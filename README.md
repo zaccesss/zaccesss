@@ -1,89 +1,84 @@
-# 👋 Hi, I'm Isaac (Zac) Adjei  
+<img src="https://raw.githubusercontent.com/Zaccesss/Zaccesss/main/banner.png" width="100%" alt="ZACCESS Banner">
 
-Engineer-in-training focused on **embedded systems, circuits, IoT, and intelligent hardware-software integration**.  
-My journey began in Ghana, where curiosity, faith and problem-solving shaped my character. Today I'm studying **Electronic & Computer Engineering** at **Aston University**, blending firmware, hardware logic and software development to build systems that think, respond and solve real problems.
+# Hi, I'm **Isaac (Zac) Adjei**  
+Engineer & Technologist | Electronic & Computer Engineering
 
----
+I am an engineer with a passion for **embedded systems, circuits, IoT, cyber security and AI/ML**, with a growing foundation across software, microcontrollers and intelligent hardware-software integration. My journey started in Ghana, where discipline, curiosity and problem-solving shaped my character early. Moving to the UK strengthened my resilience and responsibility, and today I study **Electronic & Computer Engineering** pursuing innovation that blends both hardware and code.
 
-## ⚡ Technical Focus  
-> Building smart systems through code + electronics + innovation.
-
-🔹 Embedded Systems & Microcontrollers  
-🔹 C | C++ | Python | Java  
-🔹 IoT, Sensors & Real-time Data  
-🔹 PCB Design, Soldering & Rapid Prototyping  
-🔹 Serial Communication, PWM, AVR  
-🔹 MATLAB • Arduino • Proteus • GitHub  
-🔹 Cloud & Security Fundamentals  
+I am sight-impaired (monocular vision) from childhood retinoblastoma, but instead of limiting me, it built discipline, consistency and focus. I believe engineering should *serve*, solve real problems and create systems that think, respond and improve lives.
 
 ---
 
-## 🧩 Projects
-| Project | Tech | Summary |
-|---|---|---|
-| **NeoPixel LED Cube (4x4x4)** | Arduino • C++ • WS2812B LEDs | Designed, wired and programmed a 3D LED matrix system with 64 individually addressable LEDs, remote control modes and dynamic light patterns |
-| *(More hardware + software projects coming soon...)* |
+## ⚡ What I Do
+🔹 Embedded Systems Development  
+🔹 Circuits, PCB Design & Soldering  
+🔹 IoT + Sensors + Automation  
+🔹 C / C++ / Python / Java  
+🔹 Cybersecurity & Cloud Foundations  
+🔹 AI/ML exploration + Model integration  
+
+Learning. Building. Innovating. Growing.  
+
+---
+
+## 🔥 Technical Stack
+
+| Area | Tools & Tech |
+|---|---|
+| **Programming** | C • C++ • Python • Java • HTML • CSS • MATLAB |
+| **Embedded Systems** | Arduino • Atmel AVR • WS2812B LEDs • Serial Comms • PWM |
+| **Hardware** | Circuit Design • PCB Layout • Prototyping • Soldering |
+| **Software Tools** | GitHub • JetBrains IDE (PyCharm / IntelliJ) |
+| **Other** | Cyber Security • Cloud Concepts • Data Interpretation |
+
+---
+
+## 🚀 Projects
+
+### **NeoPixel LED Cube – 4×4×4 Arduino Prototype** *(2025)*
+64x WS2812B LEDs individually addressed through C++ matrix animations.  
+- Designed power handling + wiring  
+- Soldered full matrix structure  
+- Programmed RGB pattern engine  
+
+`[Repository Coming Soon]`
+
+More hardware + software builds are on the way…
 
 ---
 
 ## 🎓 Education
-**Aston University** — BEng Electrical & Electronic Engineering + Computer Science  
-*2024–2028 (Working towards First Class)*  
-Focus: Embedded Systems, Circuit Design, MATLAB, C++, Microcontrollers, PCB
 
-**Stanmore College — BTEC Engineering (D*DD)**  
-Electronics • CAD • PCB Design • Arduino Systems
-
-**Adisadel College — WASSCE | General Arts**  
-Leadership + Robotics + Debate + APOSA Secretary
-
----
-
-## 🛠 Skills & Technologies
-
-### Hardware / Embedded
-C++ • Arduino • Atmel AVR • PCB Design • Soldering  
-Microcontrollers • Serial Comms • IoT • PWM • Prototyping  
-
-### Software
-Python • Java • HTML • CSS • MATLAB  
-GitHub • JetBrains (PyCharm/IntelliJ)  
-
-### Professional & Industry
-Documentation • Risk & Ops Planning • Traffic Systems  
-Sustainability • Data Interpretation • Reporting  
-
-### Soft Skills
-Team Leadership • Speaking & Debate  
-Critical Thinking • Faith-based Leadership  
-Time Management • Organisation • Collaboration  
+**Aston University** — BEng Electronic Engineering & Computer Science *(2024–2028)*  
+**Stanmore College** — BTEC Engineering (D*DD)  
+**Adisadel College (Ghana)** — WASSCE • Robotics, SU, Debate • APOSA Secretary  
 
 ---
 
 ## 🏆 Certifications
-| Cert | Provider |
-|---|---|
-| British Airways Engineering Simulation | Forage |
-| AWS Cloud Career Tour | Springpod |
-| Amazon Robotics Programme | Springpod |
-| Digital Tech & Mobility Experience | Yunex |
-| Computer Science w/ Dr Aminu Usman | Springpod |
-| Pearson L3 Engineering Diploma | Pearson |
+
+- British Airways Engineering Virtual Simulation  
+- AWS Cloud Career Tour – Springpod  
+- Amazon Robotics • Fulfilment Career Insight  
+- Digital Tech & Smart Mobility – Yunex  
+- Computer Science with Dr Aminu Usman  
+- Pearson BTEC National Diploma in Engineering  
 
 ---
 
 ## 🌍 Languages
-English (Professional) • Ga (Fluent) • Twi (Proficient) • French (Basic)
+English • Ga • Twi • Basic French  
 
 ---
 
-## 📡 Connect with Me  
+## 🔗 Links & Contact
+
+🌐 Linktree → **https://linktr.ee/zaccess**  
 💼 LinkedIn: *www.linkedin.com/in/isaacadjei*  
-📧 Email: *offices.isaac@gmail.com*  
+📧 Email: *offices.isaac@gmail.com*   
 
 ---
 
-### 🧠 Motto
-> *Engineering that thinks. Technology that serves. Faith that drives.*
-
+### 🧠 Personal Motto
+> Engineering that thinks. Technology that serves. Faith that sustains.
 
