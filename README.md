@@ -1,6 +1,3 @@
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/eee86843-be72-4a36-852e-b40ed0a11ca8" />
-
-
 # Hi, I'm **Isaac (Zac) Adjei**  
 Engineer & Technologist | Electronic & Computer Engineering
 
@@ -81,5 +78,7 @@ English • Ga • Twi • Basic French
 ---
 
 ### 🧠 Personal Motto
-> Engineering that thinks. Technology that serves. Faith that sustains.
+> Engineering that thinks. Technology that serves.
+
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/eee86843-be72-4a36-852e-b40ed0a11ca8" />
 
