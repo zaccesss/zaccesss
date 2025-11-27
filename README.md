@@ -1,4 +1,5 @@
-<img src="https://raw.githubusercontent.com/Zaccesss/Zaccesss/main/banner.png" width="100%" alt="ZACCESS Banner">
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/eee86843-be72-4a36-852e-b40ed0a11ca8" />
+
 
 # Hi, I'm **Isaac (Zac) Adjei**  
 Engineer & Technologist | Electronic & Computer Engineering
