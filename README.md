@@ -221,7 +221,8 @@ More builds/projects coming soon.
 Outside academics I learn through online courses, personal builds/projects and self development.  
 I enjoy:
 
-- Playing **piano**  
+- Playing **piano**
+- Listening to **music**
 - The **gym** and fitness  
 - **Cycling**  
 - **Cooking**  
