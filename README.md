@@ -99,12 +99,13 @@ If you value someone who **learns fast, thinks deeply, adapts quickly and contri
 
 ### **NeoPixel LED Cube – 4×4×4 Arduino Build**
 64 WS2812B addressable LEDs animated using C++ logic  
-`↑ Repository coming soon`
 
 • Full soldered assembly  
 • Power distribution planning  
 • Animation engine + effects  
 • Debugging and iterative prototyping
+
+`[Repository coming soon on this profile]`
 
 More builds/projects coming soon.
 
