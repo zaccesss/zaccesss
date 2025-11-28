@@ -267,18 +267,11 @@ For me, growth is not occasional but an **active lifestyle**.
 
 ## 🎯 What I Am Looking For
 
-I am seeking **internships, placements and work experience** across engineering and tech including:
-
-- Embedded systems  
-- Software development  
-- Cloud computing  
-- AI and automation  
-- IoT and cyber aligned computing  
+I am seeking **internships, placements and work experience** across engineering and tech.
 
 My long term goal is to build a career where **intelligent software and efficient hardware solve real problems** at scale.
 
 If you value someone who **learns fast, thinks deeply, adapts quickly and contributes well both independently and in a team**, I would be happy to connect, collaborate and one day join your team.
-ve lifestyle.**
 
 ---
 
