@@ -146,12 +146,13 @@ More builds/projects coming soon.
 
 ### Institution of Engineering and Technology (IET) – Student Member  
 *Oct 2024 – Present*  
-Student member engaging with Career Manager, webinars and technical content to support CPD and stay current in electronics and computing.
+- Student member engaging with Career Manager, webinars and technical content to support CPD and stay current in electronics and computing.
 
 ---
 
 ### Aston Computer and Electronics Society – Member  
 *Oct 2024 – Present*  
+- Participate in coding workshops, electronics sessions and project-based learning within the Aston tech community.
 
 ---
 
@@ -160,33 +161,47 @@ Student member engaging with Career Manager, webinars and technical content to s
 ### Engineering Operations & Maintenance Planning Job Simulation Participant (Virtual Experience) – British Airways  
 *Oct 2025 – Oct 2025 · Remote*  
 
+- Analysed A320 maintenance schedules, risk and materials planning as part of an aviation engineering simulation.
+
 ---
 
 ### Virtual Work Experience at Yunex Traffic via Springpod – Yunex Traffic  
 *Aug 2025 – Aug 2025 · Remote*  
+
+- Explored intelligent transport systems, air-quality monitoring and smart city traffic management through Springpod programme.
 
 ---
 
 ### Consular Intern – Ghana High Commission, UK  
 *Jul 2024 – Aug 2024 · London, UK · On site*  
 
+- Processed visas, passports and documents while supporting customer enquiries and administration.
+
 ---
 
 ### Diplomatic Administrative and Estates Intern – Ghana High Commission, UK  
 *Mar 2024 – Mar 2024 · London, UK · On site*  
 
+- Assisted with records, logistics and estate operations while gaining experience in diplomatic office environments.
+
 ---
 ### Hospitality Staff – Casa do Frango  
 *Sep 2022 – Jan 2025 · London, UK · On site*  
+
+- Delivered service in a fast-paced restaurant environment building teamwork, coordination and customer experience skills.
 
 ---
 ### Agency Staff – Search Hub Consultancy  
 *Jul 2022 – Sep 2022 · London, UK · On site*  
 
+- Adapted to multiple venues providing service support across bar, floor and guest operations.
+  
 ---
 
 ### Agency staff – Total Facilities Recruitment Ltd  
-*Jul 2022 – Aug 2022 · London, UK · On site*  
+*Jul 2022 – Aug 2022 · London, UK · On site* 
+
+- Performed food and service duties across rotating assignments maintaining consistency under pressure.
 
 ---
 
