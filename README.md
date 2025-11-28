@@ -86,6 +86,15 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 *Plus gaming and hardware ecosystems I interact with: Steam, PlayStation Network, Unity, Unreal, Ubisoft, nVIDIA, EA, AMD.*
 
 ---
+## 🎯 What I Am Looking For
+
+I am seeking **internships, placements and work experience** across engineering and tech.
+
+My long term goal is to build a career where **intelligent software and efficient hardware solve real problems** at scale.
+
+If you value someone who **learns fast, thinks deeply, adapts quickly and contributes well both independently and in a team**, I would be happy to connect, collaborate and one day join your team.
+
+---
 
 ## 🚀 Projects
 
@@ -122,7 +131,6 @@ Deliverables included code, build photos, slides and notes so others can reprodu
 - Active in Computer & Electronics Society, African-Caribbean Society and Aston Ghana Society.  
 - Motivated to master cross disciplinary technologies bridging hardware and software with long term goals in IoT, robotics, automation and innovation.
 
-**Key skills:** C++, Java, Arduino, embedded systems, microcontrollers, Internet of Things (IoT), PWM, circuit design, printed circuit board (PCB) design, soldering, prototyping, Atmel AVR, GitHub, problem solving, critical thinking, debugging, teamwork.
 
 ---
 
@@ -132,9 +140,6 @@ Deliverables included code, build photos, slides and notes so others can reprodu
 
 - Studied modules such as Electrical Principles, Engineering Product Design, Microcontroller Systems and Specialist Engineering Projects.  
 - Developed practical skills in circuit design, Arduino programming, systems automation and technical CAD drawing.  
-- Demonstrated strong teamwork and communication through group projects and presentations.
-
-**Key skills:** Circuit design, teamwork, team building, problem solving, Arduino, AutoCAD.
 
 ---
 
@@ -144,11 +149,6 @@ Deliverables included code, build photos, slides and notes so others can reprodu
 
 - Activities and societies: Robotics, APOSA (Secretary), Scripture Union, PENSA, Debate Society, Sports and Athletics.  
 - Studied General Arts with electives in Economics, Government, Christian Religious Studies and Geography supported by core subjects in English, Mathematics, Integrated Science, Social Studies, ICT and PE.  
-- Combination strengthened analytical, communication and problem solving skills while deepening understanding of society, ethics and faith.  
-- Lived in Thomas Jonah House and served as APOSA Secretary gaining organisational and leadership experience.
-
-**Key skills:** Leadership and administration, critical thinking and analysis, communication (oral and written), teamwork and collaboration, public speaking and debate, faith based leadership, event and activity coordination.
-
 ---
 
 ## 🏛 Organisations
@@ -156,17 +156,10 @@ Deliverables included code, build photos, slides and notes so others can reprodu
 ### Institution of Engineering and Technology (IET) – Student Member  
 *Oct 2024 – Present*  
 
-- Student member of the global professional body for engineers and technicians associated with Aston University.  
-- Use IET Career Manager, technical articles and webinars to plan continuing professional development, strengthen engineering skills and stay current with new technologies.  
-- Take part in IET events and online communities to connect with practising engineers, learn about different career paths and prepare for future professional registration.
-
 ---
 
 ### Aston Computer and Electronics Society – Member  
 *Oct 2024 – Present*  
-
-- Engage in coding sessions, engineering workshops and tech events to develop practical software and hardware skills.  
-- Community involvement supports development in engineering, programming and hands on problem solving.
 
 ---
 
@@ -175,78 +168,33 @@ Deliverables included code, build photos, slides and notes so others can reprodu
 ### Engineering Operations & Maintenance Planning Job Simulation Participant (Virtual Experience) – British Airways  
 *Oct 2025 – Oct 2025 · Remote*  
 
-- Completed the British Airways Engineering Virtual Experience focused on real maintenance and supply chain operations.  
-- Analysed A320 maintenance schedules, forecasted material requirements and identified risk factors during C checks.  
-- Developed actionable planning reports aligned with EASA/CAA compliance and sustainability standards.
-
-**Skills:** Contingency planning, data interpretation, operational risk, quality assurance, report writing, sustainability.
-
 ---
 
 ### Virtual Work Experience at Yunex Traffic via Springpod – Yunex Traffic  
 *Aug 2025 – Aug 2025 · Remote*  
-
-- Completed Yunex Traffic smart mobility and environmental sustainability virtual work experience exploring how intelligent transport systems and digital technology improve air quality and urban efficiency.  
-- Learnt about the design and operation of traffic lights, sensor integration and data driven transport management used in smart cities.  
-- Created an infographic demonstrating how Zephyr air quality sensors monitor NO₂, O₃ and PM₁₀ pollution in real time to support safer cleaner mobility networks.  
-- Gained professional insight into engineering, software and project management roles within Yunex Traffic.
-
-**Skills:** Problem solving, critical thinking, traffic signal design.
-
----
-
-### Waiter / Food Runner / Bar Back – Casa do Frango  
-*Sep 2022 – Jan 2025 · London, UK · On site*  
-
-- Supported front of house service at a restaurant in Piccadilly.  
-- Worked closely with kitchen and bar teams to deliver exceptional customer experiences.  
-- Improved multitasking, communication and time management under pressure.
-
-**Skills:** Teamwork, communication, hospitality service, time management.
 
 ---
 
 ### Consular Intern – Ghana High Commission, UK  
 *Jul 2024 – Aug 2024 · London, UK · On site*  
 
-- Supported the Consular Department in processing passports, visas and travel documents.  
-- Assisted with document verification, client enquiries and administrative coordination.  
-- Developed practical experience in diplomatic services, international relations and cross border documentation procedures while enhancing communication, organisation and public service professionalism.
-
-**Skills:** International relations, communication, customer service.
-
 ---
 
 ### Diplomatic Administrative and Estates Intern – Ghana High Commission, UK  
 *Mar 2024 – Mar 2024 · London, UK · On site*  
 
-- Assisted the Administration Section with estates management activities and general administrative operations.  
-- Supported the team with document handling, facilities coordination and office logistics while gaining experience in public sector administration and diplomatic procedures.  
-- Developed skills in professional communication, record management and organisational efficiency within a government environment.
-
-**Skills:** Document management, administrative assistance, diplomacy, records management, professional ethics.
+---
+### Hospitality Staff – Casa do Frango  
+*Sep 2022 – Jan 2025 · London, UK · On site*  
 
 ---
-
-### Waiter / Food Runner / Bar Back – Search Hub Consultancy  
+### Agency Staff – Search Hub Consultancy  
 *Jul 2022 – Sep 2022 · London, UK · On site*  
 
-- Provided support across various venues via agency placement.  
-- Handled bar prep, table running and guest assistance.  
-- Maintained high service standards while adapting to different teams and environments.
-
-**Skills:** Hospitality service.
-
 ---
 
-### Waiter / Food Runner / Bar Back – Total Facilities Recruitment Ltd  
+### Agency staff – Total Facilities Recruitment Ltd  
 *Jul 2022 – Aug 2022 · London, UK · On site*  
-
-- Worked at various restaurants through agency assignments.  
-- Assisted in food and bar service, supported floor coordination and ensured timely service.  
-- Strengthened interpersonal and team collaboration skills.
-
-**Skills:** Time management, food service, teamwork, team management, communication.
 
 ---
 
@@ -262,16 +210,6 @@ I enjoy:
 - Structured routines that strengthen discipline mentally and physically  
 
 For me, growth is not occasional but an **active lifestyle**.
-
----
-
-## 🎯 What I Am Looking For
-
-I am seeking **internships, placements and work experience** across engineering and tech.
-
-My long term goal is to build a career where **intelligent software and efficient hardware solve real problems** at scale.
-
-If you value someone who **learns fast, thinks deeply, adapts quickly and contributes well both independently and in a team**, I would be happy to connect, collaborate and one day join your team.
 
 ---
 
