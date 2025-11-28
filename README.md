@@ -95,29 +95,18 @@ My long term goal is to build a career where **intelligent software and efficien
 If you value someone who **learns fast, thinks deeply, adapts quickly and contributes well both independently and in a team**, I would be happy to connect, collaborate and one day join your team.
 
 ---
-
 ## 🚀 Projects
 
-### NeoPixel LED Cube | 4×4×4 Arduino Prototype
+### **NeoPixel LED Cube – 4×4×4 Arduino Build**
+64 WS2812B addressable LEDs animated using C++ logic  
+`↑ Repository coming soon`
 
-Designed and delivered a working 4×4×4 NeoPixel LED cube with 64 WS2812B LEDs on Arduino Uno. I led the software and supported the full build across wiring, enclosure and basic power budgeting.
+• Full soldered assembly  
+• Power distribution planning  
+• Animation engine + effects  
+• Debugging and iterative prototyping
 
-Firmware in C++ using Adafruit_NeoPixel with a modular nonblocking state machine driven by `millis`.  
-Debounced momentary buttons for power and mode select, buzzer beeps for power and mode changes and serial diagnostics for testing.
-
-Ambient light sensing with an LDR, mapped and constrained to set LED brightness for visibility and sensible power use.
-
-Four selectable patterns: colour wipe, smooth RGB fade, fire effect and rainbow cycle, each written as clean functions that are easy to extend.
-
-Hardware support included soldering the 4×4×4 lattice, routing grounds and data lines, choosing a 5 V supply with headroom and fitting a simple wooden enclosure with front panel controls.
-
-Testing covered LED smoke tests, button bounce checks and short demo runs to verify thermals and stability.
-
-Deliverables included code, build photos, slides and notes so others can reproduce or add new effects.
-
-**Tech used:** Arduino Uno, C++, Adafruit_NeoPixel, WS2812B, LDR, push buttons, piezo buzzer, 5 V PSU.
-
-`[Repository coming soon on this profile]`
+More builds/projects coming soon.
 
 ---
 
