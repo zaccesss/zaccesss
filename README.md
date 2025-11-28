@@ -28,7 +28,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Aston_University-BEng_EECS_’28-purple?style=for-the-badge&logo=academia" />
+  <img src="https://img.shields.io/badge/Aston_University-Beng_EECS_2028-purple?style=for-the-badge&logo=academia" />
 </p>
 
 
