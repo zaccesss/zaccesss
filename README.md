@@ -10,6 +10,12 @@
 Engineer & Technologist  
 
 ---
+## 🔗 Links & Contact
+
+🌐 Linktree → **https://linktr.ee/zaccess**  
+💼 LinkedIn → **https://www.linkedin.com/in/isaacadjei**  
+📧 Email → **offices.isaac@gmail.com**
+---
 
 ## 👤 About Me
 
@@ -241,7 +247,33 @@ Deliverables included code, build photos, slides and notes so others can reprodu
 
 ## 🎧 Outside Engineering
 
-Outside academics I learn through online courses, personal builds/projects and self development. I enjoy piano, the gym, cycling, cooking and structured routines that strengthen discipline mentally and physically. **Growth is not occasional but an active lifestyle.**
+Outside academics I learn through online courses, personal builds/projects and self development.  
+I enjoy:
+
+- Playing **piano**  
+- The **gym** and fitness  
+- **Cycling**  
+- **Cooking**  
+- Structured routines that strengthen discipline mentally and physically  
+
+For me, growth is not occasional but an **active lifestyle**.
+
+---
+
+## 🎯 What I Am Looking For
+
+I am seeking **internships, placements and work experience** across engineering and tech including:
+
+- Embedded systems  
+- Software development  
+- Cloud computing  
+- AI and automation  
+- IoT and cyber aligned computing  
+
+My long term goal is to build a career where **intelligent software and efficient hardware solve real problems** at scale.
+
+If you value someone who **learns fast, thinks deeply, adapts quickly and contributes well both independently and in a team**, I would be happy to connect, collaborate and one day join your team.
+ve lifestyle.**
 
 ---
 
@@ -269,14 +301,6 @@ English • Ga • Twi • French (elementary)
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=zaccesss&theme=gotham&hide_border=true" />
 </p>
-
----
-
-## 🔗 Links & Contact
-
-🌐 Linktree → **https://linktr.ee/zaccess**  
-💼 LinkedIn → **https://www.linkedin.com/in/isaacadjei**  
-📧 Email → **offices.isaac@gmail.com**
 
 ---
 
