@@ -267,4 +267,7 @@ English • Ga • Twi • French (elementary)
 </p>
 
 ---
-<img width="372" height="168" alt="zaccess_banner" src="https://github.com/user-attachments/assets/9d2d9686-919b-4e22-95ed-f61c6156c34e" />
+<p align="center">
+  <img width="372" height="168" alt="zaccess_banner" src="https://github.com/user-attachments/assets/9d2d9686-919b-4e22-95ed-f61c6156c34e" />
+</p>
+
