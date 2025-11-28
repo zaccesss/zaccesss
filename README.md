@@ -100,7 +100,7 @@ If you value someone who **learns fast, thinks deeply, adapts quickly and contri
 ---
 
 ## 🌍 Languages
-English • Ga • Twi • Basic French
+English • Ga • Twi • French(Elementary)
 
 ---
 
