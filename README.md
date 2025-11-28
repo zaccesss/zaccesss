@@ -1,7 +1,7 @@
 # Hi, I'm **Isaac (Zac) Adjei**
 Engineer & Technologist
 
-I am an engineer and technologist with interests that span across **electronics, software development, cyber security, cloud computing, AI/ML, computer systems and hardware-software integration.** My journey began in Ghana where curiosity and problem solving shaped me early. In 2022 I moved to the UK during my final year at Adisadel College where I served as an aspiring Dispensary Prefect and Vice President of APOSA. That transition strengthened resilience, adaptability and responsibility which drive how I work and learn today.
+I am an aspiring engineer and technologist with interests that span across **electronics, software development, cyber security, cloud computing, AI/ML, computer systems and hardware-software integration.** My journey began in Ghana where curiosity and problem solving shaped me early. In 2022 I moved to the UK during my final year at Adisadel College where I served as an aspiring Dispensary Prefect and Vice President of APOSA. That transition strengthened resilience, adaptability and responsibility which drive how I work and learn today.
 
 I am sight impaired due to retinoblastoma in childhood which resulted in blindness in my right eye. Instead of limiting me it sharpened my discipline, consistency and determination to succeed academically and personally. I now study **Electronic Engineering and Computer Science at Aston University** building experience in both hardware and software.
 
