@@ -13,17 +13,9 @@ Engineer & Technologist
 
 ## 👤 About Me
 
-I am an engineer and technologist with interests that span across electronics, software development, cyber security, cloud computing, AI/ML, computer systems and hardware-software integration. My journey began in Ghana where curiosity and problem solving shaped me early. In 2022 I moved to the UK during my final year at Adisadel College where I served as an aspiring Dispensary Prefect and Vice President of APOSA. That transition strengthened resilience, adaptability and responsibility which drive how I work and learn today.
+I am an aspiring engineer and technology enthusiast with interests that span across electronics, software development, cyber security, cloud computing, AI/ML, computer systems and hardware-software integration. My journey began in Ghana where curiosity and problem solving shaped me early. In 2022 I moved to the UK during my final year at Adisadel College where I served as an aspiring Dispensary Prefect and Vice President of APOSA. That transition strengthened resilience, adaptability and responsibility which drive how I work and learn today.
 
 I am sight impaired due to retinoblastoma in childhood which resulted in blindness in my right eye. Instead of limiting me it sharpened my discipline, consistency and determination to succeed academically and personally. I now study Electronic Engineering and Computer Science at Aston University building experience in both hardware and software.
-
-My technical development includes C, C++, Python and Java with knowledge of microcontrollers, embedded systems, IoT fundamentals, PCB design, MATLAB, debugging and algorithmic thinking. I am also expanding skills in HTML, CSS, cloud computing, basic AI systems, cyber security and game development engines. I enjoy understanding how systems function internally and building projects that move from concept to code to real output. My 4x4x4 NeoPixel LED Cube reflects this blend through C++ logic, power budgeting and prototyping.
-
-My experience spans engineering, tech, administration and hospitality. I completed British Airways Engineering Simulation and Yunex Traffic smart mobility exposure, and worked with the Ghana High Commission where I developed diplomacy, organisation, documentation and communication. Hospitality roles improved teamwork, focus and performance under pressure. Each role shaped me into an adaptable analytical learner.
-
-I am seeking internships, placements and work experience across engineering and tech including embedded systems, software development, cloud computing, AI, automation, IoT and cyber aligned computing. My long term goal is to build a career where intelligent software and efficient hardware solve real problems.
-
-If you value someone who learns fast, thinks deeply, adapts quickly and contributes well both independently and in a team, I would be happy to connect, collaborate and one day join your team.
 
 ---
 
@@ -31,7 +23,7 @@ If you value someone who learns fast, thinks deeply, adapts quickly and contribu
 
 My technical development includes **C, C++, Python and Java** with knowledge of **microcontrollers, embedded systems, IoT fundamentals, PCB design, MATLAB, debugging and algorithmic thinking**.
 
-I am also expanding skills in **HTML, CSS, cloud computing, basic AI systems, cyber security and game development engines**. I enjoy understanding how systems function internally and building projects that move from **concept to code to real output**.
+I am also expanding knowledge and skills in **HTML, CSS, cloud computing, basic AI systems, cyber security and game development engines**. I enjoy understanding how systems function internally and building projects that move from **concept to code to real output**.
 
 One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power budgeting and prototyping.
 
@@ -41,7 +33,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 |---|---|
 | Programming | C • C++ • Python • Java • HTML • CSS • MATLAB |
 | Embedded & Hardware | Arduino • Atmel AVR • WS2812B LEDs • Serial Comms • PWM • PCB Design • Soldering • Prototyping |
-| Software & Tools | GitHub • JetBrains IDEs (PyCharm, IntelliJ) • PlatformIO • Notion |
+| Software & Tools | GitHub • JetBrains IDEs • PlatformIO • Notion |
 | Foundations | Cyber Security • Cloud Concepts • Data Interpretation • AI/ML Fundamentals • System Design • IoT |
 
 ---
@@ -124,7 +116,7 @@ Deliverables included code, build photos, slides and notes so others can reprodu
 ---
 
 ### Stanmore College  
-**Pearson BTEC Level 3 National Extended Diploma in Engineering (D\*DD)**  
+**Pearson BTEC Level 3 National Extended Diploma in Engineering (Distinction\*, Distinction, Distinction - D\*DD)**  
 *Sep 2022 – Jul 2024*  
 
 - Studied modules such as Electrical Principles, Engineering Product Design, Microcontroller Systems and Specialist Engineering Projects.  
