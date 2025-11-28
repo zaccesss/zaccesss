@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&vCenter=true&width=600&height=55&lines=Embedded+Systems+%7C+Electronics+%7C+Software;Cyber+Security+%7C+AI%2FML+%7C+Cloud;Innovation+%7C+Engineering+%7C+Growth+Mindset" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=110&section=header&text=Isaac%20(Zac)%20Adjei&fontSize=38&fontAlignY=32&animation=fadeIn" />
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=110&section=header&text=Isaac%20(Zac)%20Adjei&fontSize=38&fontAlignY=32&animation=fadeIn" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&center=true&vCenter=true&width=600&height=55&lines=Hardware+%7C+Software+%7C+Innovation;Embedded+Systems+%7C+AI%2FML+%7C+Cloud;Cyber+Security+%7C+Engineering+%7C+Growth+Mindset" />
 </p>
 
 ---
