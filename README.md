@@ -154,7 +154,7 @@ Deliverables included code, build photos, slides and notes so others can reprodu
 ## 🏛 Organisations
 
 ### Institution of Engineering and Technology (IET) – Student Member  
-*Oct 2025 – Present*  
+*Oct 2024 – Present*  
 
 - Student member of the global professional body for engineers and technicians associated with Aston University.  
 - Use IET Career Manager, technical articles and webinars to plan continuing professional development, strengthen engineering skills and stay current with new technologies.  
@@ -163,7 +163,7 @@ Deliverables included code, build photos, slides and notes so others can reprodu
 ---
 
 ### Aston Computer and Electronics Society – Member  
-*Nov 2024 – Present*  
+*Oct 2024 – Present*  
 
 - Engage in coding sessions, engineering workshops and tech events to develop practical software and hardware skills.  
 - Community involvement supports development in engineering, programming and hands on problem solving.
