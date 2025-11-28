@@ -20,11 +20,7 @@
     <img src="https://img.shields.io/badge/Email-Contact-ff6f61?style=for-the-badge&logo=gmail&logoColor=white">
   </a>
 </p>
----
-🌐 Linktree → **https://linktr.ee/zaccess**  
-💼 LinkedIn → **https://www.linkedin.com/in/isaacadjei**  
-📧 Email → **offices.isaac@gmail.com**
----
+
 
 ## 👤 About Me
 
