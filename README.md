@@ -55,16 +55,7 @@ My technical development includes **C, C++, Python and Java** with knowledge of 
 
 I am also expanding knowledge and skills in **HTML, CSS, cloud computing, basic AI systems, cyber security and game development engines**. I enjoy understanding how systems function internally and building projects that move from **concept to code to real output**.
 
-One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power budgeting and prototyping.
-
-### Snapshot of my stack
-
-| Area | Tools & Tech |
-|---|---|
-| Programming | C • C++ • Python • Java • HTML • CSS • MATLAB |
-| Embedded & Hardware | Arduino • Atmel AVR • WS2812B LEDs • Serial Comms • PWM • PCB Design • Soldering • Prototyping |
-| Software & Tools | GitHub • JetBrains IDEs • PlatformIO • Notion |
-| Foundations | Cyber Security • Cloud Concepts • Data Interpretation • AI/ML Fundamentals • System Design • IoT |
+One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power budgeting and prototyping
 
 ---
 
