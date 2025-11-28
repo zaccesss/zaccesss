@@ -12,6 +12,17 @@ Engineer & Technologist
 ---
 ## 🔗 Links & Contact
 
+<p align="center">
+  <a href="https://linktr.ee/zaccess">
+    <img src="https://img.shields.io/badge/Linktree-zaccess-1de9b6?style=for-the-badge&logo=linktree&logoColor=white">
+  </a>
+  <a href="https://www.linkedin.com/in/isaacadjei">
+    <img src="https://img.shields.io/badge/LinkedIn-Isaac_Adjei-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white">
+  </a>
+  <a href="mailto:offices.isaac@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact-ff6f61?style=for-the-badge&logo=gmail&logoColor=white">
+  </a>
+</p>
 🌐 Linktree → **https://linktr.ee/zaccess**  
 💼 LinkedIn → **https://www.linkedin.com/in/isaacadjei**  
 📧 Email → **offices.isaac@gmail.com**
@@ -304,10 +315,28 @@ English • Ga • Twi • French (elementary)
 
 ---
 
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical">
+</p>
+
+---
+
+
 ### 🧠 Personal Motto
 
 > Engineering that thinks. Technology that serves. Growth as a lifestyle.
 
+---
+
+<p align="center">
+  <a href="https://github.com/zaccesss">
+    <img src="https://visitcount.itsvg.in/api?id=zaccesss&icon=0&color=0">
+  </a>
+</p>
+
+---
+
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/eee86843-be72-4a36-852e-b40ed0a11ca8" />
+
 
 
