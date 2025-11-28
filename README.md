@@ -220,7 +220,7 @@ For me, growth is not occasional but an **active lifestyle**.
 
 ---
 
-## 🌍 Languages
+## 🌍 Languages (R&W)
 
 English • Ga • Twi • French (elementary)
 
