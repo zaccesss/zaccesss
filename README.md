@@ -21,6 +21,17 @@
   </a>
 </p>
 
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=zaccesss&style=flat&color=blue" alt="Profile views" />
+  <img src="https://img.shields.io/github/last-commit/zaccesss/laithm?style=flat&color=blue" alt="last updated" />
+  <img src="https://img.shields.io/github/stars/laithm/zaccesss?style=social" alt="GitHub stars" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Aston_University-BEng_EECS_’28-purple?style=for-the-badge&logo=academia" />
+</p>
+
+
 
 ## 👤 About Me
 
