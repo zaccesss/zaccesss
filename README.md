@@ -42,7 +42,7 @@ I am sight impaired due to retinoblastoma in childhood which resulted in blindne
 ---
 ## 🎯 What I Am Looking For
 
-I am seeking **internships, placements and work experience** across engineering and tech.
+I am seeking **internships, placements and work experience** across engineering and tech (both HW/SW).
 
 My long term goal is to build a career where **intelligent software and efficient hardware solve real problems** at scale.
 
