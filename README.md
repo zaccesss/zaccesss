@@ -273,7 +273,7 @@ For me, growth is not occasional but an **active lifestyle**.
 
 <p align="center">
   <img
-    src="https://streak-stats.demolab.com?user=zaccesss&theme=gotham&hide_border=true"
+    src="https://streak-stats.demolab.com?user=zaccesss&theme=radical&hide_border=true"
   />
 </p>
 
@@ -293,15 +293,4 @@ For me, growth is not occasional but an **active lifestyle**.
   <img width="372" height="168" alt="zaccess_banner" src="https://github.com/user-attachments/assets/9d2d9686-919b-4e22-95ed-f61c6156c34e" />
 </p>
 
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=zaccesss&theme=radical&hide_border=false&include_all_commits=true&count_private=true)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=zaccesss&theme=radical&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=zaccesss&limit=5&theme=dark&combine_all_yearly_contributions=true)
-
----
-[![](https://visitcount.itsvg.in/api?id=zaccesss&icon=0&color=8)](https://visitcount.itsvg.in)
-
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
