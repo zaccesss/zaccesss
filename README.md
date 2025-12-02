@@ -58,52 +58,114 @@ I am also expanding knowledge and skills in **HTML, CSS, cloud computing, basic 
 
 One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power budgeting and prototyping.
 
-### Snapshot of my stack
-
-| Area | Tools & Tech |
-|---|---|
-| Programming | C • C++ • Python • Java • HTML • CSS • MATLAB |
-| Embedded & Hardware | Arduino • Atmel AVR • WS2812B LEDs • Serial Comms • PWM • PCB Design • Soldering • Prototyping |
-| Software & Tools | GitHub • JetBrains IDEs • PlatformIO • Notion |
-| Foundations | Cyber Security • Cloud Concepts • Data Interpretation • AI/ML Fundamentals • System Design • IoT |
-
 ---
 
-## 🔧 Languages and Tools
+# 💻 Tech Stack Overview
 
+## 🗣 Languages
 <p align="left">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original-wordmark.svg" alt="Java" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/matlab/matlab-original.svg" alt="MATLAB" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/arduino/arduino-original.svg" alt="Arduino" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub" width="40" height="40"/>
+  <img src="https://skillicons.dev/icons?i=c" width="48" height="48" alt="C" />
+  <img src="https://skillicons.dev/icons?i=cpp" width="48" height="48" alt="C++" />
+  <img src="https://skillicons.dev/icons?i=python" width="48" height="48" alt="Python" />
+  <img src="https://skillicons.dev/icons?i=java" width="48" height="48" alt="Java" />
+  <img src="https://skillicons.dev/icons?i=html" width="48" height="48" alt="HTML" />
+  <img src="https://skillicons.dev/icons?i=css" width="48" height="48" alt="CSS" />
+  <img src="https://skillicons.dev/icons?i=matlab" width="48" height="48" alt="MATLAB" />
 </p>
 
 ---
 
-## 💻 Tech Stack (Badges)
+## 🔌 Embedded Systems + Hardware
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=arduino" width="48" height="48" alt="Arduino" />
+  <img src="https://skillicons.dev/icons?i=raspberrypi" width="48" height="48" alt="Raspberry Pi" />
+  <img src="https://skillicons.dev/icons?i=linux" width="48" height="48" alt="Linux" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="48" height="48" alt="OpenCV" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" width="48" height="48" alt="Embedded C" />
+</p>
 
-![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
-![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
-![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white)
-![Jenkins](https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white)
-![Adobe After Effects](https://img.shields.io/badge/Adobe%20After%20Effects-9999FF.svg?style=for-the-badge&logo=Adobe%20After%20Effects&logoColor=white)
-![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)
-![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
-![Raspberry Pi](https://img.shields.io/badge/-Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)
-![PlatformIO](https://img.shields.io/badge/PlatformIO-%23222.svg?style=for-the-badge&logo=platformio&logoColor=%23f5822a)
-![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)
+*Includes: Atmel AVR, WS2812B LEDs, Serial/UART, PWM, sensors, prototyping, robotics fundamentals.*
 
-*Plus gaming and hardware ecosystems I interact with: Steam, PlayStation Network, Unity, Unreal, Ubisoft, nVIDIA, EA, AMD.*
+---
 
-*Currently learning and exploring these platforms through labs, online courses and personal projects.*
+## 🧠 AI, Machine Learning + Data
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=tensorflow" width="48" height="48" alt="TensorFlow" />
+  <img src="https://skillicons.dev/icons?i=pytorch" width="48" height="48" alt="PyTorch" />
+  <img src="https://skillicons.dev/icons?i=numpy" width="48" height="48" alt="NumPy" />
+  <img src="https://skillicons.dev/icons?i=pandas" width="48" height="48" alt="Pandas" />
+  <img src="https://skillicons.dev/icons?i=scikitlearn" width="48" height="48" alt="Scikit-Learn" />
+  <img src="https://skillicons.dev/icons?i=jupyter" width="48" height="48" alt="Jupyter" />
+  <img src="https://skillicons.dev/icons?i=cuda" width="48" height="48" alt="CUDA" />
+</p>
+
+---
+
+## 🧩 Computer Science Core
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=git" width="48" height="48" alt="Git" />
+  <img src="https://skillicons.dev/icons?i=github" width="48" height="48" alt="GitHub" />
+  <img src="https://skillicons.dev/icons?i=vscode" width="48" height="48" alt="VS Code" />
+  <img src="https://skillicons.dev/icons?i=idea" width="48" height="48" alt="IntelliJ" />
+  <img src="https://skillicons.dev/icons?i=pycharm" width="48" height="48" alt="PyCharm" />
+  <img src="https://skillicons.dev/icons?i=androidstudio" width="48" height="48" alt="Android Studio" />
+</p>
+
+*Focus: data structures, algorithms, debugging, problem-solving and object-oriented design.*
+
+---
+
+## ☁️ Cloud, DevOps and Automation
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=aws" width="48" height="48" alt="AWS" />
+  <img src="https://skillicons.dev/icons?i=azure" width="48" height="48" alt="Azure" />
+  <img src="https://skillicons.dev/icons?i=gcp" width="48" height="48" alt="Google Cloud" />
+  <img src="https://skillicons.dev/icons?i=docker" width="48" height="48" alt="Docker" />
+  <img src="https://skillicons.dev/icons?i=kubernetes" width="48" height="48" alt="Kubernetes" />
+  <img src="https://skillicons.dev/icons?i=githubactions" width="48" height="48" alt="GitHub Actions" />
+</p>
+
+---
+
+## 🎮 Gaming Ecosystem and Engines
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=unity" width="48" height="48" alt="Unity" />
+  <img src="https://skillicons.dev/icons?i=unreal" width="48" height="48" alt="Unreal Engine" />
+  <img src="https://skillicons.dev/icons?i=nvidia" width="48" height="48" alt="NVIDIA" />
+  <img src="https://skillicons.dev/icons?i=amd" width="48" height="48" alt="AMD" />
+  <img src="https://skillicons.dev/icons?i=steam" width="48" height="48" alt="Steam" />
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/playstation.svg" width="48" height="48" alt="PlayStation Network" />
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ea.svg" width="48" height="48" alt="EA" />
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ubisoft.svg" width="48" height="48" alt="Ubisoft" />
+</p>
+
+---
+
+## 🔐 Cyber Security
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=linux" width="48" height="48" alt="Linux" />
+  <img src="https://skillicons.dev/icons?i=bash" width="48" height="48" alt="Bash" />
+  <img src="https://skillicons.dev/icons?i=powershell" width="48" height="48" alt="PowerShell" />
+  <img src="https://skillicons.dev/icons?i=wireshark" width="48" height="48" alt="Wireshark" />
+</p>
+
+---
+
+## 🎨 Creative and Productivity Tools
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=figma" width="48" height="48" alt="Figma" />
+  <img src="https://skillicons.dev/icons?i=canva" width="48" height="48" alt="Canva" />
+  <img src="https://skillicons.dev/icons?i=notion" width="48" height="48" alt="Notion" />
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/obsidian.svg" width="48" height="48" alt="Obsidian" />
+  <img src="https://img.shields.io/badge/Grit-%23FF8800?style=for-the-badge" height="28" alt="Grit" />
+</p>
+
+---
+
+## 📘 Learning and Experience Note
+I am actively learning and exploring many of these technologies through university labs, online courses, hands-on practice and personal engineering projects.  
+My stack grows as I grow – continuous improvement is part of my journey.
+
 
 ---
 
