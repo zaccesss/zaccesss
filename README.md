@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&duration=2500&pause=1200&center=true&vCenter=true&width=700&height=60&color=%23FF5733&vCenter=true&lines=Engineering+and+Tech;Hardware+%7C+Software;Embedded+Systems+%7C+AI%2FML;Cloud+Computing+%7C+Cyber+Security;Innovation+%7C+Growth+Mindset" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&duration=2500&pause=1200&center=true&vCenter=true&width=700&height=60&color=gradient&background=FFFFFF00&lines=Engineering+and+Tech+%7C+Hardware+%7C+Software;Embedded+Systems+%7C+AI%2FML+%7C+Cloud+Computing;Cyber+Security+%7C+Innovation+%7C+Growth+Mindset" />
 </p>
 
 ---
