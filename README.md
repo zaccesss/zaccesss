@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=zaccesss&style=flat&color=neutral" alt="Profile views" />
+  <img src="https://komarev.com/ghpvc/?username=zaccesss&style=flat&color=orange" alt="Profile views" />
   <img src="https://img.shields.io/github/last-commit/zaccesss/zaccesss?style=flat&color=green" alt="last updated" />
   <img src="https://img.shields.io/github/stars/zaccesss/zaccesss?style=social" alt="GitHub stars" />
 </p>
