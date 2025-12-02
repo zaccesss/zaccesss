@@ -47,7 +47,7 @@ I am seeking **internships, placements and work experience** across engineering 
 
 My long term goal is to build a career where **intelligent software and efficient hardware solve real problems** at scale.
 
-If you value someone who **learns fast, thinks deeply, adapts quickly and contributes well both independently and in a team**, I would be happy to connect, collaborate and one day join your team.
+If you value someone who **learns fast, thinks deeply, adapts quickly and contributes well both independently and in a team**, I would be happy to connect, collaborate and one day join your team.  Feel free to reach out anytime.
 
 ---
 ## 🧠 Technical Development
@@ -245,6 +245,11 @@ For me, growth is not occasional but an **active lifestyle**.
 
 > Engineering that thinks. Technology that serves. Growth as a lifestyle - **Isaac Adjei**.
 
+<p align="center">
+  <img width="372" height="168" alt="zaccess_banner" src="https://github.com/user-attachments/assets/9d2d9686-919b-4e22-95ed-f61c6156c34e" />
+</p>
+
+
 ---
 
 ## 🏆 GitHub Trophies
@@ -295,9 +300,5 @@ For me, growth is not occasional but an **active lifestyle**.
 
 
 ---
-
-<p align="center">
-  <img width="372" height="168" alt="zaccess_banner" src="https://github.com/user-attachments/assets/9d2d9686-919b-4e22-95ed-f61c6156c34e" />
-</p>
 
 
