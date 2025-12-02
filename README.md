@@ -60,308 +60,135 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-## 💻 Tech Stack Overview
+## 🛠️ Tools and Technologies
 
-Below is a snapshot of the tools and technologies I work with or am actively learning. Animated icons are used where possible. Everything else is kept clean and consistent.
-
----
-
-### 🗣 Languages
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
+<table>
   <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=c" width="55" alt="C"/><br>C
-    </td>
-    <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/cpp-icon.svg" width="55" alt="C++"/><br>C++
-    </td>
-    <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/python-icon.svg" width="55" alt="Python"/><br>Python
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=java" width="55" alt="Java"/><br>Java
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=html" width="55" alt="HTML"/><br>HTML
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=css" width="55" alt="CSS"/><br>CSS
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/MATLAB-FF8C00?style=for-the-badge&logo=matlab&logoColor=white" height="28" alt="MATLAB"/><br>MATLAB
-    </td>
+    <th>Category</th>
+    <th>Tool / Language</th>
+    <th>Badge</th>
   </tr>
+
+  <!-- Programming Languages -->
+  <tr>
+    <td>Languages</td>
+    <td>Python</td>
+    <td><img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Languages</td>
+    <td>C</td>
+    <td><img src="https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Languages</td>
+    <td>C++</td>
+    <td><img src="https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Languages</td>
+    <td>Java</td>
+    <td><img src="https://img.shields.io/badge/Java-007396?logo=openjdk&logoColor=white&style=for-the-badge"></td>
+  </tr>
+
+  <!-- Web -->
+  <tr>
+    <td>Web</td>
+    <td>HTML5</td>
+    <td><img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Web</td>
+    <td>CSS3</td>
+    <td><img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Web</td>
+    <td>JavaScript</td>
+    <td><img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Web</td>
+    <td>TypeScript</td>
+    <td><img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge"></td>
+  </tr>
+
+  <!-- Frameworks -->
+  <tr>
+    <td>Frameworks</td>
+    <td>React</td>
+    <td><img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Frameworks</td>
+    <td>Next.js</td>
+    <td><img src="https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Frameworks</td>
+    <td>Node.js</td>
+    <td><img src="https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white&style=for-the-badge"></td>
+  </tr>
+
+  <!-- Embedded & Electronics -->
+  <tr>
+    <td>Embedded</td>
+    <td>Arduino</td>
+    <td><img src="https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Embedded</td>
+    <td>ESP32</td>
+    <td><img src="https://img.shields.io/badge/ESP32-E7352C?logo=espressif&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Embedded</td>
+    <td>PlatformIO</td>
+    <td><img src="https://img.shields.io/badge/PlatformIO-F58220?logo=platformio&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Electronics</td>
+    <td>Proteus</td>
+    <td><img src="https://img.shields.io/badge/Proteus-1A79D1?style=for-the-badge&logoColor=white"></td>
+  </tr>
+  <tr>
+    <td>Electronics</td>
+    <td>KiCad</td>
+    <td><img src="https://img.shields.io/badge/KiCad-314CB0?logo=kicad&logoColor=white&style=for-the-badge"></td>
+  </tr>
+
+  <!-- Design -->
+  <tr>
+    <td>Design</td>
+    <td>Figma</td>
+    <td><img src="https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white&style=for-the-badge"></td>
+  </tr>
+
+  <!-- Version Control -->
+  <tr>
+    <td>Version Control</td>
+    <td>Git</td>
+    <td><img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>Version Control</td>
+    <td>GitHub</td>
+    <td><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&style=for-the-badge"></td>
+  </tr>
+
+  <!-- IDEs -->
+  <tr>
+    <td>IDEs</td>
+    <td>VS Code</td>
+    <td><img src="https://img.shields.io/badge/VS Code-007ACC?logo=visualstudiocode&logoColor=white&style=for-the-badge"></td>
+  </tr>
+  <tr>
+    <td>IDEs</td>
+    <td>PyCharm</td>
+    <td><img src="https://img.shields.io/badge/PyCharm-000000?logo=pycharm&logoColor=white&style=for-the-badge"></td>
+  </tr>
+
 </table>
-</div>
-
-**Focus areas:** procedural and object oriented programming, data structures and algorithms, numerical computing, basic web foundations.
-
----
-
-### 🔌 Embedded Systems and Hardware
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=arduino" width="55" alt="Arduino"/><br>Arduino
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=raspberrypi" width="55" alt="Raspberry Pi"/><br>Raspberry Pi
-    </td>
-    <td align="center" width="96">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" width="55" alt="Embedded C"/><br>Embedded C
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=linux" width="55" alt="Linux"/><br>Linux
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Atmel%20AVR-0B4EA2?style=for-the-badge" height="28" alt="Atmel AVR"/><br>Atmel AVR
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/WS2812B-00C853?style=for-the-badge" height="28" alt="WS2812B"/><br>WS2812B
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/PWM-FFB300?style=for-the-badge" height="28" alt="PWM"/><br>PWM
-    </td>
-  </tr>
-</table>
-</div>
-
-**Focus areas:** microcontrollers, digital IO, timers, PWM, NeoPixel control, serial communication, prototyping, basic power budgeting and soldering.
-
----
-
-### 🧠 AI, ML and Data
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=tensorflow" width="55" alt="TensorFlow"/><br>TensorFlow*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=pytorch" width="55" alt="PyTorch"/><br>PyTorch*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=numpy" width="55" alt="NumPy"/><br>NumPy
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=pandas" width="55" alt="Pandas"/><br>Pandas*
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" height="28" alt="Scikit Learn"/><br>Scikit Learn*
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" height="28" alt="Jupyter"/><br>Jupyter
-    </td>
-  </tr>
-</table>
-</div>
-
-**Note:** items with `*` are areas I am actively learning and exploring through online courses and experiments.
-
----
-
-### 🧩 Computer Science and Developer Tools
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=git" width="55" alt="Git"/><br>Git
-    </td>
-    <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/github-icon.svg" width="55" alt="GitHub"/><br>GitHub
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=vscode" width="55" alt="VS Code"/><br>VS Code
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=idea" width="55" alt="IntelliJ"/><br>IntelliJ
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=pycharm" width="55" alt="PyCharm"/><br>PyCharm
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=clion" width="55" alt="CLion"/><br>CLion
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=webstorm" width="55" alt="WebStorm"/><br>WebStorm
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=datagrip" width="55" alt="DataGrip"/><br>DataGrip*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=phpstorm" width="55" alt="PhpStorm"/><br>PhpStorm*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=rubymine" width="55" alt="RubyMine"/><br>RubyMine*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=goland" width="55" alt="GoLand"/><br>GoLand*
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipseide&logoColor=white" height="28" alt="Eclipse"/><br>Eclipse
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/NotePad++-90E59A?style=for-the-badge&logo=notepadplusplus&logoColor=black" height="28" alt="Notepad++"/><br>Notepad++
-    </td>
-  </tr>
-</table>
-</div>
-
-**Focus areas:** version control, collaborative development, IDE workflows, debugging, profiling and structured project organisation.
-
----
-
-### ☁️ Cloud and DevOps
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/aws-icon.svg" width="55" alt="AWS"/><br>AWS*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=azure" width="55" alt="Azure"/><br>Azure*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=gcp" width="55" alt="Google Cloud"/><br>Google Cloud*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=docker" width="55" alt="Docker"/><br>Docker*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=kubernetes" width="55" alt="Kubernetes"/><br>Kubernetes*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=githubactions" width="55" alt="GitHub Actions"/><br>GitHub Actions*
-    </td>
-  </tr>
-</table>
-</div>
-
-**Focus areas:** cloud concepts, CI and CD basics, container fundamentals and deployment workflows.
-
----
-
-### 🎮 Gaming Ecosystem and Engines
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=unity" width="55" alt="Unity"/><br>Unity*
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=unreal" width="55" alt="Unreal Engine"/><br>Unreal Engine*
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/NVIDIA-76B900?style=for-the-badge&logo=nvidia&logoColor=white" height="28" alt="NVIDIA"/><br>NVIDIA
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/AMD-ED1C24?style=for-the-badge&logo=amd&logoColor=white" height="28" alt="AMD"/><br>AMD
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Steam-0B1A33?style=for-the-badge&logo=steam&logoColor=white" height="28" alt="Steam"/><br>Steam
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/PlayStation-003791?style=for-the-badge&logo=playstation&logoColor=white" height="28" alt="PlayStation"/><br>PlayStation
-    </td>
-  </tr>
-</table>
-</div>
-
-**Context:** I engage with gaming and engines as part of content creation, graphics understanding and future interactive projects.
-
----
-
-### 🔐 Cyber Security
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=linux" width="55" alt="Linux"/><br>Linux
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=bash" width="55" alt="Bash"/><br>Bash
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white" height="28" alt="PowerShell"/><br>PowerShell*
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" height="28" alt="Wireshark"/><br>Wireshark*
-    </td>
-  </tr>
-</table>
-</div>
-
-**Focus areas:** command line, basic networking, protocol understanding and introductory security tooling.
-
----
-
-### 📐 CAD, PCB and Robotics Related Tools
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="120">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kicad/kicad-original.svg" width="55" alt="KiCad"/><br>KiCad*
-    </td>
-    <td align="center" width="120">
-      <img src="https://img.shields.io/badge/Autodesk%20AutoCAD-E51050?style=for-the-badge&logo=autocad&logoColor=white" height="28" alt="AutoCAD"/><br>AutoCAD*
-    </td>
-    <td align="center" width="120">
-      <img src="https://img.shields.io/badge/Fusion%20360-F5792A?style=for-the-badge&logo=autodesk&logoColor=white" height="28" alt="Fusion 360"/><br>Fusion 360*
-    </td>
-    <td align="center" width="120">
-      <img src="https://img.shields.io/badge/Proteus%20(sim)-0066CC?style=for-the-badge" height="28" alt="Proteus"/><br>Proteus (sim)*
-    </td>
-  </tr>
-</table>
-</div>
-
-**Focus areas:** circuit design awareness, simple PCB workflows, mechanical layout awareness and simulation for embedded projects and future robotics work.
-
----
-
-### 🎨 Creative and Productivity Tools
-
-<div style="display: flex; align-items: center; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=figma" width="55" alt="Figma"/><br>Figma
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=canva" width="55" alt="Canva"/><br>Canva
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=notion" width="55" alt="Notion"/><br>Notion
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Obsidian-7C3AED?style=for-the-badge&logo=obsidian&logoColor=white" height="28" alt="Obsidian"/><br>Obsidian
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Grit-%23FF8800?style=for-the-badge" height="28" alt="Grit"/><br>Grit and discipline
-    </td>
-  </tr>
-</table>
-</div>
-
-**Focus areas:** structured notes, knowledge management, design for content and portfolios, and systems that support consistency over time.
-
----
-
-### 📘 Continuous Growth
-
-I am continuously learning and improving across all these tools through university modules, personal engineering projects, online courses and hands on practice. Every tool reflects part of my journey as I develop into a well rounded engineer and technologist.
 
 ---
 
