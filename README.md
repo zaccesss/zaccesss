@@ -279,13 +279,19 @@ For me, growth is not occasional but an **active lifestyle**.
 
 ---
 
-<p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=radical">
-</p>
+<div align="center">
+  <table>
+    <tr>
+      <td>
+        <img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=radical" />
+      </td>
+      <td>
+        <img src="https://quotes-github-readme.vercel.app/api?quote=Innovation%20starts%20with%20curiosity.&author=Isaac+Adjei&theme=radical" />
+      </td>
+    </tr>
+  </table>
+</div>
 
-<p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?quote=Innovation%20starts%20with%20curiosity.&author=Isaac+Adjei&theme=radical" />
-</p>
 
 ---
 
