@@ -240,7 +240,7 @@ English • Ga • Twi • French (elementary)
 
 ### 🧠 Personal Motto
 
-> Engineering that thinks. Technology that serves. Growth as a lifestyle - **Zaccess**.
+> Engineering that thinks. Technology that serves. Growth as a lifestyle - **Isaac Adjei**.
 
 ---
 
@@ -255,7 +255,7 @@ English • Ga • Twi • French (elementary)
 ## 📊 GitHub Stats
 
 <p align="center">
-  <a href="https://git.io/awesome-stats-card"><img src="https://awesome-github-stats.azurewebsites.net/user-stats/laithm?cardType=github&theme=tokyonight&preferLogin=false&Border=00000000" width="48%" style="object-fit: contain;" /></a><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=tokyonight&hide_border=true&hide_progress=true" width="48%" style="object-fit: contain;" />
+  <a href="https://git.io/awesome-stats-card"><img src="https://awesome-github-stats.azurewebsites.net/user-stats/zaccesss?cardType=github&theme=tokyonight&preferLogin=false&Border=00000000" width="48%" style="object-fit: contain;" /></a><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=tokyonight&hide_border=true&hide_progress=true" width="48%" style="object-fit: contain;" />
 </p>
 
 <p align="center">
