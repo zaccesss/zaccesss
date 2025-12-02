@@ -246,13 +246,14 @@ English • Ga • Twi • French (elementary)
 
 ---
 
+
 ## 📊 GitHub Stats
 
-![Zac's GitHub stats](https://github-readme-stats.vercel.app/api?username=zaccesss&show_icons=true&theme=gotham&hide_border=true&rank_icon=github)
+![Zac's GitHub stats](https://github-readme-stats.vercel.app/api?username=zaccesss&show_icons=true&theme=gotham&hide_border=true&v=1)
 
-![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=gotham&hide_border=true)
+![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=gotham&hide_border=true&v=1)
 
-![GitHub streak](https://streak-stats.demolab.com?user=zaccesss&theme=gotham&hide_border=true)
+![GitHub streak](https://streak-stats.demolab.com?user=zaccesss&theme=gotham&hide_border=true&v=1)
 
 
 ---
