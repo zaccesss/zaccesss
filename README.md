@@ -82,6 +82,10 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 |:---:|:---:|:---:|:---:|:---:|
 | **Arduino** | **Raspberry Pi** | **Atmel AVR** | **Fusion 360** | **AutoCAD** |
 
+| <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/KiCad-Logo.svg" alt="KiCad" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/ProteusLogo.svg" alt="Proteus" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/436018/eagle.svg" alt="Eagle" width="65" height="65" /> |
+|:---:|:---:|:---:|
+| **KiCad** | **Proteus** | **Eagle** |
+
 </div>
 
 **KiCad** • **Proteus** • **Eagle**
@@ -95,6 +99,10 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" width="65" height="65" /> |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **TensorFlow** | **PyTorch** | **NumPy** | **Pandas** | **Scikit-Learn** | **Jupyter** | **OpenCV** |
+
+| <img src="https://www.svgrepo.com/download/373541/cuda.svg" alt="CUDA" width="65" height="65" /> |
+|:---:|
+| **CUDA** |
 
 </div>
 
@@ -137,6 +145,10 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/200px-Nvidia_logo.svg.png" alt="NVIDIA" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/200px-AMD_Logo.svg.png" alt="AMD" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/200px-Steam_icon_logo.svg.png" alt="Steam" width="65" height="65" /> |
 |:---:|:---:|:---:|:---:|:---:|
 | **Unity** | **Unreal Engine** | **NVIDIA** | **AMD** | **Steam** |
+
+| <img src="https://www.svgrepo.com/download/452087/playstation.svg" alt="PlayStation" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/330343/ea.svg" alt="EA" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/349545/ubisoft.svg" alt="Ubisoft" width="65" height="65" /> |
+|:---:|:---:|:---:|
+| **PlayStation** | **EA** | **Ubisoft** |
 
 </div>
 
