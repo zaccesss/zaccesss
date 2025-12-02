@@ -289,6 +289,11 @@ For me, growth is not occasional but an **active lifestyle**.
   <img src="https://raw.githubusercontent.com/zaccesss/zaccesss/main/dist/github-contribution-grid-snake.svg" alt="GitHub contribution snake animation" />
 </p>
 
+## 📈 Contribution Graph
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=zaccesss&theme=react-dark&hide_border=true&area=true" />
+</p>
+
 ---
 
 
