@@ -232,9 +232,11 @@ For me, growth is not occasional but an **active lifestyle**.
 
 ---
 
-## 🌍 Languages (R&W)
+## 🌍 Languages
 
-English • Ga • Twi • French (elementary)
+- **English** (Full Professional Proficiency)
+- **French** (Elementary Proficiency)
+- **Twi & Ga** (Full Professional Proficiency)
 
 ---
 
@@ -269,6 +271,15 @@ English • Ga • Twi • French (elementary)
 
 <p align="center">
   <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=gotham&hide_border=true&v=2"
+    height="170"
+    alt="Top languages"
+  />
+</p>
+
+
+<p align="center">
+  <img
     src="https://streak-stats.demolab.com?user=zaccesss&theme=gotham&hide_border=true"
   />
 </p>
@@ -280,7 +291,7 @@ English • Ga • Twi • French (elementary)
 </p>
 
 <p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?quote=Innovation%20starts%20with%20curiosity.&author=Zac&theme=radical" />
+  <img src="https://quotes-github-readme.vercel.app/api?quote=Innovation%20starts%20with%20curiosity.&author=Isaac+Adjei&theme=radical" />
 </p>
 
 ---
