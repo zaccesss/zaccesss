@@ -252,14 +252,6 @@ For me, growth is not occasional but an **active lifestyle**.
 
 ---
 
-## 🏆 GitHub Trophies
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=zaccesss&theme=radical&no-frame=true&margin-w=10" />
-</p>
-
----
-
 ## 📊 GitHub Stats
 
 <p align="center">
@@ -284,6 +276,21 @@ For me, growth is not occasional but an **active lifestyle**.
 </p>
 
 ---
+
+## 🏆 GitHub Trophies
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=zaccesss&theme=radical&no-frame=true&margin-w=10" />
+</p>
+
+## 🐍 Contribution Snake
+
+<p align="center">
+  <img src="https://github.com/zaccesss/zaccesss/blob/output/github-contribution-grid-snake.svg" alt="snake animation" />
+</p>
+
+---
+
 
 <div align="center">
   <table>
