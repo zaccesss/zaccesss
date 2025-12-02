@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=zaccesss&style=flat&color=green" alt="Profile views" />
+  <img src="https://komarev.com/ghpvc/?username=zaccesss&style=flat&color=indigo" alt="Profile views" />
   <img src="https://img.shields.io/github/last-commit/zaccesss/zaccesss?style=flat&color=green" alt="last updated" />
   <img src="https://img.shields.io/github/stars/zaccesss/zaccesss?style=social" alt="GitHub stars" />
 </p>
@@ -258,7 +258,7 @@ For me, growth is not occasional but an **active lifestyle**.
 
 <p align="center">
   <a href="https://git.io/awesome-stats-card"><img src="https://awesome-github-stats.azurewebsites.net/user-stats/zaccesss?cardType=github&theme=tokyonight&preferLogin=false&Border=00000000" width="48%" style="object-fit: contain;" 
-  /></a><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=tokyonight&hide_border=true&hide_progress=true" width="48%" style="object-fit:     contain;" />
+  />
 </p>
 
 
