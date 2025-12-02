@@ -4,8 +4,9 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1200&color=0066CC&center=true&vCenter=true&width=600&height=55&lines=Engineering+%7C+Technology;Hardware+%7C+Software;Embedded+Systems+%7C+AI%2FML;Cyber+Security+%7C+Cloud+Computing" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1200&color=0066CC&center=true&vCenter=true&width=600&height=55&lines=Engineering+%7C+Technology;Hardware+%7C+Software;Embedded+Systems+%7C+AI%2FML;Cyber+Security+%7C+Cloud+Computing;Always+learning+new+things;Driven+by+innovation+and+impact" />
 </p>
+
 
 ---
 ## 🔗 Links & Contact
@@ -23,6 +24,9 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/zaccesss?tab=followers">
+    <img alt="followers" title="Follow me on GitHub" src="https://custom-icon-badges.herokuapp.com/github/followers/zaccesss?color=236ad3&labelColor=1155ba&style=for-the-badge&logo=person-add&label=Follow&logoColor=white"/>
+  </a>
   <img src="https://komarev.com/ghpvc/?username=zaccesss&style=flat&color=green" alt="Profile views" />
   <img src="https://img.shields.io/github/last-commit/zaccesss/zaccesss?style=flat&color=green" alt="last updated" />
   <img src="https://img.shields.io/github/stars/zaccesss/zaccesss?style=social" alt="GitHub stars" />
@@ -32,7 +36,11 @@
   <img src="https://img.shields.io/badge/Aston_University-Beng_EECS_2028-purple?style=for-the-badge&logo=academia" />
 </p>
 
+---
 
+> 🔎 Quick navigation: [Tech Stack](#-my-tech-stack) • [Projects](#-projects) • [Education](#-education) • [Experience](#-experience) • [GitHub Stats](#-github-stats)
+
+---
 
 ## 👤 About Me
 
@@ -41,6 +49,7 @@ I am an aspiring engineer and technologist with interests that span across elect
 I am sight-impaired due to retinoblastoma in childhood (age 2) which resulted in blindness in my right eye. Instead of limiting me it sharpened my discipline, consistency and determination to succeed academically and personally. I now study Electronic Engineering and Computer Science at Aston University building experience in both hardware and software.
 
 ---
+
 ## 🎯 What I Am Looking For
 
 I am seeking **internships, placements and work experience** across engineering and tech (both HW/SW).
@@ -50,6 +59,7 @@ My long term goal is to build a career where **intelligent software and efficien
 If you value someone who **learns fast, thinks deeply, adapts quickly and contributes well both independently and in a team**, I would be happy to connect, collaborate and one day join your team.  Feel free to reach out anytime.
 
 ---
+
 ## 🧠 Technical Development
 
 My technical development includes **C, C++, Python and Java** with knowledge of **microcontrollers, embedded systems, IoT fundamentals, PCB design, MATLAB, debugging and algorithmic thinking**.
@@ -60,9 +70,9 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-# 💻 Tech Stack
+# 💻 My Tech Stack
 
-## 🔤 Languages
+## 🔤 Languages & Software
 
 <div align="center">
 
@@ -74,43 +84,31 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-## ⚡ Embedded + Hardware
+## ⚡ Embedded & Hardware
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" alt="Embedded" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Fusion_360_logo.svg/200px-Fusion_360_logo.svg.png" alt="Fusion 360" width="65" height="65" /> | <img src="https://seeklogo.com/images/A/autocad-logo-C9817CB828-seeklogo.com.png" alt="AutoCAD" width="65" height="65" /> |
-|:---:|:---:|:---:|:---:|:---:|
-| **Arduino** | **Raspberry Pi** | **Atmel AVR** | **Fusion 360** | **AutoCAD** |
-
-| <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/KiCad-Logo.svg" alt="KiCad" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/ProteusLogo.svg" alt="Proteus" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/436018/eagle.svg" alt="Eagle" width="65" height="65" /> |
-|:---:|:---:|:---:|
-| **KiCad** | **Proteus** | **Eagle** |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" alt="Embedded" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Fusion_360_logo.svg/200px-Fusion_360_logo.svg.png" alt="Fusion 360" width="65" height="65" /> | <img src="https://seeklogo.com/images/A/autocad-logo-C9817CB828-seeklogo.com.png" alt="AutoCAD" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/KiCad-Logo.svg" alt="KiCad" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/ProteusLogo.svg" alt="Proteus" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/436018/eagle.svg" alt="Eagle" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/SolidWorks_Logo.svg" alt="SolidWorks" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Arduino** | **Raspberry Pi** | **Atmel AVR** | **Fusion 360** | **AutoCAD** | **KiCad** | **Proteus** | **Eagle** | **SolidWorks** |
 
 </div>
 
-**KiCad** • **Proteus** • **Eagle**
-
 ---
 
-## 🤖 AI/ML + Data
+## 🤖 AI/ML & Data
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" width="65" height="65" /> |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **TensorFlow** | **PyTorch** | **NumPy** | **Pandas** | **Scikit-Learn** | **Jupyter** | **OpenCV** |
-
-| <img src="https://www.svgrepo.com/download/373541/cuda.svg" alt="CUDA" width="65" height="65" /> |
-|:---:|
-| **CUDA** |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/373541/cuda.svg" alt="CUDA" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **TensorFlow** | **PyTorch** | **NumPy** | **Pandas** | **Scikit-Learn** | **Jupyter** | **OpenCV** | **CUDA** |
 
 </div>
 
-**CUDA**
-
 ---
 
-## 🛠️ Computer Science Core Tools
+## 🛠️ CS Core Tools
 
 <div align="center">
 
@@ -126,7 +124,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-## ☁️ Cloud + DevOps
+## ☁️ Cloud & DevOps
 
 <div align="center">
 
@@ -142,17 +140,11 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/200px-Nvidia_logo.svg.png" alt="NVIDIA" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/200px-AMD_Logo.svg.png" alt="AMD" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/200px-Steam_icon_logo.svg.png" alt="Steam" width="65" height="65" /> |
-|:---:|:---:|:---:|:---:|:---:|
-| **Unity** | **Unreal Engine** | **NVIDIA** | **AMD** | **Steam** |
-
-| <img src="https://www.svgrepo.com/download/452087/playstation.svg" alt="PlayStation" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/330343/ea.svg" alt="EA" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/349545/ubisoft.svg" alt="Ubisoft" width="65" height="65" /> |
-|:---:|:---:|:---:|
-| **PlayStation** | **EA** | **Ubisoft** |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/200px-Nvidia_logo.svg.png" alt="NVIDIA" width="65" height="65" /> |  <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Intel_logo_2023.svg" alt="Intel" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/200px-AMD_Logo.svg.png" alt="AMD" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/200px-Steam_icon_logo.svg.png" alt="Steam" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/452087/playstation.svg" alt="PlayStation" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/330343/ea.svg" alt="EA" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/349545/ubisoft.svg" alt="Ubisoft" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Unity** | **Unreal Engine** | **NVIDIA** | **Intel** | **AMD** | **Steam** | **PlayStation** | **EA** | **Ubisoft** |
 
 </div>
-
-**PlayStation** • **EA** • **Ubisoft**
 
 ---
 
@@ -168,20 +160,6 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-## 🎨 Creative + Productivity
-
-<div align="center">
-
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/200px-Notion-logo.svg.png" alt="Notion" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2023_Obsidian_logo.svg/200px-2023_Obsidian_logo.svg.png" alt="Obsidian" width="65" height="65" /> |
-|:---:|:---:|:---:|:---:|
-| **Figma** | **Canva** | **Notion** | **Obsidian** |
-
-</div>
-
-**Grit**
-
----
-
 ## 🤖 Robotics
 
 <div align="center">
@@ -192,15 +170,30 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 </div>
 
-**Sensors** • **Actuators** • **Microcontrollers**
+---
+
+
+## 🎨 Creative & Productivity
+
+<div align="center">
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/200px-Notion-logo.svg.png" alt="Notion" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2023_Obsidian_logo.svg/200px-2023_Obsidian_logo.svg.png" alt="Obsidian" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|
+| **Figma** | **Canva** | **Notion** | **Obsidian** |
+
+</div>
 
 ---
 
-## 📘 Continuous Growth
+### 🌟 Highlights
 
-I am continuously learning and improving across all these tools through university modules, personal engineering projects, online courses and real-world practice. Every tool reflects part of my journey as I develop into a well-rounded engineer and technologist.
+- Currently focusing on **C/C++**, **Python**, **Embedded Systems** and **AI fundamentals**  
+- Actively using **Arduino**, **Raspberry Pi**, **Git**, **VS Code** and **MATLAB** in coursework and personal builds  
+- Exploring **TensorFlow**, **PyTorch**, **Docker** and **Kubernetes** at a beginner level  
 
-
+---
+> **📘 Note:**
+> Currently learning and exploring some of these **platforms** through **labs, online courses** and **personal projects.** This tech stack reflects the **languages, tools** and **technologies** I am learning and exploring on my journey. I am not an expert in all of them yet: many are skills I am actively developing through university, research and self-study.
 ---
 
 ## 🚀 Projects
@@ -213,7 +206,7 @@ I am continuously learning and improving across all these tools through universi
 • Animation engine + effects  
 • Debugging and iterative prototyping
 
-`[Repository coming soon on this profile]`
+`[_Repository coming soon on this profile._]`
 
 More builds/projects coming soon.
 
