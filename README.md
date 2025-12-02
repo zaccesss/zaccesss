@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1200&center=true&vCenter=true&width=600&height=55&lines=Engineering+%7C+Technology;Hardware+%7C+Software;Embedded+Systems+%7C+AI%2FML;Cyber+Security+%7C+Cloud+Computing" />
+  <img src="https://svg-text-animation.vercel.app/api?text=Engineering%20%7C%20Technology&mode=gradientPulse&colors=00C6FF,0072FF,8A2BE2,FF00FF" />
 </p>
 
 ---
