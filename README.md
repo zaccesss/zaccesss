@@ -1,10 +1,10 @@
 <!-- Header -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=110&section=header&text=Isaac%20(Zac)%20Adjei&fontSize=38&fontAlignY=32&animation=bounce" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,4,6,8,10&height=120&section=header&text=Isaac%20(Zac)%20Adjei&fontSize=40&animation=bounce" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&duration=2500&pause=1200&center=true&vCenter=true&width=700&height=60&color=%23ffffff&repeat=false&lines=%3Cspan+style%3D%22animation%3Apulse+1.5s+infinite%22%3EEngineering+and+Tech+%7C+Hardware+%7C+Software%3C%2Fspan%3E" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1200&center=true&vCenter=true&width=600&height=55&lines=Engineering+%7C+Technology;Hardware+%7C+Software;Embedded+Systems+%7C+AI%2FML;Cyber+Security+%7C+Cloud+Computing" />
 </p>
 
 ---
