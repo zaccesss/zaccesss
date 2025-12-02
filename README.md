@@ -3,10 +3,6 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,4,6,8,10&height=120&section=header&text=Isaac%20(Zac)%20Adjei&fontSize=40&animation=bounce" />
 </p>
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&center=true&vCenter=true&duration=2000&pause=1200&color=00C6FF&repeat=false&lines=Engineering+%7C+Technology" />
-</p>
-
 <div align="center">
   <img style="filter: drop-shadow(0 0 10px #00C6FF);" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&center=true&vCenter=true&duration=2000&pause=1200&color=00C6FF&lines=Engineering+%7C+Technology" />
 </div>
