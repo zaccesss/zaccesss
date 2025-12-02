@@ -38,18 +38,28 @@
 
 ---
 
-> 🔎 Quick navigation: 
-> [About Me](#about-me) • 
-> [What I Am Looking For](#what-i-am-looking-for) • 
-> [Technical Development](#technical-development) • 
-> [Tech Stack](#my-tech-stack) • 
-> [Projects](#projects) • 
-> [Education](#education) • 
-> [Experience](#experience) • 
-> [GitHub Stats](#github-stats)
+<p align="center">
+  🔎 <b>Quick navigation:</b>
+  <a href="#about-me">About Me</a> • 
+  <a href="#what-i-am-looking-for">What I Am Looking For</a> • 
+  <a href="#technical-development">Technical Development</a> • 
+  <a href="#my-tech-stack">Tech Stack</a> • 
+  <a href="#projects">Projects</a> • 
+  <a href="#education">Education</a> • 
+  <a href="#experience">Experience</a> • 
+  <a href="#github-stats">GitHub Stats</a> • 
+  <a href="#github-trophies">Trophies</a> • 
+  <a href="#contribution-snake">Contribution Snake</a> • 
+  <a href="#contribution-graph">Contribution Graph</a> • 
+  <a href="#quotes">Quotes</a> • 
+  <a href="#outside-engineering">Outside Engineering</a> • 
+  <a href="#languages">Languages</a> • 
+  <a href="#personal-motto">Motto</a>
+</p>
 
 ---
 
+<a id="about-me"></a>
 ## 👤 About Me
 
 I am an aspiring engineer and technologist with interests that span across electronics, software development, cyber security, cloud computing, AI/ML, computer systems and hardware-software integration. My journey began in Ghana where curiosity and problem-solving shaped me early. In 2022 I moved to the UK during my final year at Adisadel College where I served as an aspiring Dispensary Prefect and Vice President of APOSA. That transition strengthened resilience, adaptability and responsibility which drive how I work and learn today.
@@ -58,6 +68,7 @@ I am sight-impaired due to retinoblastoma in childhood (age 2) which resulted in
 
 ---
 
+<a id="what-i-am-looking-for"></a>
 ## 🎯 What I Am Looking For
 
 I am seeking **internships, placements and work experience** across engineering and tech (both HW/SW).
@@ -68,6 +79,7 @@ If you value someone who **learns fast, thinks deeply, adapts quickly and contri
 
 ---
 
+<a id="technical-development"></a>
 ## 🧠 Technical Development
 
 My technical development includes **C, C++, Python and Java** with knowledge of **microcontrollers, embedded systems, IoT fundamentals, PCB design, MATLAB, debugging and algorithmic thinking**.
@@ -78,6 +90,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
+<a id="my-tech-stack"></a>
 # 💻 My Tech Stack
 
 ## 🔤 Languages & Software
@@ -204,6 +217,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 > Currently learning and exploring some of these **platforms** through **labs, online courses** and **personal projects.** This tech stack reflects the **languages, tools** and **technologies** I am learning and exploring on my journey. I am not an expert in all of them yet: many are skills I am actively developing through university, research and self-study.
 ---
 
+<a id="projects"></a>
 ## 🚀 Projects
 
 ### **NeoPixel LED Cube – 4×4×4 Arduino Build**
@@ -220,6 +234,7 @@ More builds/projects coming soon.
 
 ---
 
+<a id="education"></a>
 ## 🎓 Education
 
 ### Aston University  
@@ -264,7 +279,9 @@ More builds/projects coming soon.
 
 ---
 
+<a id="experience"></a>
 ## 💼 Experience
+
 
 ### Engineering Operations & Maintenance Planning Job Simulation Participant (Virtual Experience) – British Airways  
 *Oct 2025 – Oct 2025 · Remote*  
@@ -313,6 +330,7 @@ More builds/projects coming soon.
 
 ---
 
+<a id="outside-engineering"></a>
 ## 🎧 Outside Engineering
 
 Outside academics I learn through online courses, personal builds/projects and self development.  
@@ -329,15 +347,16 @@ For me, growth is not occasional but an **active lifestyle**.
 
 ---
 
+<a id="languages"></a>
 ## 🌍 Languages
 
 - **English** – full professional proficiency  
 - **Twi & Ga** – full professional proficiency  
 - **French** – elementary proficiency  
 
-
 ---
 
+<a id="personal-motto"></a>
 ### 🧠 Personal Motto
 
 > Engineering that thinks. Technology that serves. Growth as a lifestyle - **Isaac Adjei**.
@@ -346,9 +365,9 @@ For me, growth is not occasional but an **active lifestyle**.
   <img width="372" height="168" alt="zaccess_banner" src="https://github.com/user-attachments/assets/9d2d9686-919b-4e22-95ed-f61c6156c34e" />
 </p>
 
-
 ---
 
+<a id="github-stats"></a>
 ## 📊 GitHub Stats
 
 <p align="center">
@@ -374,25 +393,31 @@ For me, growth is not occasional but an **active lifestyle**.
 
 ---
 
+<a id="github-trophies"></a>
 ## 🏆 GitHub Trophies
 
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=zaccesss&theme=radical&no-frame=true&margin-w=10" />
 </p>
 
+<a id="contribution-snake"></a>
 ## 🐍 Contribution Snake
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/zaccesss/zaccesss/main/dist/github-contribution-grid-snake.svg" alt="GitHub contribution snake animation" />
 </p>
 
+<a id="contribution-graph"></a>
 ## 📈 Contribution Graph
+
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=zaccesss&theme=react-dark&hide_border=true&area=true" />
 </p>
 
 ---
 
+<a id="quotes"></a>
+## 💬 Quotes
 
 <div align="center">
   <table>
@@ -407,5 +432,9 @@ For me, growth is not occasional but an **active lifestyle**.
   </table>
 </div>
 
+<p align="center">
+  <strong>Last updated: 2 December 2025</strong>
+</p>
 
 ---
+
