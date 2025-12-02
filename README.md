@@ -60,111 +60,109 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-# 💻 Tech Stack Overview
+# 💻 My favourite tools and technologies
+<div style="display: flex; align-items: flex-start; justify-content: center;">
+<table align="center">
 
-## 🗣 Languages
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=c" width="48" height="48" alt="C" />
-  <img src="https://skillicons.dev/icons?i=cpp" width="48" height="48" alt="C++" />
-  <img src="https://skillicons.dev/icons?i=python" width="48" height="48" alt="Python" />
-  <img src="https://skillicons.dev/icons?i=java" width="48" height="48" alt="Java" />
-  <img src="https://skillicons.dev/icons?i=html" width="48" height="48" alt="HTML" />
-  <img src="https://skillicons.dev/icons?i=css" width="48" height="48" alt="CSS" />
-  <img src="https://skillicons.dev/icons?i=matlab" width="48" height="48" alt="MATLAB" />
-</p>
+  <!-- Row 1 – Core languages -->
+  <tr>
+    <td align="center" width="96">
+      <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="65" height="65" />
+      <br>Python
+    </td>
+    <td align="center" width="96">
+      <img src="https://techstack-generator.vercel.app/cpp-icon.svg" alt="C++" width="65" height="65" />
+      <br>C++
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=c" alt="C" width="65" height="65" />
+      <br>C
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=java" alt="Java" width="65" height="65" />
+      <br>Java
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=html" alt="HTML5" width="65" height="65" />
+      <br>HTML5
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=css" alt="CSS" width="65" height="65" />
+      <br>CSS
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=matlab" alt="MATLAB" width="65" height="65" />
+      <br>MATLAB
+    </td>
+  </tr>
 
----
+  <!-- Row 2 – Embedded, OS and tooling -->
+  <tr>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=arduino" alt="Arduino" width="65" height="65" />
+      <br>Arduino
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=raspberrypi" alt="Raspberry Pi" width="65" height="65" />
+      <br>Raspberry Pi
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=linux" alt="Linux" width="65" height="65" />
+      <br>Linux
+    </td>
+    <td align="center" width="96">
+      <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="65" height="65" />
+      <br>GitHub
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=git" alt="Git" width="65" height="65" />
+      <br>Git
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" width="65" height="65" />
+      <br>VS Code
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=androidstudio" alt="Android Studio" width="65" height="65" />
+      <br>Android Studio
+    </td>
+  </tr>
 
-## 🔌 Embedded Systems + Hardware
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=arduino" width="48" height="48" alt="Arduino" />
-  <img src="https://skillicons.dev/icons?i=raspberrypi" width="48" height="48" alt="Raspberry Pi" />
-  <img src="https://skillicons.dev/icons?i=linux" width="48" height="48" alt="Linux" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="48" height="48" alt="OpenCV" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" width="48" height="48" alt="Embedded C" />
-</p>
+  <!-- Row 3 – Cloud, AI, gaming and productivity -->
+  <tr>
+    <td align="center" width="96">
+      <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="AWS" width="65" height="65" />
+      <br>AWS
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=azure" alt="Azure" width="65" height="65" />
+      <br>Azure
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=gcp" alt="Google Cloud" width="65" height="65" />
+      <br>Google Cloud
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=docker" alt="Docker" width="65" height="65" />
+      <br>Docker
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=unity" alt="Unity" width="65" height="65" />
+      <br>Unity
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=unreal" alt="Unreal" width="65" height="65" />
+      <br>Unreal
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=notion" alt="Notion" width="65" height="65" />
+      <br>Notion
+    </td>
+  </tr>
 
-*Includes: Atmel AVR, WS2812B LEDs, Serial/UART, PWM, sensors, prototyping, robotics fundamentals.*
-
----
-
-## 🧠 AI, Machine Learning + Data
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=tensorflow" width="48" height="48" alt="TensorFlow" />
-  <img src="https://skillicons.dev/icons?i=pytorch" width="48" height="48" alt="PyTorch" />
-  <img src="https://skillicons.dev/icons?i=numpy" width="48" height="48" alt="NumPy" />
-  <img src="https://skillicons.dev/icons?i=pandas" width="48" height="48" alt="Pandas" />
-  <img src="https://skillicons.dev/icons?i=scikitlearn" width="48" height="48" alt="Scikit-Learn" />
-  <img src="https://skillicons.dev/icons?i=jupyter" width="48" height="48" alt="Jupyter" />
-  <img src="https://skillicons.dev/icons?i=cuda" width="48" height="48" alt="CUDA" />
-</p>
-
----
-
-## 🧩 Computer Science Core
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=git" width="48" height="48" alt="Git" />
-  <img src="https://skillicons.dev/icons?i=github" width="48" height="48" alt="GitHub" />
-  <img src="https://skillicons.dev/icons?i=vscode" width="48" height="48" alt="VS Code" />
-  <img src="https://skillicons.dev/icons?i=idea" width="48" height="48" alt="IntelliJ" />
-  <img src="https://skillicons.dev/icons?i=pycharm" width="48" height="48" alt="PyCharm" />
-  <img src="https://skillicons.dev/icons?i=androidstudio" width="48" height="48" alt="Android Studio" />
-</p>
-
-*Focus: data structures, algorithms, debugging, problem-solving and object-oriented design.*
-
----
-
-## ☁️ Cloud, DevOps and Automation
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=aws" width="48" height="48" alt="AWS" />
-  <img src="https://skillicons.dev/icons?i=azure" width="48" height="48" alt="Azure" />
-  <img src="https://skillicons.dev/icons?i=gcp" width="48" height="48" alt="Google Cloud" />
-  <img src="https://skillicons.dev/icons?i=docker" width="48" height="48" alt="Docker" />
-  <img src="https://skillicons.dev/icons?i=kubernetes" width="48" height="48" alt="Kubernetes" />
-  <img src="https://skillicons.dev/icons?i=githubactions" width="48" height="48" alt="GitHub Actions" />
-</p>
-
----
-
-## 🎮 Gaming Ecosystem and Engines
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=unity" width="48" height="48" alt="Unity" />
-  <img src="https://skillicons.dev/icons?i=unreal" width="48" height="48" alt="Unreal Engine" />
-  <img src="https://skillicons.dev/icons?i=nvidia" width="48" height="48" alt="NVIDIA" />
-  <img src="https://skillicons.dev/icons?i=amd" width="48" height="48" alt="AMD" />
-  <img src="https://skillicons.dev/icons?i=steam" width="48" height="48" alt="Steam" />
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/playstation.svg" width="48" height="48" alt="PlayStation Network" />
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ea.svg" width="48" height="48" alt="EA" />
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ubisoft.svg" width="48" height="48" alt="Ubisoft" />
-</p>
-
----
-
-## 🔐 Cyber Security
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=linux" width="48" height="48" alt="Linux" />
-  <img src="https://skillicons.dev/icons?i=bash" width="48" height="48" alt="Bash" />
-  <img src="https://skillicons.dev/icons?i=powershell" width="48" height="48" alt="PowerShell" />
-  <img src="https://skillicons.dev/icons?i=wireshark" width="48" height="48" alt="Wireshark" />
-</p>
-
----
-
-## 🎨 Creative and Productivity Tools
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=figma" width="48" height="48" alt="Figma" />
-  <img src="https://skillicons.dev/icons?i=canva" width="48" height="48" alt="Canva" />
-  <img src="https://skillicons.dev/icons?i=notion" width="48" height="48" alt="Notion" />
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/obsidian.svg" width="48" height="48" alt="Obsidian" />
-  <img src="https://img.shields.io/badge/Grit-%23FF8800?style=for-the-badge" height="28" alt="Grit" />
-</p>
-
----
-
-## 📘 Learning and Experience Note
-I am actively learning and exploring many of these technologies through university labs, online courses, hands-on practice and personal engineering projects.  
-My stack grows as I grow – continuous improvement is part of my journey.
+</table>
+</div>
+<br><br>
 
 
 ---
