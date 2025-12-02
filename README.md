@@ -1,11 +1,11 @@
 <!-- Header -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,4,6,8,10&height=120&section=header&text=Isaac%20(Zac)%20Adjei&fontSize=40&animation=bounce" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=header&text=Isaac%20(Zac)%20Adjei&fontSize=38&fontAlignY=32&fontColor=ffffff&animation=bounce" />
 </p>
 
-<div align="center">
-  <img style="filter: drop-shadow(0 0 10px #00C6FF);" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&center=true&vCenter=true&duration=2000&pause=1200&color=00C6FF&lines=Engineering+%7C+Technology" />
-</div>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1200&color=003366&center=true&vCenter=true&width=600&height=55&lines=Engineering+%7C+Technology;Hardware+%7C+Software;Embedded+Systems+%7C+AI%2FML;Cyber+Security+%7C+Cloud+Computing" />
+</p>
 
 ---
 ## 🔗 Links & Contact
