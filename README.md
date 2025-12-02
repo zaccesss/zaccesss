@@ -253,7 +253,7 @@ English • Ga • Twi • French (elementary)
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=zaccesss&theme=gotham&hide_border=true" />
+  <img src="https://streak-stats.demolab.com?user=zaccess&theme=gotham&hide_border=true" />
 </p>
 
 ---
