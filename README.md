@@ -280,7 +280,7 @@ For me, growth is not occasional but an **active lifestyle**.
 ---
 
 <p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical">
+  <img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=radical">
 </p>
 
 <p align="center">
