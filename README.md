@@ -265,6 +265,8 @@ English • Ga • Twi • French (elementary)
   />
 </p>
 
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&theme=tokyonight)
+
 <p align="center">
   <img
     src="https://streak-stats.demolab.com?user=zaccesss&theme=gotham&hide_border=true"
