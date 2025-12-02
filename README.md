@@ -250,15 +250,15 @@ English • Ga • Twi • French (elementary)
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=zaccesss&show_icons=true&theme=gotham&hide_border=true"
-    height="160"
+    src="https://github-readme-stats.vercel.app/api?username=zaccesss&show_icons=true&theme=gotham&hide_border=true&rank_icon=github"
+    height="170"
   />
 </p>
 
 <p align="center">
   <img
     src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=gotham&hide_border=true"
-    height="160"
+    height="170"
   />
 </p>
 
@@ -271,7 +271,7 @@ English • Ga • Twi • French (elementary)
 ---
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&height=100&color=gradient&text=If%20you%20think%20your%20users%20are%20idiots,%0Aonly%20idiots%20will%20use%20it.&fontSize=16&animation=fadeIn" />
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical">
 </p>
 
 <p align="center">
