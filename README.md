@@ -265,18 +265,20 @@ English • Ga • Twi • French (elementary)
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical">
 </p>
 
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?quote=Innovation%20starts%20with%20curiosity.&author=Zac&theme=radical" />
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=100&color=gradient&text=If%20you%20think%20your%20users%20are%20idiots,%20only%20idiots%20will%20use%20it.&fontSize=16&animation=fadeIn" />
+</p>
+
 ---
 
 
 ### 🧠 Personal Motto
 
 > Engineering that thinks. Technology that serves. Growth as a lifestyle.
-
----
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=zaccesss&style=flat&color=green" />
-</p>
 
 ---
 <p align="center">
