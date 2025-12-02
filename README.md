@@ -234,9 +234,10 @@ For me, growth is not occasional but an **active lifestyle**.
 
 ## 🌍 Languages
 
-- **English** (Full Professional Proficiency)
-- **French** (Elementary Proficiency)
-- **Twi & Ga** (Full Professional Proficiency)
+- **English** – full professional proficiency  
+- **Twi & Ga** – full professional proficiency  
+- **French** – elementary proficiency  
+
 
 ---
 
