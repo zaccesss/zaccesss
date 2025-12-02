@@ -4,8 +4,12 @@
 </p>
 
 <p align="center">
-  <img src="https://svg-text-animation.vercel.app/api?text=Engineering%20%7C%20Technology&mode=gradientPulse&colors=00C6FF,0072FF,8A2BE2,FF00FF" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&center=true&vCenter=true&duration=2000&pause=1200&color=00C6FF&repeat=false&lines=Engineering+%7C+Technology" />
 </p>
+
+<div align="center">
+  <img style="filter: drop-shadow(0 0 10px #00C6FF);" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&center=true&vCenter=true&duration=2000&pause=1200&color=00C6FF&lines=Engineering+%7C+Technology" />
+</div>
 
 ---
 ## 🔗 Links & Contact
