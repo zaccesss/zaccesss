@@ -248,7 +248,10 @@ English • Ga • Twi • French (elementary)
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=zaccess&show_icons=true&theme=gotham&hide_border=true" height="170" />
+  <img src="https://github-readme-stats.vercel.app/api?username=zaccesss&show_icons=true&theme=gotham&hide_border=true" height="170" />
+</p>
+
+<p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=gotham&hide_border=true" height="170" />
 </p>
 
@@ -272,9 +275,7 @@ English • Ga • Twi • French (elementary)
 ---
 
 <p align="center">
-  <a href="https://github.com/zaccesss">
-    <img src="https://visitcount.itsvg.in/api?id=zaccesss&icon=0&color=0">
-  </a>
+  <img src="https://komarev.com/ghpvc/?username=zaccesss&style=flat&color=green" />
 </p>
 
 ---
