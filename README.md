@@ -60,135 +60,135 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-## 🛠️ Tools and Technologies
+# 💻 Tech Stack
 
-<table>
-  <tr>
-    <th>Category</th>
-    <th>Tool / Language</th>
-    <th>Badge</th>
-  </tr>
+## 🔤 Languages
 
-  <!-- Programming Languages -->
-  <tr>
-    <td>Languages</td>
-    <td>Python</td>
-    <td><img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Languages</td>
-    <td>C</td>
-    <td><img src="https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Languages</td>
-    <td>C++</td>
-    <td><img src="https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Languages</td>
-    <td>Java</td>
-    <td><img src="https://img.shields.io/badge/Java-007396?logo=openjdk&logoColor=white&style=for-the-badge"></td>
-  </tr>
+<div align="center">
 
-  <!-- Web -->
-  <tr>
-    <td>Web</td>
-    <td>HTML5</td>
-    <td><img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Web</td>
-    <td>CSS3</td>
-    <td><img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Web</td>
-    <td>JavaScript</td>
-    <td><img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Web</td>
-    <td>TypeScript</td>
-    <td><img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge"></td>
-  </tr>
+| <img src="https://techstack-generator.vercel.app/c-icon.svg" alt="C" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/cpp-icon.svg" alt="C++" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/java-icon.svg" alt="Java" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **C** | **C++** | **Python** | **Java** | **HTML** | **CSS** | **JavaScript** | **MATLAB** |
 
-  <!-- Frameworks -->
-  <tr>
-    <td>Frameworks</td>
-    <td>React</td>
-    <td><img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Frameworks</td>
-    <td>Next.js</td>
-    <td><img src="https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Frameworks</td>
-    <td>Node.js</td>
-    <td><img src="https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white&style=for-the-badge"></td>
-  </tr>
+</div>
 
-  <!-- Embedded & Electronics -->
-  <tr>
-    <td>Embedded</td>
-    <td>Arduino</td>
-    <td><img src="https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Embedded</td>
-    <td>ESP32</td>
-    <td><img src="https://img.shields.io/badge/ESP32-E7352C?logo=espressif&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Embedded</td>
-    <td>PlatformIO</td>
-    <td><img src="https://img.shields.io/badge/PlatformIO-F58220?logo=platformio&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Electronics</td>
-    <td>Proteus</td>
-    <td><img src="https://img.shields.io/badge/Proteus-1A79D1?style=for-the-badge&logoColor=white"></td>
-  </tr>
-  <tr>
-    <td>Electronics</td>
-    <td>KiCad</td>
-    <td><img src="https://img.shields.io/badge/KiCad-314CB0?logo=kicad&logoColor=white&style=for-the-badge"></td>
-  </tr>
+---
 
-  <!-- Design -->
-  <tr>
-    <td>Design</td>
-    <td>Figma</td>
-    <td><img src="https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white&style=for-the-badge"></td>
-  </tr>
+## ⚡ Embedded + Hardware
 
-  <!-- Version Control -->
-  <tr>
-    <td>Version Control</td>
-    <td>Git</td>
-    <td><img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>Version Control</td>
-    <td>GitHub</td>
-    <td><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&style=for-the-badge"></td>
-  </tr>
+<div align="center">
 
-  <!-- IDEs -->
-  <tr>
-    <td>IDEs</td>
-    <td>VS Code</td>
-    <td><img src="https://img.shields.io/badge/VS Code-007ACC?logo=visualstudiocode&logoColor=white&style=for-the-badge"></td>
-  </tr>
-  <tr>
-    <td>IDEs</td>
-    <td>PyCharm</td>
-    <td><img src="https://img.shields.io/badge/PyCharm-000000?logo=pycharm&logoColor=white&style=for-the-badge"></td>
-  </tr>
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" alt="Embedded" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fusion360/fusion360-original.svg" alt="Fusion 360" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg" alt="AutoCAD" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|
+| **Arduino** | **Raspberry Pi** | **Atmel AVR** | **Fusion 360** | **AutoCAD** |
 
-</table>
+</div>
+
+**KiCad** • **Proteus** • **Eagle**
+
+---
+
+## 🤖 AI/ML + Data
+
+<div align="center">
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **TensorFlow** | **PyTorch** | **NumPy** | **Pandas** | **Scikit-Learn** | **Jupyter** | **OpenCV** |
+
+</div>
+
+**CUDA**
+
+---
+
+## 🛠️ Computer Science Core Tools
+
+<div align="center">
+
+| <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" alt="IntelliJ" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" alt="PyCharm" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clion/clion-original.svg" alt="CLion" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webstorm/webstorm-original.svg" alt="WebStorm" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/datagrip/datagrip-original.svg" alt="DataGrip" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/phpstorm/phpstorm-original.svg" alt="PhpStorm" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **GitHub** | **Git** | **IntelliJ** | **PyCharm** | **CLion** | **WebStorm** | **DataGrip** | **PhpStorm** |
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rubymine/rubymine-original.svg" alt="RubyMine" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/goland/goland-original.svg" alt="GoLand" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" alt="Gradle" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **RubyMine** | **GoLand** | **VS Code** | **Eclipse** | **Postman** | **Gradle** | **Node.js** |
+
+</div>
+
+---
+
+## ☁️ Cloud + DevOps
+
+<div align="center">
+
+| <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="AWS" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/docker-icon.svg" alt="Docker" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/kubernetes-icon.svg" alt="Kubernetes" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **AWS** | **Azure** | **Google Cloud** | **Docker** | **Kubernetes** | **GitHub Actions** |
+
+</div>
+
+---
+
+## 🎮 Gaming Ecosystem
+
+<div align="center">
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nvidia/nvidia-original.svg" alt="NVIDIA" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amd/amd-original.svg" alt="AMD" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/steam/steam-original.svg" alt="Steam" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|:---:|
+| **Unity** | **Unreal Engine** | **NVIDIA** | **AMD** | **Steam** |
+
+</div>
+
+**PlayStation** • **EA** • **Ubisoft**
+
+---
+
+## 🔒 Cyber Security
+
+<div align="center">
+
+| <img src="https://techstack-generator.vercel.app/bash-icon.svg" alt="Bash" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" alt="PowerShell" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wireshark/wireshark-original.svg" alt="Wireshark" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|
+| **Bash** | **Linux** | **PowerShell** | **Wireshark** |
+
+</div>
+
+---
+
+## 🎨 Creative + Productivity
+
+<div align="center">
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/obsidian/obsidian-original.svg" alt="Obsidian" width="65" height="65" /> |
+|:---:|:---:|:---:|:---:|
+| **Figma** | **Canva** | **Notion** | **Obsidian** |
+
+</div>
+
+**Grit**
+
+---
+
+## 🤖 Robotics
+
+<div align="center">
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg" alt="ROS" width="65" height="65" /> |
+|:---:|
+| **ROS** |
+
+</div>
+
+**Sensors** • **Actuators** • **Microcontrollers**
+
+---
+
+## 📘 Continuous Growth
+
+I am continuously learning and improving across all these tools through university modules, personal engineering projects, online courses and real-world practice. Every tool reflects part of my journey as I develop into a well-rounded engineer and technologist.
+
+---
 
 ---
 
