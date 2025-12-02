@@ -60,336 +60,308 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-## 🧰 Tools, languages and technologies
+## 💻 Tech Stack Overview
+
+Below is a snapshot of the tools and technologies I work with or am actively learning. Animated icons are used where possible. Everything else is kept clean and consistent.
 
 ---
 
-### 💻 Programming languages
+### 🗣 Languages
 
 <div style="display: flex; align-items: flex-start; justify-content: center;">
 <table align="center">
   <tr>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=c" width="55"/><br>C
+      <img src="https://skillicons.dev/icons?i=c" width="55" alt="C"/><br>C
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=cpp" width="55"/><br>C++
+      <img src="https://techstack-generator.vercel.app/cpp-icon.svg" width="55" alt="C++"/><br>C++
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=python" width="55"/><br>Python
+      <img src="https://techstack-generator.vercel.app/python-icon.svg" width="55" alt="Python"/><br>Python
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=java" width="55"/><br>Java
+      <img src="https://skillicons.dev/icons?i=java" width="55" alt="Java"/><br>Java
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=html" width="55"/><br>HTML
+      <img src="https://skillicons.dev/icons?i=html" width="55" alt="HTML"/><br>HTML
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=css" width="55"/><br>CSS
+      <img src="https://skillicons.dev/icons?i=css" width="55" alt="CSS"/><br>CSS
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=matlab" width="55"/><br>MATLAB
+      <img src="https://img.shields.io/badge/MATLAB-FF8C00?style=for-the-badge&logo=matlab&logoColor=white" height="28" alt="MATLAB"/><br>MATLAB
     </td>
   </tr>
 </table>
 </div>
 
-**Focus:** Low level work with C and C++, problem solving with Python and Java and web fundamentals with HTML, CSS and MATLAB for engineering work.
+**Focus areas:** procedural and object oriented programming, data structures and algorithms, numerical computing, basic web foundations.
 
 ---
 
-### 🔌 Embedded systems and hardware
+### 🔌 Embedded Systems and Hardware
 
 <div style="display: flex; align-items: flex-start; justify-content: center;">
 <table align="center">
   <tr>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=arduino" width="55"/><br>Arduino
+      <img src="https://skillicons.dev/icons?i=arduino" width="55" alt="Arduino"/><br>Arduino
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=raspberrypi" width="55"/><br>Raspberry Pi
+      <img src="https://skillicons.dev/icons?i=raspberrypi" width="55" alt="Raspberry Pi"/><br>Raspberry Pi
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=linux" width="55"/><br>Linux tooling
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" width="55" alt="Embedded C"/><br>Embedded C
     </td>
     <td align="center" width="96">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="55"/><br>OpenCV
+      <img src="https://skillicons.dev/icons?i=linux" width="55" alt="Linux"/><br>Linux
     </td>
     <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Embedded%20C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" height="28"/><br>Embedded C++
+      <img src="https://img.shields.io/badge/Atmel%20AVR-0B4EA2?style=for-the-badge" height="28" alt="Atmel AVR"/><br>Atmel AVR
     </td>
     <td align="center" width="96">
-      <img src="https://img.shields.io/badge/ROS-22314E?style=for-the-badge&logo=ros&logoColor=white" height="28"/><br>ROS basics
+      <img src="https://img.shields.io/badge/WS2812B-00C853?style=for-the-badge" height="28" alt="WS2812B"/><br>WS2812B
     </td>
     <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Robotics%20sim-00A3E0?style=for-the-badge&logo=azurepipelines&logoColor=white" height="28"/><br>Robotics sim
+      <img src="https://img.shields.io/badge/PWM-FFB300?style=for-the-badge" height="28" alt="PWM"/><br>PWM
     </td>
   </tr>
 </table>
 </div>
 
-**Focus:** Hands on work with microcontrollers, addressable LEDs, Linux environments and basic computer vision that connect hardware to intelligent behaviour (NeoPixel / WS2812B, PWM control and soldered prototypes).
+**Focus areas:** microcontrollers, digital IO, timers, PWM, NeoPixel control, serial communication, prototyping, basic power budgeting and soldering.
 
 ---
 
-### ☁️ Cloud, DevOps and backend
+### 🧠 AI, ML and Data
 
 <div style="display: flex; align-items: flex-start; justify-content: center;">
 <table align="center">
   <tr>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/aws-icon.svg" width="55"/><br>AWS
+      <img src="https://skillicons.dev/icons?i=tensorflow" width="55" alt="TensorFlow"/><br>TensorFlow*
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=azure" width="55"/><br>Azure
+      <img src="https://skillicons.dev/icons?i=pytorch" width="55" alt="PyTorch"/><br>PyTorch*
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=gcp" width="55"/><br>Google Cloud
+      <img src="https://skillicons.dev/icons?i=numpy" width="55" alt="NumPy"/><br>NumPy
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=nodejs" width="55"/><br>Node.js basics
+      <img src="https://skillicons.dev/icons?i=pandas" width="55" alt="Pandas"/><br>Pandas*
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=docker" width="55"/><br>Docker
+      <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" height="28" alt="Scikit Learn"/><br>Scikit Learn*
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=kubernetes" width="55"/><br>Kubernetes
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/GitHub%20Actions-2671E5?style=for-the-badge&logo=githubactions&logoColor=white" height="28"/><br>GitHub Actions
+      <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" height="28" alt="Jupyter"/><br>Jupyter
     </td>
   </tr>
 </table>
 </div>
 
-**Focus:** Learning how to deploy code, containerise services and understand how cloud platforms support scalable engineering projects.
+**Note:** items with `*` are areas I am actively learning and exploring through online courses and experiments.
 
 ---
 
-### 🧠 AI, ML and data
+### 🧩 Computer Science and Developer Tools
 
 <div style="display: flex; align-items: flex-start; justify-content: center;">
 <table align="center">
   <tr>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=tensorflow" width="55"/><br>TensorFlow
+      <img src="https://skillicons.dev/icons?i=git" width="55" alt="Git"/><br>Git
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=pytorch" width="55"/><br>PyTorch
+      <img src="https://techstack-generator.vercel.app/github-icon.svg" width="55" alt="GitHub"/><br>GitHub
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=numpy" width="55"/><br>NumPy
+      <img src="https://skillicons.dev/icons?i=vscode" width="55" alt="VS Code"/><br>VS Code
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=pandas" width="55"/><br>Pandas
+      <img src="https://skillicons.dev/icons?i=idea" width="55" alt="IntelliJ"/><br>IntelliJ
     </td>
     <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" height="28"/><br>Scikit Learn
+      <img src="https://skillicons.dev/icons?i=pycharm" width="55" alt="PyCharm"/><br>PyCharm
     </td>
     <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" height="28"/><br>Jupyter
+      <img src="https://skillicons.dev/icons?i=clion" width="55" alt="CLion"/><br>CLion
     </td>
     <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Simulink-0076A8?style=for-the-badge&logo=mathworks&logoColor=white" height="28"/><br>Simulink
+      <img src="https://skillicons.dev/icons?i=webstorm" width="55" alt="WebStorm"/><br>WebStorm
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=datagrip" width="55" alt="DataGrip"/><br>DataGrip*
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=phpstorm" width="55" alt="PhpStorm"/><br>PhpStorm*
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=rubymine" width="55" alt="RubyMine"/><br>RubyMine*
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=goland" width="55" alt="GoLand"/><br>GoLand*
+    </td>
+    <td align="center" width="96">
+      <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipseide&logoColor=white" height="28" alt="Eclipse"/><br>Eclipse
+    </td>
+    <td align="center" width="96">
+      <img src="https://img.shields.io/badge/NotePad++-90E59A?style=for-the-badge&logo=notepadplusplus&logoColor=black" height="28" alt="Notepad++"/><br>Notepad++
     </td>
   </tr>
 </table>
 </div>
 
-**Focus:** Building a foundation in numerical computing, classic ML stacks, data structures and algorithmic thinking for efficient solutions.
+**Focus areas:** version control, collaborative development, IDE workflows, debugging, profiling and structured project organisation.
 
 ---
 
-### 🧱 Cyber security and operating systems
+### ☁️ Cloud and DevOps
 
 <div style="display: flex; align-items: flex-start; justify-content: center;">
 <table align="center">
   <tr>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=linux" width="55"/><br>Linux
+      <img src="https://techstack-generator.vercel.app/aws-icon.svg" width="55" alt="AWS"/><br>AWS*
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=ubuntu" width="55"/><br>Ubuntu
+      <img src="https://skillicons.dev/icons?i=azure" width="55" alt="Azure"/><br>Azure*
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=kalilinux" width="55"/><br>Kali basics
+      <img src="https://skillicons.dev/icons?i=gcp" width="55" alt="Google Cloud"/><br>Google Cloud*
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=bash" width="55"/><br>Bash shell
+      <img src="https://skillicons.dev/icons?i=docker" width="55" alt="Docker"/><br>Docker*
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=powershell" width="55"/><br>PowerShell
+      <img src="https://skillicons.dev/icons?i=kubernetes" width="55" alt="Kubernetes"/><br>Kubernetes*
     </td>
     <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" height="28"/><br>Wireshark
+      <img src="https://skillicons.dev/icons?i=githubactions" width="55" alt="GitHub Actions"/><br>GitHub Actions*
     </td>
   </tr>
 </table>
 </div>
 
-**Focus:** Early steps into security labs, network inspection and system level understanding using Linux and common analysis tools.
+**Focus areas:** cloud concepts, CI and CD basics, container fundamentals and deployment workflows.
 
 ---
 
-### 📐 Engineering CAD and PCB tools
+### 🎮 Gaming Ecosystem and Engines
+
+<div style="display: flex; align-items: flex-start; justify-content: center;">
+<table align="center">
+  <tr>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=unity" width="55" alt="Unity"/><br>Unity*
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=unreal" width="55" alt="Unreal Engine"/><br>Unreal Engine*
+    </td>
+    <td align="center" width="96">
+      <img src="https://img.shields.io/badge/NVIDIA-76B900?style=for-the-badge&logo=nvidia&logoColor=white" height="28" alt="NVIDIA"/><br>NVIDIA
+    </td>
+    <td align="center" width="96">
+      <img src="https://img.shields.io/badge/AMD-ED1C24?style=for-the-badge&logo=amd&logoColor=white" height="28" alt="AMD"/><br>AMD
+    </td>
+    <td align="center" width="96">
+      <img src="https://img.shields.io/badge/Steam-0B1A33?style=for-the-badge&logo=steam&logoColor=white" height="28" alt="Steam"/><br>Steam
+    </td>
+    <td align="center" width="96">
+      <img src="https://img.shields.io/badge/PlayStation-003791?style=for-the-badge&logo=playstation&logoColor=white" height="28" alt="PlayStation"/><br>PlayStation
+    </td>
+  </tr>
+</table>
+</div>
+
+**Context:** I engage with gaming and engines as part of content creation, graphics understanding and future interactive projects.
+
+---
+
+### 🔐 Cyber Security
+
+<div style="display: flex; align-items: flex-start; justify-content: center;">
+<table align="center">
+  <tr>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=linux" width="55" alt="Linux"/><br>Linux
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=bash" width="55" alt="Bash"/><br>Bash
+    </td>
+    <td align="center" width="96">
+      <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white" height="28" alt="PowerShell"/><br>PowerShell*
+    </td>
+    <td align="center" width="96">
+      <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" height="28" alt="Wireshark"/><br>Wireshark*
+    </td>
+  </tr>
+</table>
+</div>
+
+**Focus areas:** command line, basic networking, protocol understanding and introductory security tooling.
+
+---
+
+### 📐 CAD, PCB and Robotics Related Tools
 
 <div style="display: flex; align-items: flex-start; justify-content: center;">
 <table align="center">
   <tr>
     <td align="center" width="120">
-      <img alt="AutoCAD" src="https://img.shields.io/badge/AutoCAD-E51050?style=for-the-badge&logo=autodesk&logoColor=white" height="28"/><br>AutoCAD
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kicad/kicad-original.svg" width="55" alt="KiCad"/><br>KiCad*
     </td>
     <td align="center" width="120">
-      <img alt="KiCad" src="https://img.shields.io/badge/KiCad-314CB0?style=for-the-badge&logo=kicad&logoColor=white" height="28"/><br>KiCad
+      <img src="https://img.shields.io/badge/Autodesk%20AutoCAD-E51050?style=for-the-badge&logo=autocad&logoColor=white" height="28" alt="AutoCAD"/><br>AutoCAD*
     </td>
     <td align="center" width="120">
-      <img alt="Fusion 360" src="https://img.shields.io/badge/Fusion%20360-FF6D00?style=for-the-badge&logo=autodesk&logoColor=white" height="28"/><br>Fusion 360
+      <img src="https://img.shields.io/badge/Fusion%20360-F5792A?style=for-the-badge&logo=autodesk&logoColor=white" height="28" alt="Fusion 360"/><br>Fusion 360*
     </td>
     <td align="center" width="120">
-      <img alt="EAGLE" src="https://img.shields.io/badge/EAGLE-CC7B19?style=for-the-badge&logo=autodesk&logoColor=white" height="28"/><br>EAGLE
-    </td>
-    <td align="center" width="140">
-      <img alt="Proteus" src="https://img.shields.io/badge/Proteus%20Simulation-086DBA?style=for-the-badge&logo=code&logoColor=white" height="28"/><br>Proteus simulation
+      <img src="https://img.shields.io/badge/Proteus%20(sim)-0066CC?style=for-the-badge" height="28" alt="Proteus"/><br>Proteus (sim)*
     </td>
   </tr>
 </table>
 </div>
 
-**Focus:** Circuit design, layout awareness and simulation to support PCB workflows and hardware prototyping. Proteus is used alongside these tools for circuit simulation and testing.
+**Focus areas:** circuit design awareness, simple PCB workflows, mechanical layout awareness and simulation for embedded projects and future robotics work.
 
 ---
 
-### 💾 Computer science tools and IDEs
+### 🎨 Creative and Productivity Tools
 
-<div style="display: flex; align-items: flex-start; justify-content: center;">
+<div style="display: flex; align-items: center; justify-content: center;">
 <table align="center">
   <tr>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=git" width="55"/><br>Git
+      <img src="https://skillicons.dev/icons?i=figma" width="55" alt="Figma"/><br>Figma
     </td>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/github-icon.svg" width="55"/><br>GitHub
+      <img src="https://skillicons.dev/icons?i=canva" width="55" alt="Canva"/><br>Canva
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=vscode" width="55"/><br>VS Code
+      <img src="https://skillicons.dev/icons?i=notion" width="55" alt="Notion"/><br>Notion
     </td>
     <td align="center" width="96">
-      <img src="https://img.shields.io/badge/JetBrains%20Suite-000000?style=for-the-badge&logo=jetbrains&logoColor=white" height="28"/><br>JetBrains suite
+      <img src="https://img.shields.io/badge/Obsidian-7C3AED?style=for-the-badge&logo=obsidian&logoColor=white" height="28" alt="Obsidian"/><br>Obsidian
     </td>
     <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=idea" width="55"/><br>IntelliJ
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=pycharm" width="55"/><br>PyCharm
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=clion" width="55"/><br>CLion
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=webstorm" width="55"/><br>WebStorm
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/DataGrip-21D789?style=for-the-badge&logo=datagrip&logoColor=white" height="28"/><br>DataGrip
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/RubyMine-CC0000?style=for-the-badge&logo=rubymine&logoColor=white" height="28"/><br>RubyMine
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/GoLand-00ADD8?style=for-the-badge&logo=goland&logoColor=white" height="28"/><br>GoLand
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Notepad++-90E59A?style=for-the-badge&logo=notepadplusplus&logoColor=black" height="28"/><br>Notepad++
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Terminal%20workflows-000000?style=for-the-badge&logo=gnubash&logoColor=white" height="28"/><br>Terminal workflows
+      <img src="https://img.shields.io/badge/Grit-%23FF8800?style=for-the-badge" height="28" alt="Grit"/><br>Grit and discipline
     </td>
   </tr>
 </table>
 </div>
 
-**Focus:** Version control, multi language IDEs and terminal based workflows that support serious engineering projects.
+**Focus areas:** structured notes, knowledge management, design for content and portfolios, and systems that support consistency over time.
 
 ---
 
-### 🎮 Gaming, engines and graphics
+### 📘 Continuous Growth
 
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=unity" width="55"/><br>Unity
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=unreal" width="55"/><br>Unreal Engine
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=blender" width="55"/><br>Blender basics
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Steam-1B2838?style=for-the-badge&logo=steam&logoColor=white" height="28"/><br>Steam
-    </td>
-    <td align="center" width="120">
-      <img src="https://img.shields.io/badge/PlayStation%20Network-003791?style=for-the-badge&logo=playstation&logoColor=white" height="28"/><br>PlayStation Network
-    </td>
-    <td align="center" width="110">
-      <img src="https://img.shields.io/badge/EA%20%2F%20Ubisoft-000000?style=for-the-badge&logo=easeus&logoColor=white" height="28"/><br>EA / Ubisoft
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=nvidia" width="55"/><br>NVIDIA
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/AMD-ED1C24?style=for-the-badge&logo=amd&logoColor=white" height="28"/><br>AMD
-    </td>
-  </tr>
-</table>
-</div>
-
-**Focus:** Engines and ecosystems that connect graphics, input devices and performance into interactive experiences and gaming projects.
-
----
-
-### ✏️ Creative and productivity tools
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=figma" width="55"/><br>Figma
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" height="28"/><br>Canva
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=ae" width="55"/><br>After Effects
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=ps" width="55"/><br>Photoshop
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=pr" width="55"/><br>Premiere Pro
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=notion" width="55"/><br>Notion
-    </td>
-    <td align="center" width="96">
-      <img src="https://img.shields.io/badge/Obsidian-7C3AED?style=for-the-badge&logo=obsidian&logoColor=white" height="28"/><br>Obsidian
-    </td>
-  </tr>
-</table>
-</div>
-
-**Focus:** Design, content and knowledge management tools that support branding, structured notes, study workflows and long term projects.
-
----
-
-### 📘 Continuous growth
-
-Most of these tools are ones I am actively learning, exploring and applying through university modules, online courses, labs and personal builds rather than claiming expert level everywhere.
-
-My stack grows as I grow and each icon represents part of my journey toward becoming a well rounded engineer and technologist 🙂
-
+I am continuously learning and improving across all these tools through university modules, personal engineering projects, online courses and hands on practice. Every tool reflects part of my journey as I develop into a well rounded engineer and technologist.
 
 ---
 
