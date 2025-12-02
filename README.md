@@ -38,17 +38,15 @@
 
 ---
 
-<p align="center">
-  🔎 <b>Quick navigation:</b>
-  <a href="#about-me">About</a> • 
-  <a href="#what-i-am-looking-for">Opportunities</a> • 
-  <a href="#technical-development">Technical Growth</a> • 
-  <a href="#my-tech-stack">Tech Stack</a> • 
-  <a href="#projects">Projects</a> • 
-  <a href="#education">Education</a> • 
-  <a href="#experience">Experience</a> • 
-  <a href="#github-stats">Stats</a>
-</p>
+> 🔎 Quick navigation: 
+> [About Me](#about-me) • 
+> [What I Am Looking For](#what-i-am-looking-for) • 
+> [Technical Development](#technical-development) • 
+> [Tech Stack](#my-tech-stack) • 
+> [Projects](#projects) • 
+> [Education](#education) • 
+> [Experience](#experience) • 
+> [GitHub Stats](#github-stats)
 
 ---
 
