@@ -3,11 +3,6 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=110&section=header&text=Isaac%20(Zac)%20Adjei&fontSize=38&fontAlignY=32&animation=bounce" />
 </p>
 
-<!-- Animated Quote Banner -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&height=100&color=gradient&text=If%20you%20think%20your%20users%20are%20idiots,%20only%20idiots%20will%20use%20it.&fontSize=16&animation=fadeIn" />
-</p>
-
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&duration=2500&pause=1200&center=true&vCenter=true&width=700&height=60&color=%23FF5733&vCenter=true&lines=Engineering+and+Tech;Hardware+%7C+Software;Embedded+Systems+%7C+AI%2FML;Cloud+Computing+%7C+Cyber+Security;Innovation+%7C+Growth+Mindset" />
 </p>
@@ -277,10 +272,6 @@ English • Ga • Twi • French (elementary)
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=rect&height=100&color=gradient&text=If%20you%20think%20your%20users%20are%20idiots,%20only%20idiots%20will%20use%20it.&fontSize=16&animation=fadeIn" />
-</p>
-
-<p align="center">
-  <img src="https://readme-quotes.vercel.app/api?type=horizontal&theme=radical" />
 </p>
 
 ---
