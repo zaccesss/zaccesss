@@ -586,6 +586,3 @@ For me, growth is not occasional but an **active lifestyle**.
 
 
 ---
-
-
-<img width="225" height="225" alt="image" src="https://github.com/user-attachments/assets/458f0953-1003-4225-ab0e-c889b9a08709" />
