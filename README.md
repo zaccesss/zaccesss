@@ -47,14 +47,14 @@
   <a href="#projects">Projects</a> • 
   <a href="#education">Education</a> • 
   <a href="#experience">Experience</a> • 
+  <a href="#outside-engineering">Outside Engineering</a> • 
+  <a href="#languages">Languages</a> • 
+  <a href="#personal-motto">Motto</a> • 
   <a href="#github-stats">GitHub Stats</a> • 
   <a href="#github-trophies">Trophies</a> • 
   <a href="#contribution-snake">Contribution Snake</a> • 
   <a href="#contribution-graph">Contribution Graph</a> • 
-  <a href="#quotes">Quotes</a> • 
-  <a href="#outside-engineering">Outside Engineering</a> • 
-  <a href="#languages">Languages</a> • 
-  <a href="#personal-motto">Motto</a>
+  <a href="#quotes">Quotes</a>
 </p>
 
 ---
