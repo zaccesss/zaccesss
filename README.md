@@ -286,7 +286,7 @@ For me, growth is not occasional but an **active lifestyle**.
 ## 🐍 Contribution Snake
 
 <p align="center">
-  <img src="https://github.com/zaccesss/zaccesss/blob/output/github-contribution-grid-snake.svg" alt="snake animation" />
+  <img src="https://raw.githubusercontent.com/zaccesss/zaccesss/main/dist/github-contribution-grid-snake.svg" alt="GitHub contribution snake animation" />
 </p>
 
 ---
