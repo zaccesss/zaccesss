@@ -78,7 +78,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" alt="Embedded" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fusion360/fusion360-original.svg" alt="Fusion 360" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg" alt="AutoCAD" width="65" height="65" /> |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" alt="Embedded" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Fusion_360_logo.svg/200px-Fusion_360_logo.svg.png" alt="Fusion 360" width="65" height="65" /> | <img src="https://seeklogo.com/images/A/autocad-logo-C9817CB828-seeklogo.com.png" alt="AutoCAD" width="65" height="65" /> |
 |:---:|:---:|:---:|:---:|:---:|
 | **Arduino** | **Raspberry Pi** | **Atmel AVR** | **Fusion 360** | **AutoCAD** |
 
@@ -134,7 +134,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nvidia/nvidia-original.svg" alt="NVIDIA" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amd/amd-original.svg" alt="AMD" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/steam/steam-original.svg" alt="Steam" width="65" height="65" /> |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/200px-Nvidia_logo.svg.png" alt="NVIDIA" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/200px-AMD_Logo.svg.png" alt="AMD" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/200px-Steam_icon_logo.svg.png" alt="Steam" width="65" height="65" /> |
 |:---:|:---:|:---:|:---:|:---:|
 | **Unity** | **Unreal Engine** | **NVIDIA** | **AMD** | **Steam** |
 
@@ -148,7 +148,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 <div align="center">
 
-| <img src="https://techstack-generator.vercel.app/bash-icon.svg" alt="Bash" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" alt="PowerShell" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wireshark/wireshark-original.svg" alt="Wireshark" width="65" height="65" /> |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" alt="PowerShell" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wireshark_icon.svg/200px-Wireshark_icon.svg.png" alt="Wireshark" width="65" height="65" /> |
 |:---:|:---:|:---:|:---:|
 | **Bash** | **Linux** | **PowerShell** | **Wireshark** |
 
@@ -160,7 +160,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/obsidian/obsidian-original.svg" alt="Obsidian" width="65" height="65" /> |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/200px-Notion-logo.svg.png" alt="Notion" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2023_Obsidian_logo.svg/200px-2023_Obsidian_logo.svg.png" alt="Obsidian" width="65" height="65" /> |
 |:---:|:---:|:---:|:---:|
 | **Figma** | **Canva** | **Notion** | **Obsidian** |
 
@@ -174,7 +174,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg" alt="ROS" width="65" height="65" /> |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ros_logo.svg/200px-Ros_logo.svg.png" alt="ROS" width="65" height="65" /> |
 |:---:|
 | **ROS** |
 
@@ -188,7 +188,6 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 I am continuously learning and improving across all these tools through university modules, personal engineering projects, online courses and real-world practice. Every tool reflects part of my journey as I develop into a well-rounded engineer and technologist.
 
----
 
 ---
 
