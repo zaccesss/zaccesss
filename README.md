@@ -246,15 +246,37 @@ English • Ga • Twi • French (elementary)
 
 ---
 
-
 ## 📊 GitHub Stats
 
-![Zac's GitHub stats](https://github-readme-stats.vercel.app/api?username=zaccesss&show_icons=true&theme=gotham&hide_border=true&v=1)
+<p align="center">
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=zaccesss&show_icons=true&theme=gotham&hide_border=true&rank_icon=github"
+    height="170"
+  />
+</p>
 
-![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=gotham&hide_border=true&v=1)
+<p align="center">
+  <img
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaccesss&layout=compact&theme=gotham&hide_border=true"
+    height="170"
+  />
+</p>
 
-![GitHub streak](https://streak-stats.demolab.com?user=zaccesss&theme=gotham&hide_border=true&v=1)
+<p align="center">
+  <img
+    src="https://streak-stats.demolab.com?user=zaccesss&theme=gotham&hide_border=true"
+  />
+</p>
 
+---
+
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical">
+</p>
+
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?quote=Innovation%20starts%20with%20curiosity.&author=Zac&theme=radical" />
+</p>
 
 ---
 
