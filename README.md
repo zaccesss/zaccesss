@@ -230,31 +230,16 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ### 📐 Engineering CAD and PCB tools
 
-> 📝 For these icons, upload your own PNGs (for example into an `assets/` folder in this repo) then update the `src` paths to match.
-
-<div style="display: flex; align-items: flex-start; justify-content: center;">
-<table align="center">
-  <tr>
-    <td align="center" width="96">
-      <img src="assets/autocad.png" width="50" alt="AutoCAD"/><br>AutoCAD
-    </td>
-    <td align="center" width="96">
-      <img src="assets/kicad.png" width="50" alt="KiCad"/><br>KiCad
-    </td>
-    <td align="center" width="96">
-      <img src="assets/fusion360.png" width="50" alt="Fusion 360"/><br>Fusion 360
-    </td>
-    <td align="center" width="96">
-      <img src="assets/eagle.png" width="50" alt="EAGLE"/><br>EAGLE
-    </td>
-    <td align="center" width="96">
-      <img src="assets/proteus.png" width="50" alt="Proteus"/><br>Proteus
-    </td>
-  </tr>
-</table>
-</div>
+<p>
+  <a href="#"><img alt="AutoCAD" src="https://img.shields.io/badge/AutoCAD-E51050?style=for-the-badge&logo=autodesk&logoColor=white"></a>
+  <a href="#"><img alt="KiCad" src="https://img.shields.io/badge/KiCad-314CB0?style=for-the-badge&logo=kicad&logoColor=white"></a>
+  <a href="#"><img alt="Fusion 360" src="https://img.shields.io/badge/Fusion%20360-FF6D00?style=for-the-badge&logo=autodesk&logoColor=white"></a>
+  <a href="#"><img alt="EAGLE" src="https://img.shields.io/badge/EAGLE-CC7B19?style=for-the-badge&logo=autodesk&logoColor=white"></a>
+  <a href="#"><img alt="Proteus simulation" src="https://img.shields.io/badge/Proteus%20Simulation-086DBA?style=for-the-badge&logo=code&logoColor=white"></a>
+</p>
 
 **Focus:** Circuit design, layout awareness and simulation to support PCB workflows and hardware prototyping. Proteus is used alongside these tools for circuit simulation and testing.
+
 
 ---
 
