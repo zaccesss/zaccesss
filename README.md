@@ -93,11 +93,13 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 <a id="my-tech-stack"></a>
 # 💻 My Tech Stack
 
-## 🔤 Languages & Software
+---
+
+## Languages & Software
 
 <div align="center">
 
-| <img src="https://techstack-generator.vercel.app/c-icon.svg" alt="C" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/cpp-icon.svg" alt="C++" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/java-icon.svg" alt="Java" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" width="65" height="65" /> |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="65" /> | <img src="https://techstack-generator.vercel.app/cpp-icon.svg" width="65" /> | <img src="https://techstack-generator.vercel.app/python-icon.svg" width="65" /> | <img src="https://techstack-generator.vercel.app/java-icon.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="65" /> | <img src="https://techstack-generator.vercel.app/js-icon.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" width="65" /> |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **C** | **C++** | **Python** | **Java** | **HTML** | **CSS** | **JavaScript** | **MATLAB** |
 
@@ -105,51 +107,85 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-## ⚡ Embedded & Hardware
+## Core Tools & IDEs
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" alt="Embedded" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Fusion_360_logo.svg/200px-Fusion_360_logo.svg.png" alt="Fusion 360" width="65" height="65" /> | <img src="https://seeklogo.com/images/A/autocad-logo-C9817CB828-seeklogo.com.png" alt="AutoCAD" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/KiCad-Logo.svg" alt="KiCad" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/ProteusLogo.svg" alt="Proteus" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/436018/eagle.svg" alt="Eagle" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/SolidWorks_Logo.svg" alt="SolidWorks" width="65" height="65" /> |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Arduino** | **Raspberry Pi** | **Atmel AVR** | **Fusion 360** | **AutoCAD** | **KiCad** | **Proteus** | **Eagle** | **SolidWorks** |
+### Core Tools
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="65" /> | <img src="https://techstack-generator.vercel.app/github-icon.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Git** | **GitHub** | **VS Code** | **Eclipse** | **Postman** | **Gradle** |
+
+### JetBrains Ecosystem
+
+| <img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clion/clion-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webstorm/webstorm-original.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|:---:|
+| **JetBrains** | **IntelliJ** | **PyCharm** | **CLion** | **WebStorm** |
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/datagrip/datagrip-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/phpstorm/phpstorm-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rubymine/rubymine-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/goland/goland-original.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|
+| **DataGrip** | **PhpStorm** | **RubyMine** | **GoLand** |
+
+### Mobile & Languages
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="65" /> |
+|:---:|:---:|
+| **Android Studio** | **Kotlin** |
 
 </div>
 
 ---
 
-## 🤖 AI/ML & Data
+## AI/ML & Data
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/373541/cuda.svg" alt="CUDA" width="65" height="65" /> |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **TensorFlow** | **PyTorch** | **NumPy** | **Pandas** | **Scikit-Learn** | **Jupyter** | **OpenCV** | **CUDA** |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **TensorFlow** | **PyTorch** | **NumPy** | **Pandas** | **Scikit-Learn** | **Jupyter** |
+
+<br>
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" width="65" /> | <img src="https://www.svgrepo.com/download/373541/cuda.svg" width="65" /> |
+|:---:|:---:|:---:|
+| **OpenCV** | **Matplotlib** | **CUDA** |
 
 </div>
 
 ---
 
-## 🛠️ CS Core Tools
+## Web Development
 
 <div align="center">
 
-| <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" alt="IntelliJ" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" alt="PyCharm" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clion/clion-original.svg" alt="CLion" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webstorm/webstorm-original.svg" alt="WebStorm" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/datagrip/datagrip-original.svg" alt="DataGrip" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/phpstorm/phpstorm-original.svg" alt="PhpStorm" width="65" height="65" /> |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **GitHub** | **Git** | **IntelliJ** | **PyCharm** | **CLion** | **WebStorm** | **DataGrip** | **PhpStorm** |
+### Frontend
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rubymine/rubymine-original.svg" alt="RubyMine" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/goland/goland-original.svg" alt="GoLand" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg" alt="Gradle" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="65" height="65" /> |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **RubyMine** | **GoLand** | **VS Code** | **Eclipse** | **Postman** | **Gradle** | **Node.js** |
+| <img src="https://techstack-generator.vercel.app/react-icon.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="65" /> |
+|:---:|:---:|:---:|
+| **React** | **Tailwind CSS** | **Bootstrap** |
+
+### Backend
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|
+| **Node.js** | **Express** | **Django** | **Flask** |
+
+### Databases
+
+| <img src="https://techstack-generator.vercel.app/mysql-icon.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|
+| **MySQL** | **PostgreSQL** | **MongoDB** | **Firebase** |
 
 </div>
 
 ---
 
-## ☁️ Cloud & DevOps
+## Cloud & DevOps
 
 <div align="center">
 
-| <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="AWS" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/docker-icon.svg" alt="Docker" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/kubernetes-icon.svg" alt="Kubernetes" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" width="65" height="65" /> |
+| <img src="https://techstack-generator.vercel.app/aws-icon.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" width="65" /> | <img src="https://techstack-generator.vercel.app/docker-icon.svg" width="65" /> | <img src="https://techstack-generator.vercel.app/kubernetes-icon.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" width="65" /> |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | **AWS** | **Azure** | **Google Cloud** | **Docker** | **Kubernetes** | **GitHub Actions** |
 
@@ -157,48 +193,77 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-## 🎮 Gaming Ecosystem
+## Cyber Security
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/200px-Nvidia_logo.svg.png" alt="NVIDIA" width="65" height="65" /> |  <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Intel_logo_2023.svg" alt="Intel" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/200px-AMD_Logo.svg.png" alt="AMD" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/200px-Steam_icon_logo.svg.png" alt="Steam" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/452087/playstation.svg" alt="PlayStation" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/330343/ea.svg" alt="EA" width="65" height="65" /> | <img src="https://www.svgrepo.com/download/349545/ubisoft.svg" alt="Ubisoft" width="65" height="65" /> |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Unity** | **Unreal Engine** | **NVIDIA** | **Intel** | **AMD** | **Steam** | **PlayStation** | **EA** | **Ubisoft** |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="65" /> | <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kalilinux.svg" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/PowerShell_5.0_icon.png" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wireshark_icon.svg/200px-Wireshark_icon.svg.png" width="65" /> | <img src="https://nmap.org/images/nmap-logo-256x256.png" width="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Bash** | **Linux** | **Kali Linux** | **PowerShell** | **Wireshark** | **Nmap** |
 
 </div>
 
 ---
 
-## 🔒 Cyber Security
+## Embedded & Hardware
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg" alt="PowerShell" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wireshark_icon.svg/200px-Wireshark_icon.svg.png" alt="Wireshark" width="65" height="65" /> |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/embeddedc/embeddedc-original.svg" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/KiCad-Logo.svg" width="65" /> | <img src="https://www.svgrepo.com/download/436018/eagle.svg" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/ProteusLogo.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Arduino** | **Raspberry Pi** | **Embedded C (AVR)** | **KiCad** | **Eagle** | **Proteus** |
+
+<br>
+
+| <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/SolidWorks_Logo.svg" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Simulink_Logo_%28non-wordmark%29.png" width="65" /> | <img src="https://seeklogo.com/images/A/autodesk-fusion-360-logo-7F72A76397-seeklogo.com.png" width="65" /> | <img src="https://seeklogo.com/images/A/autocad-logo-C9817CB828-seeklogo.com.png" width="65" /> |
 |:---:|:---:|:---:|:---:|
-| **Bash** | **Linux** | **PowerShell** | **Wireshark** |
+| **SolidWorks** | **Simulink** | **Fusion 360** | **AutoCAD** |
 
 </div>
 
 ---
 
-## 🤖 Robotics
+## Robotics
 
 <div align="center">
 
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ros_logo.svg/200px-Ros_logo.svg.png" alt="ROS" width="65" height="65" /> |
-|:---:|
-| **ROS** |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg" width="65" /> | <img src="https://www.svgrepo.com/download/373541/cuda.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gazebo/gazebo-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pybullet/pybullet-original.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|
+| **ROS** | **NVIDIA Jetson** | **Gazebo** | **PyBullet** |
 
 </div>
 
 ---
 
-
-## 🎨 Creative & Productivity
+## Gaming Ecosystem
 
 <div align="center">
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" width="65" height="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/200px-Notion-logo.svg.png" alt="Notion" width="65" height="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2023_Obsidian_logo.svg/200px-2023_Obsidian_logo.svg.png" alt="Obsidian" width="65" height="65" /> |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" width="65" /> | <img src="https://www.svgrepo.com/download/373541/cuda.svg" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Intel_logo_2023.svg" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/200px-AMD_Logo.svg.png" width="65" /> |
+|:---:|:---:|:---:|:---:|:---:|
+| **Unity** | **Unreal Engine** | **NVIDIA** | **Intel** | **AMD** |
+
+<br>
+
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/200px-Steam_icon_logo.svg.png" width="65" /> | <img src="https://www.svgrepo.com/download/452087/playstation.svg" width="65" /> | <img src="https://www.svgrepo.com/download/330343/ea.svg" width="65" /> | <img src="https://www.svgrepo.com/download/349545/ubisoft.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|
+| **Steam** | **PlayStation** | **EA** | **Ubisoft** |
+
+</div>
+
+---
+
+## Creative & Productivity
+
+<div align="center">
+
+| <img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" width="65" /> | <img src="https://cdn.worldvectorlogo.com/logos/after-effects-1.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|:---:|
+| **Photoshop** | **Illustrator** | **After Effects** | **Premiere Pro** | **Blender** |
+
+<br>
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/200px-Notion-logo.svg.png" width="65" /> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2023_Obsidian_logo.svg/200px-2023_Obsidian_logo.svg.png" width="65" /> |
 |:---:|:---:|:---:|:---:|
 | **Figma** | **Canva** | **Notion** | **Obsidian** |
 
@@ -206,15 +271,17 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ---
 
-### 🌟 Highlights
+## 📘 Learning Journey
 
-- Currently focusing on **C/C++**, **Python**, **Embedded Systems** and **AI fundamentals**  
-- Actively using **Arduino**, **Raspberry Pi**, **Git**, **VS Code** and **MATLAB** in coursework and personal builds  
-- Exploring **TensorFlow**, **PyTorch**, **Docker** and **Kubernetes** at a beginner level  
+This tech stack represents my ongoing learning journey in engineering and technology. I am developing these skills through:
 
----
-> **📘 Note:**
-> Currently learning and exploring some of these **platforms** through **labs, online courses** and **personal projects.** This tech stack reflects the **languages, tools** and **technologies** I am learning and exploring on my journey. I am not an expert in all of them yet: many are skills I am actively developing through university, research and self-study.
+- **University learning** – Structured learning across computer science, electrical/electronic engineering and robotics  
+- **Personal projects and hackathons** – practical hardware and software development, rapid problem solving, creative experimentation and competitive environments
+- **Online courses and labs** – self paced learning in different fields of engineering and technology 
+- **Research and exploration** – studying emerging technologies and real world engineering practices  
+
+> **NB:** I am not an expert in all these technologies yet. This is a living document that reflects what I am actively using and what I am learning. Some tools are part of my daily workflow, others are at beginner level. The process of continuous learning is what drives my interest in technology and innovation.
+
 ---
 
 <a id="projects"></a>
