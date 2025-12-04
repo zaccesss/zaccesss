@@ -288,16 +288,20 @@ This tech stack represents my ongoing learning journey in engineering and techno
 ## 🚀 Projects
 
 ### **NeoPixel LED Cube – 4×4×4 Arduino Build**
-64 WS2812B addressable LEDs animated using C++ logic  
+A fully engineered 64-LED WS2812B cube with adaptive brightness, multi-pattern animation engine and complete documentation.  
+Built using Arduino C++, custom wiring, sensor integration and real-time state logic.
 
-• Full soldered assembly  
-• Power distribution planning  
-• Animation engine + effects  
-• Debugging and iterative prototyping
+- Full hand-soldered 4×4×4 LED assembly  
+- Structured power system with filtering capacitor  
+- Multiple animation patterns (RGB Fade, Fire, Rainbow, Color Wipe)  
+- LDR-based adaptive brightness system  
+- Buzzer interaction feedback  
+- Complete engineering documentation included in repo (media, reports, diagrams, code)
 
-`[_Repository coming soon on this profile._]`
+🔗 **Repository:**  
+👉 **https://github.com/zaccesss/neopixel-led-cube**
 
-More builds/projects coming soon.
+More builds and engineering projects coming soon.
 
 ---
 
