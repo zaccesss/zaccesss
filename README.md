@@ -299,7 +299,7 @@ Built using Arduino C++, custom wiring, sensor integration and real-time state l
 - Complete engineering documentation included in repo (media, reports, diagrams, code)
 
 🔗 **Repository:**  
-👉 **https://github.com/zaccesss/neopixel-led-cube**
+👉 **https://github.com/zaccesss/neopixel-led-cube-project**
 
 More builds and engineering projects coming soon.
 
