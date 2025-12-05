@@ -9,7 +9,7 @@
 
 
 ---
-## 🔗 Links & Contact
+## Links & Contact
 
 <p align="center">
   <a href="https://linktr.ee/zaccess">
@@ -60,7 +60,7 @@
 ---
 
 <a id="about-me"></a>
-## 👤 About Me
+## About Me
 
 I am an aspiring engineer and technologist with interests that span across electronics, software development, cyber security, cloud computing, AI/ML, computer systems and hardware-software integration. My journey began in Ghana where curiosity and problem-solving shaped me early. In 2022 I moved to the UK during my final year at Adisadel College where I served as an aspiring Dispensary Prefect and Vice President of APOSA. That transition strengthened resilience, adaptability and responsibility which drive how I work and learn today.
 
@@ -69,7 +69,7 @@ I am sight-impaired due to retinoblastoma in childhood (age 2) which resulted in
 ---
 
 <a id="what-i-am-looking-for"></a>
-## 🎯 What I Am Looking For
+## What I Am Looking For
 
 I am seeking **internships, placements and work experience** across engineering and tech (both HW/SW).
 
@@ -80,7 +80,7 @@ If you value someone who **learns fast, thinks deeply, adapts quickly and contri
 ---
 
 <a id="technical-development"></a>
-## 🧠 Technical Development
+## Technical Development
 
 My technical development includes **C, C++, Python and Java** with knowledge of **microcontrollers, embedded systems, IoT fundamentals, PCB design, MATLAB, debugging and algorithmic thinking**.
 
@@ -91,7 +91,7 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 ---
 
 <a id="my-tech-stack"></a>
-# 💻 My Tech Stack
+# My Tech Stack
 
 ---
 
@@ -285,7 +285,7 @@ This tech stack represents my ongoing learning journey in engineering and techno
 ---
 
 <a id="projects"></a>
-## 🚀 Projects
+## Projects
 
 ### **NeoPixel LED Cube – 4×4×4 Arduino Build**
 A fully engineered 64-LED WS2812B cube with adaptive brightness, multi-pattern animation engine and complete documentation.  
@@ -301,12 +301,12 @@ Built using Arduino C++, custom wiring, sensor integration and real-time state l
 🔗 **Repository:**  
 👉 **https://github.com/zaccesss/neopixel-led-cube-project**
 
-More builds and engineering projects coming soon.
+More builds and engineering projects coming soon...
 
 ---
 
 <a id="education"></a>
-## 🎓 Education
+## Education
 
 ### Aston University  
 **BEng Electronic Engineering & Computer Science (EECS)**  
@@ -336,7 +336,7 @@ More builds and engineering projects coming soon.
 - Studied General Arts with electives in Economics, Government, Christian Religious Studies and Geography supported by core subjects in English, Mathematics, Integrated Science, Social Studies, ICT and PE.  
 ---
 
-## 🏛 Organisations
+## Organisations
 
 ### Institution of Engineering and Technology (IET) – Student Member  
 *Oct 2024 – Present*  
@@ -351,7 +351,7 @@ More builds and engineering projects coming soon.
 ---
 
 <a id="experience"></a>
-## 💼 Experience
+## Experience
 
 
 ### Engineering Operations & Maintenance Planning Job Simulation Participant (Virtual Experience) – British Airways  
@@ -402,7 +402,7 @@ More builds and engineering projects coming soon.
 ---
 
 <a id="outside-engineering"></a>
-## 🎧 Outside Engineering
+##  Outside Engineering
 
 Outside academics I learn through online courses, personal builds/projects and self development.  
 I enjoy:
@@ -419,7 +419,7 @@ For me, growth is not occasional but an **active lifestyle**.
 ---
 
 <a id="languages"></a>
-## 🌍 Languages
+## Languages
 
 - **English** – full professional proficiency  
 - **Twi & Ga** – full professional proficiency  
@@ -428,7 +428,7 @@ For me, growth is not occasional but an **active lifestyle**.
 ---
 
 <a id="personal-motto"></a>
-### 🧠 Personal Motto
+###  Personal Motto
 
 > Engineering that thinks. Technology that serves. Growth as a lifestyle - **Isaac Adjei**.
 
@@ -439,7 +439,7 @@ For me, growth is not occasional but an **active lifestyle**.
 ---
 
 <a id="github-stats"></a>
-## 📊 GitHub Stats
+## GitHub Stats
 
 <p align="center">
   <a href="https://git.io/awesome-stats-card"><img src="https://awesome-github-stats.azurewebsites.net/user-stats/zaccesss?cardType=github&theme=radical&preferLogin=false&Border=00000000" width="48%" style="object-fit: contain;" 
@@ -465,21 +465,21 @@ For me, growth is not occasional but an **active lifestyle**.
 ---
 
 <a id="github-trophies"></a>
-## 🏆 GitHub Trophies
+## GitHub Trophies
 
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=zaccesss&theme=radical&no-frame=true&margin-w=10" />
 </p>
 
 <a id="contribution-snake"></a>
-## 🐍 Contribution Snake
+## Contribution Snake
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/zaccesss/zaccesss/main/dist/github-contribution-grid-snake.svg" alt="GitHub contribution snake animation" />
 </p>
 
 <a id="contribution-graph"></a>
-## 📈 Contribution Graph
+## Contribution Graph
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=zaccesss&theme=react-dark&hide_border=true&area=true" />
@@ -488,7 +488,7 @@ For me, growth is not occasional but an **active lifestyle**.
 ---
 
 <a id="quotes"></a>
-## 💬 Quotes
+## Quotes
 
 <div align="center">
   <table>
