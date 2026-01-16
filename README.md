@@ -506,7 +506,7 @@ For me, growth is not occasional but an **active lifestyle**.
 ---
 
 <p align="center">
-  <strong>Last updated: December 2025</strong>
+  <strong>Last updated: January 2026 </strong>
 </p>
 
 ---
