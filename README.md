@@ -167,9 +167,11 @@ One example is my **4×4×4 NeoPixel LED Cube** which blends C++ logic, power bu
 
 ### Backend
 
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" width="65" /> |
-|:---:|:---:|:---:|:---:|
-| **Node.js** | **Express** | **Django** | **Flask** |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" width="65" /> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" width="65" /> |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Node.js** | **Express** | **Django** | **Flask** | **PHP 8.2** | **Apache** | **Composer** |
+
+---
 
 ### Databases
 
@@ -301,7 +303,22 @@ Built using Arduino C++, custom wiring, sensor integration and real-time state l
 🔗 **Repository:**  
 👉 **https://github.com/zaccesss/neopixel-led-cube-project**
 
-More builds and engineering projects coming soon...
+---
+
+### **AstonCV - Full-Stack CV Database Website**
+A full-stack CV database website built at Aston University. Built from scratch with no frameworks using PHP 8.2, MySQL and custom CSS.
+
+- Public browsing, searching and viewing of CVs
+- User registration, login, CV update and logout
+- 11 security measures including bcrypt, CSRF, PDO, brute-force protection
+- PDF export via mPDF (server-side generation with Composer)
+- Custom domain redirect via Cloudflare (astoncv.zacess.com)
+- Deployed live on Aston University internal server
+
+🔗 **Repository:**  
+👉 **https://github.com/zaccesss/astoncv**
+
+More builds and projects coming soon...
 
 ---
 
