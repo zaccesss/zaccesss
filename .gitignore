@@ -1,0 +1,41 @@
+# Claude Code working files — local only, never push to GitHub
+.claude/
+
+# Local implementation notes — not for the repo
+log.md
+
+# Portfolio site nested repo — has its own git history, keep out of this repo
+isaac-adjei-portfolio/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment / secrets — never commit these
+.env
+*.env
+.env.local
+.env.*.local
+
+# pip cache (if running locally)
+.pip-cache/
+*.egg-info/
+dist/build/
+
+# Source photos — kept locally for reference, not needed in repo
+assets/*.jpg
+assets/*.png
+assets/*.jpeg
+
+# macOS metadata
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
+desktop.ini
+
+# VS Code local settings (keep extensions.json but not workspace state)
+.vscode/settings.json
+.vscode/*.code-workspace

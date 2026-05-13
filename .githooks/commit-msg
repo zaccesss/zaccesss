@@ -1,0 +1,5 @@
+#!/bin/sh
+# Strips any Co-Authored-By, Co-authored-by, or Signed-off-by AI lines
+# from commit messages before they are saved.
+sed -i '/^Co-[Aa]uthored-[Bb]y:/d' "$1"
+sed -i '/^Signed-off-by:.*noreply@anthropic/Id' "$1"
