@@ -22,7 +22,6 @@ from html import escape as esc
 # ---------------------------------------------------------------------------
 
 USERNAME   = 'zaccesss'
-BIRTH_DATE = datetime.datetime(2005, 6, 25)
 
 ASCII_ART_PATH = os.path.join(os.path.dirname(__file__), 'assets', 'ascii_final.txt')
 GRAPHQL_URL    = 'https://api.github.com/graphql'
@@ -40,8 +39,8 @@ LINE_WIDTH = 60
 ASCII_X = 15
 STATS_X = 390
 
-# Stats rows: content goes to row 29 (y=610); SVG height adds bottom margin.
-STATS_ROWS = 30
+# Stats rows: content goes to row 30 (y=630); SVG height adds bottom margin.
+STATS_ROWS = 31
 SVG_HEIGHT = ROW_START + (STATS_ROWS - 1) * ROW_STEP + ROW_STEP + 20   # = 650
 
 # ---------------------------------------------------------------------------
@@ -250,21 +249,6 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
     return add, delete, add - delete
 
 # ---------------------------------------------------------------------------
-# Age / uptime
-# ---------------------------------------------------------------------------
-
-def calculate_age(birth: datetime.datetime) -> tuple[int, int, int]:
-    today  = datetime.datetime.utcnow()
-    y, m, d = today.year - birth.year, today.month - birth.month, today.day - birth.day
-    if d < 0:
-        m -= 1
-        d += (today.replace(day=1) - datetime.timedelta(days=1)).day
-    if m < 0:
-        y -= 1
-        m += 12
-    return y, m, d
-
-# ---------------------------------------------------------------------------
 # Formatting helpers
 # ---------------------------------------------------------------------------
 
@@ -337,7 +321,6 @@ def loc_row(y: int, total: int, add: int, delete: int) -> str:
 
 def build_svg(
     ascii_rows: list[str],
-    age_str: str,
     repos: int, contributed: int, stars: int,
     commits: int, followers: int,
     prs: int, issues: int,
@@ -362,7 +345,7 @@ def build_svg(
 
     # ASCII art at 14px — keeps 44-char lines clear of the stats column at x=390
     ascii_tspans = [
-        f'    <tspan x="{ASCII_X}" y="{ROW_START + ROW_STEP + i * ROW_STEP}">{esc(line)}</tspan>'
+        f'    <tspan x="{ASCII_X}" y="{ROW_START + ROW_STEP + 10 + i * ROW_STEP}">{esc(line)}</tspan>'
         for i, line in enumerate(ascii_rows)
     ]
 
@@ -373,11 +356,11 @@ def build_svg(
     stats_tspans = [
         trow(Y[0],  f'isaac@adjei {header_dashes}'),
 
-        info_row(Y[1],  'OS',       'Windows, macOS, Ubuntu, Linux'),
-        info_row(Y[2],  'Uptime',   age_str),
-        info_row(Y[3],  'Host',     'Aston University'),
-        info_row(Y[4],  'Location', 'Birmingham & London, UK'),
-        info_row(Y[5],  'Kernel',   'Electronic Engineering and Computer Science'),
+        info_row(Y[1],  'Host',     'Aston University'),
+        info_row(Y[2],  'Location', 'Birmingham & London, UK'),
+        info_row(Y[3],  'Mode',     'Electronic Engineering and Computer Science'),
+        info_row(Y[4],  'Kernel',   'Sleep deprived but functional'),
+        info_row(Y[5],  'OS',       'Windows, macOS, Ubuntu, Linux'),
         info_row(Y[6],  'IDE',      'JetBrains, VS Code, Visual/Microchip Studio'),
 
         blank(Y[7]),
@@ -410,6 +393,7 @@ def build_svg(
         dual_row(Y[27],  'Commits',  fmt(commits),   'Followers', fmt(followers)),
         dual_row(Y[28],  'PRs',      fmt(prs),        'Issues',    fmt(issues)),
         loc_row(Y[29],   loc_total, loc_add, loc_del),
+        info_row(Y[30],  'Status',   'One bug away from greatness'),
     ]
 
     ascii_block = '\n'.join(ascii_tspans)
@@ -474,10 +458,6 @@ def main() -> None:
         print(f'  Warning: {e}', file=sys.stderr)
         loc_add, loc_del, loc_total = 0, 0, 0
 
-    age_y, age_m, age_d = calculate_age(BIRTH_DATE)
-    age_str = f'{age_y} years, {age_m} months, {age_d} days'
-
-    print(f'  Age: {age_str}')
     print(f'  Repos: {repos} (Contributed: {contributed}) | Stars: {stars}')
     print(f'  Commits: {commits} | Followers: {followers}')
     print(f'  PRs: {prs} | Issues: {issues}')
@@ -485,7 +465,7 @@ def main() -> None:
 
     for colors, fname in [(DARK, 'dark_mode.svg'), (LIGHT, 'light_mode.svg')]:
         print(f'Generating {fname}...')
-        svg = build_svg(ascii_rows, age_str,
+        svg = build_svg(ascii_rows,
                         repos, contributed, stars,
                         commits, followers, prs, issues,
                         loc_total, loc_add, loc_del, colors)
