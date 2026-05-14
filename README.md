@@ -5,7 +5,11 @@
 </picture>
 
 <p align="center">
+  <a href="https://isaacadjei.me">Website</a>
+  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/projects">View my projects</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/contact">Get in touch</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/links">Links</a>
 </p>
