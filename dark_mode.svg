@@ -54,7 +54,7 @@
   <text x="390" y="30" fill="#c9d1d9" style="white-space:pre;">
     <tspan x="390" y="30">isaac@adjei -----------------------------------------------</tspan>
     <tspan x="390" y="50"><tspan class="cc">. </tspan><tspan class="key">OS</tspan><tspan class="cc">: ........................ </tspan><tspan class="value">Windows, macOS, Ubuntu, Linux</tspan></tspan>
-    <tspan x="390" y="70"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">: ..................... </tspan><tspan class="value">20 years, 10 months, 18 days</tspan></tspan>
+    <tspan x="390" y="70"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">: ..................... </tspan><tspan class="value">20 years, 10 months, 19 days</tspan></tspan>
     <tspan x="390" y="90"><tspan class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">: ................................... </tspan><tspan class="value">Aston University</tspan></tspan>
     <tspan x="390" y="110"><tspan class="cc">. </tspan><tspan class="key">Location</tspan><tspan class="cc">: ........................ </tspan><tspan class="value">Birmingham &amp; London, UK</tspan></tspan>
     <tspan x="390" y="130"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">: ...... </tspan><tspan class="value">Electronic Engineering and Computer Science</tspan></tspan>
@@ -79,8 +79,8 @@
     <tspan x="390" y="510"></tspan>
     <tspan x="390" y="530"><tspan class="cc">- GitHub Stats ---------------------------------------------</tspan></tspan>
     <tspan x="390" y="550"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ......... </tspan><tspan class="value">16 {Contributed: 0}</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan><tspan class="cc">: .......... </tspan><tspan class="value">1</tspan></tspan>
-    <tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............. </tspan><tspan class="value">1,168</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan><tspan class="cc">: ............. </tspan><tspan class="value">10</tspan></tspan>
+    <tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............. </tspan><tspan class="value">1,170</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan><tspan class="cc">: ............. </tspan><tspan class="value">10</tspan></tspan>
     <tspan x="390" y="590"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: .................. </tspan><tspan class="value">88</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: .................. </tspan><tspan class="value">40</tspan></tspan>
-    <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: ........... </tspan><tspan class="value">152,416 ( <tspan class="addColor">180,447</tspan>++, <tspan class="delColor">28,031</tspan>-- )</tspan></tspan>
+    <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: ........... </tspan><tspan class="value">152,420 ( <tspan class="addColor">180,455</tspan>++, <tspan class="delColor">28,035</tspan>-- )</tspan></tspan>
   </text>
 </svg>
