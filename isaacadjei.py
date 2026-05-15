@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-isaacadjei.py: my GitHub profile README SVG generator
+isaacadjei.py — my GitHub profile README SVG generator.
 
-Generates dark_mode.svg and light_mode.svg.
-  Left column  : ASCII art portrait (44 cols x 28 rows, from ascii_final.txt)
-  Right column : neofetch-style terminal info + live GitHub stats
+I generate dark_mode.svg and light_mode.svg, each with:
+  - Left column:  my ASCII art portrait (44 cols x 28 rows, loaded from ascii_final.txt)
+  - Right column: neofetch-style info block + live GitHub stats pulled from the API
 
-Usage (local):
-    set ACCESS_TOKEN=<fine-grained-PAT>
+To run locally I need my ACCESS_TOKEN set as an environment variable:
+    export ACCESS_TOKEN=<fine-grained-PAT>
     python isaacadjei.py
 """
 
@@ -282,8 +282,10 @@ def info_row(y: int, label: str, value: str) -> str:
     return trow(y, cc('. ') + key(label) + cc(f': {pad_dots(label, str(value))} ') + val(str(value)))
 
 def section_header(y: int, title: str) -> str:
-    hyphens = '-' * max(2, LINE_WIDTH - 2 - len(title) - 1)  # fill remaining width with hyphens so the line reaches LINE_WIDTH
-    return trow(y, cc(f'- {title} {hyphens}'))
+    # I want my section headers to match the weight of the first "isaac@adjei" line,
+    # so the whole thing - title and hyphens - uses the main text colour, no grey.
+    hyphens = '-' * max(2, LINE_WIDTH - 2 - len(title) - 1)
+    return trow(y, f'- {title} {hyphens}')
 
 def blank(y: int) -> str:
     return trow(y, '')

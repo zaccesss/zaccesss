@@ -1,16 +1,15 @@
 name: README build
 
+# I run this every 6 hours to keep my stats fresh, on every push to main,
+# and I can also trigger it manually from the Actions tab when I need it.
 on:
-  # Run automatically every day at midnight UTC
   schedule:
-    - cron: "0 0 * * *"
-  # Run on every push to main (so stats update after any change)
+    - cron: "0 */6 * * *"
   push:
     branches: [main]
-  # Allow manual trigger from the Actions tab
   workflow_dispatch:
 
-# Allow the job to push the updated SVGs back to the repo
+# I need write access so the job can push the regenerated SVGs back to my repo.
 permissions:
   contents: write
 
@@ -19,15 +18,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Check out my repo so the workflow has access to my files.
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # I'm using Python 3.12 to run my SVG generator script.
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      # Cache pip downloads so subsequent runs are faster
+      # Cache pip downloads so my builds are faster on repeat runs.
       - name: Cache pip
         uses: actions/cache@v4
         with:
@@ -35,23 +36,25 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: ${{ runner.os }}-pip-
 
+      # Install everything my generator script needs.
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
+      # Run my generator — it pulls live GitHub stats and writes dark_mode.svg and light_mode.svg.
+      # ACCESS_TOKEN lives in: Settings > Secrets and variables > Actions > New repository secret
+      # It needs read access to my repositories and account so it can fetch stats.
       - name: Generate SVGs
         env:
-          # ACCESS_TOKEN must be added in:
-          # GitHub repo → Settings → Secrets and variables → Actions → New repository secret
-          # Name: ACCESS_TOKEN
-          # Value: a fine-grained PAT with repository read + account read permissions
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_NAME: zaccesss
         run: python isaacadjei.py
 
+      # Commit the freshly generated SVGs back to my repo under my own name.
+      # The diff check means I only commit when something actually changed.
       - name: Commit and push updated SVGs
         run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          git config --global user.email "offices.isaac@gmail.com"
+          git config --global user.name "Isaac Adjei"
           git add dark_mode.svg light_mode.svg
           git diff --staged --quiet || git commit -m "chore: update profile SVG [automated]"
           git push
