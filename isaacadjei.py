@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-today.py — GitHub profile README SVG generator for Isaac Adjei (zaccesss)
+isaacadjei.py: my GitHub profile README SVG generator
 
 Generates dark_mode.svg and light_mode.svg.
-  Left column  : ASCII art portrait (44 cols × 28 rows, from ascii_final.txt)
+  Left column  : ASCII art portrait (44 cols x 28 rows, from ascii_final.txt)
   Right column : neofetch-style terminal info + live GitHub stats
 
 Usage (local):
     set ACCESS_TOKEN=<fine-grained-PAT>
-    python today.py
+    python isaacadjei.py
 """
 
 import os
@@ -21,30 +21,30 @@ from html import escape as esc
 # Constants
 # ---------------------------------------------------------------------------
 
-USERNAME   = 'zaccesss'
+USERNAME   = 'zaccesss'  # GitHub username to query
 
-ASCII_ART_PATH = os.path.join(os.path.dirname(__file__), 'assets', 'ascii_final.txt')
-GRAPHQL_URL    = 'https://api.github.com/graphql'
+ASCII_ART_PATH = os.path.join(os.path.dirname(__file__), 'assets', 'ascii_final.txt')  # path to ASCII portrait file
+GRAPHQL_URL    = 'https://api.github.com/graphql'  # GitHub GraphQL endpoint
 
 # Portrait dimensions (rows must match ascii_final.txt line count)
-ASCII_ROWS = 28
+ASCII_ROWS = 28  # must match the line count of ascii_final.txt
 
-SVG_WIDTH  = 985
-ROW_STEP   = 20
-ROW_START  = 30   # y of first row
+SVG_WIDTH  = 985  # total canvas width in pixels
+ROW_STEP   = 20   # vertical gap between rows in pixels
+ROW_START  = 30   # y-coordinate of the first row
 
-# Right column char width — dots are calculated so every value ends here.
-LINE_WIDTH = 60
+# Right column char width: dots are calculated so every value ends here.
+LINE_WIDTH = 60   # character budget for the right column; dots fill to this width exactly
 
-ASCII_X = 15
-STATS_X = 390
+ASCII_X = 15   # left edge of the ASCII portrait column
+STATS_X = 390  # left edge of the stats column
 
 # Stats rows: content goes to row 30 (y=630); SVG height adds bottom margin.
-STATS_ROWS = 31
-SVG_HEIGHT = ROW_START + (STATS_ROWS - 1) * ROW_STEP + ROW_STEP + 20   # = 650
+STATS_ROWS = 31                                                        # total number of rows in the stats block
+SVG_HEIGHT = ROW_START + (STATS_ROWS - 1) * ROW_STEP + ROW_STEP + 20  # 650px total canvas height
 
 # ---------------------------------------------------------------------------
-# Colour schemes — Andrew6rant / FowlFarmer reference colours
+# Colour schemes
 # ---------------------------------------------------------------------------
 
 DARK = {
@@ -78,7 +78,7 @@ def load_ascii_art(path: str) -> list[str]:
     result = []
     for i in range(ASCII_ROWS):
         line = lines[i] if i < len(lines) else ''
-        result.append(line.ljust(44)[:44])
+        result.append(line.ljust(44)[:44])  # pad short lines to exactly 44 chars and clip any that are longer
     return result
 
 # ---------------------------------------------------------------------------
@@ -86,10 +86,10 @@ def load_ascii_art(path: str) -> list[str]:
 # ---------------------------------------------------------------------------
 
 def graphql(token: str, query: str, variables: dict | None = None) -> dict:
-    headers = {'Authorization': f'bearer {token}', 'Content-Type': 'application/json'}
+    headers = {'Authorization': f'bearer {token}', 'Content-Type': 'application/json'}  # bearer auth for GitHub API
     resp = requests.post(GRAPHQL_URL,
                          json={'query': query, 'variables': variables or {}},
-                         headers=headers, timeout=30)
+                         headers=headers, timeout=30)  # 30-second timeout so a slow API cannot hang the workflow
     resp.raise_for_status()
     result = resp.json()
     if 'errors' in result:
@@ -119,7 +119,7 @@ def get_user_info(token: str, username: str) -> tuple[int, int, int, int, int]:
         u.get('pullRequests',               {}).get('totalCount', 0),
         u.get('repositoriesContributedTo',  {}).get('totalCount', 0),
         u.get('issues',                     {}).get('totalCount', 0),
-        int(u.get('createdAt', '2022-01-01T00:00:00Z')[:4]),
+        int(u.get('createdAt', '2022-01-01T00:00:00Z')[:4]),  # slice the year from the ISO timestamp
     )
 
 
@@ -141,7 +141,7 @@ def get_repos_and_stars(token: str, username: str) -> tuple[int, int]:
         r = graphql(token, query, {'login': username, 'cursor': cursor})
         r = r.get('user', {}).get('repositories', {})
         if first:
-            total, first = r.get('totalCount', 0), False
+            total, first = r.get('totalCount', 0), False  # capture total count from the first page only
         stars += sum(n.get('stargazerCount', 0) for n in r.get('nodes', []))
         page = r.get('pageInfo', {})
         if not page.get('hasNextPage'):
@@ -169,7 +169,7 @@ def get_commits_for_year(token: str, username: str, year: int) -> int:
 
 def get_all_commits(token: str, username: str, creation_year: int) -> int:
     total = 0
-    for year in range(creation_year, datetime.datetime.utcnow().year + 1):
+    for year in range(creation_year, datetime.datetime.utcnow().year + 1):  # walk every year from account creation to today
         try:
             total += get_commits_for_year(token, username, year)
         except Exception as e:
@@ -237,6 +237,7 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
                                .get('history', {}))
                 for c in history.get('nodes', []):
                     login = ((c.get('author') or {}).get('user') or {}).get('login', '')
+                    # count commits with no linked GitHub user (terminal pushes) and own linked commits
                     if not login or login.lower() == username.lower():
                         add    += c.get('additions', 0)
                         delete += c.get('deletions', 0)
@@ -253,7 +254,7 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
 # ---------------------------------------------------------------------------
 
 def fmt(n: int) -> str:
-    return f'{n:,}'
+    return f'{n:,}'  # comma-separated thousands (e.g. 1,234)
 
 
 def pad_dots(label: str, value: str, width: int = LINE_WIDTH) -> str:
@@ -262,46 +263,43 @@ def pad_dots(label: str, value: str, width: int = LINE_WIDTH) -> str:
     The full value string (including any trailing text like '( add++, del-- )')
     must be passed so dots are calculated correctly.
     """
-    n = width - 2 - len(label) - 2 - 1 - len(str(value))
+    n = width - 2 - len(label) - 2 - 1 - len(str(value))  # 2 = '. ', 2 = ': ', 1 = space before value
     return '.' * max(1, n)
 
 # ---------------------------------------------------------------------------
 # SVG fragment builders
 # ---------------------------------------------------------------------------
 
-def cc(t: str)  -> str: return f'<tspan class="cc">{esc(t)}</tspan>'
-def key(t: str) -> str: return f'<tspan class="key">{esc(t)}</tspan>'
-def val(t: str) -> str: return f'<tspan class="value">{esc(t)}</tspan>'
+def cc(t: str)  -> str: return f'<tspan class="cc">{esc(t)}</tspan>'    # punctuation and dots colour class
+def key(t: str) -> str: return f'<tspan class="key">{esc(t)}</tspan>'   # label colour class
+def val(t: str) -> str: return f'<tspan class="value">{esc(t)}</tspan>' # value colour class
 
 def trow(y: int, content: str) -> str:
-    return f'    <tspan x="{STATS_X}" y="{y}">{content}</tspan>'
+    return f'    <tspan x="{STATS_X}" y="{y}">{content}</tspan>'  # pin each row to the stats column x-offset
 
 def info_row(y: int, label: str, value: str) -> str:
     """Standard right-aligned info row."""
     return trow(y, cc('. ') + key(label) + cc(f': {pad_dots(label, str(value))} ') + val(str(value)))
 
 def section_header(y: int, title: str) -> str:
-    hyphens = '-' * max(2, LINE_WIDTH - 2 - len(title) - 1)
+    hyphens = '-' * max(2, LINE_WIDTH - 2 - len(title) - 1)  # fill remaining width with hyphens so the line reaches LINE_WIDTH
     return trow(y, cc(f'- {title} {hyphens}'))
 
 def blank(y: int) -> str:
     return trow(y, '')
 
 def dual_row(y: int, lbl1: str, v1: str, lbl2: str, v2: str) -> str:
-    """
-    Two key-value pairs on one line.
-    Dots are split 50/50 so both sides look balanced (matches Andrew6rant style).
-    """
+    """Two key-value pairs on one line, dots split evenly between both sides."""
     total = max(3, LINE_WIDTH - 2 - len(lbl1) - 2 - 1 - len(v1)
                 - 3 - len(lbl2) - 2 - 1 - len(v2))
-    d1 = total // 2
-    d2 = total - d1
+    d1 = total // 2   # first half of the dot run
+    d2 = total - d1   # second half absorbs any odd remainder
     return trow(y,
         cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
         cc(' | ') + key(lbl2) + cc(f': {"."*d2} ') + val(v2))
 
 def repos_row(y: int, repos: int, contributed: int, stars: int) -> str:
-    """Repos row with {Contributed: X} bracket, matching Andrew6rant format."""
+    """Repos row with contributed count in braces alongside stars."""
     v1 = f'{fmt(repos)} {{Contributed: {fmt(contributed)}}}'
     return dual_row(y, 'Repos', v1, 'Stars', fmt(stars))
 
@@ -343,7 +341,7 @@ def build_svg(
       text, tspan {{ white-space: pre; }}
     """
 
-    # ASCII art at 14px — keeps 44-char lines clear of the stats column at x=390
+    # ASCII art at 14px: keeps 44-char lines clear of the stats column at x={STATS_X}
     ascii_tspans = [
         f'    <tspan x="{ASCII_X}" y="{ROW_START + ROW_STEP + 10 + i * ROW_STEP}">{esc(line)}</tspan>'
         for i, line in enumerate(ascii_rows)
@@ -406,7 +404,7 @@ def build_svg(
      font-size="16px">
   <defs><style>{style}  </style></defs>
   <rect width="{SVG_WIDTH}px" height="{SVG_HEIGHT}px" fill="{colors['bg']}" rx="15"/>
-  <!-- ASCII portrait — 14px so 44-char lines stay inside x={STATS_X} -->
+  <!-- ASCII portrait: 14px so 44-char lines stay inside x={STATS_X} -->
   <text x="{ASCII_X}" y="{ROW_START}" fill="{colors['text']}" font-size="14px"
         xml:space="preserve" style="white-space:pre;">
 {ascii_block}
@@ -426,7 +424,7 @@ def main() -> None:
     if not token:
         print('ERROR: ACCESS_TOKEN environment variable is not set.', file=sys.stderr)
         sys.exit(1)
-    username = os.environ.get('USER_NAME', USERNAME)
+    username = os.environ.get('USER_NAME', USERNAME)  # USER_NAME env var overrides the hardcoded default
 
     print('Loading ASCII art...')
     ascii_rows = load_ascii_art(ASCII_ART_PATH)
@@ -436,7 +434,7 @@ def main() -> None:
         followers, prs, contributed, issues, creation_year = get_user_info(token, username)
     except Exception as e:
         print(f'  Warning: {e}', file=sys.stderr)
-        followers, prs, contributed, issues, creation_year = 0, 0, 0, 0, 2022
+        followers, prs, contributed, issues, creation_year = 0, 0, 0, 0, 2022  # safe defaults if the API call fails
 
     try:
         repos, stars = get_repos_and_stars(token, username)
@@ -463,7 +461,7 @@ def main() -> None:
     print(f'  PRs: {prs} | Issues: {issues}')
     print(f'  LOC: {fmt(loc_total)} ({fmt(loc_add)}++, {fmt(loc_del)}--)')
 
-    for colors, fname in [(DARK, 'dark_mode.svg'), (LIGHT, 'light_mode.svg')]:
+    for colors, fname in [(DARK, 'dark_mode.svg'), (LIGHT, 'light_mode.svg')]:  # generate both colour theme variants
         print(f'Generating {fname}...')
         svg = build_svg(ascii_rows,
                         repos, contributed, stars,
