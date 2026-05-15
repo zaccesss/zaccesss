@@ -46,7 +46,7 @@ jobs:
           # Value: a fine-grained PAT with repository read + account read permissions
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_NAME: zaccesss
-        run: python today.py
+        run: python isaacadjei.py
 
       - name: Commit and push updated SVGs
         run: |
