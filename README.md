@@ -5,6 +5,8 @@
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/contact">Get in touch</a>
   &nbsp;&bull;&nbsp;
+  <a href="https://www.isaacadjei.me/newsletter">Newsletter</a>
+  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/links">Links</a>
 </p>
 
