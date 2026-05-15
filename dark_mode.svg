@@ -18,7 +18,7 @@
       text, tspan { white-space: pre; }
       </style></defs>
   <rect width="985px" height="670px" fill="#161b22" rx="15"/>
-  <!-- ASCII portrait — 14px so 44-char lines stay inside x=390 -->
+  <!-- ASCII portrait: 14px so 44-char lines stay inside x=390 -->
   <text x="15" y="30" fill="#c9d1d9" font-size="14px"
         xml:space="preserve" style="white-space:pre;">
     <tspan x="15" y="60">                                            </tspan>
@@ -79,9 +79,9 @@
     <tspan x="390" y="510"></tspan>
     <tspan x="390" y="530"><tspan class="cc">- GitHub Stats ---------------------------------------------</tspan></tspan>
     <tspan x="390" y="550"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ......... </tspan><tspan class="value">21 {Contributed: 0}</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan><tspan class="cc">: .......... </tspan><tspan class="value">1</tspan></tspan>
-    <tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............. </tspan><tspan class="value">1,224</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan><tspan class="cc">: ............. </tspan><tspan class="value">10</tspan></tspan>
-    <tspan x="390" y="590"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: ................. </tspan><tspan class="value">177</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: .................. </tspan><tspan class="value">71</tspan></tspan>
-    <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: .......... </tspan><tspan class="value">224,266 ( <tspan class="addColor">339,841</tspan>++, <tspan class="delColor">115,575</tspan>-- )</tspan></tspan>
+    <tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............. </tspan><tspan class="value">1,237</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan><tspan class="cc">: ............. </tspan><tspan class="value">10</tspan></tspan>
+    <tspan x="390" y="590"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: ................. </tspan><tspan class="value">179</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: .................. </tspan><tspan class="value">71</tspan></tspan>
+    <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: .......... </tspan><tspan class="value">224,422 ( <tspan class="addColor">340,105</tspan>++, <tspan class="delColor">115,683</tspan>-- )</tspan></tspan>
     <tspan x="390" y="630"><tspan class="cc">. </tspan><tspan class="key">Status</tspan><tspan class="cc">: ...................... </tspan><tspan class="value">One bug away from greatness</tspan></tspan>
   </text>
 </svg>
