@@ -15,7 +15,6 @@
   <source media="(prefers-color-scheme: light)" srcset="light_mode.svg?v=2">
   <img alt="Isaac Adjei's GitHub Profile" src="light_mode.svg?v=2" width="100%">
 </picture>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="approach_dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="approach_light.svg">
