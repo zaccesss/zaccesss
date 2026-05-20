@@ -56,5 +56,5 @@ jobs:
           git config --global user.email "offices.isaac@gmail.com"
           git config --global user.name "Isaac Adjei"
           git add dark_mode.svg light_mode.svg
-          git diff --staged --quiet || git commit -m "chore: update profile SVG [automated]"
+          git diff --staged --quiet || git commit -m "chore: update profile SVG"
           git push
