@@ -79,9 +79,9 @@
     <tspan x="390" y="510"></tspan>
     <tspan x="390" y="530">- GitHub Stats ---------------------------------------------</tspan>
     <tspan x="390" y="550"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ......... </tspan><tspan class="value">22 {Contributed: 0}</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan><tspan class="cc">: .......... </tspan><tspan class="value">1</tspan></tspan>
-    <tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............. </tspan><tspan class="value">1,376</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan><tspan class="cc">: ............. </tspan><tspan class="value">10</tspan></tspan>
-    <tspan x="390" y="590"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: ................. </tspan><tspan class="value">214</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: .................. </tspan><tspan class="value">71</tspan></tspan>
-    <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: .......... </tspan><tspan class="value">236,753 ( <tspan class="addColor">354,134</tspan>++, <tspan class="delColor">117,381</tspan>-- )</tspan></tspan>
+    <tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............. </tspan><tspan class="value">1,380</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan><tspan class="cc">: ............. </tspan><tspan class="value">10</tspan></tspan>
+    <tspan x="390" y="590"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: ................. </tspan><tspan class="value">216</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: .................. </tspan><tspan class="value">71</tspan></tspan>
+    <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: .......... </tspan><tspan class="value">241,812 ( <tspan class="addColor">361,403</tspan>++, <tspan class="delColor">119,591</tspan>-- )</tspan></tspan>
     <tspan x="390" y="630"><tspan class="cc">. </tspan><tspan class="key">Status</tspan><tspan class="cc">: ...................... </tspan><tspan class="value">One bug away from greatness</tspan></tspan>
   </text>
 </svg>
