@@ -51,10 +51,17 @@ jobs:
 
       # Commit the freshly generated SVGs back to my repo under my own name.
       # The diff check means I only commit when something actually changed.
+      # After pushing to GitHub, the extra push URLs send the same commit to GitLab and Codeberg
+      # so all 3 platforms stay in sync without manual intervention.
       - name: Commit and push updated SVGs
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
         run: |
           git config --global user.email "offices.isaac@gmail.com"
           git config --global user.name "Isaac Adjei"
           git add dark_mode.svg light_mode.svg
           git diff --staged --quiet || git commit -m "chore: update profile SVG"
+          git remote set-url --add --push origin "https://zaccesss:${GITLAB_TOKEN}@gitlab.com/zaccesss/zaccesss.git"
+          git remote set-url --add --push origin "https://zaccesss:${CODEBERG_TOKEN}@codeberg.org/zaccesss/zaccesss.git"
           git push
