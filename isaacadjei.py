@@ -27,9 +27,9 @@ ASCII_ART_PATH = os.path.join(os.path.dirname(__file__), 'assets', 'ascii_final.
 GRAPHQL_URL    = 'https://api.github.com/graphql'  # GitHub GraphQL endpoint
 
 # Portrait dimensions (rows must match ascii_final.txt line count)
-ASCII_ROWS = 28  # must match the line count of ascii_final.txt
+ASCII_ROWS = 30  # must match the line count of ascii_final.txt
 
-SVG_WIDTH  = 985  # total canvas width in pixels
+SVG_WIDTH  = 1040  # total canvas width in pixels
 ROW_STEP   = 20   # vertical gap between rows in pixels
 ROW_START  = 30   # y-coordinate of the first row
 
@@ -39,8 +39,8 @@ LINE_WIDTH = 60   # character budget for the right column; dots fill to this wid
 ASCII_X = 15   # left edge of the ASCII portrait column
 STATS_X = 390  # left edge of the stats column
 
-# Stats rows: content goes to row 30 (y=630); SVG height adds bottom margin.
-STATS_ROWS = 31                                                        # total number of rows in the stats block
+# Stats rows: content goes to row 32 (y=670); SVG height adds bottom margin.
+STATS_ROWS = 33                                                        # total number of rows in the stats block
 SVG_HEIGHT = ROW_START + (STATS_ROWS - 1) * ROW_STEP + ROW_STEP + 20  # 650px total canvas height
 
 # ---------------------------------------------------------------------------
@@ -165,6 +165,53 @@ def get_commits_for_year(token: str, username: str, year: int) -> int:
                .get('contributionsCollection', {})
                .get('contributionCalendar', {})
                .get('totalContributions', 0))
+
+
+def get_streak(token: str, username: str) -> tuple[int, int]:
+    """Return (current_streak_days, longest_streak_days) from the past year's contribution calendar."""
+    data = graphql(token, """
+        query ($login: String!) {
+            user(login: $login) {
+                contributionsCollection {
+                    contributionCalendar {
+                        weeks {
+                            contributionDays {
+                                contributionCount
+                                date
+                            }
+                        }
+                    }
+                }
+            }
+        }""", {'login': username})
+    weeks = (data.get('user', {})
+                 .get('contributionsCollection', {})
+                 .get('contributionCalendar', {})
+                 .get('weeks', []))
+    days = sorted(
+        [(d['date'], d['contributionCount'])
+         for w in weeks for d in w.get('contributionDays', [])],
+        key=lambda x: x[0]
+    )
+    longest = current_run = 0
+    for _, count in days:
+        if count > 0:
+            current_run += 1
+            longest = max(longest, current_run)
+        else:
+            current_run = 0
+    # I don't penalise the streak if today has no contributions yet
+    today = datetime.date.today().isoformat()
+    days_to_check = [(d, c) for d, c in days if d <= today]
+    if days_to_check and days_to_check[-1][0] == today and days_to_check[-1][1] == 0:
+        days_to_check = days_to_check[:-1]
+    current = 0
+    for _, count in reversed(days_to_check):
+        if count > 0:
+            current += 1
+        else:
+            break
+    return current, longest
 
 
 def get_all_commits(token: str, username: str, creation_year: int) -> int:
@@ -325,6 +372,7 @@ def build_svg(
     commits: int, followers: int,
     prs: int, issues: int,
     loc_total: int, loc_add: int, loc_del: int,
+    current_streak: int, longest_streak: int,
     colors: dict,
 ) -> str:
 
@@ -357,7 +405,7 @@ def build_svg(
         trow(Y[0],  f'isaac@adjei {header_dashes}'),
 
         info_row(Y[1],  'Host',     'Aston University'),
-        info_row(Y[2],  'Location', 'Birmingham & London, UK'),
+        info_row(Y[2],  'Location', 'London & Birmingham, UK'),
         info_row(Y[3],  'Mode',     'Electronic Engineering and Computer Science'),
         info_row(Y[4],  'Kernel',   'Sleep deprived but functional'),
         info_row(Y[5],  'OS',       'Windows, macOS, Ubuntu, Linux'),
@@ -366,34 +414,36 @@ def build_svg(
         blank(Y[7]),
 
         info_row(Y[8],  'Languages.Programming', 'C, C++, Python, TypeScript, Rust'),
-        info_row(Y[9],  'Languages.Web',         'HTML, CSS, React, Next.js, Node.js'),
-        info_row(Y[10], 'Languages.Hardware',    'Embedded C, MATLAB, Assembly'),
-        info_row(Y[11], 'Languages.Real',        'English, French, Twi, Ga'),
+        info_row(Y[9],  'Languages.Web',         'HTML, CSS, PHP, React, Next.js'),
+        info_row(Y[10], 'Languages.Hardware',    'Embedded C, MATLAB, MicroPython, FPGA/VHDL'),
+        info_row(Y[11], 'Languages.Tools',       'Git, Docker, Bash'),
+        info_row(Y[12], 'Languages.Real',        'English, French, Twi, Ga'),
 
-        blank(Y[12]),
+        blank(Y[13]),
 
-        info_row(Y[13], 'Hobbies.Software', 'Web Dev, Open Source, Microcontrollers'),
-        info_row(Y[14], 'Hobbies.Hardware', 'Embedded Systems, PCB Design'),
-        info_row(Y[15], 'Hobbies.Tech',     'Cyber Security, AI/ML, DevOps, SQL'),
-        info_row(Y[16], 'Hobbies.General',  'Piano, Running, Gym, Cycling, Gaming'),
+        info_row(Y[14], 'Hobbies.Software', 'Full Stack, Open Source, Databases'),
+        info_row(Y[15], 'Hobbies.Hardware', 'Embedded Systems, Microcontrollers, PCB'),
+        info_row(Y[16], 'Hobbies.Tech',     'Cyber Security, AI/ML, DevOps, Hackathons'),
+        info_row(Y[17], 'Hobbies.General',  'Fitness, Piano, Gaming, Making'),
 
-        blank(Y[17]),
+        blank(Y[18]),
 
-        section_header(Y[18], 'Contact'),
-        info_row(Y[19], 'Portfolio',      'isaacadjei.me'),
-        info_row(Y[20], 'Email.Personal', 'hello@isaacadjei.me'),
-        info_row(Y[21], 'Email.Work',     'contact@isaacadjei.me'),
-        info_row(Y[22], 'LinkedIn',       'linkedin.com/in/isaacadjei'),
-        info_row(Y[23], 'Discord',        'zac.nii'),
+        section_header(Y[19], 'Contact'),
+        info_row(Y[20], 'Portfolio',      'isaacadjei.me'),
+        info_row(Y[21], 'Email.Personal', 'hello@isaacadjei.me'),
+        info_row(Y[22], 'Email.Work',     'contact@isaacadjei.me'),
+        info_row(Y[23], 'LinkedIn',       'linkedin.com/in/isaacadjei'),
+        info_row(Y[24], 'Discord',        'zac.nii'),
 
-        blank(Y[24]),
+        blank(Y[25]),
 
-        section_header(Y[25], 'GitHub Stats'),
-        repos_row(Y[26], repos, contributed, stars),
-        dual_row(Y[27],  'Commits',  fmt(commits),   'Followers', fmt(followers)),
-        dual_row(Y[28],  'PRs',      fmt(prs),        'Issues',    fmt(issues)),
-        loc_row(Y[29],   loc_total, loc_add, loc_del),
-        info_row(Y[30],  'Status',   'One bug away from greatness'),
+        section_header(Y[26], 'GitHub Stats'),
+        repos_row(Y[27], repos, contributed, stars),
+        dual_row(Y[28],  'Commits',   fmt(commits),        'Followers',     fmt(followers)),
+        dual_row(Y[29],  'PRs',       fmt(prs),            'Issues',        fmt(issues)),
+        loc_row(Y[30],   loc_total, loc_add, loc_del),
+        dual_row(Y[31],  'Streak.Current', f'{current_streak} days', 'Streak.Best', f'{longest_streak} days'),
+        info_row(Y[32],  'Status',   'One bug away from greatness'),
     ]
 
     ascii_block = '\n'.join(ascii_tspans)
@@ -458,17 +508,26 @@ def main() -> None:
         print(f'  Warning: {e}', file=sys.stderr)
         loc_add, loc_del, loc_total = 0, 0, 0
 
+    print('  Fetching streak stats...')
+    try:
+        current_streak, longest_streak = get_streak(token, username)
+    except Exception as e:
+        print(f'  Warning: {e}', file=sys.stderr)
+        current_streak, longest_streak = 0, 0
+
     print(f'  Repos: {repos} (Contributed: {contributed}) | Stars: {stars}')
     print(f'  Commits: {commits} | Followers: {followers}')
     print(f'  PRs: {prs} | Issues: {issues}')
     print(f'  LOC: {fmt(loc_total)} ({fmt(loc_add)}++, {fmt(loc_del)}--)')
+    print(f'  Streak: {current_streak} days current, {longest_streak} days best')
 
     for colors, fname in [(DARK, 'dark_mode.svg'), (LIGHT, 'light_mode.svg')]:  # generate both colour theme variants
         print(f'Generating {fname}...')
         svg = build_svg(ascii_rows,
                         repos, contributed, stars,
                         commits, followers, prs, issues,
-                        loc_total, loc_add, loc_del, colors)
+                        loc_total, loc_add, loc_del,
+                        current_streak, longest_streak, colors)
         with open(fname, 'w', encoding='utf-8') as f:
             f.write(svg)
     print('Done.')
