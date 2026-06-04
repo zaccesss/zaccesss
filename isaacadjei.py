@@ -34,7 +34,7 @@ ROW_STEP   = 20   # vertical gap between rows in pixels
 ROW_START  = 30   # y-coordinate of the first row
 
 # Right column char width: dots are calculated so every value ends here.
-LINE_WIDTH = 60   # character budget for the right column; dots fill to this width exactly
+LINE_WIDTH = 66   # character budget for the right column; dots fill to this width exactly
 
 ASCII_X = 15   # left edge of the ASCII portrait column
 STATS_X = 390  # left edge of the stats column
