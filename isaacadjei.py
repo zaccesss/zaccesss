@@ -416,7 +416,7 @@ def build_svg(
         info_row(Y[8],  'Languages.Programming', 'C, C++, Python, TypeScript, Rust'),
         info_row(Y[9],  'Languages.Web',         'HTML, CSS, PHP, React, Next.js'),
         info_row(Y[10], 'Languages.Hardware',    'Embedded C, MATLAB, MicroPython, FPGA/VHDL'),
-        info_row(Y[11], 'Languages.Tools',       'Git, Docker, Bash'),
+        info_row(Y[11], 'Languages.Tools',       'Git, Docker, Bash, Make, CI/CD'),
         info_row(Y[12], 'Languages.Real',        'English, French, Twi, Ga'),
 
         blank(Y[13]),
@@ -424,7 +424,7 @@ def build_svg(
         info_row(Y[14], 'Hobbies.Software', 'Full Stack, Open Source, Databases'),
         info_row(Y[15], 'Hobbies.Hardware', 'Embedded Systems, Microcontrollers, PCB'),
         info_row(Y[16], 'Hobbies.Tech',     'Cyber Security, AI/ML, DevOps, Hackathons'),
-        info_row(Y[17], 'Hobbies.General',  'Fitness, Piano, Gaming, Making'),
+        info_row(Y[17], 'Hobbies.General',  'Fitness, Travel, Piano, Reading, Gaming'),
 
         blank(Y[18]),
 
