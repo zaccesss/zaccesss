@@ -36,8 +36,8 @@ ROW_START  = 30   # y-coordinate of the first row
 # Right column char width: dots are calculated so every value ends here.
 LINE_WIDTH = 66   # character budget for the right column; dots fill to this width exactly
 
-ASCII_X = 15   # left edge of the ASCII portrait column
-STATS_X = 390  # left edge of the stats column
+ASCII_X = 35   # left edge of the ASCII portrait column
+STATS_X = 410  # left edge of the stats column
 
 # Stats rows: content goes to row 32 (y=670); SVG height adds bottom margin.
 STATS_ROWS = 33                                                        # total number of rows in the stats block
@@ -337,30 +337,38 @@ def section_header(y: int, title: str) -> str:
 def blank(y: int) -> str:
     return trow(y, '')
 
+PIPE_LEFT = 36  # chars from line-start to the space before ' | '; pins | column
+
 def dual_row(y: int, lbl1: str, v1: str, lbl2: str, v2: str) -> str:
-    """Two key-value pairs on one line, dots split evenly between both sides."""
-    total = max(3, LINE_WIDTH - 2 - len(lbl1) - 2 - 1 - len(v1)
-                - 3 - len(lbl2) - 2 - 1 - len(v2))
-    d1 = total // 2   # first half of the dot run
-    d2 = total - d1   # second half absorbs any odd remainder
+    """Two key-value pairs with the | separator pinned to column PIPE_LEFT."""
+    d1 = max(1, PIPE_LEFT - 5 - len(lbl1) - len(v1))
+    d2 = max(1, LINE_WIDTH - PIPE_LEFT - 6 - len(lbl2) - len(v2))
     return trow(y,
         cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
         cc(' | ') + key(lbl2) + cc(f': {"."*d2} ') + val(v2))
 
-def repos_row(y: int, repos: int, contributed: int, stars: int) -> str:
-    """Repos row with contributed count in braces alongside stars."""
-    v1 = f'{fmt(repos)} {{Contributed: {fmt(contributed)}}}'
-    return dual_row(y, 'Repos', v1, 'Stars', fmt(stars))
+def repos_commits_row(y: int, repos: int, contributed: int, commits: int) -> str:
+    """Repos (with key-coloured Contributed) paired with Commits."""
+    v1_plain = f'{fmt(repos)} {{Contributed: {fmt(contributed)}}}'
+    d1 = max(1, PIPE_LEFT - 5 - len('Repos') - len(v1_plain))
+    d2 = max(1, LINE_WIDTH - PIPE_LEFT - 6 - len('Commits') - len(fmt(commits)))
+    v1_svg = (f'<tspan class="value">{esc(fmt(repos))} {{'
+              f'<tspan class="key">Contributed</tspan>: {esc(fmt(contributed))}}}</tspan>')
+    return trow(y,
+        cc('. ') + key('Repos') + cc(f': {"."*d1} ') + v1_svg +
+        cc(' | ') + key('Commits') + cc(f': {"."*d2} ') + val(fmt(commits)))
 
-def loc_row(y: int, total: int, add: int, delete: int) -> str:
-    """Lines of Code with coloured add/del; dots calculated from full text."""
-    full_text = f'{fmt(total)} ( {fmt(add)}++, {fmt(delete)}-- )'
-    d = pad_dots('Lines of Code', full_text)
-    body = (f'<tspan class="value">{esc(fmt(total))} ( '
-            f'<tspan class="addColor">{esc(fmt(add))}</tspan>++, '
-            f'<tspan class="delColor">{esc(fmt(delete))}</tspan>-- )'
-            f'</tspan>')
-    return trow(y, cc('. ') + key('Lines of Code') + cc(f': {d} ') + body)
+def loc_dual_row(y: int, total: int, add: int, delete: int) -> str:
+    """Lines of Code on left, coloured add/del breakdown on right after |."""
+    net_str = fmt(total)
+    add_str = fmt(add)
+    del_str = fmt(delete)
+    d1 = max(1, PIPE_LEFT - 5 - len('Lines of Code') - len(net_str))
+    rhs = (f'( <tspan class="addColor">{esc(add_str)}</tspan>++, '
+           f'<tspan class="delColor">{esc(del_str)}</tspan>-- )')
+    return trow(y,
+        cc('. ') + key('Lines of Code') + cc(f': {"."*d1} ') + val(net_str) +
+        cc(' | ') + rhs)
 
 # ---------------------------------------------------------------------------
 # SVG builder
@@ -413,37 +421,37 @@ def build_svg(
 
         blank(Y[7]),
 
-        info_row(Y[8],  'Languages.Programming', 'C, C++, Python, TypeScript, Rust'),
-        info_row(Y[9],  'Languages.Web',         'HTML, CSS, PHP, React, Next.js'),
-        info_row(Y[10], 'Languages.Hardware',    'Embedded C, MATLAB, MicroPython, FPGA/VHDL'),
-        info_row(Y[11], 'Languages.Tools',       'Git, Docker, Bash, Make, CI/CD'),
+        info_row(Y[8],  'Languages.Web',          'HTML, CSS, PHP, React, Next.js'),
+        info_row(Y[9],  'Languages.Software',    'C, C++, Python, TypeScript, Rust'),
+        info_row(Y[10], 'Languages.Hardware',    'Embed C, MATLAB, MicroPy, FPGA/VHDL'),
+        info_row(Y[11], 'Languages.Tools',       'Git, Shell, Bash, Docker, Make, CI/CD'),
         info_row(Y[12], 'Languages.Real',        'English, French, Twi, Ga'),
 
         blank(Y[13]),
 
-        info_row(Y[14], 'Hobbies.Software', 'Full Stack, Open Source, Databases'),
-        info_row(Y[15], 'Hobbies.Hardware', 'Embedded Systems, Microcontrollers, PCB'),
-        info_row(Y[16], 'Hobbies.Tech',     'Cyber Security, AI/ML, DevOps, Hackathons'),
+        info_row(Y[14], 'Hobbies.Tech',      'CyberSec, AI/ML, DevOps, Cloud'),
+        info_row(Y[15], 'Hobbies.Software',  'Full Stack, Databases, Open Source'),
+        info_row(Y[16], 'Hobbies.Hardware',  'Embed Systems, MCUs, PCB, Robotics'),
         info_row(Y[17], 'Hobbies.General',  'Fitness, Travel, Piano, Reading, Gaming'),
+        info_row(Y[18], 'Hobbies.Status',   'rm -rf impostor_syndrome && touch grass'),
 
-        blank(Y[18]),
+        blank(Y[19]),
 
-        section_header(Y[19], 'Contact'),
-        info_row(Y[20], 'Portfolio',      'isaacadjei.me'),
-        info_row(Y[21], 'Email.Personal', 'hello@isaacadjei.me'),
-        info_row(Y[22], 'Email.Work',     'contact@isaacadjei.me'),
-        info_row(Y[23], 'LinkedIn',       'linkedin.com/in/isaacadjei'),
-        info_row(Y[24], 'Discord',        'zac.nii'),
+        section_header(Y[20], 'Contact'),
+        info_row(Y[21], 'Portfolio',      'isaacadjei.me'),
+        info_row(Y[22], 'Email.Personal', 'hello@isaacadjei.me'),
+        info_row(Y[23], 'Email.Work',     'contact@isaacadjei.me'),
+        info_row(Y[24], 'LinkedIn',       'linkedin.com/in/isaacadjei'),
+        info_row(Y[25], 'Discord',        'zac.nii'),
 
-        blank(Y[25]),
+        blank(Y[26]),
 
-        section_header(Y[26], 'GitHub Stats'),
-        repos_row(Y[27], repos, contributed, stars),
-        dual_row(Y[28],  'Commits',   fmt(commits),        'Followers',     fmt(followers)),
-        dual_row(Y[29],  'PRs',       fmt(prs),            'Issues',        fmt(issues)),
-        loc_row(Y[30],   loc_total, loc_add, loc_del),
+        section_header(Y[27], 'Git Stats'),
+        repos_commits_row(Y[28], repos, contributed, commits),
+        dual_row(Y[29],  'Followers',      fmt(followers),            'Stars',       fmt(stars)),
+        dual_row(Y[30],  'PRs',            fmt(prs),                  'Issues',      fmt(issues)),
         dual_row(Y[31],  'Streak.Current', f'{current_streak} days', 'Streak.Best', f'{longest_streak} days'),
-        info_row(Y[32],  'Status',   'One bug away from greatness'),
+        loc_dual_row(Y[32], loc_total, loc_add, loc_del),
     ]
 
     ascii_block = '\n'.join(ascii_tspans)
