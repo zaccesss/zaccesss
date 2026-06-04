@@ -52,12 +52,13 @@ jobs:
       # Commit the freshly generated SVGs back to my repo under my own name.
       # The diff check means I only commit when something actually changed.
       # I push to GitHub first (using the token actions/checkout already configured),
-      # then mirror the same HEAD to GitLab and Codeberg by pushing directly to their URLs.
+      # then mirror the same HEAD to GitLab, Codeberg, and Gitea by pushing directly to their URLs.
       # Using set-url --add --push would drop GitHub from the push list, so I avoid it here.
       - name: Commit and push updated SVGs
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
           CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+          GITEA_TOKEN: ${{ secrets.GITEA_TOKEN }}
         run: |
           git config --global user.email "offices.isaac@gmail.com"
           git config --global user.name "Isaac Adjei"
@@ -66,3 +67,4 @@ jobs:
           git push origin HEAD:main
           git push "https://zaccesss:${GITLAB_TOKEN}@gitlab.com/zaccesss/zaccesss.git" HEAD:main
           git push "https://zaccesss:${CODEBERG_TOKEN}@codeberg.org/zaccesss/zaccesss.git" HEAD:main
+          git push "https://zaccesss:${GITEA_TOKEN}@gitea.com/zaccesss/zaccesss.git" HEAD:main
