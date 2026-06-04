@@ -54,38 +54,38 @@
   </text>
   <!-- Stats block -->
   <text x="390" y="30" fill="#24292f" style="white-space:pre;">
-    <tspan x="390" y="30">isaac@adjei -----------------------------------------------</tspan>
-    <tspan x="390" y="50"><tspan class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">: ................................... </tspan><tspan class="value">Aston University</tspan></tspan>
-    <tspan x="390" y="70"><tspan class="cc">. </tspan><tspan class="key">Location</tspan><tspan class="cc">: ........................ </tspan><tspan class="value">London &amp; Birmingham, UK</tspan></tspan>
-    <tspan x="390" y="90"><tspan class="cc">. </tspan><tspan class="key">Mode</tspan><tspan class="cc">: ........ </tspan><tspan class="value">Electronic Engineering and Computer Science</tspan></tspan>
-    <tspan x="390" y="110"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">: .................... </tspan><tspan class="value">Sleep deprived but functional</tspan></tspan>
-    <tspan x="390" y="130"><tspan class="cc">. </tspan><tspan class="key">OS</tspan><tspan class="cc">: ........................ </tspan><tspan class="value">Windows, macOS, Ubuntu, Linux</tspan></tspan>
-    <tspan x="390" y="150"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">: ......... </tspan><tspan class="value">JetBrains, VS Code, Visual/Microchip Studio</tspan></tspan>
+    <tspan x="390" y="30">isaac@adjei -----------------------------------------------------</tspan>
+    <tspan x="390" y="50"><tspan class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">: ......................................... </tspan><tspan class="value">Aston University</tspan></tspan>
+    <tspan x="390" y="70"><tspan class="cc">. </tspan><tspan class="key">Location</tspan><tspan class="cc">: .............................. </tspan><tspan class="value">London &amp; Birmingham, UK</tspan></tspan>
+    <tspan x="390" y="90"><tspan class="cc">. </tspan><tspan class="key">Mode</tspan><tspan class="cc">: .............. </tspan><tspan class="value">Electronic Engineering and Computer Science</tspan></tspan>
+    <tspan x="390" y="110"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">: .......................... </tspan><tspan class="value">Sleep deprived but functional</tspan></tspan>
+    <tspan x="390" y="130"><tspan class="cc">. </tspan><tspan class="key">OS</tspan><tspan class="cc">: .............................. </tspan><tspan class="value">Windows, macOS, Ubuntu, Linux</tspan></tspan>
+    <tspan x="390" y="150"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">: ............... </tspan><tspan class="value">JetBrains, VS Code, Visual/Microchip Studio</tspan></tspan>
     <tspan x="390" y="170"></tspan>
-    <tspan x="390" y="190"><tspan class="cc">. </tspan><tspan class="key">Languages.Programming</tspan><tspan class="cc">: .. </tspan><tspan class="value">C, C++, Python, TypeScript, Rust</tspan></tspan>
-    <tspan x="390" y="210"><tspan class="cc">. </tspan><tspan class="key">Languages.Web</tspan><tspan class="cc">: ............ </tspan><tspan class="value">HTML, CSS, PHP, React, Next.js</tspan></tspan>
+    <tspan x="390" y="190"><tspan class="cc">. </tspan><tspan class="key">Languages.Programming</tspan><tspan class="cc">: ........ </tspan><tspan class="value">C, C++, Python, TypeScript, Rust</tspan></tspan>
+    <tspan x="390" y="210"><tspan class="cc">. </tspan><tspan class="key">Languages.Web</tspan><tspan class="cc">: .................. </tspan><tspan class="value">HTML, CSS, PHP, React, Next.js</tspan></tspan>
     <tspan x="390" y="230"><tspan class="cc">. </tspan><tspan class="key">Languages.Hardware</tspan><tspan class="cc">: . </tspan><tspan class="value">Embedded C, MATLAB, MicroPython, FPGA/VHDL</tspan></tspan>
-    <tspan x="390" y="250"><tspan class="cc">. </tspan><tspan class="key">Languages.Tools</tspan><tspan class="cc">: ....................... </tspan><tspan class="value">Git, Docker, Bash</tspan></tspan>
-    <tspan x="390" y="270"><tspan class="cc">. </tspan><tspan class="key">Languages.Real</tspan><tspan class="cc">: ................. </tspan><tspan class="value">English, French, Twi, Ga</tspan></tspan>
+    <tspan x="390" y="250"><tspan class="cc">. </tspan><tspan class="key">Languages.Tools</tspan><tspan class="cc">: ............................. </tspan><tspan class="value">Git, Docker, Bash</tspan></tspan>
+    <tspan x="390" y="270"><tspan class="cc">. </tspan><tspan class="key">Languages.Real</tspan><tspan class="cc">: ....................... </tspan><tspan class="value">English, French, Twi, Ga</tspan></tspan>
     <tspan x="390" y="290"></tspan>
-    <tspan x="390" y="310"><tspan class="cc">. </tspan><tspan class="key">Hobbies.Software</tspan><tspan class="cc">: ..... </tspan><tspan class="value">Full Stack, Open Source, Databases</tspan></tspan>
-    <tspan x="390" y="330"><tspan class="cc">. </tspan><tspan class="key">Hobbies.Hardware</tspan><tspan class="cc">: . </tspan><tspan class="value">Embedded Systems, Microcontrollers, PCB</tspan></tspan>
-    <tspan x="390" y="350"><tspan class="cc">. </tspan><tspan class="key">Hobbies.Tech</tspan><tspan class="cc">: .. </tspan><tspan class="value">Cyber Security, AI/ML, DevOps, Hackathons</tspan></tspan>
-    <tspan x="390" y="370"><tspan class="cc">. </tspan><tspan class="key">Hobbies.General</tspan><tspan class="cc">: .......... </tspan><tspan class="value">Fitness, Piano, Gaming, Making</tspan></tspan>
+    <tspan x="390" y="310"><tspan class="cc">. </tspan><tspan class="key">Hobbies.Software</tspan><tspan class="cc">: ........... </tspan><tspan class="value">Full Stack, Open Source, Databases</tspan></tspan>
+    <tspan x="390" y="330"><tspan class="cc">. </tspan><tspan class="key">Hobbies.Hardware</tspan><tspan class="cc">: ...... </tspan><tspan class="value">Embedded Systems, Microcontrollers, PCB</tspan></tspan>
+    <tspan x="390" y="350"><tspan class="cc">. </tspan><tspan class="key">Hobbies.Tech</tspan><tspan class="cc">: ........ </tspan><tspan class="value">Cyber Security, AI/ML, DevOps, Hackathons</tspan></tspan>
+    <tspan x="390" y="370"><tspan class="cc">. </tspan><tspan class="key">Hobbies.General</tspan><tspan class="cc">: ................ </tspan><tspan class="value">Fitness, Piano, Gaming, Making</tspan></tspan>
     <tspan x="390" y="390"></tspan>
-    <tspan x="390" y="410">- Contact --------------------------------------------------</tspan>
-    <tspan x="390" y="430"><tspan class="cc">. </tspan><tspan class="key">Portfolio</tspan><tspan class="cc">: ................................. </tspan><tspan class="value">isaacadjei.me</tspan></tspan>
-    <tspan x="390" y="450"><tspan class="cc">. </tspan><tspan class="key">Email.Personal</tspan><tspan class="cc">: ...................... </tspan><tspan class="value">hello@isaacadjei.me</tspan></tspan>
-    <tspan x="390" y="470"><tspan class="cc">. </tspan><tspan class="key">Email.Work</tspan><tspan class="cc">: ........................ </tspan><tspan class="value">contact@isaacadjei.me</tspan></tspan>
-    <tspan x="390" y="490"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">: ..................... </tspan><tspan class="value">linkedin.com/in/isaacadjei</tspan></tspan>
-    <tspan x="390" y="510"><tspan class="cc">. </tspan><tspan class="key">Discord</tspan><tspan class="cc">: ......................................... </tspan><tspan class="value">zac.nii</tspan></tspan>
+    <tspan x="390" y="410">- Contact --------------------------------------------------------</tspan>
+    <tspan x="390" y="430"><tspan class="cc">. </tspan><tspan class="key">Portfolio</tspan><tspan class="cc">: ....................................... </tspan><tspan class="value">isaacadjei.me</tspan></tspan>
+    <tspan x="390" y="450"><tspan class="cc">. </tspan><tspan class="key">Email.Personal</tspan><tspan class="cc">: ............................ </tspan><tspan class="value">hello@isaacadjei.me</tspan></tspan>
+    <tspan x="390" y="470"><tspan class="cc">. </tspan><tspan class="key">Email.Work</tspan><tspan class="cc">: .............................. </tspan><tspan class="value">contact@isaacadjei.me</tspan></tspan>
+    <tspan x="390" y="490"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">: ........................... </tspan><tspan class="value">linkedin.com/in/isaacadjei</tspan></tspan>
+    <tspan x="390" y="510"><tspan class="cc">. </tspan><tspan class="key">Discord</tspan><tspan class="cc">: ............................................... </tspan><tspan class="value">zac.nii</tspan></tspan>
     <tspan x="390" y="530"></tspan>
-    <tspan x="390" y="550">- GitHub Stats ---------------------------------------------</tspan>
-    <tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ......... </tspan><tspan class="value">22 {Contributed: 0}</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan><tspan class="cc">: .......... </tspan><tspan class="value">2</tspan></tspan>
-    <tspan x="390" y="590"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............. </tspan><tspan class="value">2,038</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan><tspan class="cc">: ............. </tspan><tspan class="value">10</tspan></tspan>
-    <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: ................. </tspan><tspan class="value">425</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: .................. </tspan><tspan class="value">72</tspan></tspan>
-    <tspan x="390" y="630"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: .......... </tspan><tspan class="value">327,032 ( <tspan class="addColor">479,298</tspan>++, <tspan class="delColor">152,266</tspan>-- )</tspan></tspan>
-    <tspan x="390" y="650"><tspan class="cc">. </tspan><tspan class="key">Streak.Current</tspan><tspan class="cc">: ..... </tspan><tspan class="value">43 days</tspan><tspan class="cc"> | </tspan><tspan class="key">Streak.Best</tspan><tspan class="cc">: ..... </tspan><tspan class="value">43 days</tspan></tspan>
-    <tspan x="390" y="670"><tspan class="cc">. </tspan><tspan class="key">Status</tspan><tspan class="cc">: ...................... </tspan><tspan class="value">One bug away from greatness</tspan></tspan>
+    <tspan x="390" y="550">- GitHub Stats ---------------------------------------------------</tspan>
+    <tspan x="390" y="570"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ............ </tspan><tspan class="value">22 {Contributed: 0}</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan><tspan class="cc">: ............. </tspan><tspan class="value">2</tspan></tspan>
+    <tspan x="390" y="590"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ................ </tspan><tspan class="value">2,040</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan><tspan class="cc">: ................ </tspan><tspan class="value">10</tspan></tspan>
+    <tspan x="390" y="610"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: .................... </tspan><tspan class="value">425</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: ..................... </tspan><tspan class="value">72</tspan></tspan>
+    <tspan x="390" y="630"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: ................ </tspan><tspan class="value">327,032 ( <tspan class="addColor">479,309</tspan>++, <tspan class="delColor">152,277</tspan>-- )</tspan></tspan>
+    <tspan x="390" y="650"><tspan class="cc">. </tspan><tspan class="key">Streak.Current</tspan><tspan class="cc">: ........ </tspan><tspan class="value">43 days</tspan><tspan class="cc"> | </tspan><tspan class="key">Streak.Best</tspan><tspan class="cc">: ........ </tspan><tspan class="value">43 days</tspan></tspan>
+    <tspan x="390" y="670"><tspan class="cc">. </tspan><tspan class="key">Status</tspan><tspan class="cc">: ............................ </tspan><tspan class="value">One bug away from greatness</tspan></tspan>
   </text>
 </svg>
