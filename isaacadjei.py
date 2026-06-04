@@ -29,7 +29,7 @@ GRAPHQL_URL    = 'https://api.github.com/graphql'  # GitHub GraphQL endpoint
 # Portrait dimensions (rows must match ascii_final.txt line count)
 ASCII_ROWS = 30  # must match the line count of ascii_final.txt
 
-SVG_WIDTH  = 1040  # total canvas width in pixels
+SVG_WIDTH  = 1080  # total canvas width in pixels
 ROW_STEP   = 20   # vertical gap between rows in pixels
 ROW_START  = 30   # y-coordinate of the first row
 
