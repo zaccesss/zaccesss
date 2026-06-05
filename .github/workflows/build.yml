@@ -68,10 +68,20 @@ jobs:
           git add dark_mode.svg light_mode.svg
           git diff --staged --quiet || git commit -m "chore: update profile SVG"
           git push origin HEAD:main
-          git push "https://zaccesss:${GITLAB_TOKEN}@gitlab.com/zaccesss/zaccesss.git" HEAD:main
-          git push "https://zaccesss:${CODEBERG_TOKEN}@codeberg.org/zaccesss/zaccesss.git" HEAD:main
+          # GitLab: unprotect main, force-push, reprotect
+          GL_PROJECT_ID=$(curl -s -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" \
+            "https://gitlab.com/api/v4/projects/zaccesss%2Fzaccesss" | jq -r '.id')
+          curl -s -X DELETE -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" \
+            "https://gitlab.com/api/v4/projects/${GL_PROJECT_ID}/protected_branches/main" > /dev/null
+          git push --force "https://zaccesss:${GITLAB_TOKEN}@gitlab.com/zaccesss/zaccesss.git" HEAD:main
+          curl -s -X POST -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" \
+            "https://gitlab.com/api/v4/projects/${GL_PROJECT_ID}/protected_branches" \
+            -d "name=main&push_access_level=40&merge_access_level=40" > /dev/null
+          # Codeberg: force-push (no branch protection issues)
+          git push --force "https://zaccesss:${CODEBERG_TOKEN}@codeberg.org/zaccesss/zaccesss.git" HEAD:main
+          # Gitea: force-push via SSH
           echo "$GITEA_SSH_KEY" > /tmp/gitea_key
           chmod 600 /tmp/gitea_key
           mkdir -p ~/.ssh && ssh-keyscan -H gitea.com >> ~/.ssh/known_hosts 2>/dev/null
-          GIT_SSH_COMMAND="ssh -i /tmp/gitea_key" git push git@gitea.com:zaccesss/zaccesss.git HEAD:main
+          GIT_SSH_COMMAND="ssh -i /tmp/gitea_key" git push --force git@gitea.com:zaccesss/zaccesss.git HEAD:main
           rm /tmp/gitea_key
