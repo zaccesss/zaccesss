@@ -359,13 +359,18 @@ def repos_commits_row(y: int, repos: int, contributed: int, commits: int) -> str
         cc(' | ') + key('Commits') + cc(f': {"."*d2} ') + val(fmt(commits)))
 
 def loc_dual_row(y: int, total: int, add: int, delete: int) -> str:
-    """Lines of Code on left, coloured add/del breakdown on right after |."""
+    """Lines of Code on left, add/del breakdown on right with ) aligned to right edge."""
     net_str = fmt(total)
     add_str = fmt(add)
     del_str = fmt(delete)
     d1 = max(1, PIPE_LEFT - 5 - len('Lines of Code') - len(net_str))
-    rhs = (f'( <tspan class="addColor">{esc(add_str)}</tspan>++, '
-           f'<tspan class="delColor">{esc(del_str)}</tspan>-- )')
+    right_chars = LINE_WIDTH - PIPE_LEFT - 3
+    inner = f'{add_str}++, {del_str}--'
+    total_pad = right_chars - 2 - len(inner)
+    lp = ' ' * (total_pad // 2)
+    rp = ' ' * (total_pad - total_pad // 2)
+    rhs = (f'({lp}<tspan class="addColor">{esc(add_str)}</tspan>++, '
+           f'<tspan class="delColor">{esc(del_str)}</tspan>--{rp})')
     return trow(y,
         cc('. ') + key('Lines of Code') + cc(f': {"."*d1} ') + val(net_str) +
         cc(' | ') + rhs)
@@ -438,11 +443,11 @@ def build_svg(
         blank(Y[19]),
 
         section_header(Y[20], 'Contact'),
-        info_row(Y[21], 'Portfolio',      'isaacadjei.me'),
-        info_row(Y[22], 'Email.Personal', 'hello@isaacadjei.me'),
-        info_row(Y[23], 'Email.Work',     'contact@isaacadjei.me'),
-        info_row(Y[24], 'LinkedIn',       'linkedin.com/in/isaacadjei'),
-        info_row(Y[25], 'Discord',        'zac.nii'),
+        info_row(Y[21], 'Discord',        'zac.nii'),
+        info_row(Y[22], 'Portfolio',      'isaacadjei.me'),
+        info_row(Y[23], 'Email.Personal', 'hello@isaacadjei.me'),
+        info_row(Y[24], 'Email.Work',     'contact@isaacadjei.me'),
+        info_row(Y[25], 'LinkedIn',       'linkedin.com/in/isaacadjei'),
 
         blank(Y[26]),
 
@@ -450,7 +455,7 @@ def build_svg(
         repos_commits_row(Y[28], repos, contributed, commits),
         dual_row(Y[29],  'Followers',      fmt(followers),            'Stars',       fmt(stars)),
         dual_row(Y[30],  'PRs',            fmt(prs),                  'Issues',      fmt(issues)),
-        dual_row(Y[31],  'Streak.Current', f'{current_streak} days', 'Streak.Best', f'{longest_streak} days'),
+        dual_row(Y[31],  'Streak.Best', f'{longest_streak} days', 'Streak.Current', f'{current_streak} days'),
         loc_dual_row(Y[32], loc_total, loc_add, loc_del),
     ]
 
