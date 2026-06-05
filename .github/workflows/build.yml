@@ -61,7 +61,7 @@ jobs:
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
           CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
-          GITEA_TOKEN: ${{ secrets.GITEA_TOKEN }}
+          GITEA_SSH_KEY: ${{ secrets.GITEA_SSH_KEY }}
         run: |
           git config --global user.email "offices.isaac@gmail.com"
           git config --global user.name "Isaac Adjei"
@@ -70,4 +70,8 @@ jobs:
           git push origin HEAD:main
           git push "https://zaccesss:${GITLAB_TOKEN}@gitlab.com/zaccesss/zaccesss.git" HEAD:main
           git push "https://zaccesss:${CODEBERG_TOKEN}@codeberg.org/zaccesss/zaccesss.git" HEAD:main
-          git push "https://zaccesss:${GITEA_TOKEN}@gitea.com/zaccesss/zaccesss.git" HEAD:main
+          echo "$GITEA_SSH_KEY" > /tmp/gitea_key
+          chmod 600 /tmp/gitea_key
+          mkdir -p ~/.ssh && ssh-keyscan -H gitea.com >> ~/.ssh/known_hosts 2>/dev/null
+          GIT_SSH_COMMAND="ssh -i /tmp/gitea_key" git push git@gitea.com:zaccesss/zaccesss.git HEAD:main
+          rm /tmp/gitea_key
