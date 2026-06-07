@@ -426,11 +426,11 @@ def build_svg(
 
         blank(Y[7]),
 
-        info_row(Y[8],  'Languages.Web',          'HTML, CSS, PHP, React, Next.js'),
+        info_row(Y[8],  'Languages.Tools',       'Git, Shell, Bash, Docker, Make, CI/CD'),
         info_row(Y[9],  'Languages.Software',    'C, C++, Python, TypeScript, Rust'),
-        info_row(Y[10], 'Languages.Hardware',    'Embed C, MATLAB, MicroPy, FPGA/VHDL'),
-        info_row(Y[11], 'Languages.Tools',       'Git, Shell, Bash, Docker, Make, CI/CD'),
-        info_row(Y[12], 'Languages.Real',        'English, French, Twi, Ga'),
+        info_row(Y[10], 'Languages.Hardware',    'Embedded C, MATLAB, MicroPy, FPGA/VHDL'),
+        info_row(Y[11], 'Languages.Web',          'HTML, CSS, PHP/Laravel, React, Next.js'),
+        info_row(Y[12], 'Languages.Spoken',        'English, French, Twi, Ga'),
 
         blank(Y[13]),
 
