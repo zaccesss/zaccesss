@@ -15,7 +15,8 @@
   <source media="(prefers-color-scheme: light)" srcset="light_mode.svg?v=2">
   <img alt="Isaac Adjei's GitHub Profile" src="dark_mode.svg?v=2" width="100%">
 </picture>
-<!-- I'm keeping these SVGs but muting them for now - uncomment to restore
+<!-- I'm keeping these SVGs but muting them for now - I'll uncomment when i want to restore them later -->
+<!--
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="approach_dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="approach_light.svg">
