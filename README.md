@@ -7,6 +7,10 @@
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/blog">Blog</a>
   &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/newsletter">Newsletter</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/now">Now</a>
+  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/links">Links</a>
 </p>
 
