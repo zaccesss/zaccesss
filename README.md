@@ -3,8 +3,6 @@
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/projects">Projects</a>
   &nbsp;&bull;&nbsp;
-  <a href="https://isaacadjei.me/contact">Contact</a>
-  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/blog">Blog</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/newsletter">Newsletter</a>
@@ -12,6 +10,8 @@
   <a href="https://isaacadjei.me/now">Now</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/links">Links</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/contact">Contact</a>
 </p>
 
 <picture>
