@@ -62,6 +62,19 @@ jobs:
           git config --global user.name "Isaac Adjei"
           git add dark_mode.svg light_mode.svg
           git diff --staged --quiet || git commit -m "chore: update profile SVG"
-          git push origin HEAD:main
+          # Retry with a rebase if the remote moved ahead while we were running
+          # (a concurrent push or an overlapping scheduled run). The SVG commit is
+          # a leaf change, so rebasing it onto the new tip is always clean.
+          # 'if git push' keeps a failed push from tripping 'set -e' mid-loop.
+          pushed=false
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then pushed=true; break; fi
+            echo "Push rejected (attempt ${attempt}); rebasing on origin/main and retrying..."
+            git pull --rebase origin main
+          done
+          if [ "$pushed" != true ]; then
+            echo "::error::Failed to push updated SVGs after 5 attempts."
+            exit 1
+          fi
           # Mirroring to GitLab, Codeberg, Bitbucket and Gitea is handled
           # server-side by the mirror-ops setup, so no mirror pushes happen here.
