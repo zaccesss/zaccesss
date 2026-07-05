@@ -13,6 +13,12 @@ on:
 permissions:
   contents: write
 
+# Only one build runs at a time. Overlapping runs regenerate the same two SVGs
+# and would otherwise race each other's push; queueing them avoids that.
+concurrency:
+  group: readme-build
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -61,16 +67,28 @@ jobs:
           git config --global user.email "190771985+zaccesss@users.noreply.github.com"
           git config --global user.name "Isaac Adjei"
           git add dark_mode.svg light_mode.svg
-          git diff --staged --quiet || git commit -m "chore: update profile SVG"
-          # Retry with a rebase if the remote moved ahead while we were running
-          # (a concurrent push or an overlapping scheduled run). The SVG commit is
-          # a leaf change, so rebasing it onto the new tip is always clean.
+          if git diff --staged --quiet; then
+            echo "SVGs unchanged; nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore: update profile SVG"
+          # If the remote moved ahead while we were running, replant our freshly
+          # generated SVGs on top of the new tip and retry. We regenerate the whole
+          # SVG each run, so ours is the authoritative newest version — 'reset --soft'
+          # onto origin/main re-commits our files cleanly with no line-level conflict.
           # 'if git push' keeps a failed push from tripping 'set -e' mid-loop.
           pushed=false
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then pushed=true; break; fi
-            echo "Push rejected (attempt ${attempt}); rebasing on origin/main and retrying..."
-            git pull --rebase origin main
+            echo "Push rejected (attempt ${attempt}); replanting SVGs on latest origin/main..."
+            git fetch origin main
+            git reset --soft origin/main
+            if git diff --staged --quiet; then
+              echo "Remote already matches our SVGs; nothing to push."
+              pushed=true
+              break
+            fi
+            git commit -m "chore: update profile SVG"
           done
           if [ "$pushed" != true ]; then
             echo "::error::Failed to push updated SVGs after 5 attempts."
