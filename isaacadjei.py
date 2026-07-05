@@ -237,7 +237,7 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
             query ($login: String!, $cursor: String) {
                 user(login: $login) {
                     repositories(first: 100, after: $cursor,
-                                 ownerAffiliations: OWNER, isFork: false) {
+                                 ownerAffiliations: [OWNER, ORGANIZATION_MEMBER], isFork: false) {
                         nodes { nameWithOwner isEmpty defaultBranchRef { name } }
                         pageInfo { hasNextPage endCursor }
                     }
@@ -273,6 +273,10 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
     add, delete = 0, 0
     for repo in repos:
         owner, name = repo.split('/', 1)
+        # Only in my own repos do I credit unlinked terminal commits (they're mine).
+        # In org/shared repos an unlinked commit could be someone else's, so there
+        # I require the commit to be authored by me.
+        is_own_repo = owner.lower() == username.lower()
         cursor = None
         try:
             while True:
@@ -284,8 +288,7 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
                                .get('history', {}))
                 for c in history.get('nodes', []):
                     login = ((c.get('author') or {}).get('user') or {}).get('login', '')
-                    # count commits with no linked GitHub user (terminal pushes) and own linked commits
-                    if not login or login.lower() == username.lower():
+                    if login.lower() == username.lower() or (is_own_repo and not login):
                         add    += c.get('additions', 0)
                         delete += c.get('deletions', 0)
                 page = history.get('pageInfo', {})
