@@ -27,19 +27,19 @@ jobs:
       # Check out my repo so the workflow has access to my files.
       # fetch-depth: 0 gives a full clone — Gitea rejects shallow pushes to new repos.
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       # I'm using Python 3.12 to run my SVG generator script.
       - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
       # Cache pip downloads so my builds are faster on repeat runs.
       - name: Cache pip
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
