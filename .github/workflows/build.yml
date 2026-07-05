@@ -54,34 +54,14 @@ jobs:
 
       # Commit the freshly generated SVGs back to my repo under my own name.
       # The diff check means I only commit when something actually changed.
-      # I push to GitHub first (using the token actions/checkout already configured),
-      # then mirror the same HEAD to GitLab, Codeberg, and Gitea by pushing directly to their URLs.
-      # Using set-url --add --push would drop GitHub from the push list, so I avoid it here.
+      # I push to GitHub (using the token actions/checkout already configured);
+      # mirroring to the other forges is handled server-side by mirror-ops.
       - name: Commit and push updated SVGs
-        env:
-          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
-          GITEA_SSH_KEY: ${{ secrets.GITEA_SSH_KEY }}
         run: |
           git config --global user.email "190771985+zaccesss@users.noreply.github.com"
           git config --global user.name "Isaac Adjei"
           git add dark_mode.svg light_mode.svg
           git diff --staged --quiet || git commit -m "chore: update profile SVG"
           git push origin HEAD:main
-          # GitLab: unprotect main, force-push, reprotect
-          GL_PROJECT_ID=$(curl -s -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" \
-            "https://gitlab.com/api/v4/projects/zaccesss%2Fzaccesss" | jq -r '.id')
-          curl -s -X DELETE -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" \
-            "https://gitlab.com/api/v4/projects/${GL_PROJECT_ID}/protected_branches/main" > /dev/null
-          git push --force "https://zaccesss:${GITLAB_TOKEN}@gitlab.com/zaccesss/zaccesss.git" HEAD:main
-          curl -s -X POST -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" \
-            "https://gitlab.com/api/v4/projects/${GL_PROJECT_ID}/protected_branches" \
-            -d "name=main&push_access_level=40&merge_access_level=40" > /dev/null
-          # Codeberg: force-push (no branch protection issues)
-          git push --force "https://zaccesss:${CODEBERG_TOKEN}@codeberg.org/zaccesss/zaccesss.git" HEAD:main
-          # Gitea: force-push via SSH
-          echo "$GITEA_SSH_KEY" > /tmp/gitea_key
-          chmod 600 /tmp/gitea_key
-          mkdir -p ~/.ssh && ssh-keyscan -H gitea.com >> ~/.ssh/known_hosts 2>/dev/null
-          GIT_SSH_COMMAND="ssh -i /tmp/gitea_key" git push --force git@gitea.com:zaccesss/zaccesss.git HEAD:main
-          rm /tmp/gitea_key
+          # Mirroring to GitLab, Codeberg, Bitbucket and Gitea is handled
+          # server-side by the mirror-ops setup, so no mirror pushes happen here.
