@@ -15,9 +15,9 @@
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg?v=4">
-  <source media="(prefers-color-scheme: light)" srcset="light_mode.svg?v=4">
-  <img alt="Isaac Adjei's GitHub Profile" src="dark_mode.svg?v=4" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg?v=5">
+  <source media="(prefers-color-scheme: light)" srcset="light_mode.svg?v=5">
+  <img alt="Isaac Adjei's GitHub Profile" src="dark_mode.svg?v=5" width="100%">
 </picture>
 <!-- I'm keeping these SVGs but muting them for now - I'll uncomment when i want to restore them later -->
 <!--
