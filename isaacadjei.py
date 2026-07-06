@@ -260,7 +260,7 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
                         ... on Commit {
                             history(first: 100, after: $cursor) {
                                 nodes {
-                                    additions deletions
+                                    additions deletions messageHeadline
                                     author { user { login } }
                                 }
                                 pageInfo { hasNextPage endCursor }
@@ -287,6 +287,10 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
                                .get('target', {})
                                .get('history', {}))
                 for c in history.get('nodes', []):
+                    # I skip my automated metadata backup commits (from the meta-mirror repo) so their
+                    # JSON dumps do not inflate my lines of code with data I did not actually write.
+                    if c.get('messageHeadline', '') == 'chore: update metadata backup':
+                        continue
                     login = ((c.get('author') or {}).get('user') or {}).get('login', '')
                     if login.lower() == username.lower() or (is_own_repo and not login):
                         add    += c.get('additions', 0)
