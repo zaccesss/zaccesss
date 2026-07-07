@@ -24,6 +24,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="approach_dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="approach_light.svg">
-  <img alt="my approach" src="approach_light.svg" width="100%">
+  <img alt="my approach" src="approach_dark.svg" width="100%">
 </picture>
 -->
