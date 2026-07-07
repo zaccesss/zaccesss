@@ -4,9 +4,10 @@
 name: CI
 
 on:
+  # Pull requests only. CI does not need to re-run on main after a PR merges (the same
+  # commit was already checked on the PR), and the SVG commits the build pushes to main
+  # are not code changes worth checking.
   pull_request:
-  push:
-    branches: [main]
 
 # Least privilege, I only read the repository.
 permissions:
