@@ -8,6 +8,8 @@ because it is a living profile rather than a released library.
 
 ### Changed
 
+- The build now pushes the regenerated SVGs over SSH with a write deploy key rather than
+  the built in token, so it can bypass the required CI check on `main`.
 - Relicensed the repository. The visual and written content (the SVGs, the README,
   the ASCII portrait and everything under `assets/`) is now Creative Commons
   Attribution-NonCommercial-NoDerivatives 4.0, and the generator source
@@ -17,6 +19,9 @@ because it is a living profile rather than a released library.
 
 ### Added
 
+- A branch ruleset on `main` that requires the CI check (`Build script (Python)`) before
+  a pull request can merge, with the build's write deploy key (`BUILD_DEPLOY_KEY`) as the
+  bypass actor so the automated SVG commit still lands.
 - Repository scaffolding to match my other repos: a CI workflow that compile and
   import checks the generator, a gitleaks secret scan, Dependabot auto-merge, a
   `.gitattributes` that marks the generated SVGs, and `CODE_OF_CONDUCT.md`,

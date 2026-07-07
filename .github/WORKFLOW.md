@@ -31,6 +31,9 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 - Auto-merge waits for the CI check (`Build script (Python)`) to pass, then squash
   merges and deletes the branch, so I never sit and watch it.
+- A branch ruleset on `main` marks that CI check as required, so a pull request cannot
+  merge until it passes. The build's deploy key is a bypass actor on the ruleset, so the
+  automated SVG commits still land straight on `main`.
 - Dependabot auto-merge is ecosystem-aware: patch and minor bumps and major GitHub
   Actions bumps merge once the check passes, but a major `pip` bump is held for my
   review because the compile and import check cannot prove a breaking runtime change
@@ -43,6 +46,8 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 - The build workflow commits the regenerated `dark_mode.svg` and `light_mode.svg`
   straight to `main` as me, `Isaac Adjei`, so the commit attributes to me across
   every forge.
+- It pushes over SSH with the `BUILD_DEPLOY_KEY` write deploy key, which is the branch
+  ruleset's bypass actor, so the required CI check does not block the direct SVG commit.
 - It only commits when an SVG actually changed, so a quiet run leaves no empty commit.
 
 ## Commits
@@ -64,8 +69,9 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 - Every credential is an Actions secret, never in the code. `ACCESS_TOKEN` is a read
   only fine grained token the generator uses to read my GitHub stats. The commit back
-  to `main` uses the built in `GITHUB_TOKEN`. A GitHub Actions secret name cannot
-  start with `GITHUB_` (GitHub reserves that prefix), which is why the stats token is
+  to `main` is pushed over SSH with the `BUILD_DEPLOY_KEY` write deploy key, which is
+  also the branch ruleset's bypass actor. A GitHub Actions secret name cannot start
+  with `GITHUB_` (GitHub reserves that prefix), which is why the stats token is
   `ACCESS_TOKEN`.
 
 ## The system in one breath
