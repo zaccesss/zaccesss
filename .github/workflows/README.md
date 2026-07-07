@@ -1,0 +1,31 @@
+# Workflows
+
+One workflow builds the profile itself; the rest keep the repo healthy. The
+generator lives in [`../../isaacadjei.py`](../../isaacadjei.py) and the build
+workflow is a thin wrapper that hands it the token.
+
+## The build
+
+| Workflow | Trigger | Purpose |
+| --- | --- | --- |
+| [build](build.yml) | every 6 hours, push to main, manual `workflow_dispatch` | Runs `isaacadjei.py` to regenerate `dark_mode.svg` and `light_mode.svg` from live GitHub stats, then commits only if something changed |
+
+## Repo automation
+
+| Workflow | Trigger | Purpose |
+| --- | --- | --- |
+| [ci](ci.yml) | push, PR | Compile-checks and imports the generator so a broken change cannot land |
+| [gitleaks-scan](gitleaks-scan.yml) | push, PR | Scans for hard-coded secrets with a pinned gitleaks binary |
+| [automerge-dependabot](automerge-dependabot.yml) | PR | Enables squash auto-merge on Dependabot PRs (patch and minor on any ecosystem, plus major GitHub Actions bumps; major `pip` bumps are held for review) and anything labelled `automerge` |
+
+Dependency update PRs and stale branch cleanup are handled centrally by repo-ops, so
+this repo carries no `dependabot.yml` or branch maintenance workflow.
+
+## Conventions
+
+- One workflow per job, named for what it does; the build workflow is a thin wrapper
+  and the logic lives in the script.
+- All runtime settings come from GitHub Actions secrets injected as environment
+  variables; nothing configurable is committed.
+- Third-party actions are pinned to a full commit SHA so a mutable tag cannot be
+  silently updated.
