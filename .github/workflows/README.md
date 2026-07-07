@@ -2,13 +2,13 @@
 
 One workflow builds the profile itself; the rest keep the repo healthy. The
 generator lives in [`../../isaacadjei.py`](../../isaacadjei.py) and the build
-workflow is a thin wrapper that hands it the token.
+workflow is a thin wrapper that hands it the credentials.
 
 ## The build
 
 | Workflow | Trigger | Purpose |
 | --- | --- | --- |
-| [build](build.yml) | four times a day (00:17, 06:17, 12:17, 18:17 UTC), push to main, manual `workflow_dispatch` | Runs `isaacadjei.py` to regenerate `dark_mode.svg` and `light_mode.svg` from live GitHub stats, then commits only if something changed |
+| [build](build.yml) | four times a day (00:17, 06:17, 12:17, 18:17 UTC), push to main (excluding the generated SVGs), manual `workflow_dispatch` | Runs `isaacadjei.py` to regenerate `dark_mode.svg` and `light_mode.svg` from live GitHub stats, then commits only if something changed. Pushes over SSH with a write deploy key that bypasses the branch ruleset |
 
 ## Repo automation
 

@@ -8,6 +8,9 @@ because it is a living profile rather than a released library.
 
 ### Changed
 
+- The build pushes the SVGs over SSH with a write deploy key rather than the built in
+  token. The push trigger ignores the generated SVGs so the deploy-key push cannot
+  re-trigger the build and loop.
 - CI and gitleaks now run on pull requests only. They no longer re-run on `main` after a
   merge, since the same commit was already checked on the PR.
 - Moved the build schedule off the top of the hour to `17 0,6,12,18 * * *` (00:17,
@@ -22,6 +25,9 @@ because it is a living profile rather than a released library.
 
 ### Added
 
+- Enforced CI on `main` with a branch ruleset, so a pull request cannot merge until the
+  check passes and `gh pr merge --auto` waits for it. The build's write deploy key is the
+  ruleset's bypass actor so the automated SVG commit still lands.
 - Repository scaffolding to match my other repos: a CI workflow that compile and
   import checks the generator, a gitleaks secret scan, Dependabot auto-merge, a
   `.gitattributes` that marks the generated SVGs, and `CODE_OF_CONDUCT.md`,
