@@ -8,7 +8,7 @@ workflow is a thin wrapper that hands it the token.
 
 | Workflow | Trigger | Purpose |
 | --- | --- | --- |
-| [build](build.yml) | every 6 hours, push to main, manual `workflow_dispatch` | Runs `isaacadjei.py` to regenerate `dark_mode.svg` and `light_mode.svg` from live GitHub stats, then commits only if something changed |
+| [build](build.yml) | four times a day (00:17, 06:17, 12:17, 18:17 UTC), push to main, manual `workflow_dispatch` | Runs `isaacadjei.py` to regenerate `dark_mode.svg` and `light_mode.svg` from live GitHub stats, then commits only if something changed |
 
 ## Repo automation
 
