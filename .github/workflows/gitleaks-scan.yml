@@ -1,0 +1,39 @@
+# I scan this repository for hard-coded secrets and credentials on every push to main
+# and every PR targeting main. The build only uses a read only token, but I still want
+# a tripwire that fails loudly if any credential ever gets committed by mistake. I
+# install a pinned gitleaks binary directly rather than the action wrapper, which needs
+# a paid licence for SARIF upload on private repos.
+
+name: Gitleaks Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Least privilege, I only need to read the repository contents to scan them.
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    name: Gitleaks
+    runs-on: ubuntu-latest
+
+    steps:
+      # I check out the repository so gitleaks has the files to scan.
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      # I install a pinned gitleaks binary directly. Pinning the version keeps the scan reproducible.
+      - name: Install Gitleaks
+        run: |
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz" \
+            | tar -xz -C /tmp gitleaks
+          sudo mv /tmp/gitleaks /usr/local/bin/gitleaks
+
+      # I scan the working tree files for hard-coded credentials. --redact keeps any finding out of
+      # the log, and --exit-code=1 fails the workflow if anything is found.
+      - name: Run Gitleaks
+        run: gitleaks detect --no-git --redact --exit-code=1
