@@ -1,0 +1,41 @@
+# Lightweight CI so a broken change cannot land. I compile and import check my one
+# generator script. There is no build step, it is a plain script, so this is quick.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Least privilege, I only read the repository.
+permissions:
+  contents: read
+
+jobs:
+  script:
+    name: Build script (Python)
+    runs-on: ubuntu-latest
+    steps:
+      # I check out the repository.
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      # I set up Python 3.12, the same version my build workflow runs on.
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      # I install my dependencies so the import check below is a real check.
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # I byte compile the script to catch syntax errors, then import it to catch
+      # import and wiring errors. The token is only read inside main() under the
+      # __main__ guard, so this import needs no secret.
+      - name: Compile and import check
+        run: |
+          python -m compileall -q isaacadjei.py
+          python -c "import isaacadjei"
