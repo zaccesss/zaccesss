@@ -3,7 +3,7 @@
 # Copyright (c) 2026 Isaac Adjei <https://isaacadjei.me>
 #
 # This generator script is licensed under the PolyForm Noncommercial License 1.0.0;
-# see LICENSE-CODE. The repository's visual output (the SVGs, the README and the
+# see NOTICE.md. The repository's visual output (the SVGs, the README and the
 # assets) is licensed under CC BY-NC-ND 4.0; see LICENSE.
 """
 isaacadjei.py — my GitHub profile README SVG generator.
