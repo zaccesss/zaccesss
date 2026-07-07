@@ -33,7 +33,7 @@ jobs:
 
     steps:
       # Check out my repo so the workflow has access to my files.
-      # fetch-depth: 0 gives a full clone — Gitea rejects shallow pushes to new repos.
+      # fetch-depth: 0 gives a full clone. Gitea rejects shallow pushes to new repos.
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
@@ -60,7 +60,7 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
-      # Run my generator — it pulls live GitHub stats and writes dark_mode.svg and light_mode.svg.
+      # Run my generator. It pulls live GitHub stats and writes dark_mode.svg and light_mode.svg.
       # ACCESS_TOKEN lives in: Settings > Secrets and variables > Actions > New repository secret
       # It needs read access to my repositories and account so it can fetch stats.
       - name: Generate SVGs
@@ -85,7 +85,7 @@ jobs:
           git commit -m "chore: update profile SVG"
           # If the remote moved ahead while we were running, replant our freshly
           # generated SVGs on top of the new tip and retry. We regenerate the whole
-          # SVG each run, so ours is the authoritative newest version — 'reset --soft'
+          # SVG each run, so ours is the authoritative newest version, so 'reset --soft'
           # onto origin/main re-commits our files cleanly with no line-level conflict.
           # 'if git push' keeps a failed push from tripping 'set -e' mid-loop.
           pushed=false
