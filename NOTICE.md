@@ -1,13 +1,20 @@
+# Notice
+
+This repository is dual-licensed:
+
+- The visual and written content (the generated SVGs, the README, the ASCII portrait and
+  everything under `assets/`) is licensed under the Creative Commons
+  Attribution-NonCommercial-NoDerivatives 4.0 International License; see [LICENSE](LICENSE).
+- The generator source code (`isaacadjei.py`) is licensed under the PolyForm Noncommercial
+  License 1.0.0, the full text of which follows.
+
+---
+
 PolyForm Noncommercial License 1.0.0
 
 Copyright (c) 2026 Isaac Adjei <https://isaacadjei.me>
 
 <https://polyformproject.org/licenses/noncommercial/1.0.0>
-
-This license covers the generator source code in this repository (isaacadjei.py).
-The visual and written content (the generated SVGs, the README, the ASCII portrait
-and everything under assets/) is licensed separately under the Creative Commons
-Attribution-NonCommercial-NoDerivatives 4.0 International License; see LICENSE.
 
 Acceptance
 
