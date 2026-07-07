@@ -8,6 +8,8 @@ because it is a living profile rather than a released library.
 
 ### Changed
 
+- CI and gitleaks now run on pull requests only. They no longer re-run on `main` after a
+  merge, since the same commit was already checked on the PR.
 - Moved the build schedule off the top of the hour to `17 0,6,12,18 * * *` (00:17,
   06:17, 12:17 and 18:17 UTC). The explicit times spell out the four daily runs and the
   off-peak minute dodges GitHub's congested on-the-hour scheduling.
