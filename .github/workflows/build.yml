@@ -30,10 +30,6 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
-          # I check out over SSH with a write deploy key so the SVG push below can bypass
-          # the branch ruleset that requires CI on main. The deploy key is the ruleset's
-          # bypass actor; commits stay authored as me.
-          ssh-key: ${{ secrets.BUILD_DEPLOY_KEY }}
 
       # I'm using Python 3.12 to run my SVG generator script.
       - name: Set up Python 3.12
