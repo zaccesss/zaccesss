@@ -70,7 +70,7 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 ## The system in one breath
 
-- Every six hours `build.yml` runs `isaacadjei.py`, which reads my live GitHub stats
-  and writes `dark_mode.svg` and `light_mode.svg`. If an SVG changed it commits, and
-  mirror-ops carries this repo to the forges. See the top-level
+- Four times a day (00:17, 06:17, 12:17 and 18:17 UTC) `build.yml` runs `isaacadjei.py`,
+  which reads my live GitHub stats and writes `dark_mode.svg` and `light_mode.svg`. If an
+  SVG changed it commits, and mirror-ops carries this repo to the forges. See the top-level
   [`../README.md`](../README.md) and [`workflows/README.md`](workflows/README.md).
