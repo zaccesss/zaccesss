@@ -31,6 +31,8 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 - Auto-merge waits for the CI check (`Build script (Python)`) to pass, then squash
   merges and deletes the branch, so I never sit and watch it.
+- A branch ruleset on `main` marks that CI check as required, so `gh pr merge --auto`
+  genuinely waits for it before merging. The build's deploy key bypasses the ruleset.
 - Dependabot auto-merge is ecosystem-aware: patch and minor bumps and major GitHub
   Actions bumps merge once the check passes, but a major `pip` bump is held for my
   review because the compile and import check cannot prove a breaking runtime change
@@ -43,6 +45,9 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 - The build workflow commits the regenerated `dark_mode.svg` and `light_mode.svg`
   straight to `main` as me, `Isaac Adjei`, so the commit attributes to me across
   every forge.
+- It pushes over SSH with the `BUILD_DEPLOY_KEY` write deploy key, which bypasses the
+  branch ruleset that requires CI, so the direct SVG commit is not blocked. The push
+  trigger ignores the SVGs so this commit cannot re-trigger the build.
 - It only commits when an SVG actually changed, so a quiet run leaves no empty commit.
 
 ## Commits
@@ -58,13 +63,14 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 - `python -m compileall isaacadjei.py` and `python -c "import isaacadjei"` (CI runs
   the same).
-- I never commit a secret. Gitleaks scans every push.
+- I never commit a secret. Gitleaks scans every PR.
 
 ## Secrets
 
 - Every credential is an Actions secret, never in the code. `ACCESS_TOKEN` is a read
   only fine grained token the generator uses to read my GitHub stats. The commit back
-  to `main` uses the built in `GITHUB_TOKEN`. A GitHub Actions secret name cannot
+  to `main` is pushed over SSH with the `BUILD_DEPLOY_KEY` write deploy key, which is
+  also the branch ruleset's bypass actor. A GitHub Actions secret name cannot
   start with `GITHUB_` (GitHub reserves that prefix), which is why the stats token is
   `ACCESS_TOKEN`.
 
