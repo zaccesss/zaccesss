@@ -1,10 +1,12 @@
 name: README build
 
-# I run this every 6 hours to keep my stats fresh, on every push to main,
-# and I can also trigger it manually from the Actions tab when I need it.
+# I run this four times a day at 00:17, 06:17, 12:17 and 18:17 UTC to keep my stats
+# fresh, on every push to main, and I can also trigger it manually from the Actions tab.
+# The :17 minute keeps the run off the congested top of the hour so it is less likely
+# to be delayed or dropped.
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "17 0,6,12,18 * * *"
   push:
     branches: [main]
   workflow_dispatch:
