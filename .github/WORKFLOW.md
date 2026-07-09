@@ -33,10 +33,6 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
   merges and deletes the branch, so I never sit and watch it.
 - A branch ruleset on `main` marks that CI check as required, so `gh pr merge --auto`
   genuinely waits for it before merging. The build's deploy key bypasses the ruleset.
-- Dependabot auto-merge is ecosystem-aware: patch and minor bumps and major GitHub
-  Actions bumps merge once the check passes, but a major `pip` bump is held for my
-  review because the compile and import check cannot prove a breaking runtime change
-  is safe.
 - Dependency update PRs and stale branch cleanup are handled centrally by repo-ops.
 - One change is one branch is one PR. I keep unrelated work apart.
 
