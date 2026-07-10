@@ -10,16 +10,27 @@
         font-display: swap;
         size-adjust: 109%;
       }
+      .bg       { fill: #f6f8fa;     }
+      .fg       { fill: #24292f;   }
       .key      { fill: #953800;    }
       .value    { fill: #0a3069;  }
       .addColor { fill: #1a7f37;    }
       .delColor { fill: #cf222e; }
       .cc       { fill: #c2cfde;   }
       text, tspan { white-space: pre; }
+      @media (prefers-color-scheme: dark) {
+        .bg       { fill: #161b22;     }
+        .fg       { fill: #c9d1d9;   }
+        .key      { fill: #ffa657;    }
+        .value    { fill: #a5d6ff;  }
+        .addColor { fill: #3fb950;    }
+        .delColor { fill: #f85149; }
+        .cc       { fill: #616e7f;   }
+      }
       </style></defs>
-  <rect width="1080px" height="710px" fill="#f6f8fa" rx="15"/>
+  <rect width="1080px" height="710px" class="bg" rx="15"/>
   <!-- ASCII portrait: 14px so 44-char lines stay inside x=410 -->
-  <text x="35" y="30" fill="#24292f" font-size="14px"
+  <text x="35" y="30" class="fg" font-size="14px"
         xml:space="preserve" style="white-space:pre;">
     <tspan x="35" y="60">                                            </tspan>
     <tspan x="35" y="80">              .W##*W::  |1ll*$#,            </tspan>
@@ -53,7 +64,7 @@
     <tspan x="35" y="640">                                            </tspan>
   </text>
   <!-- Stats block -->
-  <text x="410" y="30" fill="#24292f" style="white-space:pre;">
+  <text x="410" y="30" class="fg" style="white-space:pre;">
     <tspan x="410" y="30">isaac@adjei -----------------------------------------------------</tspan>
     <tspan x="410" y="50"><tspan class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">: ......................................... </tspan><tspan class="value">Aston University</tspan></tspan>
     <tspan x="410" y="70"><tspan class="cc">. </tspan><tspan class="key">Location</tspan><tspan class="cc">: .............................. </tspan><tspan class="value">London &amp; Birmingham, UK</tspan></tspan>
@@ -82,10 +93,10 @@
     <tspan x="410" y="530"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">: ........................... </tspan><tspan class="value">linkedin.com/in/isaacadjei</tspan></tspan>
     <tspan x="410" y="550"></tspan>
     <tspan x="410" y="570">- Git Stats ------------------------------------------------------</tspan>
-    <tspan x="410" y="590"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ....... </tspan><tspan class="value">31 {<tspan class="key">Contributed</tspan>: 0}</tspan><tspan class="cc"> | </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............ </tspan><tspan class="value">3,998</tspan></tspan>
+    <tspan x="410" y="590"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ....... </tspan><tspan class="value">31 {<tspan class="key">Contributed</tspan>: 0}</tspan><tspan class="cc"> | </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............ </tspan><tspan class="value">3,988</tspan></tspan>
     <tspan x="410" y="610"><tspan class="cc">. </tspan><tspan class="key">Followers</tspan><tspan class="cc">: .................... </tspan><tspan class="value">12</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan><tspan class="cc">: .................. </tspan><tspan class="value">2</tspan></tspan>
-    <tspan x="410" y="630"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: ......................... </tspan><tspan class="value">784</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: ............... </tspan><tspan class="value">414</tspan></tspan>
+    <tspan x="410" y="630"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: ......................... </tspan><tspan class="value">781</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: ............... </tspan><tspan class="value">412</tspan></tspan>
     <tspan x="410" y="650"><tspan class="cc">. </tspan><tspan class="key">Streak.Best</tspan><tspan class="cc">: ............. </tspan><tspan class="value">79 days</tspan><tspan class="cc"> | </tspan><tspan class="key">Streak.Current</tspan><tspan class="cc">: ... </tspan><tspan class="value">79 days</tspan></tspan>
-    <tspan x="410" y="670"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: ........... </tspan><tspan class="value">410,000</tspan><tspan class="cc"> | </tspan>(  <tspan class="addColor">625,826</tspan>++, <tspan class="delColor">215,826</tspan>--   )</tspan>
+    <tspan x="410" y="670"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: ........... </tspan><tspan class="value">409,612</tspan><tspan class="cc"> | </tspan>(  <tspan class="addColor">625,376</tspan>++, <tspan class="delColor">215,764</tspan>--   )</tspan>
   </text>
 </svg>
