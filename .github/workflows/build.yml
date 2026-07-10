@@ -9,12 +9,11 @@ on:
     - cron: "17 0,6,12,18 * * *"
   push:
     branches: [main]
-    # The build commits the regenerated SVGs and pushes them with a deploy key which,
-    # unlike GITHUB_TOKEN, re-triggers workflows. I ignore the generated SVGs so an
+    # The build commits the regenerated SVG and pushes it with a deploy key which,
+    # unlike GITHUB_TOKEN, re-triggers workflows. I ignore the generated SVG so an
     # SVG-only commit cannot start another build and loop.
     paths-ignore:
-      - dark_mode.svg
-      - light_mode.svg
+      - profile.svg
   workflow_dispatch:
 
 # I need write access so the job can push the regenerated SVGs back to my repo.
@@ -60,24 +59,24 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
-      # Run my generator. It pulls live GitHub stats and writes dark_mode.svg and light_mode.svg.
+      # Run my generator. It pulls live GitHub stats and writes profile.svg.
       # ACCESS_TOKEN lives in: Settings > Secrets and variables > Actions > New repository secret
       # It needs read access to my repositories and account so it can fetch stats.
-      - name: Generate SVGs
+      - name: Generate the profile SVG
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_NAME: zaccesss
         run: python isaacadjei.py
 
-      # Commit the freshly generated SVGs back to my repo under my own name.
+      # Commit the freshly generated SVG back to my repo under my own name.
       # The diff check means I only commit when something actually changed.
       # I push to GitHub (using the token actions/checkout already configured);
       # mirroring to the other forges is handled server-side by mirror-ops.
-      - name: Commit and push updated SVGs
+      - name: Commit and push the updated SVG
         run: |
           git config --global user.email "code@isaacadjei.me"
           git config --global user.name "Isaac Adjei"
-          git add dark_mode.svg light_mode.svg
+          git add profile.svg
           if git diff --staged --quiet; then
             echo "SVGs unchanged; nothing to commit."
             exit 0
