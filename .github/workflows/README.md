@@ -8,7 +8,7 @@ workflow is a thin wrapper that hands it the credentials.
 
 | Workflow | Trigger | Purpose |
 | --- | --- | --- |
-| [build](build.yml) | four times a day (00:17, 06:17, 12:17, 18:17 UTC), push to main (excluding the generated SVGs), manual `workflow_dispatch` | Runs `isaacadjei.py` to regenerate `dark_mode.svg` and `light_mode.svg` from live GitHub stats, then commits only if something changed. Pushes over SSH with a write deploy key that bypasses the branch ruleset |
+| [build](build.yml) | four times a day (00:17, 06:17, 12:17, 18:17 UTC), push to main (excluding the generated SVG), manual `workflow_dispatch` | Runs `isaacadjei.py` to regenerate the single theme-adaptive `profile.svg` from live GitHub stats, then commits only if something changed. Pushes over SSH with a write deploy key that bypasses the branch ruleset |
 
 ## Repo automation
 
