@@ -8,6 +8,14 @@ because it is a living profile rather than a released library.
 
 ### Changed
 
+- The profile card is now a single theme-adaptive `profile.svg` instead of a `dark_mode.svg`
+  and `light_mode.svg` pair swapped by a `<picture>` element. The theme switch lives inside the
+  SVG as a `prefers-color-scheme` media query on colour classes, so the browser renders the right
+  theme on every forge (GitHub, GitLab, Codeberg and gitea.com), not just GitHub. GitHub strips
+  `<picture>` on the other forges and falls back to a single fixed image, which is why the mirrors
+  always showed the dark card before. The `approach` diagram gets the same treatment as a single
+  adaptive `approach.svg`, so it is ready to render everywhere when I un-mute it. The generator
+  (`isaacadjei.py`) now emits the one adaptive file, and the README references it directly.
 - The build pushes the SVGs over SSH with a write deploy key rather than the built in
   token. The push trigger ignores the generated SVGs so the deploy-key push cannot
   re-trigger the build and loop.
