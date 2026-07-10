@@ -5,6 +5,8 @@
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/blog">Blog</a>
   &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/til">TIL</a>
+  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/newsletter">Newsletter</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/now">Now</a>

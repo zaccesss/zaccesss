@@ -25,6 +25,8 @@ because it is a living profile rather than a released library.
 
 ### Added
 
+- A TIL link in the README nav, between Blog and Newsletter, pointing at
+  `https://isaacadjei.me/til`.
 - Enforced CI on `main` with a branch ruleset, so a pull request cannot merge until the
   check passes and `gh pr merge --auto` waits for it. The build's write deploy key is the
   ruleset's bypass actor so the automated SVG commit still lands.
