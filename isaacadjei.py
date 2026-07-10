@@ -8,7 +8,8 @@
 """
 isaacadjei.py — my GitHub profile README SVG generator.
 
-I generate dark_mode.svg and light_mode.svg, each with:
+I generate profile.svg, a single theme-adaptive card (light by default, dark under a
+prefers-color-scheme media query so it renders correctly on every forge, not just GitHub):
   - Left column:  my ASCII art portrait (44 cols x 28 rows, loaded from ascii_final.txt)
   - Right column: neofetch-style info block + live GitHub stats pulled from the API
 
@@ -399,9 +400,13 @@ def build_svg(
     prs: int, issues: int,
     loc_total: int, loc_add: int, loc_del: int,
     current_streak: int, longest_streak: int,
-    colors: dict,
 ) -> str:
 
+    # One adaptive stylesheet: the light palette is the default (light and no-preference viewers)
+    # and a prefers-color-scheme:dark media query swaps in the dark palette. Because the browser
+    # renders the SVG, this theme switch works on every forge (GitHub, GitLab, Codeberg, gitea.com),
+    # unlike a <picture> element, which the other forges strip. Every colour lives on a class, so the
+    # background rect and the text follow the theme too.
     style = f"""
       @font-face {{
         src: local('Consolas'), local('Consolas Bold');
@@ -409,12 +414,23 @@ def build_svg(
         font-display: swap;
         size-adjust: 109%;
       }}
-      .key      {{ fill: {colors['key']};    }}
-      .value    {{ fill: {colors['value']};  }}
-      .addColor {{ fill: {colors['add']};    }}
-      .delColor {{ fill: {colors['delete']}; }}
-      .cc       {{ fill: {colors['dots']};   }}
+      .bg       {{ fill: {LIGHT['bg']};     }}
+      .fg       {{ fill: {LIGHT['text']};   }}
+      .key      {{ fill: {LIGHT['key']};    }}
+      .value    {{ fill: {LIGHT['value']};  }}
+      .addColor {{ fill: {LIGHT['add']};    }}
+      .delColor {{ fill: {LIGHT['delete']}; }}
+      .cc       {{ fill: {LIGHT['dots']};   }}
       text, tspan {{ white-space: pre; }}
+      @media (prefers-color-scheme: dark) {{
+        .bg       {{ fill: {DARK['bg']};     }}
+        .fg       {{ fill: {DARK['text']};   }}
+        .key      {{ fill: {DARK['key']};    }}
+        .value    {{ fill: {DARK['value']};  }}
+        .addColor {{ fill: {DARK['add']};    }}
+        .delColor {{ fill: {DARK['delete']}; }}
+        .cc       {{ fill: {DARK['dots']};   }}
+      }}
     """
 
     # ASCII art at 14px: keeps 44-char lines clear of the stats column at x={STATS_X}
@@ -481,14 +497,14 @@ def build_svg(
      width="{SVG_WIDTH}px" height="{SVG_HEIGHT}px"
      font-size="16px">
   <defs><style>{style}  </style></defs>
-  <rect width="{SVG_WIDTH}px" height="{SVG_HEIGHT}px" fill="{colors['bg']}" rx="15"/>
+  <rect width="{SVG_WIDTH}px" height="{SVG_HEIGHT}px" class="bg" rx="15"/>
   <!-- ASCII portrait: 14px so 44-char lines stay inside x={STATS_X} -->
-  <text x="{ASCII_X}" y="{ROW_START}" fill="{colors['text']}" font-size="14px"
+  <text x="{ASCII_X}" y="{ROW_START}" class="fg" font-size="14px"
         xml:space="preserve" style="white-space:pre;">
 {ascii_block}
   </text>
   <!-- Stats block -->
-  <text x="{STATS_X}" y="{ROW_START}" fill="{colors['text']}" style="white-space:pre;">
+  <text x="{STATS_X}" y="{ROW_START}" class="fg" style="white-space:pre;">
 {stats_block}
   </text>
 </svg>"""
@@ -547,15 +563,14 @@ def main() -> None:
     print(f'  LOC: {fmt(loc_total)} ({fmt(loc_add)}++, {fmt(loc_del)}--)')
     print(f'  Streak: {current_streak} days current, {longest_streak} days best')
 
-    for colors, fname in [(DARK, 'dark_mode.svg'), (LIGHT, 'light_mode.svg')]:  # generate both colour theme variants
-        print(f'Generating {fname}...')
-        svg = build_svg(ascii_rows,
-                        repos, contributed, stars,
-                        commits, followers, prs, issues,
-                        loc_total, loc_add, loc_del,
-                        current_streak, longest_streak, colors)
-        with open(fname, 'w', encoding='utf-8') as f:
-            f.write(svg)
+    print('Generating profile.svg...')  # one theme-adaptive card that renders on every forge
+    svg = build_svg(ascii_rows,
+                    repos, contributed, stars,
+                    commits, followers, prs, issues,
+                    loc_total, loc_add, loc_del,
+                    current_streak, longest_streak)
+    with open('profile.svg', 'w', encoding='utf-8') as f:
+        f.write(svg)
     print('Done.')
 
 
