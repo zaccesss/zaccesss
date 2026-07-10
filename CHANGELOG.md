@@ -15,7 +15,9 @@ because it is a living profile rather than a released library.
   `<picture>` on the other forges and falls back to a single fixed image, which is why the mirrors
   always showed the dark card before. The `approach` diagram gets the same treatment as a single
   adaptive `approach.svg`, so it is ready to render everywhere when I un-mute it. The generator
-  (`isaacadjei.py`) now emits the one adaptive file, and the README references it directly.
+  (`isaacadjei.py`) now emits the one adaptive file, and the README references it directly. The
+  build workflow now regenerates, ignores on push and commits `profile.svg` rather than the old
+  paired filenames, which were left stale in the first pass and broke the daily auto-update.
 - The build pushes the SVGs over SSH with a write deploy key rather than the built in
   token. The push trigger ignores the generated SVGs so the deploy-key push cannot
   re-trigger the build and loop.
