@@ -73,7 +73,16 @@ jobs:
       # I push to GitHub (using the token actions/checkout already configured);
       # mirroring to the other forges is handled server-side by mirror-ops.
       - name: Commit and push the updated SVG
+        env:
+          SIGNING_KEY: ${{ secrets.CI_SIGNING_KEY }}
         run: |
+          if [ -n "$SIGNING_KEY" ]; then
+            printf '%s\n' "$SIGNING_KEY" > ~/.sign_key && chmod 600 ~/.sign_key
+            ssh-keygen -y -f ~/.sign_key > ~/.sign_key.pub
+            git config --global gpg.format ssh
+            git config --global user.signingkey ~/.sign_key.pub
+            git config --global commit.gpgsign true
+          fi
           git config --global user.email "code@isaacadjei.me"
           git config --global user.name "Isaac Adjei"
           git add profile.svg
