@@ -38,5 +38,5 @@ jobs:
       # __main__ guard, so this import needs no secret.
       - name: Compile and import check
         run: |
-          python -m compileall -q isaacadjei.py
-          python -c "import isaacadjei"
+          python -m compileall -q profile.py
+          python -c "import profile"
