@@ -8,8 +8,11 @@
 """
 profile.py — my GitHub profile README SVG generator.
 
-I generate profile.svg, a single theme-adaptive card (light by default, dark under a
-prefers-color-scheme media query so it renders correctly on every forge, not just GitHub):
+I generate three SVG cards (profile.svg, profile-dark.svg, and profile-light.svg):
+  - profile.svg: theme-adaptive card (dark palette by default, light under prefers-color-scheme)
+  - profile-dark.svg: fixed dark-mode card for <picture> source tags, for hosts that don't
+    honour @media queries inside an <img>-embedded SVG
+  - profile-light.svg: fixed light-mode card for the same <picture> source tags
   - Left column:  my ASCII art portrait (44 cols x 30 rows, loaded from ascii_profile.txt)
   - Right column: neofetch-style info block + live GitHub stats pulled from the API
 
@@ -105,8 +108,8 @@ def graphql(token: str, query: str, variables: dict | None = None) -> dict:
     return result.get('data', {})
 
 
-def get_user_info(token: str, username: str) -> tuple[int, int, int, int, int, int]:
-    """Return (followers, prs, contributed_repos, issues, gists, creation_year)."""
+def get_user_info(token: str, username: str) -> tuple[int, int, int, int, int, int, str]:
+    """Return (followers, prs, contributed_repos, issues, gists, creation_year, created_at)."""
     data = graphql(token, """
         query ($login: String!) {
             user(login: $login) {
@@ -123,13 +126,15 @@ def get_user_info(token: str, username: str) -> tuple[int, int, int, int, int, i
             }
         }""", {'login': username})
     u = data.get('user', {})
+    created_at = u.get('createdAt', '2022-01-01T00:00:00Z')
     return (
         u.get('followers',                  {}).get('totalCount', 0),
         u.get('pullRequests',               {}).get('totalCount', 0),
         u.get('repositoriesContributedTo',  {}).get('totalCount', 0),
         u.get('issues',                     {}).get('totalCount', 0),
         u.get('gists',                      {}).get('totalCount', 0),
-        int(u.get('createdAt', '2022-01-01T00:00:00Z')[:4]),  # slice the year from the ISO timestamp
+        int(created_at[:4]),  # slice the year from the ISO timestamp, for the contributions-since-creation loop
+        created_at,
     )
 
 
@@ -334,6 +339,14 @@ def fmt(n: int) -> str:
     return f'{n:,}'  # comma-separated thousands (e.g. 1,234)
 
 
+def fmt_uptime(created_at: str) -> str:
+    """Return account age as 'Xy Yd' (neofetch-style uptime), from an ISO createdAt timestamp."""
+    created = datetime.date.fromisoformat(created_at[:10])
+    delta_days = (datetime.date.today() - created).days
+    years, days = divmod(delta_days, 365)
+    return f'{years}y {days}d'
+
+
 def pad_dots(label: str, value: str, width: int = LINE_WIDTH) -> str:
     """
     Return dots so that '. LABEL: DOTS VALUE' = width chars exactly.
@@ -377,17 +390,23 @@ def dual_row(y: int, lbl1: str, v1: str, lbl2: str, v2: str) -> str:
         cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
         cc(' | ') + key(lbl2) + cc(f': {"."*d2} ') + val(v2))
 
-def contribs_repos_row(y: int, lbl1: str, v1: str, repos: int, contributed: int) -> str:
-    """Any headline stat paired with Repos (Contributed in key-coloured curly braces) on the right,
-    the same headline-left, detail-right shape as the Lines of Code row."""
-    v2_plain = f'{fmt(repos)} {{Contrib: {fmt(contributed)}}}'
+def dual_row_detail(y: int, lbl1: str, v1: str, lbl2: str, v2_main: str, detail_lbl: str, detail_val: str) -> str:
+    """Headline stat on left paired with a right stat containing detailed info in key-coloured curly braces.
+    e.g. '. Contribs: 1,234 | Repos: 15 {Contrib: 8}'
+         '. Uptime: 3y 145d | Streak: 5d {Best: 42d}'
+    """
+    v2_plain = f'{v2_main} {{{detail_lbl}: {detail_val}}}'
     d1 = max(1, PIPE_LEFT - 5 - len(lbl1) - len(v1))
-    d2 = max(1, LINE_WIDTH - PIPE_LEFT - 6 - len('Repos') - len(v2_plain))
-    v2_svg = (f'<tspan class="value">{esc(fmt(repos))} {{'
-              f'<tspan class="key">Contrib</tspan>: {esc(fmt(contributed))}}}</tspan>')
+    d2 = max(1, LINE_WIDTH - PIPE_LEFT - 6 - len(lbl2) - len(v2_plain))
+    v2_svg = (f'<tspan class="value">{esc(v2_main)} {{'
+              f'<tspan class="key">{esc(detail_lbl)}</tspan>: {esc(detail_val)}}}</tspan>')
     return trow(y,
         cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
-        cc(' | ') + key('Repos') + cc(f': {"."*d2} ') + v2_svg)
+        cc(' | ') + key(lbl2) + cc(f': {"."*d2} ') + v2_svg)
+
+def contribs_repos_row(y: int, lbl1: str, v1: str, repos: int, contributed: int) -> str:
+    """Any headline stat paired with Repos (Contributed in key-coloured curly braces) on the right."""
+    return dual_row_detail(y, lbl1, v1, 'Repos', fmt(repos), 'Contrib', fmt(contributed))
 
 def loc_dual_row(y: int, total: int, add: int, delete: int) -> str:
     """Lines of Code on left, add/del breakdown on right with } aligned to right edge."""
@@ -415,16 +434,31 @@ def build_svg(
     repos: int, contributed: int, stars: int, forks: int,
     commits: int, followers: int,
     prs: int, issues: int, reviews: int, gists: int,
-    total_contribs: int,
+    total_contribs: int, uptime: str,
     loc_total: int, loc_add: int, loc_del: int,
     current_streak: int, longest_streak: int,
+    mode: str = 'adaptive',
 ) -> str:
 
-    # One adaptive stylesheet: the light palette is the default (light and no-preference viewers)
-    # and a prefers-color-scheme:dark media query swaps in the dark palette. Because the browser
-    # renders the SVG, this theme switch works on every forge (GitHub, GitLab, Codeberg, gitea.com),
-    # unlike a <picture> element, which the other forges strip. Every colour lives on a class, so the
-    # background rect and the text follow the theme too.
+    if mode == 'dark':
+        base_palette = DARK
+        media_override = ""
+    elif mode == 'light':
+        base_palette = LIGHT
+        media_override = ""
+    else:  # adaptive
+        base_palette = DARK
+        media_override = f"""
+      @media (prefers-color-scheme: light) {{
+        .bg       {{ fill: {LIGHT['bg']};     }}
+        .fg       {{ fill: {LIGHT['text']};   }}
+        .key      {{ fill: {LIGHT['key']};    }}
+        .value    {{ fill: {LIGHT['value']};  }}
+        .addColor {{ fill: {LIGHT['add']};    }}
+        .delColor {{ fill: {LIGHT['delete']}; }}
+        .cc       {{ fill: {LIGHT['dots']};   }}
+      }}"""
+
     style = f"""
       @font-face {{
         src: local('Consolas'), local('Consolas Bold');
@@ -432,23 +466,14 @@ def build_svg(
         font-display: swap;
         size-adjust: 109%;
       }}
-      .bg       {{ fill: {LIGHT['bg']};     }}
-      .fg       {{ fill: {LIGHT['text']};   }}
-      .key      {{ fill: {LIGHT['key']};    }}
-      .value    {{ fill: {LIGHT['value']};  }}
-      .addColor {{ fill: {LIGHT['add']};    }}
-      .delColor {{ fill: {LIGHT['delete']}; }}
-      .cc       {{ fill: {LIGHT['dots']};   }}
-      text, tspan {{ white-space: pre; }}
-      @media (prefers-color-scheme: dark) {{
-        .bg       {{ fill: {DARK['bg']};     }}
-        .fg       {{ fill: {DARK['text']};   }}
-        .key      {{ fill: {DARK['key']};    }}
-        .value    {{ fill: {DARK['value']};  }}
-        .addColor {{ fill: {DARK['add']};    }}
-        .delColor {{ fill: {DARK['delete']}; }}
-        .cc       {{ fill: {DARK['dots']};   }}
-      }}
+      .bg       {{ fill: {base_palette['bg']};     }}
+      .fg       {{ fill: {base_palette['text']};   }}
+      .key      {{ fill: {base_palette['key']};    }}
+      .value    {{ fill: {base_palette['value']};  }}
+      .addColor {{ fill: {base_palette['add']};    }}
+      .delColor {{ fill: {base_palette['delete']}; }}
+      .cc       {{ fill: {base_palette['dots']};   }}
+      text, tspan {{ white-space: pre; }}{media_override}
     """
 
     # ASCII art at 14px: keeps 44-char lines clear of the stats column at x={STATS_X}
@@ -500,12 +525,13 @@ def build_svg(
 
         section_header(Y[27], 'Git Stats'),
         dual_row(Y[28], 'Followers',      fmt(followers),        'Stars',          fmt(stars)),
-        contribs_repos_row(Y[29], 'Contribs', fmt(total_contribs), repos, contributed),
         # Forks and Gists are both 0 right now, I'll bring this row back once I have some.
-        # dual_row(Y[30], 'Forks',        fmt(forks),            'Gists',          fmt(gists)),
-        dual_row(Y[30], 'Commits',        fmt(commits),          'PRs',            fmt(prs)),
-        dual_row(Y[31], 'Issues',         fmt(issues),           'Reviews',        fmt(reviews)),
-        dual_row(Y[32], 'Streak.Best',    f'{longest_streak} days', 'Streak.Current', f'{current_streak} days'),
+        # dual_row(Y[?], 'Forks',        fmt(forks),            'Gists',          fmt(gists)),
+        dual_row(Y[29], 'Commits',        fmt(commits),          'PRs',            fmt(prs)),
+        dual_row(Y[30], 'Issues',         fmt(issues),           'Reviews',        fmt(reviews)),
+        # The three curly-brace detail rows sit together at the bottom, by design.
+        contribs_repos_row(Y[31], 'Contribs', fmt(total_contribs), repos, contributed),
+        dual_row_detail(Y[32], 'Uptime', uptime,   'Streak',         f'{fmt(current_streak)}d', 'Best', f'{fmt(longest_streak)}d'),
         loc_dual_row(Y[33], loc_total, loc_add, loc_del),
     ]
 
@@ -554,10 +580,12 @@ def main() -> None:
 
     print('Fetching GitHub stats...')
     try:
-        followers, prs, contributed, issues, gists, creation_year = get_user_info(token, username)
+        followers, prs, contributed, issues, gists, creation_year, created_at = get_user_info(token, username)
     except Exception as e:
         print(f'  Warning: {e}', file=sys.stderr)
-        followers, prs, contributed, issues, gists, creation_year = 0, 0, 0, 0, 0, 2022  # safe defaults if the API call fails
+        # safe defaults if the API call fails
+        followers, prs, contributed, issues, gists, creation_year, created_at = 0, 0, 0, 0, 0, 2022, '2022-01-01T00:00:00Z'
+    uptime = fmt_uptime(created_at)
 
     try:
         repos, stars, forks = get_repos_stars_and_forks(token, username)
@@ -591,19 +619,27 @@ def main() -> None:
     print(f'  Forks: {forks} | Gists: {gists}')
     print(f'  Commits: {commits} | PRs: {prs}')
     print(f'  Issues: {issues} | Reviews: {reviews}')
+    print(f'  Account: {creation_year} | Uptime: {uptime}')
     print(f'  LOC: {fmt(loc_total)} ({fmt(loc_add)}++, {fmt(loc_del)}--)')
     print(f'  Streak: {current_streak} days current, {longest_streak} days best')
 
-    print('Generating profile.svg...')  # one theme-adaptive card that renders on every forge
-    svg = build_svg(ascii_rows,
-                    repos, contributed, stars, forks,
-                    commits, followers, prs, issues, reviews, gists,
-                    total_contribs,
-                    loc_total, loc_add, loc_del,
-                    current_streak, longest_streak)
+    print('Generating profile.svg (adaptive), profile-dark.svg, and profile-light.svg...')
+    stat_args = (
+        ascii_rows,
+        repos, contributed, stars, forks,
+        commits, followers, prs, issues, reviews, gists,
+        total_contribs, uptime,
+        loc_total, loc_add, loc_del,
+        current_streak, longest_streak,
+    )
     with open('profile.svg', 'w', encoding='utf-8') as f:
-        f.write(svg)
+        f.write(build_svg(*stat_args, mode='adaptive'))
+    with open('profile-dark.svg', 'w', encoding='utf-8') as f:
+        f.write(build_svg(*stat_args, mode='dark'))
+    with open('profile-light.svg', 'w', encoding='utf-8') as f:
+        f.write(build_svg(*stat_args, mode='light'))
     print('Done.')
+
 
 
 if __name__ == '__main__':
