@@ -390,7 +390,7 @@ def contribs_repos_row(y: int, lbl1: str, v1: str, repos: int, contributed: int)
         cc(' | ') + key('Repos') + cc(f': {"."*d2} ') + v2_svg)
 
 def loc_dual_row(y: int, total: int, add: int, delete: int) -> str:
-    """Lines of Code on left, add/del breakdown on right with ) aligned to right edge."""
+    """Lines of Code on left, add/del breakdown on right with } aligned to right edge."""
     net_str = fmt(total)
     add_str = fmt(add)
     del_str = fmt(delete)
@@ -400,8 +400,8 @@ def loc_dual_row(y: int, total: int, add: int, delete: int) -> str:
     total_pad = right_chars - 2 - len(inner)
     lp = ' ' * (total_pad // 2)
     rp = ' ' * (total_pad - total_pad // 2)
-    rhs = (f'({lp}<tspan class="addColor">{esc(add_str)}</tspan>++, '
-           f'<tspan class="delColor">{esc(del_str)}</tspan>--{rp})')
+    rhs = (f'{{{lp}<tspan class="addColor">{esc(add_str)}</tspan>++, '
+           f'<tspan class="delColor">{esc(del_str)}</tspan>--{rp}}}')
     return trow(y,
         cc('. ') + key('Lines of Code') + cc(f': {"."*d1} ') + val(net_str) +
         cc(' | ') + rhs)
