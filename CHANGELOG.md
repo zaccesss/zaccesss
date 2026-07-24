@@ -26,12 +26,17 @@ because it is a living profile rather than a released library.
 - Reordered the Git Stats rows so the three curly-brace detail rows (`Repos {Contrib}`, `Streak {Best}`,
   `Lines of Code {++/--}`) sit together at the bottom of the block instead of being split up by `Commits`/`PRs`
   and `Issues`/`Reviews`.
-- Aligned the opening `{` of the `Repos {Contrib}` and `Streak {Best}` rows to the same column, computed per
-  render from whichever row's detail text is currently longer (that row keeps its natural exact-66-char fit;
-  the other row's brace shifts left to match and gets right-padded with invisible spaces). Pinning to a fixed
-  column instead would have let the row with the longer detail text overflow past 66 chars once the two
-  values' digit counts diverged - verified across several `Contrib`/`Best` length combinations that both rows
-  stay at exactly 66 chars and the braces land on the same column in every case.
+- Aligned both the opening `{` and closing `}` of the `Repos {Contrib}` and `Streak {Best}` rows to the same
+  columns, by padding whichever row's inner brace text is shorter with a leader-dot (`{Best: .42d}`) up to a
+  shared target length, matching the `. Label: .... value` dot-leader style used everywhere else on the card
+  instead of leaving an invisible gap. Went through two unsafe designs before this one and caught both by
+  testing worst-case values rather than just the current live numbers: pinning a fixed column let the row with
+  the longer detail text overflow past 66 chars, and the first version of the inner-padding fix could still
+  overflow because padding one row out to match the other's length didn't check whether that row had any
+  budget left before its own dot-leader hit its 1-dot floor. Swept 480 `(repos, contributed, current streak,
+  longest streak)` combinations after the fix - zero overflow, braces aligned in every case.
+- Bumped the README's SVG cache-busting query param from `?v=11` to `?v=12` across all three `<picture>`
+  references, so the dot-leader change above is visible immediately rather than waiting out GitHub's cache.
 - Bumped the README's SVG cache-busting query param from `?v=10` to `?v=11` across all three `<picture>`
   references, so the brace-alignment change above is visible immediately rather than waiting out GitHub's cache.
 - Bumped the README's SVG cache-busting query param from `?v=9` to `?v=10` across all three `<picture>`
