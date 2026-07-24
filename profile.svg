@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg"
      font-family="ConsolasFallback,Consolas,monospace"
-     width="1080px" height="710px"
+     width="1080px" height="730px"
      font-size="16px">
   <defs><style>
       @font-face {
@@ -28,40 +28,40 @@
         .cc       { fill: #616e7f;   }
       }
       </style></defs>
-  <rect width="1080px" height="710px" class="bg" rx="15"/>
+  <rect width="1080px" height="730px" class="bg" rx="15"/>
   <!-- ASCII portrait: 14px so 44-char lines stay inside x=410 -->
   <text x="35" y="30" class="fg" font-size="14px"
         xml:space="preserve" style="white-space:pre;">
-    <tspan x="35" y="60">                                            </tspan>
-    <tspan x="35" y="80">              .W##*W::  |1ll*$#,            </tspan>
-    <tspan x="35" y="100">            g$M#gg@@@@*@@@@MgMM@@           </tspan>
-    <tspan x="35" y="120">         Wgg##$@@@@@@%W$@@@@@@$##@@         </tspan>
-    <tspan x="35" y="140">     $@@@@@$$@M$M#%#@g#g#g@@@@@@@MM@@@M     </tspan>
-    <tspan x="35" y="160">   %@@@M*l|;;11;;;;;WW;:,,;11W**%M@@@$@@@   </tspan>
-    <tspan x="35" y="180">   M@gW;..,:;:;::::,,,,:::::::::;|lW#M@g@,  </tspan>
-    <tspan x="35" y="200">  @%1:,WM:1|111::,,,,,,,,,,::11|1||111WM@%  </tspan>
-    <tspan x="35" y="220">.@%l|||,1|WWWl1::,.........,:1llll||||l#$@$ </tspan>
-    <tspan x="35" y="240">1|;*11llll|11:,,,..........,,;||llWllll%g#@:</tspan>
-    <tspan x="35" y="260">@W,#l,;111;:,.   ......     .,,:;:;|llW#g@, </tspan>
-    <tspan x="35" y="280"> M@.11,|l*###gggW|,..... ,:1*#g###%W|11|1;@ </tspan>
-    <tspan x="35" y="300">.M..1**WWW*|;lgMM#1:,,,:*%#%,  lWWW**|;;.@:.</tspan>
-    <tspan x="35" y="320">@,,*W*%gg%:|W|,*W#%:..;*W%$:l*%W%$g%*W||,g@#</tspan>
-    <tspan x="35" y="340">#,,W;11l%*.|$1 :l*l,,,;*1.;..W%:W%l|11|l:; ,</tspan>
-    <tspan x="35" y="360">,,,11;;:,,:,..,,:11,..,1|,.,,..:,,,:;11l::,,</tspan>
-    <tspan x="35" y="380"> .,.:11;:,...  ,;1,,..,:::. ..,,..,:;1|1.:1.</tspan>
-    <tspan x="35" y="400"> . l1;:,,....1|:.     ..,;.....,,:1:11,W#.  </tspan>
-    <tspan x="35" y="420">     ;1::,,...,|*g#1;;|Wll;... ..,:;;1,l    </tspan>
-    <tspan x="35" y="440">     ,11;:,     ,;,   ...        ..::,*     </tspan>
-    <tspan x="35" y="460">      |ll|;1|%*|;:,.   .,;1l1.,:;|||1l      </tspan>
-    <tspan x="35" y="480">       ::;;;. ;,         ,11,.:,:11|l;      </tspan>
-    <tspan x="35" y="500"> .ll#* |,;|l1;:;,         . :111|l*%W;####%1</tspan>
-    <tspan x="35" y="520">@@@@@@|Wl1|11;;11;::::;1;;;:;1l**l;;: @@@@@@</tspan>
-    <tspan x="35" y="540">@@@@@@;;|lW*l1,             ;**W1::::l@@@@@@</tspan>
-    <tspan x="35" y="560">@@@@@@;,..,:;;1||;:,...,:;1||:,.,1,..,@@@@@@</tspan>
-    <tspan x="35" y="580">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="35" y="80">                                            </tspan>
+    <tspan x="35" y="100">              .W##*W::  |1ll*$#,            </tspan>
+    <tspan x="35" y="120">            g$M#gg@@@@*@@@@MgMM@@           </tspan>
+    <tspan x="35" y="140">         Wgg##$@@@@@@%W$@@@@@@$##@@         </tspan>
+    <tspan x="35" y="160">     $@@@@@$$@M$M#%#@g#g#g@@@@@@@MM@@@M     </tspan>
+    <tspan x="35" y="180">   %@@@M*l|;;11;;;;;WW;:,,;11W**%M@@@$@@@   </tspan>
+    <tspan x="35" y="200">   M@gW;..,:;:;::::,,,,:::::::::;|lW#M@g@,  </tspan>
+    <tspan x="35" y="220">  @%1:,WM:1|111::,,,,,,,,,,::11|1||111WM@%  </tspan>
+    <tspan x="35" y="240">.@%l|||,1|WWWl1::,.........,:1llll||||l#$@$ </tspan>
+    <tspan x="35" y="260">1|;*11llll|11:,,,..........,,;||llWllll%g#@:</tspan>
+    <tspan x="35" y="280">@W,#l,;111;:,.   ......     .,,:;:;|llW#g@, </tspan>
+    <tspan x="35" y="300"> M@.11,|l*###gggW|,..... ,:1*#g###%W|11|1;@ </tspan>
+    <tspan x="35" y="320">.M..1**WWW*|;lgMM#1:,,,:*%#%,  lWWW**|;;.@:.</tspan>
+    <tspan x="35" y="340">@,,*W*%gg%:|W|,*W#%:..;*W%$:l*%W%$g%*W||,g@#</tspan>
+    <tspan x="35" y="360">#,,W;11l%*.|$1 :l*l,,,;*1.;..W%:W%l|11|l:; ,</tspan>
+    <tspan x="35" y="380">,,,11;;:,,:,..,,:11,..,1|,.,,..:,,,:;11l::,,</tspan>
+    <tspan x="35" y="400"> .,.:11;:,...  ,;1,,..,:::. ..,,..,:;1|1.:1.</tspan>
+    <tspan x="35" y="420"> . l1;:,,....1|:.     ..,;.....,,:1:11,W#.  </tspan>
+    <tspan x="35" y="440">     ;1::,,...,|*g#1;;|Wll;... ..,:;;1,l    </tspan>
+    <tspan x="35" y="460">     ,11;:,     ,;,   ...        ..::,*     </tspan>
+    <tspan x="35" y="480">      |ll|;1|%*|;:,.   .,;1l1.,:;|||1l      </tspan>
+    <tspan x="35" y="500">       ::;;;. ;,         ,11,.:,:11|l;      </tspan>
+    <tspan x="35" y="520"> .ll#* |,;|l1;:;,         . :111|l*%W;####%1</tspan>
+    <tspan x="35" y="540">@@@@@@|Wl1|11;;11;::::;1;;;:;1l**l;;: @@@@@@</tspan>
+    <tspan x="35" y="560">@@@@@@;;|lW*l1,             ;**W1::::l@@@@@@</tspan>
+    <tspan x="35" y="580">@@@@@@;,..,:;;1||;:,...,:;1||:,.,1,..,@@@@@@</tspan>
     <tspan x="35" y="600">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
     <tspan x="35" y="620">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-    <tspan x="35" y="640">                                            </tspan>
+    <tspan x="35" y="640">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+    <tspan x="35" y="660">                                            </tspan>
   </text>
   <!-- Stats block -->
   <text x="410" y="30" class="fg" style="white-space:pre;">
@@ -93,10 +93,11 @@
     <tspan x="410" y="530"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">: ........................... </tspan><tspan class="value">linkedin.com/in/isaacadjei</tspan></tspan>
     <tspan x="410" y="550"></tspan>
     <tspan x="410" y="570">- Git Stats ------------------------------------------------------</tspan>
-    <tspan x="410" y="590"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ....... </tspan><tspan class="value">32 {<tspan class="key">Contributed</tspan>: 0}</tspan><tspan class="cc"> | </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............ </tspan><tspan class="value">4,566</tspan></tspan>
-    <tspan x="410" y="610"><tspan class="cc">. </tspan><tspan class="key">Followers</tspan><tspan class="cc">: .................... </tspan><tspan class="value">15</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan><tspan class="cc">: .................. </tspan><tspan class="value">2</tspan></tspan>
-    <tspan x="410" y="630"><tspan class="cc">. </tspan><tspan class="key">PRs</tspan><tspan class="cc">: ......................... </tspan><tspan class="value">932</tspan><tspan class="cc"> | </tspan><tspan class="key">Issues</tspan><tspan class="cc">: ............... </tspan><tspan class="value">526</tspan></tspan>
-    <tspan x="410" y="650"><tspan class="cc">. </tspan><tspan class="key">Streak.Best</tspan><tspan class="cc">: ............. </tspan><tspan class="value">93 days</tspan><tspan class="cc"> | </tspan><tspan class="key">Streak.Current</tspan><tspan class="cc">: ... </tspan><tspan class="value">93 days</tspan></tspan>
-    <tspan x="410" y="670"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: ........... </tspan><tspan class="value">428,474</tspan><tspan class="cc"> | </tspan>(  <tspan class="addColor">654,517</tspan>++, <tspan class="delColor">226,043</tspan>--   )</tspan>
+    <tspan x="410" y="590"><tspan class="cc">. </tspan><tspan class="key">Followers</tspan><tspan class="cc">: .................... </tspan><tspan class="value">15</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan><tspan class="cc">: .................. </tspan><tspan class="value">2</tspan></tspan>
+    <tspan x="410" y="610"><tspan class="cc">. </tspan><tspan class="key">Contribs</tspan><tspan class="cc">: .................. </tspan><tspan class="value">4,586</tspan><tspan class="cc"> | </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ... </tspan><tspan class="value">32 {<tspan class="key">Contrib</tspan>: 32}</tspan></tspan>
+    <tspan x="410" y="630"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ................... </tspan><tspan class="value">3,066</tspan><tspan class="cc"> | </tspan><tspan class="key">PRs</tspan><tspan class="cc">: .................. </tspan><tspan class="value">934</tspan></tspan>
+    <tspan x="410" y="650"><tspan class="cc">. </tspan><tspan class="key">Issues</tspan><tspan class="cc">: ...................... </tspan><tspan class="value">526</tspan><tspan class="cc"> | </tspan><tspan class="key">Reviews</tspan><tspan class="cc">: ............... </tspan><tspan class="value">17</tspan></tspan>
+    <tspan x="410" y="670"><tspan class="cc">. </tspan><tspan class="key">Streak.Best</tspan><tspan class="cc">: ............. </tspan><tspan class="value">93 days</tspan><tspan class="cc"> | </tspan><tspan class="key">Streak.Current</tspan><tspan class="cc">: ... </tspan><tspan class="value">93 days</tspan></tspan>
+    <tspan x="410" y="690"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan><tspan class="cc">: ........... </tspan><tspan class="value">428,560</tspan><tspan class="cc"> | </tspan>(  <tspan class="addColor">654,709</tspan>++, <tspan class="delColor">226,149</tspan>--   )</tspan>
   </text>
 </svg>
