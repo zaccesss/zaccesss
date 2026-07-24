@@ -26,6 +26,14 @@ because it is a living profile rather than a released library.
 - Reordered the Git Stats rows so the three curly-brace detail rows (`Repos {Contrib}`, `Streak {Best}`,
   `Lines of Code {++/--}`) sit together at the bottom of the block instead of being split up by `Commits`/`PRs`
   and `Issues`/`Reviews`.
+- Aligned the opening `{` of the `Repos {Contrib}` and `Streak {Best}` rows to the same column, computed per
+  render from whichever row's detail text is currently longer (that row keeps its natural exact-66-char fit;
+  the other row's brace shifts left to match and gets right-padded with invisible spaces). Pinning to a fixed
+  column instead would have let the row with the longer detail text overflow past 66 chars once the two
+  values' digit counts diverged - verified across several `Contrib`/`Best` length combinations that both rows
+  stay at exactly 66 chars and the braces land on the same column in every case.
+- Bumped the README's SVG cache-busting query param from `?v=10` to `?v=11` across all three `<picture>`
+  references, so the brace-alignment change above is visible immediately rather than waiting out GitHub's cache.
 - Bumped the README's SVG cache-busting query param from `?v=9` to `?v=10` across all three `<picture>`
   references, so GitHub serves the freshly regenerated cards instead of a cached copy of the old layout.
 - Updated `.github/workflows/build.yml` and `.github/workflows/ci.yml` to generate, ignore and stage all
