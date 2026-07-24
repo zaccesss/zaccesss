@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
-  approach.svg - my personal code philosophy, adapts to the viewer's theme.
+  approach-light.svg - my personal code philosophy (fixed light palette).
   Loops every 26s: 0.5s blank, type each line at ~60ms/char, 4s hold, 3s reset.
   Each line is revealed left-to-right by animating a clipPath rect width from 0 to max.
 -->
@@ -19,22 +19,13 @@
       text, tspan { white-space: pre; }
       @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
       .cursor  { animation: blink 0.7s step-end infinite; }
-      .comment { fill: #616e7f; }
-      .kw      { fill: #ff7b72; }
-      .type    { fill: #ffa657; }
-      .fn      { fill: #d2a8ff; }
-      .str     { fill: #a5d6ff; }
-      .plain   { fill: #c9d1d9; }
-      .bg      { fill: #161b22; }
-      @media (prefers-color-scheme: light) {
-        .comment { fill: #6e7781; }
-        .kw      { fill: #cf222e; }
-        .type    { fill: #953800; }
-        .fn      { fill: #8250df; }
-        .str     { fill: #0a3069; }
-        .plain   { fill: #24292f; }
-        .bg      { fill: #f6f8fa; }
-      }
+      .comment { fill: #6e7781; }
+      .kw      { fill: #cf222e; }
+      .type    { fill: #953800; }
+      .fn      { fill: #8250df; }
+      .str     { fill: #0a3069; }
+      .plain   { fill: #24292f; }
+      .bg      { fill: #f6f8fa; }
     </style>
 
     <!-- keyTimes as fractions of 26s total cycle                                      -->

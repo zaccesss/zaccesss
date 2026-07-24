@@ -1,20 +1,21 @@
 # Workflows
 
-One workflow builds the profile itself; the rest keep the repo healthy. The
-generator lives in [`../../profile.py`](../../profile.py) and the build
-workflow is a thin wrapper that hands it the credentials.
+One workflow builds the profile and approach cards; the rest keep the repo
+healthy. The generators live in [`../../profile.py`](../../profile.py) and
+[`../../approach.py`](../../approach.py),
+and the build workflow is a thin wrapper that hands them the credentials.
 
 ## The build
 
 | Workflow | Trigger | Purpose |
 | --- | --- | --- |
-| [build](build.yml) | three times a day (00:17, 08:17, 16:17 UTC), push to main (excluding the generated SVG), manual `workflow_dispatch` | Runs `profile.py` to regenerate the single theme-adaptive `profile.svg` from live GitHub stats, then commits only if something changed. Pushes over SSH with a write deploy key that bypasses the branch ruleset |
+| [build](build.yml) | four times a day (00:17, 06:17, 12:17, 18:17 UTC), push to main (excluding generated SVGs), manual `workflow_dispatch` | Runs `profile.py` to regenerate the profile cards (`profile.svg`, `profile-dark.svg`, `profile-light.svg`) from live GitHub stats, then `approach.py` to split the hand-edited `approach.svg` into `approach-dark.svg` and `approach-light.svg`, then commits only if something changed. Pushes over SSH with a write deploy key that bypasses the branch ruleset |
 
 ## Repo automation
 
 | Workflow | Trigger | Purpose |
 | --- | --- | --- |
-| [ci](ci.yml) | PR | Compile-checks and imports the generator so a broken change cannot land |
+| [ci](ci.yml) | PR | Compile-checks and imports both generators so a broken change cannot land |
 | [gitleaks-scan](gitleaks-scan.yml) | push, PR | Scans for hard-coded secrets with a pinned gitleaks binary |
 
 Dependency update PRs and stale branch cleanup are handled centrally by repo-ops, so
