@@ -5,7 +5,7 @@ This repository is dual-licensed:
 - The visual and written content (the generated SVGs, the README, the ASCII portrait and
   everything under `assets/`) is licensed under the Creative Commons
   Attribution-NonCommercial-NoDerivatives 4.0 International License; see [LICENSE](LICENSE).
-- The generator source code (`isaacadjei.py`) is licensed under the PolyForm Noncommercial
+- The generator source code (`profile.py`) is licensed under the PolyForm Noncommercial
   License 1.0.0, the full text of which follows.
 
 ---

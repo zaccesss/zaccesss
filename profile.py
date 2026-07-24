@@ -6,16 +6,16 @@
 # see NOTICE.md. The repository's visual output (the SVGs, the README and the
 # assets) is licensed under CC BY-NC-ND 4.0; see LICENSE.
 """
-isaacadjei.py — my GitHub profile README SVG generator.
+profile.py — my GitHub profile README SVG generator.
 
 I generate profile.svg, a single theme-adaptive card (light by default, dark under a
 prefers-color-scheme media query so it renders correctly on every forge, not just GitHub):
-  - Left column:  my ASCII art portrait (44 cols x 28 rows, loaded from ascii_final.txt)
+  - Left column:  my ASCII art portrait (44 cols x 30 rows, loaded from ascii_profile.txt)
   - Right column: neofetch-style info block + live GitHub stats pulled from the API
 
 To run locally I need my ACCESS_TOKEN set as an environment variable:
     export ACCESS_TOKEN=<fine-grained-PAT>
-    python isaacadjei.py
+    python profile.py
 """
 
 import os
@@ -30,11 +30,11 @@ from html import escape as esc
 
 USERNAME   = 'zaccesss'  # GitHub username to query
 
-ASCII_ART_PATH = os.path.join(os.path.dirname(__file__), 'assets', 'ascii_final.txt')  # path to ASCII portrait file
+ASCII_ART_PATH = os.path.join(os.path.dirname(__file__), 'assets', 'ascii_profile.txt')  # path to ASCII portrait file
 GRAPHQL_URL    = 'https://api.github.com/graphql'  # GitHub GraphQL endpoint
 
-# Portrait dimensions (rows must match ascii_final.txt line count)
-ASCII_ROWS = 30  # must match the line count of ascii_final.txt
+# Portrait dimensions (rows must match ascii_profile.txt line count)
+ASCII_ROWS = 30  # must match the line count of ascii_profile.txt
 
 SVG_WIDTH  = 1080  # total canvas width in pixels
 ROW_STEP   = 20   # vertical gap between rows in pixels
@@ -45,10 +45,11 @@ LINE_WIDTH = 66   # character budget for the right column; dots fill to this wid
 
 ASCII_X = 35   # left edge of the ASCII portrait column
 STATS_X = 410  # left edge of the stats column
+ASCII_Y_OFFSET = ROW_STEP  # visually centres the portrait after the taller Git Stats block
 
-# Stats rows: content goes to row 32 (y=670); SVG height adds bottom margin.
-STATS_ROWS = 33                                                        # total number of rows in the stats block
-SVG_HEIGHT = ROW_START + (STATS_ROWS - 1) * ROW_STEP + ROW_STEP + 20  # 650px total canvas height
+# Stats rows: content goes to row 33 (y=690); SVG height adds bottom margin.
+STATS_ROWS = 34                                                        # total number of rows in the stats block
+SVG_HEIGHT = ROW_START + (STATS_ROWS - 1) * ROW_STEP + ROW_STEP + 20  # 730px total canvas height
 
 # ---------------------------------------------------------------------------
 # Colour schemes
@@ -79,7 +80,7 @@ LIGHT = {
 # ---------------------------------------------------------------------------
 
 def load_ascii_art(path: str) -> list[str]:
-    """Return ASCII_ROWS strings of 44 chars each from ascii_final.txt."""
+    """Return ASCII_ROWS strings of 44 chars each from ascii_profile.txt."""
     with open(path, 'r', encoding='utf-8') as f:
         lines = f.read().splitlines()
     result = []
@@ -104,18 +105,19 @@ def graphql(token: str, query: str, variables: dict | None = None) -> dict:
     return result.get('data', {})
 
 
-def get_user_info(token: str, username: str) -> tuple[int, int, int, int, int]:
-    """Return (followers, prs, contributed_repos, issues, creation_year)."""
+def get_user_info(token: str, username: str) -> tuple[int, int, int, int, int, int]:
+    """Return (followers, prs, contributed_repos, issues, gists, creation_year)."""
     data = graphql(token, """
         query ($login: String!) {
             user(login: $login) {
                 followers { totalCount }
                 pullRequests { totalCount }
                 issues { totalCount }
+                gists(first: 1, privacy: PUBLIC) { totalCount }
                 repositoriesContributedTo(
                     first: 1
-                    contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, REPOSITORY]
-                    includeUserRepositories: false
+                    contributionTypes: [COMMIT, PULL_REQUEST, PULL_REQUEST_REVIEW, ISSUE, REPOSITORY]
+                    includeUserRepositories: true
                 ) { totalCount }
                 createdAt
             }
@@ -126,52 +128,62 @@ def get_user_info(token: str, username: str) -> tuple[int, int, int, int, int]:
         u.get('pullRequests',               {}).get('totalCount', 0),
         u.get('repositoriesContributedTo',  {}).get('totalCount', 0),
         u.get('issues',                     {}).get('totalCount', 0),
+        u.get('gists',                      {}).get('totalCount', 0),
         int(u.get('createdAt', '2022-01-01T00:00:00Z')[:4]),  # slice the year from the ISO timestamp
     )
 
 
-def get_repos_and_stars(token: str, username: str) -> tuple[int, int]:
-    """Return (total_owned_repos, total_stars)."""
+def get_repos_stars_and_forks(token: str, username: str) -> tuple[int, int, int]:
+    """Return (total_owned_repos, total_stars, total_forks)."""
     query = """
         query ($login: String!, $cursor: String) {
             user(login: $login) {
                 repositories(first: 100, after: $cursor, ownerAffiliations: OWNER,
                              orderBy: {field: UPDATED_AT, direction: DESC}) {
-                    nodes { stargazerCount }
+                    nodes { stargazerCount forkCount }
                     pageInfo { hasNextPage endCursor }
                     totalCount
                 }
             }
         }"""
-    stars, total, cursor, first = 0, 0, None, True
+    stars, forks, total, cursor, first = 0, 0, 0, None, True
     while True:
         r = graphql(token, query, {'login': username, 'cursor': cursor})
         r = r.get('user', {}).get('repositories', {})
         if first:
             total, first = r.get('totalCount', 0), False  # capture total count from the first page only
         stars += sum(n.get('stargazerCount', 0) for n in r.get('nodes', []))
+        forks += sum(n.get('forkCount', 0) for n in r.get('nodes', []))
         page = r.get('pageInfo', {})
         if not page.get('hasNextPage'):
             break
         cursor = page.get('endCursor')
-    return total, stars
+    return total, stars, forks
 
 
-def get_commits_for_year(token: str, username: str, year: int) -> int:
+def get_contributions_for_year(token: str, username: str, year: int) -> tuple[int, int, int]:
+    """Return (commits, reviews, total_contributions) for one calendar year."""
     data = graphql(token, """
         query ($login: String!, $from: DateTime!, $to: DateTime!) {
             user(login: $login) {
                 contributionsCollection(from: $from, to: $to) {
-                    contributionCalendar { totalContributions }
+                    totalCommitContributions
+                    totalPullRequestReviewContributions
+                    contributionCalendar {
+                        totalContributions
+                    }
                 }
             }
         }""", {'login': username,
                'from': f'{year}-01-01T00:00:00Z',
                'to':   f'{year}-12-31T23:59:59Z'})
-    return (data.get('user', {})
-               .get('contributionsCollection', {})
-               .get('contributionCalendar', {})
-               .get('totalContributions', 0))
+    collection = (data.get('user', {})
+                      .get('contributionsCollection', {}))
+    return (
+        collection.get('totalCommitContributions', 0),
+        collection.get('totalPullRequestReviewContributions', 0),
+        collection.get('contributionCalendar', {}).get('totalContributions', 0),
+    )
 
 
 def get_streak(token: str, username: str) -> tuple[int, int]:
@@ -221,14 +233,18 @@ def get_streak(token: str, username: str) -> tuple[int, int]:
     return current, longest
 
 
-def get_all_commits(token: str, username: str, creation_year: int) -> int:
-    total = 0
+def get_all_contributions(token: str, username: str, creation_year: int) -> tuple[int, int, int]:
+    """Sum commits, reviews and total contributions across every year since account creation."""
+    commits = reviews = total_contribs = 0
     for year in range(creation_year, datetime.datetime.utcnow().year + 1):  # walk every year from account creation to today
         try:
-            total += get_commits_for_year(token, username, year)
+            year_commits, year_reviews, year_total = get_contributions_for_year(token, username, year)
+            commits += year_commits
+            reviews += year_reviews
+            total_contribs += year_total
         except Exception as e:
-            print(f'  Warning (commits {year}): {e}', file=sys.stderr)
-    return total
+            print(f'  Warning (contributions {year}): {e}', file=sys.stderr)
+    return commits, reviews, total_contribs
 
 
 def get_loc(token: str, username: str) -> tuple[int, int, int]:
@@ -361,16 +377,17 @@ def dual_row(y: int, lbl1: str, v1: str, lbl2: str, v2: str) -> str:
         cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
         cc(' | ') + key(lbl2) + cc(f': {"."*d2} ') + val(v2))
 
-def repos_commits_row(y: int, repos: int, contributed: int, commits: int) -> str:
-    """Repos (with key-coloured Contributed) paired with Commits."""
-    v1_plain = f'{fmt(repos)} {{Contributed: {fmt(contributed)}}}'
-    d1 = max(1, PIPE_LEFT - 5 - len('Repos') - len(v1_plain))
-    d2 = max(1, LINE_WIDTH - PIPE_LEFT - 6 - len('Commits') - len(fmt(commits)))
-    v1_svg = (f'<tspan class="value">{esc(fmt(repos))} {{'
-              f'<tspan class="key">Contributed</tspan>: {esc(fmt(contributed))}}}</tspan>')
+def contribs_repos_row(y: int, lbl1: str, v1: str, repos: int, contributed: int) -> str:
+    """Any headline stat paired with Repos (Contributed in key-coloured curly braces) on the right,
+    the same headline-left, detail-right shape as the Lines of Code row."""
+    v2_plain = f'{fmt(repos)} {{Contrib: {fmt(contributed)}}}'
+    d1 = max(1, PIPE_LEFT - 5 - len(lbl1) - len(v1))
+    d2 = max(1, LINE_WIDTH - PIPE_LEFT - 6 - len('Repos') - len(v2_plain))
+    v2_svg = (f'<tspan class="value">{esc(fmt(repos))} {{'
+              f'<tspan class="key">Contrib</tspan>: {esc(fmt(contributed))}}}</tspan>')
     return trow(y,
-        cc('. ') + key('Repos') + cc(f': {"."*d1} ') + v1_svg +
-        cc(' | ') + key('Commits') + cc(f': {"."*d2} ') + val(fmt(commits)))
+        cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
+        cc(' | ') + key('Repos') + cc(f': {"."*d2} ') + v2_svg)
 
 def loc_dual_row(y: int, total: int, add: int, delete: int) -> str:
     """Lines of Code on left, add/del breakdown on right with ) aligned to right edge."""
@@ -395,9 +412,10 @@ def loc_dual_row(y: int, total: int, add: int, delete: int) -> str:
 
 def build_svg(
     ascii_rows: list[str],
-    repos: int, contributed: int, stars: int,
+    repos: int, contributed: int, stars: int, forks: int,
     commits: int, followers: int,
-    prs: int, issues: int,
+    prs: int, issues: int, reviews: int, gists: int,
+    total_contribs: int,
     loc_total: int, loc_add: int, loc_del: int,
     current_streak: int, longest_streak: int,
 ) -> str:
@@ -435,7 +453,7 @@ def build_svg(
 
     # ASCII art at 14px: keeps 44-char lines clear of the stats column at x={STATS_X}
     ascii_tspans = [
-        f'    <tspan x="{ASCII_X}" y="{ROW_START + ROW_STEP + 10 + i * ROW_STEP}">{esc(line)}</tspan>'
+        f'    <tspan x="{ASCII_X}" y="{ROW_START + ROW_STEP + 10 + ASCII_Y_OFFSET + i * ROW_STEP}">{esc(line)}</tspan>'
         for i, line in enumerate(ascii_rows)
     ]
 
@@ -481,11 +499,14 @@ def build_svg(
         blank(Y[26]),
 
         section_header(Y[27], 'Git Stats'),
-        repos_commits_row(Y[28], repos, contributed, commits),
-        dual_row(Y[29],  'Followers',      fmt(followers),            'Stars',       fmt(stars)),
-        dual_row(Y[30],  'PRs',            fmt(prs),                  'Issues',      fmt(issues)),
-        dual_row(Y[31],  'Streak.Best', f'{longest_streak} days', 'Streak.Current', f'{current_streak} days'),
-        loc_dual_row(Y[32], loc_total, loc_add, loc_del),
+        dual_row(Y[28], 'Followers',      fmt(followers),        'Stars',          fmt(stars)),
+        contribs_repos_row(Y[29], 'Contribs', fmt(total_contribs), repos, contributed),
+        # Forks and Gists are both 0 right now, I'll bring this row back once I have some.
+        # dual_row(Y[30], 'Forks',        fmt(forks),            'Gists',          fmt(gists)),
+        dual_row(Y[30], 'Commits',        fmt(commits),          'PRs',            fmt(prs)),
+        dual_row(Y[31], 'Issues',         fmt(issues),           'Reviews',        fmt(reviews)),
+        dual_row(Y[32], 'Streak.Best',    f'{longest_streak} days', 'Streak.Current', f'{current_streak} days'),
+        loc_dual_row(Y[33], loc_total, loc_add, loc_del),
     ]
 
     ascii_block = '\n'.join(ascii_tspans)
@@ -518,6 +539,14 @@ def main() -> None:
     if not token:
         print('ERROR: ACCESS_TOKEN environment variable is not set.', file=sys.stderr)
         sys.exit(1)
+    # GitHub's contributionsCollection withholds private-repo detail (commits, reviews, the
+    # calendar) from every API caller, even the account owner, unless the token carries the
+    # classic read:user scope - no fine-grained permission grants this. CONTRIB_TOKEN is a
+    # separate classic PAT scoped to read:user only, with no repo access at all, so I don't have
+    # to widen ACCESS_TOKEN's own repo-content permissions just to see my private contributions.
+    # Falls back to ACCESS_TOKEN so this still runs (with public-only contribution counts) before
+    # the secret exists, or for local testing with a token that already carries read:user.
+    contrib_token = os.environ.get('CONTRIB_TOKEN', '').strip() or token
     username = os.environ.get('USER_NAME', USERNAME)  # USER_NAME env var overrides the hardcoded default
 
     print('Loading ASCII art...')
@@ -525,23 +554,23 @@ def main() -> None:
 
     print('Fetching GitHub stats...')
     try:
-        followers, prs, contributed, issues, creation_year = get_user_info(token, username)
+        followers, prs, contributed, issues, gists, creation_year = get_user_info(token, username)
     except Exception as e:
         print(f'  Warning: {e}', file=sys.stderr)
-        followers, prs, contributed, issues, creation_year = 0, 0, 0, 0, 2022  # safe defaults if the API call fails
+        followers, prs, contributed, issues, gists, creation_year = 0, 0, 0, 0, 0, 2022  # safe defaults if the API call fails
 
     try:
-        repos, stars = get_repos_and_stars(token, username)
+        repos, stars, forks = get_repos_stars_and_forks(token, username)
     except Exception as e:
         print(f'  Warning: {e}', file=sys.stderr)
-        repos, stars = 0, 0
+        repos, stars, forks = 0, 0, 0
 
-    print('  Counting commits...')
+    print('  Counting commit and review contributions...')
     try:
-        commits = get_all_commits(token, username, creation_year)
+        commits, reviews, total_contribs = get_all_contributions(contrib_token, username, creation_year)
     except Exception as e:
         print(f'  Warning: {e}', file=sys.stderr)
-        commits = 0
+        commits, reviews, total_contribs = 0, 0, 0
 
     print('  Calculating lines of code...')
     try:
@@ -552,21 +581,24 @@ def main() -> None:
 
     print('  Fetching streak stats...')
     try:
-        current_streak, longest_streak = get_streak(token, username)
+        current_streak, longest_streak = get_streak(contrib_token, username)
     except Exception as e:
         print(f'  Warning: {e}', file=sys.stderr)
         current_streak, longest_streak = 0, 0
 
-    print(f'  Repos: {repos} (Contributed: {contributed}) | Stars: {stars}')
-    print(f'  Commits: {commits} | Followers: {followers}')
-    print(f'  PRs: {prs} | Issues: {issues}')
+    print(f'  Followers: {followers} | Stars: {stars}')
+    print(f'  Repos: {repos} | Contributed: {contributed} | Contribs: {total_contribs}')
+    print(f'  Forks: {forks} | Gists: {gists}')
+    print(f'  Commits: {commits} | PRs: {prs}')
+    print(f'  Issues: {issues} | Reviews: {reviews}')
     print(f'  LOC: {fmt(loc_total)} ({fmt(loc_add)}++, {fmt(loc_del)}--)')
     print(f'  Streak: {current_streak} days current, {longest_streak} days best')
 
     print('Generating profile.svg...')  # one theme-adaptive card that renders on every forge
     svg = build_svg(ascii_rows,
-                    repos, contributed, stars,
-                    commits, followers, prs, issues,
+                    repos, contributed, stars, forks,
+                    commits, followers, prs, issues, reviews, gists,
+                    total_contribs,
                     loc_total, loc_add, loc_del,
                     current_streak, longest_streak)
     with open('profile.svg', 'w', encoding='utf-8') as f:
