@@ -38,9 +38,8 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 ## The automated SVG refresh
 
-- The build workflow commits the regenerated `dark_mode.svg` and `light_mode.svg`
-  straight to `main` as me, `Isaac Adjei`, so the commit attributes to me across
-  every forge.
+- The build workflow commits the regenerated `profile.svg` straight to `main` as me,
+  `Isaac Adjei`, so the commit attributes to me across every forge.
 - It pushes over SSH with the `BUILD_DEPLOY_KEY` write deploy key, which bypasses the
   branch ruleset that requires CI, so the direct SVG commit is not blocked. The push
   trigger ignores the SVGs so this commit cannot re-trigger the build.
@@ -57,7 +56,7 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 ## Before a PR
 
-- `python -m compileall isaacadjei.py` and `python -c "import isaacadjei"` (CI runs
+- `python -m compileall profile.py` and `python -c "import profile"` (CI runs
   the same).
 - I never commit a secret. Gitleaks scans every PR.
 
@@ -69,10 +68,17 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
   also the branch ruleset's bypass actor. A GitHub Actions secret name cannot
   start with `GITHUB_` (GitHub reserves that prefix), which is why the stats token is
   `ACCESS_TOKEN`.
+- `CONTRIB_TOKEN` is the one deliberate exception to fine-grained-only tokens. GitHub's
+  `contributionsCollection` (commits, PR reviews, the contribution calendar) withholds
+  private-repo detail from every API caller, even the account owner, unless the token
+  carries the classic `read:user` scope; no fine-grained permission grants this. I hold
+  it as narrowly as the gap allows: a classic PAT scoped to `read:user` alone, no `repo`
+  access at all, so it cannot read or write any repository content, only my own
+  profile-level contribution counts.
 
 ## The system in one breath
 
-- Four times a day (00:17, 06:17, 12:17 and 18:17 UTC) `build.yml` runs `isaacadjei.py`,
-  which reads my live GitHub stats and writes `dark_mode.svg` and `light_mode.svg`. If an
-  SVG changed it commits, and mirror-ops carries this repo to the forges. See the top-level
+- Three times a day (00:17, 08:17 and 16:17 UTC) `build.yml` runs `profile.py`,
+  which reads my live GitHub stats and writes `profile.svg`. If the SVG changed it
+  commits, and mirror-ops carries this repo to the forges. See the top-level
   [`../README.md`](../README.md) and [`workflows/README.md`](workflows/README.md).

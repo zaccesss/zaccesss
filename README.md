@@ -9,14 +9,14 @@
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/newsletter">Newsletter</a>
   &nbsp;&bull;&nbsp;
-  <a href="https://isaacadjei.me/now">Now</a>
-  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/links">Links</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/contact">Contact</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/all-pages">More</a>
 </p>
 
-<img alt="Isaac Adjei's GitHub Profile" src="profile.svg?v=6" width="100%">
+<img alt="Isaac Adjei's GitHub Profile" src="profile.svg?v=7" width="100%">
 <!-- I'm keeping this SVG but muting it for now - I'll uncomment when i want to restore it later -->
 <!--
 <img alt="my approach" src="approach.svg" width="100%">
