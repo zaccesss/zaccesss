@@ -390,47 +390,43 @@ def dual_row(y: int, lbl1: str, v1: str, lbl2: str, v2: str) -> str:
         cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
         cc(' | ') + key(lbl2) + cc(f': {"."*d2} ') + val(v2))
 
-def brace_str_len(detail_lbl: str, detail_val: str) -> int:
-    """Length of the '{detail_lbl: detail_val}' suffix a dual_row_detail row will render."""
-    return len(f'{{{detail_lbl}: {detail_val}}}')
+def brace_inner_len(detail_lbl: str, detail_val: str) -> int:
+    """Length of the unpadded 'detail_lbl: detail_val' text a dual_row_detail row puts inside its braces."""
+    return len(f'{detail_lbl}: {detail_val}')
 
-def shared_brace_col(*detail_lens: int) -> int:
-    """
-    Column where '{' should start so every row sharing this value aligns its opening brace.
-    Pinned to the longest detail suffix (its row keeps its natural exact-width fit); every
-    other row's brace shifts left to match and gets right-padded, so nothing can overflow.
-    """
-    return LINE_WIDTH - max(detail_lens)
+def max_brace_inner_len(lbl2: str, v2_main: str) -> int:
+    """Longest inner-brace text this row can take padded to before its own dot-leader hits the 1-dot floor."""
+    return LINE_WIDTH - PIPE_LEFT - 10 - len(lbl2) - len(v2_main)
 
 def dual_row_detail(y: int, lbl1: str, v1: str, lbl2: str, v2_main: str, detail_lbl: str, detail_val: str,
-                     brace_col: int | None = None) -> str:
+                     pad_inner_to: int | None = None) -> str:
     """Headline stat on left paired with a right stat containing detailed info in key-coloured curly braces.
     e.g. '. Contribs: 1,234 | Repos: 15 {Contrib: 8}'
          '. Uptime: 3y 145d | Streak: 5d {Best: 42d}'
 
-    Pass brace_col (from shared_brace_col()) to align the opening brace with another row of
-    the same shape; the row is right-padded with spaces to stay flush at LINE_WIDTH.
+    Pass pad_inner_to (the max of brace_inner_len() across a group of rows) to align both the
+    opening and closing braces with another row of the same shape: a leader-dot fills the gap
+    inside the braces on whichever row's detail text is shorter, so both { and } land on the
+    same column. The padding only ever adds characters inside an already-natural-width row -
+    it can't push the row past the 66-char budget the way pinning a fixed column could.
     """
+    inner_prefix = f'{detail_lbl}: '
+    gap = max(0, (pad_inner_to or 0) - brace_inner_len(detail_lbl, detail_val))
+    dots = '.' * gap
     d1 = max(1, PIPE_LEFT - 5 - len(lbl1) - len(v1))
-    if brace_col is None:
-        v2_plain = f'{v2_main} {{{detail_lbl}: {detail_val}}}'
-        d2 = max(1, LINE_WIDTH - PIPE_LEFT - 6 - len(lbl2) - len(v2_plain))
-        pad = 0
-    else:
-        lbl2_start = 2 + len(lbl1) + 2 + d1 + 1 + len(v1) + 3  # mirrors PIPE_LEFT + 3
-        d2 = max(1, brace_col - lbl2_start - len(lbl2) - 2 - 1 - len(v2_main) - 1)
-        rendered_col = lbl2_start + len(lbl2) + 2 + d2 + 1 + len(v2_main) + 1
-        pad = max(0, LINE_WIDTH - rendered_col - brace_str_len(detail_lbl, detail_val))
+    v2_plain = f'{v2_main} {{{inner_prefix}{dots}{detail_val}}}'
+    d2 = max(1, LINE_WIDTH - PIPE_LEFT - 6 - len(lbl2) - len(v2_plain))
     v2_svg = (f'<tspan class="value">{esc(v2_main)} {{'
-              f'<tspan class="key">{esc(detail_lbl)}</tspan>: {esc(detail_val)}}}</tspan>' +
-              (' ' * pad if pad else ''))
+              f'<tspan class="key">{esc(detail_lbl)}</tspan>: ' +
+              (f'<tspan class="cc">{dots}</tspan>' if dots else '') +
+              f'{esc(detail_val)}}}</tspan>')
     return trow(y,
         cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
         cc(' | ') + key(lbl2) + cc(f': {"."*d2} ') + v2_svg)
 
-def contribs_repos_row(y: int, lbl1: str, v1: str, repos: int, contributed: int, brace_col: int | None = None) -> str:
+def contribs_repos_row(y: int, lbl1: str, v1: str, repos: int, contributed: int, pad_inner_to: int | None = None) -> str:
     """Any headline stat paired with Repos (Contributed in key-coloured curly braces) on the right."""
-    return dual_row_detail(y, lbl1, v1, 'Repos', fmt(repos), 'Contrib', fmt(contributed), brace_col=brace_col)
+    return dual_row_detail(y, lbl1, v1, 'Repos', fmt(repos), 'Contrib', fmt(contributed), pad_inner_to=pad_inner_to)
 
 def loc_dual_row(y: int, total: int, add: int, delete: int) -> str:
     """Lines of Code on left, add/del breakdown on right with } aligned to right edge."""
@@ -510,10 +506,16 @@ def build_svg(
 
     header_dashes = '-' * (LINE_WIDTH - len('isaac@adjei ') - 1)
 
-    # Repos {Contrib} and Streak {Best} share one opening-brace column so they align vertically.
-    repos_col = shared_brace_col(
-        brace_str_len('Contrib', fmt(contributed)),
-        brace_str_len('Best', f'{fmt(longest_streak)}d'),
+    # Repos {Contrib} and Streak {Best} share one inner-padding target so both { and } align vertically.
+    # Capped to what both rows can actually take - otherwise padding one row's brace out to match
+    # the other's could push its own dot-leader past the 1-dot floor and overflow the 66-char budget.
+    brace_inner_target = min(
+        max(
+            brace_inner_len('Contrib', fmt(contributed)),
+            brace_inner_len('Best', f'{fmt(longest_streak)}d'),
+        ),
+        max_brace_inner_len('Repos', fmt(repos)),
+        max_brace_inner_len('Streak', f'{fmt(current_streak)}d'),
     )
 
     stats_tspans = [
@@ -560,8 +562,8 @@ def build_svg(
         dual_row(Y[29], 'Commits',        fmt(commits),          'PRs',            fmt(prs)),
         dual_row(Y[30], 'Issues',         fmt(issues),           'Reviews',        fmt(reviews)),
         # The three curly-brace detail rows sit together at the bottom, by design.
-        contribs_repos_row(Y[31], 'Contribs', fmt(total_contribs), repos, contributed, brace_col=repos_col),
-        dual_row_detail(Y[32], 'Uptime', uptime,   'Streak',         f'{fmt(current_streak)}d', 'Best', f'{fmt(longest_streak)}d', brace_col=repos_col),
+        contribs_repos_row(Y[31], 'Contribs', fmt(total_contribs), repos, contributed, pad_inner_to=brace_inner_target),
+        dual_row_detail(Y[32], 'Uptime', uptime,   'Streak',         f'{fmt(current_streak)}d', 'Best', f'{fmt(longest_streak)}d', pad_inner_to=brace_inner_target),
         loc_dual_row(Y[33], loc_total, loc_add, loc_del),
     ]
 
