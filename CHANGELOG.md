@@ -8,8 +8,38 @@ because it is a living profile rather than a released library.
 
 ### Changed
 
-- Trimmed the build schedule from four runs a day to three, at 00:17, 08:17 and 16:17
-  UTC (8-hour spacing) instead of every 6 hours, to cut down on scheduled Actions runs.
+- Upgraded the profile SVG generation to output three variants: `profile.svg` (adaptive, default dark),
+  `profile-dark.svg`, and `profile-light.svg`. The README uses an HTML `<picture>` tag with `prefers-color-scheme`
+  media queries to serve `profile-dark.svg` and `profile-light.svg` directly (resolving SVG @media sandboxing
+  on forges and devices that strip it), while keeping `profile.svg` as the standalone adaptive fallback image.
+- Added `approach.py`, which derives `approach-dark.svg` and `approach-light.svg` from the
+  hand-edited `approach.svg`, the same fixed-palette-per-theme treatment as the profile card, for when the
+  `approach` card in the README is un-muted. approach.svg itself stays hand-authored since it's an illustrative
+  diagram, not live data.
+- Replaced the Git Stats `Account` creation-year row with `Uptime` (account age as `Xy Yd`, computed live from
+  the account's creation timestamp rather than frozen at a static year), paired with `Streak` on the right,
+  formatting the longest streak in key-coloured curly braces (`Uptime: 3y 145d | Streak: Xd {Best: Yd}`) to
+  match the `Repos` and `Lines of Code` headline-left, detail-right pattern. Abbreviated the "days" unit on
+  `Streak`/`Best` to a single `d` after finding the full word could overflow the 66-char row budget once both
+  values reached a full year (366/366) - verified every Git Stats row against generous worst-case values and
+  this was the only one that broke the budget; the abbreviated form fits exactly at 66 chars even at 366d/366d.
+- Reordered the Git Stats rows so the three curly-brace detail rows (`Repos {Contrib}`, `Streak {Best}`,
+  `Lines of Code {++/--}`) sit together at the bottom of the block instead of being split up by `Commits`/`PRs`
+  and `Issues`/`Reviews`.
+- Bumped the README's SVG cache-busting query param from `?v=9` to `?v=10` across all three `<picture>`
+  references, so GitHub serves the freshly regenerated cards instead of a cached copy of the old layout.
+- Updated `.github/workflows/build.yml` and `.github/workflows/ci.yml` to generate, ignore and stage all
+  generated SVG variants (`profile*.svg`, `approach-dark.svg`, `approach-light.svg`) and to compile-check
+  `approach.py` alongside `profile.py`.
+- Bumped the build schedule back to four runs a day (00:17, 06:17, 12:17 and 18:17 UTC) from three, and
+  brought `.github/WORKFLOW.md` and `.github/workflows/README.md` back in sync with the schedule and with
+  `approach.py`'s existence (both had drifted out of date).
+- Fixed a stale reference in `.gitattributes` to the generator's old filename (`isaacadjei.py`), clarified
+  that `approach.svg` is the one hand-authored exception among the generated SVGs, and generalised "GitHub's
+  language bar" to "each forge's language bar" since the file applies to every mirror, not just GitHub.
+- Generalised "iOS Safari and GitHub Mobile" to forge/device-neutral wording in `README.md`, `profile.py`
+  and `approach.py`, since the underlying reason (some hosts strip `@media` queries from inline SVG) isn't
+  specific to those two.
 - Renamed the profile generator from `isaacadjei.py` to `profile.py` and the ASCII
   portrait asset from `ascii_final.txt` to `ascii_profile.txt`.
 - Added a `More` link to the README's top link row, pointing at

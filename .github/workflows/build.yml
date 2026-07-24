@@ -1,19 +1,23 @@
 name: README build
 
-# I run this three times a day at 00:17, 08:17 and 16:17 UTC to keep my stats fresh,
+# I run this four times a day at 00:17, 06:17, 12:17 and 18:17 UTC to keep my stats fresh,
 # on every push to main, and I can also trigger it manually from the Actions tab.
 # The :17 minute keeps the run off the congested top of the hour so it is less likely
 # to be delayed or dropped.
 on:
   schedule:
-    - cron: "17 0,8,16 * * *"
+    - cron: "17 0,6,12,18 * * *"
   push:
     branches: [main]
-    # The build commits the regenerated SVG and pushes it with a deploy key which,
-    # unlike GITHUB_TOKEN, re-triggers workflows. I ignore the generated SVG so an
-    # SVG-only commit cannot start another build and loop.
+    # The build commits the regenerated SVGs and pushes them with a deploy key which,
+    # unlike GITHUB_TOKEN, re-triggers workflows. I ignore the generated SVGs so an
+    # SVG-only commit cannot start another build and loop. approach.svg itself is
+    # excluded from this list since it's the hand-edited source, not generated output -
+    # editing it should still trigger a build so its dark/light siblings regenerate.
     paths-ignore:
-      - profile.svg
+      - 'profile*.svg'
+      - 'approach-dark.svg'
+      - 'approach-light.svg'
   workflow_dispatch:
 
 # I need write access so the job can push the regenerated SVG back to my repo.
@@ -73,7 +77,12 @@ jobs:
           USER_NAME: zaccesss
         run: python profile.py
 
-      # Commit the freshly generated SVG back to my repo under my own name.
+      # Derive approach-dark.svg and approach-light.svg from the hand-edited approach.svg.
+      # No secrets needed - it's a pure palette split of a checked-in source file.
+      - name: Generate the approach SVG variants
+        run: python approach.py
+
+      # Commit the freshly generated SVGs back to my repo under my own name.
       # The diff check means I only commit when something actually changed.
       # I push to GitHub (using the token actions/checkout already configured);
       # mirroring to the other forges is handled server-side by mirror-ops.
@@ -90,12 +99,12 @@ jobs:
           fi
           git config --global user.email "code@isaacadjei.me"
           git config --global user.name "Isaac Adjei"
-          git add profile.svg
+          git add profile.svg profile-dark.svg profile-light.svg approach-dark.svg approach-light.svg
           if git diff --staged --quiet; then
-            echo "SVG unchanged; nothing to commit."
+            echo "SVGs unchanged; nothing to commit."
             exit 0
           fi
-          git commit -m "chore: update profile SVG"
+          git commit -m "chore: update generated SVGs"
           # If the remote moved ahead while we were running, replant our freshly
           # generated SVGs on top of the new tip and retry. We regenerate the whole
           # SVG each run, so ours is the authoritative newest version, so 'reset --soft'
@@ -112,7 +121,7 @@ jobs:
               pushed=true
               break
             fi
-            git commit -m "chore: update profile SVG"
+            git commit -m "chore: update generated SVGs"
           done
           if [ "$pushed" != true ]; then
             echo "::error::Failed to push updated SVGs after 5 attempts."
