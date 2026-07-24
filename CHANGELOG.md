@@ -8,6 +8,22 @@ because it is a living profile rather than a released library.
 
 ### Changed
 
+- Trimmed the build schedule from four runs a day to three, at 00:17, 08:17 and 16:17
+  UTC (8-hour spacing) instead of every 6 hours, to cut down on scheduled Actions runs.
+- Renamed the profile generator from `isaacadjei.py` to `profile.py` and the ASCII
+  portrait asset from `ascii_final.txt` to `ascii_profile.txt`.
+- Added a `More` link to the README's top link row, pointing at
+  `https://isaacadjei.me/all-pages`, and dropped the direct `Now` link because
+  that page is already discoverable from `More`.
+- Expanded the Git Stats section to six rows: followers/stars, lifetime contributions/
+  repos, commits/PRs, issues/PR reviews, streaks and lines of code. Contributed repos
+  now includes my own repos, commits count commit contributions only, and lifetime
+  Contribs sums the contribution calendar total across every year since account
+  creation. The Repos row keeps the Contributed count in key-coloured curly braces on
+  the right, mirroring the Lines of Code row's headline-left, detail-right shape. Forks
+  and gists are still fetched every run but that row is commented out for now since both
+  are 0; I'll bring it back once there is real data. The portrait is shifted down to
+  stay centred beside the taller stats block.
 - The profile card is now a single theme-adaptive `profile.svg` instead of a `dark_mode.svg`
   and `light_mode.svg` pair swapped by a `<picture>` element. The theme switch lives inside the
   SVG as a `prefers-color-scheme` media query on colour classes, so the browser renders the right
@@ -15,7 +31,7 @@ because it is a living profile rather than a released library.
   `<picture>` on the other forges and falls back to a single fixed image, which is why the mirrors
   always showed the dark card before. The `approach` diagram gets the same treatment as a single
   adaptive `approach.svg`, so it is ready to render everywhere when I un-mute it. The generator
-  (`isaacadjei.py`) now emits the one adaptive file, and the README references it directly. The
+  (`profile.py`) now emits the one adaptive file, and the README references it directly. The
   build workflow now regenerates, ignores on push and commits `profile.svg` rather than the old
   paired filenames, which were left stale in the first pass and broke the daily auto-update.
 - The build pushes the SVGs over SSH with a write deploy key rather than the built in
@@ -23,13 +39,14 @@ because it is a living profile rather than a released library.
   re-trigger the build and loop.
 - CI and gitleaks now run on pull requests only. They no longer re-run on `main` after a
   merge, since the same commit was already checked on the PR.
-- Moved the build schedule off the top of the hour to `17 0,6,12,18 * * *` (00:17,
-  06:17, 12:17 and 18:17 UTC). The explicit times spell out the four daily runs and the
-  off-peak minute dodges GitHub's congested on-the-hour scheduling.
+- Moved the build schedule off the top of the hour, to the `:17` minute past each
+  scheduled run. The explicit times spell out each daily run and the off-peak minute
+  dodges GitHub's congested on-the-hour scheduling. (Since trimmed from four runs a day
+  to three, see above.)
 - Relicensed the repository. The visual and written content (the SVGs, the README,
   the ASCII portrait and everything under `assets/`) is now Creative Commons
   Attribution-NonCommercial-NoDerivatives 4.0, and the generator source
-  (`isaacadjei.py`) is PolyForm Noncommercial 1.0.0, so the profile can be shared
+  (`profile.py`) is PolyForm Noncommercial 1.0.0, so the profile can be shared
   with credit but not reused commercially or remixed. This replaces the previous
   MIT licence.
 
@@ -46,6 +63,17 @@ because it is a living profile rather than a released library.
   `SECURITY.md` and this changelog. Dependency update PRs and stale branch cleanup
   are handled centrally by repo-ops, so this repo carries no `dependabot.yml` or
   branch maintenance workflow.
+
+### Fixed
+
+- Commits, PR reviews and lifetime Contribs were silently undercounting every private
+  repo. GitHub's `contributionsCollection` withholds private-repo detail from every API
+  caller, even the account owner, unless the token carries the classic `read:user`
+  scope; no fine-grained permission grants this, confirmed empirically by testing
+  the same query with and without that scope on an otherwise identical token. Added
+  `CONTRIB_TOKEN`, a classic PAT scoped to `read:user` alone with no `repo` access at
+  all, used only for the contribution and streak queries, so `ACCESS_TOKEN`'s own
+  repo-content permissions stay exactly as narrow as before.
 
 ## 2026-07-06
 

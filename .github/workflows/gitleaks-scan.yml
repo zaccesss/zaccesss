@@ -1,16 +1,17 @@
 # I scan this repository for hard-coded secrets and credentials on every PR targeting
-# main. The build only uses a read only token, but I still want
-# a tripwire that fails loudly if any credential ever gets committed by mistake. I
+# main and every push. The build only uses a read only token, but I still want a
+# tripwire that fails loudly if any credential ever gets committed by mistake. I
 # install a pinned gitleaks binary directly rather than the action wrapper, which needs
 # a paid licence for SARIF upload on private repos.
 
 name: Gitleaks Scan
 
 on:
-  # Pull requests only. The scan on the PR is enough; main does not need a second run
-  # after the same commit merges.
+  # PRs catch proposed changes, and pushes catch direct automation commits plus any
+  # branch push that did not come through a PR yet.
   pull_request:
     branches: [main]
+  push:
 
 # Least privilege, I only need to read the repository contents to scan them.
 permissions:
