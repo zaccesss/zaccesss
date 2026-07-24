@@ -1,5 +1,5 @@
-# Lightweight CI so a broken change cannot land. I compile and import check my one
-# generator script. There is no build step, it is a plain script, so this is quick.
+# Lightweight CI so a broken change cannot land. I compile and import check my
+# generator scripts. There is no build step, they are plain scripts, so this is quick.
 
 name: CI
 
@@ -33,10 +33,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # I byte compile the script to catch syntax errors, then import it to catch
+      # I byte compile each script to catch syntax errors, then import it to catch
       # import and wiring errors. The token is only read inside main() under the
       # __main__ guard, so this import needs no secret.
       - name: Compile and import check
         run: |
-          python -m compileall -q profile.py
+          python -m compileall -q profile.py approach.py
           python -c "import profile"
+          python -c "import approach"
