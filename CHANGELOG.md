@@ -35,6 +35,8 @@ because it is a living profile rather than a released library.
   overflow because padding one row out to match the other's length didn't check whether that row had any
   budget left before its own dot-leader hit its 1-dot floor. Swept 480 `(repos, contributed, current streak,
   longest streak)` combinations after the fix - zero overflow, braces aligned in every case.
+- Bumped the README's SVG cache-busting query param from `?v=11` to `?v=12` across all three `<picture>`
+  references, so the dot-leader change above is visible immediately rather than waiting out GitHub's cache.
 - Bumped the README's SVG cache-busting query param from `?v=10` to `?v=11` across all three `<picture>`
   references, so the brace-alignment change above is visible immediately rather than waiting out GitHub's cache.
 - Bumped the README's SVG cache-busting query param from `?v=9` to `?v=10` across all three `<picture>`
