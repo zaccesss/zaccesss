@@ -18,15 +18,6 @@
       .delColor { fill: #f85149; }
       .cc       { fill: #616e7f;   }
       text, tspan { white-space: pre; }
-      @media (prefers-color-scheme: light) {
-        .bg       { fill: #f6f8fa;     }
-        .fg       { fill: #24292f;   }
-        .key      { fill: #953800;    }
-        .value    { fill: #0a3069;  }
-        .addColor { fill: #1a7f37;    }
-        .delColor { fill: #cf222e; }
-        .cc       { fill: #c2cfde;   }
-      }
       </style></defs>
   <rect width="1080px" height="730px" class="bg" rx="15"/>
   <!-- ASCII portrait: 14px so 44-char lines stay inside x=410 -->
