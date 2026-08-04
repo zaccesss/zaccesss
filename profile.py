@@ -25,6 +25,7 @@ import os
 import sys
 import datetime
 import requests
+from dateutil.relativedelta import relativedelta
 from html import escape as esc
 
 # ---------------------------------------------------------------------------
@@ -39,15 +40,23 @@ GRAPHQL_URL    = 'https://api.github.com/graphql'  # GitHub GraphQL endpoint
 # Portrait dimensions (rows must match ascii_profile.txt line count)
 ASCII_ROWS = 30  # must match the line count of ascii_profile.txt
 
-SVG_WIDTH  = 1080  # total canvas width in pixels
+SVG_WIDTH  = 1120  # total canvas width in pixels; +40 vs the old 1080 to keep pace with LINE_WIDTH
+                    # going 66->70, so the right margin past the stats column stays roughly level
+                    # with ASCII_X's 35px left margin instead of the widened column eating into it
 ROW_STEP   = 20   # vertical gap between rows in pixels
 ROW_START  = 30   # y-coordinate of the first row
 
 # Right column char width: dots are calculated so every value ends here.
-LINE_WIDTH = 66   # character budget for the right column; dots fill to this width exactly
+# 70 not 66: the extra 4 chars are the slack the Repos/Streak curly-brace rows need to always
+# align, verified by exhaustively checking every digit-length combination up to 999 repos/
+# contributed and 9999 streak days (get_streak() is no longer capped at one year of history, so
+# a multi-year streak is a real possibility, not just a hypothetical) - see shared_brace_col().
+LINE_WIDTH = 70   # character budget for the right column; dots fill to this width exactly
 
 ASCII_X = 35   # left edge of the ASCII portrait column
 STATS_X = 410  # left edge of the stats column
+ASCII_FONT_SIZE = 13  # px; a size down from the 16px stats font so the 44-char-wide portrait
+                       # leaves a real gap before STATS_X instead of almost touching it
 ASCII_Y_OFFSET = ROW_STEP  # visually centres the portrait after the taller Git Stats block
 
 # Stats rows: content goes to row 33 (y=690); SVG height adds bottom margin.
@@ -191,12 +200,12 @@ def get_contributions_for_year(token: str, username: str, year: int) -> tuple[in
     )
 
 
-def get_streak(token: str, username: str) -> tuple[int, int]:
-    """Return (current_streak_days, longest_streak_days) from the past year's contribution calendar."""
+def get_contribution_days_for_year(token: str, username: str, year: int) -> list[tuple[str, int]]:
+    """Return [(date, contributionCount), ...] for one calendar year, sorted by date."""
     data = graphql(token, """
-        query ($login: String!) {
+        query ($login: String!, $from: DateTime!, $to: DateTime!) {
             user(login: $login) {
-                contributionsCollection {
+                contributionsCollection(from: $from, to: $to) {
                     contributionCalendar {
                         weeks {
                             contributionDays {
@@ -207,16 +216,35 @@ def get_streak(token: str, username: str) -> tuple[int, int]:
                     }
                 }
             }
-        }""", {'login': username})
+        }""", {'login': username,
+               'from': f'{year}-01-01T00:00:00Z',
+               'to':   f'{year}-12-31T23:59:59Z'})
     weeks = (data.get('user', {})
                  .get('contributionsCollection', {})
                  .get('contributionCalendar', {})
                  .get('weeks', []))
-    days = sorted(
-        [(d['date'], d['contributionCount'])
-         for w in weeks for d in w.get('contributionDays', [])],
+    return sorted(
+        [(d['date'], d['contributionCount']) for w in weeks for d in w.get('contributionDays', [])],
         key=lambda x: x[0]
     )
+
+def get_streak(token: str, username: str, creation_year: int) -> tuple[int, int]:
+    """Return (current_streak_days, longest_streak_days) across the account's full history.
+
+    GitHub's contributionsCollection caps out at one year of days per query (its default, with
+    no from/to, is the trailing 365 days), which is not the same thing as the account's real
+    streak history once the account is more than a year old. A genuine 400 day streak would get
+    silently truncated to whatever the trailing year covers. So instead of one bare query, I walk
+    every calendar year from account creation to today, same pattern as get_all_contributions(),
+    and run the streak count over the full stitched-together history rather than a single window.
+    """
+    days = []
+    for year in range(creation_year, datetime.datetime.utcnow().year + 1):
+        try:
+            days.extend(get_contribution_days_for_year(token, username, year))
+        except Exception as e:
+            print(f'  Warning (streak {year}): {e}', file=sys.stderr)
+    days.sort(key=lambda x: x[0])
     longest = current_run = 0
     for _, count in days:
         if count > 0:
@@ -340,11 +368,19 @@ def fmt(n: int) -> str:
 
 
 def fmt_uptime(created_at: str) -> str:
-    """Return account age as 'Xy Yd' (neofetch-style uptime), from an ISO createdAt timestamp."""
+    """Return account age as 'Xy Yd' (neofetch-style uptime), from an ISO createdAt timestamp.
+
+    Calendar-exact rather than delta_days // 365: a flat 365 divisor doesn't know about leap
+    years, so it drifts the day count by roughly a day for every leap year the account has lived
+    through, and eventually would misattribute a whole year once that drift piles up. relativedelta
+    walks real calendar months and years instead, so the split is exact regardless of how many
+    leap years fall inside the span.
+    """
     created = datetime.date.fromisoformat(created_at[:10])
-    delta_days = (datetime.date.today() - created).days
-    years, days = divmod(delta_days, 365)
-    return f'{years}y {days}d'
+    today = datetime.date.today()
+    delta = relativedelta(today, created)
+    days = (today - (created + relativedelta(years=delta.years))).days
+    return f'{delta.years}y {days}d'
 
 
 def pad_dots(label: str, value: str, width: int = LINE_WIDTH) -> str:
@@ -390,32 +426,55 @@ def dual_row(y: int, lbl1: str, v1: str, lbl2: str, v2: str) -> str:
         cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
         cc(' | ') + key(lbl2) + cc(f': {"."*d2} ') + val(v2))
 
+RIGHT_BUDGET = LINE_WIDTH - PIPE_LEFT - 3  # chars available for 'lbl2: .. v2_main {detail_lbl: .. detail_val}'
+
 def brace_inner_len(detail_lbl: str, detail_val: str) -> int:
     """Length of the unpadded 'detail_lbl: detail_val' text a dual_row_detail row puts inside its braces."""
     return len(f'{detail_lbl}: {detail_val}')
 
-def max_brace_inner_len(lbl2: str, v2_main: str) -> int:
-    """Longest inner-brace text this row can take padded to before its own dot-leader hits the 1-dot floor."""
-    return LINE_WIDTH - PIPE_LEFT - 10 - len(lbl2) - len(v2_main)
+def brace_col_range(lbl2: str, v2_main: str, detail_lbl: str, detail_val: str) -> tuple[int, int]:
+    """(min, max) column the '{' can land on for this row, as chars from the start of its own
+    'lbl2: ...' text up to and including the space right before '{'.
+
+    min is with the dot-leader at its 1-dot floor (as tight as the row can be). max is with the
+    inner brace text at its natural, unpadded length (as loose as the row can be before it either
+    has to shrink real digits, which we never do, or blow past the LINE_WIDTH row budget).
+    """
+    p_min = len(lbl2) + len(v2_main) + 5
+    p_max = RIGHT_BUDGET - 2 - brace_inner_len(detail_lbl, detail_val)
+    return p_min, p_max
+
+def shared_brace_col(rows: list[tuple[str, str, str, str]]) -> int:
+    """Target '{' column for a group of dual_row_detail rows, chosen so whichever row naturally
+    needs the most room sets the target and the others stretch their dot-leader to match.
+
+    dual_row_detail clamps this per-row to its own brace_col_range, so a row that can't afford
+    the target (its max < target) still lands as close as it safely can instead of overflowing -
+    the only way two rows end up misaligned is when their safe ranges genuinely don't overlap,
+    which is now the true minimum misalignment rather than an artifact of an overly strict cap.
+    """
+    return max(brace_col_range(*row)[0] for row in rows)
 
 def dual_row_detail(y: int, lbl1: str, v1: str, lbl2: str, v2_main: str, detail_lbl: str, detail_val: str,
-                     pad_inner_to: int | None = None) -> str:
+                     brace_col: int | None = None) -> str:
     """Headline stat on left paired with a right stat containing detailed info in key-coloured curly braces.
     e.g. '. Contribs: 1,234 | Repos: 15 {Contrib: 8}'
          '. Uptime: 3y 145d | Streak: 5d {Best: 42d}'
 
-    Pass pad_inner_to (the max of brace_inner_len() across a group of rows) to align both the
-    opening and closing braces with another row of the same shape: a leader-dot fills the gap
-    inside the braces on whichever row's detail text is shorter, so both { and } land on the
-    same column. The padding only ever adds characters inside an already-natural-width row -
-    it can't push the row past the 66-char budget the way pinning a fixed column could.
+    Pass brace_col (from shared_brace_col() across a group of rows) to align the opening and
+    closing braces with those other rows: both the outer dot-leader (before v2_main) and the
+    inner one (inside the braces) stretch to land '{' on that column, so '}' lands in sync too
+    since every row is still exactly LINE_WIDTH chars wide. brace_col is clamped to this row's
+    own safe range first, so it can only ever pad up to what the LINE_WIDTH budget allows - it can
+    never push a row past it.
     """
-    inner_prefix = f'{detail_lbl}: '
-    gap = max(0, (pad_inner_to or 0) - brace_inner_len(detail_lbl, detail_val))
+    p_min, p_max = brace_col_range(lbl2, v2_main, detail_lbl, detail_val)
+    p = p_min if brace_col is None else max(p_min, min(brace_col, p_max))
+    d2 = p - len(lbl2) - len(v2_main) - 4
+    natural_inner = brace_inner_len(detail_lbl, detail_val)
+    gap = max(0, (RIGHT_BUDGET - p - 2) - natural_inner)
     dots = '.' * gap
     d1 = max(1, PIPE_LEFT - 5 - len(lbl1) - len(v1))
-    v2_plain = f'{v2_main} {{{inner_prefix}{dots}{detail_val}}}'
-    d2 = max(1, LINE_WIDTH - PIPE_LEFT - 6 - len(lbl2) - len(v2_plain))
     v2_svg = (f'<tspan class="value">{esc(v2_main)} {{'
               f'<tspan class="key">{esc(detail_lbl)}</tspan>: ' +
               (f'<tspan class="cc">{dots}</tspan>' if dots else '') +
@@ -424,9 +483,9 @@ def dual_row_detail(y: int, lbl1: str, v1: str, lbl2: str, v2_main: str, detail_
         cc('. ') + key(lbl1) + cc(f': {"."*d1} ') + val(v1) +
         cc(' | ') + key(lbl2) + cc(f': {"."*d2} ') + v2_svg)
 
-def contribs_repos_row(y: int, lbl1: str, v1: str, repos: int, contributed: int, pad_inner_to: int | None = None) -> str:
+def contribs_repos_row(y: int, lbl1: str, v1: str, repos: int, contributed: int, brace_col: int | None = None) -> str:
     """Any headline stat paired with Repos (Contributed in key-coloured curly braces) on the right."""
-    return dual_row_detail(y, lbl1, v1, 'Repos', fmt(repos), 'Contrib', fmt(contributed), pad_inner_to=pad_inner_to)
+    return dual_row_detail(y, lbl1, v1, 'Repos', fmt(repos), 'Contrib', fmt(contributed), brace_col=brace_col)
 
 def loc_dual_row(y: int, total: int, add: int, delete: int) -> str:
     """Lines of Code on left, add/del breakdown on right with } aligned to right edge."""
@@ -496,7 +555,7 @@ def build_svg(
       text, tspan {{ white-space: pre; }}{media_override}
     """
 
-    # ASCII art at 14px: keeps 44-char lines clear of the stats column at x={STATS_X}
+    # ASCII art at ASCII_FONT_SIZE: keeps 44-char lines clear of the stats column at x={STATS_X}
     ascii_tspans = [
         f'    <tspan x="{ASCII_X}" y="{ROW_START + ROW_STEP + 10 + ASCII_Y_OFFSET + i * ROW_STEP}">{esc(line)}</tspan>'
         for i, line in enumerate(ascii_rows)
@@ -504,19 +563,15 @@ def build_svg(
 
     Y = [ROW_START + i * ROW_STEP for i in range(STATS_ROWS)]
 
-    header_dashes = '-' * (LINE_WIDTH - len('isaac@adjei ') - 1)
+    header_dashes = '-' * (LINE_WIDTH - len('isaac@adjei '))
 
-    # Repos {Contrib} and Streak {Best} share one inner-padding target so both { and } align vertically.
-    # Capped to what both rows can actually take - otherwise padding one row's brace out to match
-    # the other's could push its own dot-leader past the 1-dot floor and overflow the 66-char budget.
-    brace_inner_target = min(
-        max(
-            brace_inner_len('Contrib', fmt(contributed)),
-            brace_inner_len('Best', f'{fmt(longest_streak)}d'),
-        ),
-        max_brace_inner_len('Repos', fmt(repos)),
-        max_brace_inner_len('Streak', f'{fmt(current_streak)}d'),
-    )
+    # Repos {Contrib} and Streak {Best} share one '{' column target so both braces align vertically.
+    # dual_row_detail clamps this to each row's own safe range, so it can only ever land as close
+    # as that row's budget allows - it can't push either row past the LINE_WIDTH row budget.
+    brace_col_target = shared_brace_col([
+        ('Repos', fmt(repos), 'Contrib', fmt(contributed)),
+        ('Streak', f'{fmt(current_streak)}d', 'Best', f'{fmt(longest_streak)}d'),
+    ])
 
     stats_tspans = [
         trow(Y[0],  f'isaac@adjei {header_dashes}'),
@@ -562,8 +617,8 @@ def build_svg(
         dual_row(Y[29], 'Commits',        fmt(commits),          'PRs',            fmt(prs)),
         dual_row(Y[30], 'Issues',         fmt(issues),           'Reviews',        fmt(reviews)),
         # The three curly-brace detail rows sit together at the bottom, by design.
-        contribs_repos_row(Y[31], 'Contribs', fmt(total_contribs), repos, contributed, pad_inner_to=brace_inner_target),
-        dual_row_detail(Y[32], 'Uptime', uptime,   'Streak',         f'{fmt(current_streak)}d', 'Best', f'{fmt(longest_streak)}d', pad_inner_to=brace_inner_target),
+        contribs_repos_row(Y[31], 'Contribs', fmt(total_contribs), repos, contributed, brace_col=brace_col_target),
+        dual_row_detail(Y[32], 'Uptime', uptime,   'Streak',         f'{fmt(current_streak)}d', 'Best', f'{fmt(longest_streak)}d', brace_col=brace_col_target),
         loc_dual_row(Y[33], loc_total, loc_add, loc_del),
     ]
 
@@ -577,8 +632,8 @@ def build_svg(
      font-size="16px">
   <defs><style>{style}  </style></defs>
   <rect width="{SVG_WIDTH}px" height="{SVG_HEIGHT}px" class="bg" rx="15"/>
-  <!-- ASCII portrait: 14px so 44-char lines stay inside x={STATS_X} -->
-  <text x="{ASCII_X}" y="{ROW_START}" class="fg" font-size="14px"
+  <!-- ASCII portrait: {ASCII_FONT_SIZE}px so 44-char lines leave a gap before x={STATS_X} -->
+  <text x="{ASCII_X}" y="{ROW_START}" class="fg" font-size="{ASCII_FONT_SIZE}px"
         xml:space="preserve" style="white-space:pre;">
 {ascii_block}
   </text>
@@ -641,7 +696,7 @@ def main() -> None:
 
     print('  Fetching streak stats...')
     try:
-        current_streak, longest_streak = get_streak(contrib_token, username)
+        current_streak, longest_streak = get_streak(contrib_token, username, creation_year)
     except Exception as e:
         print(f'  Warning: {e}', file=sys.stderr)
         current_streak, longest_streak = 0, 0
