@@ -25,6 +25,7 @@ import os
 import sys
 import datetime
 import requests
+from dateutil.relativedelta import relativedelta
 from html import escape as esc
 
 # ---------------------------------------------------------------------------
@@ -39,17 +40,18 @@ GRAPHQL_URL    = 'https://api.github.com/graphql'  # GitHub GraphQL endpoint
 # Portrait dimensions (rows must match ascii_profile.txt line count)
 ASCII_ROWS = 30  # must match the line count of ascii_profile.txt
 
-SVG_WIDTH  = 1100  # total canvas width in pixels; +20 vs the old 1080 to keep pace with LINE_WIDTH
-                    # going 66->68, so the right margin past the stats column stays roughly level
+SVG_WIDTH  = 1120  # total canvas width in pixels; +40 vs the old 1080 to keep pace with LINE_WIDTH
+                    # going 66->70, so the right margin past the stats column stays roughly level
                     # with ASCII_X's 35px left margin instead of the widened column eating into it
 ROW_STEP   = 20   # vertical gap between rows in pixels
 ROW_START  = 30   # y-coordinate of the first row
 
 # Right column char width: dots are calculated so every value ends here.
-# 68 not 66: the extra 2 chars are the slack the Repos/Streak curly-brace rows need to always
-# align, verified by exhaustively checking every digit-length combination up to 999 repos/repos
-# contributed and 366 streak days - see shared_brace_col().
-LINE_WIDTH = 68   # character budget for the right column; dots fill to this width exactly
+# 70 not 66: the extra 4 chars are the slack the Repos/Streak curly-brace rows need to always
+# align, verified by exhaustively checking every digit-length combination up to 999 repos/
+# contributed and 9999 streak days (get_streak() is no longer capped at one year of history, so
+# a multi-year streak is a real possibility, not just a hypothetical) - see shared_brace_col().
+LINE_WIDTH = 70   # character budget for the right column; dots fill to this width exactly
 
 ASCII_X = 35   # left edge of the ASCII portrait column
 STATS_X = 410  # left edge of the stats column
@@ -198,12 +200,12 @@ def get_contributions_for_year(token: str, username: str, year: int) -> tuple[in
     )
 
 
-def get_streak(token: str, username: str) -> tuple[int, int]:
-    """Return (current_streak_days, longest_streak_days) from the past year's contribution calendar."""
+def get_contribution_days_for_year(token: str, username: str, year: int) -> list[tuple[str, int]]:
+    """Return [(date, contributionCount), ...] for one calendar year, sorted by date."""
     data = graphql(token, """
-        query ($login: String!) {
+        query ($login: String!, $from: DateTime!, $to: DateTime!) {
             user(login: $login) {
-                contributionsCollection {
+                contributionsCollection(from: $from, to: $to) {
                     contributionCalendar {
                         weeks {
                             contributionDays {
@@ -214,16 +216,35 @@ def get_streak(token: str, username: str) -> tuple[int, int]:
                     }
                 }
             }
-        }""", {'login': username})
+        }""", {'login': username,
+               'from': f'{year}-01-01T00:00:00Z',
+               'to':   f'{year}-12-31T23:59:59Z'})
     weeks = (data.get('user', {})
                  .get('contributionsCollection', {})
                  .get('contributionCalendar', {})
                  .get('weeks', []))
-    days = sorted(
-        [(d['date'], d['contributionCount'])
-         for w in weeks for d in w.get('contributionDays', [])],
+    return sorted(
+        [(d['date'], d['contributionCount']) for w in weeks for d in w.get('contributionDays', [])],
         key=lambda x: x[0]
     )
+
+def get_streak(token: str, username: str, creation_year: int) -> tuple[int, int]:
+    """Return (current_streak_days, longest_streak_days) across the account's full history.
+
+    GitHub's contributionsCollection caps out at one year of days per query (its default, with
+    no from/to, is the trailing 365 days), which is not the same thing as the account's real
+    streak history once the account is more than a year old. A genuine 400 day streak would get
+    silently truncated to whatever the trailing year covers. So instead of one bare query, I walk
+    every calendar year from account creation to today, same pattern as get_all_contributions(),
+    and run the streak count over the full stitched-together history rather than a single window.
+    """
+    days = []
+    for year in range(creation_year, datetime.datetime.utcnow().year + 1):
+        try:
+            days.extend(get_contribution_days_for_year(token, username, year))
+        except Exception as e:
+            print(f'  Warning (streak {year}): {e}', file=sys.stderr)
+    days.sort(key=lambda x: x[0])
     longest = current_run = 0
     for _, count in days:
         if count > 0:
@@ -347,11 +368,19 @@ def fmt(n: int) -> str:
 
 
 def fmt_uptime(created_at: str) -> str:
-    """Return account age as 'Xy Yd' (neofetch-style uptime), from an ISO createdAt timestamp."""
+    """Return account age as 'Xy Yd' (neofetch-style uptime), from an ISO createdAt timestamp.
+
+    Calendar-exact rather than delta_days // 365: a flat 365 divisor doesn't know about leap
+    years, so it drifts the day count by roughly a day for every leap year the account has lived
+    through, and eventually would misattribute a whole year once that drift piles up. relativedelta
+    walks real calendar months and years instead, so the split is exact regardless of how many
+    leap years fall inside the span.
+    """
     created = datetime.date.fromisoformat(created_at[:10])
-    delta_days = (datetime.date.today() - created).days
-    years, days = divmod(delta_days, 365)
-    return f'{years}y {days}d'
+    today = datetime.date.today()
+    delta = relativedelta(today, created)
+    days = (today - (created + relativedelta(years=delta.years))).days
+    return f'{delta.years}y {days}d'
 
 
 def pad_dots(label: str, value: str, width: int = LINE_WIDTH) -> str:
@@ -667,7 +696,7 @@ def main() -> None:
 
     print('  Fetching streak stats...')
     try:
-        current_streak, longest_streak = get_streak(contrib_token, username)
+        current_streak, longest_streak = get_streak(contrib_token, username, creation_year)
     except Exception as e:
         print(f'  Warning: {e}', file=sys.stderr)
         current_streak, longest_streak = 0, 0

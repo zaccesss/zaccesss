@@ -38,10 +38,22 @@ because it is a living profile rather than a released library.
 - Proved by exhaustive sweep that the dot-leader fix above was already the best a 66-char row could do -
   `Repos {Contrib}` and `Streak {Best}` have fixed label-length differences (`Repos` vs `Streak`, `Contrib`
   vs `Best`) that a dot-leader cannot always cancel out within a fixed budget without either overflowing
-  or shrinking a real digit. Widened `LINE_WIDTH` from 66 to 68 chars, the smallest increase that guarantees
-  both braces always land on the same column, checked against every digit-length combination up to 999
-  repos/contributed and 366 streak days. Widened `SVG_WIDTH` from 1080 to 1100 to match, so the extra two
-  characters come out of the right margin evenly instead of crowding the card edge.
+  or shrinking a real digit.
+- Found that `get_streak()` was silently capped at one year of history: GitHub's `contributionsCollection`
+  defaults to the trailing 365 days when no `from`/`to` range is given, so any real streak longer than a
+  year would have been truncated to whatever the trailing year covered, with nothing to say it had been
+  cut short. Added `get_contribution_days_for_year()` and walked every calendar year from account creation
+  to today, the same pattern `get_all_contributions()` already used, then ran the streak count over the
+  full stitched-together history instead of a single window. A streak can now genuinely run past a year.
+- Widened `LINE_WIDTH` from 66 to 70 chars and `SVG_WIDTH` from 1080 to 1120 to match, the smallest
+  increase that guarantees the `Repos`/`Streak` braces always land on the same column, checked against
+  every digit-length combination up to 999 repos/contributed and 9999 streak days now that a streak isn't
+  bounded to one year. The extra characters come out of the right margin evenly instead of crowding the
+  card edge.
+- Made `fmt_uptime()` calendar-exact instead of dividing `delta_days` by a flat 365: that divisor doesn't
+  know about leap years, so the day count drifted by roughly a day for every leap year the account had
+  lived through. Switched to `dateutil.relativedelta`, which walks real calendar years, so the split is
+  exact regardless of how many leap years fall inside the span.
 - Fixed the `isaac@adjei` header divider landing one hyphen short of every other row's width, unlike the
   `- Contact` and `- Git Stats` section dividers, which already filled to `LINE_WIDTH` exactly.
 - Reduced the ASCII portrait from 14px to 13px so the 44-char-wide art leaves a visible gap before the
