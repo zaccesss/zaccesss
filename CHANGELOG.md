@@ -35,19 +35,6 @@ because it is a living profile rather than a released library.
   overflow because padding one row out to match the other's length didn't check whether that row had any
   budget left before its own dot-leader hit its 1-dot floor. Swept 480 `(repos, contributed, current streak,
   longest streak)` combinations after the fix - zero overflow, braces aligned in every case.
-- Proved by exhaustive sweep that the dot-leader fix above was already the best a 66-char row could do -
-  `Repos {Contrib}` and `Streak {Best}` have fixed label-length differences (`Repos` vs `Streak`, `Contrib`
-  vs `Best`) that a dot-leader cannot always cancel out within a fixed budget without either overflowing
-  or shrinking a real digit. Widened `LINE_WIDTH` from 66 to 68 chars, the smallest increase that guarantees
-  both braces always land on the same column, checked against every digit-length combination up to 999
-  repos/contributed and 366 streak days. Widened `SVG_WIDTH` from 1080 to 1100 to match, so the extra two
-  characters come out of the right margin evenly instead of crowding the card edge.
-- Fixed the `isaac@adjei` header divider landing one hyphen short of every other row's width, unlike the
-  `- Contact` and `- Git Stats` section dividers, which already filled to `LINE_WIDTH` exactly.
-- Reduced the ASCII portrait from 14px to 13px so the 44-char-wide art leaves a visible gap before the
-  stats column instead of almost touching it.
-- Bumped the README's SVG cache-busting query param from `?v=12` to `?v=13` across all three `<picture>`
-  references, so the changes above are visible immediately rather than waiting out GitHub's cache.
 - Bumped the README's SVG cache-busting query param from `?v=11` to `?v=12` across all three `<picture>`
   references, so the dot-leader change above is visible immediately rather than waiting out GitHub's cache.
 - Bumped the README's SVG cache-busting query param from `?v=10` to `?v=11` across all three `<picture>`
