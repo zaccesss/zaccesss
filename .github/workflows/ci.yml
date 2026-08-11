@@ -5,7 +5,7 @@ name: CI
 
 on:
   # Pull requests only. CI does not need to re-run on main after a PR merges (the same
-  # commit was already checked on the PR), and the SVG commits the build pushes to main
+  # commit was already checked on the PR); the SVG commits the build pushes to main
   # are not code changes worth checking.
   pull_request:
 
@@ -38,6 +38,6 @@ jobs:
       # __main__ guard, so this import needs no secret.
       - name: Compile and import check
         run: |
-          python -m compileall -q profile.py approach.py
-          python -c "import profile"
-          python -c "import approach"
+          python -m compileall -q profile/profile.py approach/approach.py
+          python -c "import sys; sys.path.insert(0, 'profile'); import profile"
+          python -c "import sys; sys.path.insert(0, 'approach'); import approach"

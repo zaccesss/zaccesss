@@ -1,15 +1,15 @@
 # Workflows
 
 One workflow builds the profile and approach cards; the rest keep the repo
-healthy. The generators live in [`../../profile.py`](../../profile.py) and
-[`../../approach.py`](../../approach.py),
+healthy. The generators live in [`../../profile/profile.py`](../../profile/profile.py) and
+[`../../approach/approach.py`](../../approach/approach.py),
 and the build workflow is a thin wrapper that hands them the credentials.
 
 ## The build
 
 | Workflow | Trigger | Purpose |
 | --- | --- | --- |
-| [build](build.yml) | four times a day (00:17, 06:17, 12:17, 18:17 UTC), push to main (excluding generated SVGs), manual `workflow_dispatch` | Runs `profile.py` to regenerate the profile cards (`profile.svg`, `profile-dark.svg`, `profile-light.svg`) from live GitHub stats, then `approach.py` to split the hand-edited `approach.svg` into `approach-dark.svg` and `approach-light.svg`, then commits only if something changed. Pushes over SSH with a write deploy key that bypasses the branch ruleset |
+| [build](build.yml) | four times a day (00:17, 06:17, 12:17, 18:17 UTC), push to main (excluding generated SVGs), manual `workflow_dispatch` | Runs `profile/profile.py` to regenerate the profile cards (`profile/profile.svg`, `profile/profile-dark.svg`, `profile/profile-light.svg`) from live GitHub stats, then `approach/approach.py` to split the hand-edited `approach/approach.svg` into `approach/approach-dark.svg` and `approach/approach-light.svg`, then commits only if something changed. Pushes over SSH with a write deploy key that bypasses the branch ruleset |
 
 ## Repo automation
 
