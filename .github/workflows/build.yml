@@ -1,7 +1,7 @@
 name: README build
 
 # I run this four times a day at 00:17, 06:17, 12:17 and 18:17 UTC to keep my stats fresh,
-# on every push to main, and I can also trigger it manually from the Actions tab.
+# on every push to main; I can also trigger it manually from the Actions tab.
 # The :17 minute keeps the run off the congested top of the hour so it is less likely
 # to be delayed or dropped.
 on:
@@ -15,9 +15,9 @@ on:
     # excluded from this list since it's the hand-edited source, not generated output -
     # editing it should still trigger a build so its dark/light siblings regenerate.
     paths-ignore:
-      - 'profile*.svg'
-      - 'approach-dark.svg'
-      - 'approach-light.svg'
+      - 'profile/profile*.svg'
+      - 'approach/approach-dark.svg'
+      - 'approach/approach-light.svg'
   workflow_dispatch:
 
 # I need write access so the job can push the regenerated SVG back to my repo.
@@ -68,19 +68,19 @@ jobs:
       # It needs read access to my repositories and account so it can fetch stats.
       # CONTRIB_TOKEN is a separate classic PAT scoped to read:user only, no repo access at all.
       # GitHub's contributionsCollection withholds private-repo detail (commits, reviews, the
-      # calendar) from every API caller without that scope, and no fine-grained permission grants
+      # calendar) from every API caller without that scope; no fine-grained permission grants
       # it, so this is the one place a classic PAT is unavoidable - held as narrowly as possible.
       - name: Generate the profile SVG
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           CONTRIB_TOKEN: ${{ secrets.CONTRIB_TOKEN }}
           USER_NAME: zaccesss
-        run: python profile.py
+        run: python profile/profile.py
 
       # Derive approach-dark.svg and approach-light.svg from the hand-edited approach.svg.
       # No secrets needed - it's a pure palette split of a checked-in source file.
       - name: Generate the approach SVG variants
-        run: python approach.py
+        run: python approach/approach.py
 
       # Commit the freshly generated SVGs back to my repo under my own name.
       # The diff check means I only commit when something actually changed.
@@ -99,7 +99,7 @@ jobs:
           fi
           git config --global user.email "code@isaacadjei.me"
           git config --global user.name "Isaac Adjei"
-          git add profile.svg profile-dark.svg profile-light.svg approach-dark.svg approach-light.svg
+          git add profile/profile.svg profile/profile-dark.svg profile/profile-light.svg approach/approach-dark.svg approach/approach-light.svg
           if git diff --staged --quiet; then
             echo "SVGs unchanged; nothing to commit."
             exit 0

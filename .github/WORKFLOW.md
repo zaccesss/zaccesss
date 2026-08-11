@@ -38,9 +38,10 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 ## The automated SVG refresh
 
-- The build workflow commits the regenerated profile SVGs (`profile.svg`, `profile-dark.svg`, `profile-light.svg`)
-  and the derived approach SVGs (`approach-dark.svg`, `approach-light.svg`) straight to `main` as me,
-  `Isaac Adjei`, so the commit attributes to me across every forge.
+- The build workflow commits the regenerated profile SVGs (`profile/profile.svg`, `profile/profile-dark.svg`,
+  `profile/profile-light.svg`) and the derived approach SVGs (`approach/approach-dark.svg`,
+  `approach/approach-light.svg`) straight to `main` as me, `Isaac Adjei`, so the commit attributes to me
+  across every forge.
 - It pushes over SSH with the `BUILD_DEPLOY_KEY` write deploy key, which bypasses the
   branch ruleset that requires CI, so the direct SVG commit is not blocked. The push
   trigger ignores the SVGs so this commit cannot re-trigger the build.
@@ -57,7 +58,9 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 ## Before a PR
 
-- `python -m compileall profile.py approach.py` and `python -c "import profile; import approach"`
+- `python -m compileall profile/profile.py approach/approach.py` and
+  `python -c "import sys; sys.path.insert(0, 'profile'); import profile"` /
+  `python -c "import sys; sys.path.insert(0, 'approach'); import approach"`
   (CI runs the same).
 - I never commit a secret. Gitleaks scans every PR.
 
@@ -79,8 +82,9 @@ gh pr merge --squash --delete-branch --auto    # it merges itself once CI passes
 
 ## The system in one breath
 
-- Four times a day (00:17, 06:17, 12:17 and 18:17 UTC) `build.yml` runs `profile.py`,
-  which reads my live GitHub stats and writes `profile.svg`, `profile-dark.svg`, and `profile-light.svg`,
-  then runs `approach.py`, which splits the hand-edited `approach.svg` into `approach-dark.svg` and
-  `approach-light.svg`. If any SVG changed it commits, and mirror-ops carries this repo to the forges.
+- Four times a day (00:17, 06:17, 12:17 and 18:17 UTC) `build.yml` runs `profile/profile.py`,
+  which reads my live GitHub stats and writes `profile/profile.svg`, `profile/profile-dark.svg`, and
+  `profile/profile-light.svg`, then runs `approach/approach.py`, which splits the hand-edited
+  `approach/approach.svg` into `approach/approach-dark.svg` and `approach/approach-light.svg`.
+  If any SVG changed it commits; mirror-ops then carries this repo to the forges.
   See the top-level [`../README.md`](../README.md) and [`workflows/README.md`](workflows/README.md).

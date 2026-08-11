@@ -8,8 +8,12 @@ because it is a living profile rather than a released library.
 
 ### Changed
 
+- Moved the profile and approach generators and their SVGs into their own `profile/` and `approach/`
+  folders, so each card's script and output sit together instead of all eight files loose at the repo
+  root. Updated the README image paths, the build and CI workflows and the docs that reference them
+  to match; bumped the profile SVGs' cache-busting query string to `v=14` since their served path changed.
 - Upgraded the profile SVG generation to output three variants: `profile.svg` (adaptive, default dark),
-  `profile-dark.svg`, and `profile-light.svg`. The README uses an HTML `<picture>` tag with `prefers-color-scheme`
+  `profile-dark.svg` and `profile-light.svg`. The README uses an HTML `<picture>` tag with `prefers-color-scheme`
   media queries to serve `profile-dark.svg` and `profile-light.svg` directly (resolving SVG @media sandboxing
   on forges and devices that strip it), while keeping `profile.svg` as the standalone adaptive fallback image.
 - Added `approach.py`, which derives `approach-dark.svg` and `approach-light.svg` from the
@@ -31,7 +35,7 @@ because it is a living profile rather than a released library.
   shared target length, matching the `. Label: .... value` dot-leader style used everywhere else on the card
   instead of leaving an invisible gap. Went through two unsafe designs before this one and caught both by
   testing worst-case values rather than just the current live numbers: pinning a fixed column let the row with
-  the longer detail text overflow past 66 chars, and the first version of the inner-padding fix could still
+  the longer detail text overflow past 66 chars; the first version of the inner-padding fix could still
   overflow because padding one row out to match the other's length didn't check whether that row had any
   budget left before its own dot-leader hit its 1-dot floor. Swept 480 `(repos, contributed, current streak,
   longest streak)` combinations after the fix - zero overflow, braces aligned in every case.
@@ -73,7 +77,7 @@ because it is a living profile rather than a released library.
   brought `.github/WORKFLOW.md` and `.github/workflows/README.md` back in sync with the schedule and with
   `approach.py`'s existence (both had drifted out of date).
 - Fixed a stale reference in `.gitattributes` to the generator's old filename (`isaacadjei.py`), clarified
-  that `approach.svg` is the one hand-authored exception among the generated SVGs, and generalised "GitHub's
+  that `approach.svg` is the one hand-authored exception among the generated SVGs and generalised "GitHub's
   language bar" to "each forge's language bar" since the file applies to every mirror, not just GitHub.
 - Generalised "iOS Safari and GitHub Mobile" to forge/device-neutral wording in `README.md`, `profile.py`
   and `approach.py`, since the underlying reason (some hosts strip `@media` queries from inline SVG) isn't
@@ -81,11 +85,11 @@ because it is a living profile rather than a released library.
 - Renamed the profile generator from `isaacadjei.py` to `profile.py` and the ASCII
   portrait asset from `ascii_final.txt` to `ascii_profile.txt`.
 - Added a `More` link to the README's top link row, pointing at
-  `https://isaacadjei.me/all-pages`, and dropped the direct `Now` link because
+  `https://isaacadjei.me/all-pages` and dropped the direct `Now` link because
   that page is already discoverable from `More`.
 - Expanded the Git Stats section to six rows: followers/stars, lifetime contributions/
   repos, commits/PRs, issues/PR reviews, streaks and lines of code. Contributed repos
-  now includes my own repos, commits count commit contributions only, and lifetime
+  now includes my own repos, commits count commit contributions only and lifetime
   Contribs sums the contribution calendar total across every year since account
   creation. The Repos row keeps the Contributed count in key-coloured curly braces on
   the right, mirroring the Lines of Code row's headline-left, detail-right shape. Forks
@@ -99,7 +103,7 @@ because it is a living profile rather than a released library.
   `<picture>` on the other forges and falls back to a single fixed image, which is why the mirrors
   always showed the dark card before. The `approach` diagram gets the same treatment as a single
   adaptive `approach.svg`, so it is ready to render everywhere when I un-mute it. The generator
-  (`profile.py`) now emits the one adaptive file, and the README references it directly. The
+  (`profile.py`) now emits the one adaptive file and the README references it directly. The
   build workflow now regenerates, ignores on push and commits `profile.svg` rather than the old
   paired filenames, which were left stale in the first pass and broke the daily auto-update.
 - The build pushes the SVGs over SSH with a write deploy key rather than the built in
@@ -113,7 +117,7 @@ because it is a living profile rather than a released library.
   to three, see above.)
 - Relicensed the repository. The visual and written content (the SVGs, the README,
   the ASCII portrait and everything under `assets/`) is now Creative Commons
-  Attribution-NonCommercial-NoDerivatives 4.0, and the generator source
+  Attribution-NonCommercial-NoDerivatives 4.0 and the generator source
   (`profile.py`) is PolyForm Noncommercial 1.0.0, so the profile can be shared
   with credit but not reused commercially or remixed. This replaces the previous
   MIT licence.
@@ -127,7 +131,7 @@ because it is a living profile rather than a released library.
   ruleset's bypass actor so the automated SVG commit still lands.
 - Repository scaffolding to match my other repos: a CI workflow that compile and
   import checks the generator, a gitleaks secret scan, Dependabot auto-merge, a
-  `.gitattributes` that marks the generated SVGs, and `CODE_OF_CONDUCT.md`,
+  `.gitattributes` that marks the generated SVGs and `CODE_OF_CONDUCT.md`,
   `SECURITY.md` and this changelog. Dependency update PRs and stale branch cleanup
   are handled centrally by repo-ops, so this repo carries no `dependabot.yml` or
   branch maintenance workflow.
@@ -218,7 +222,7 @@ because it is a living profile rather than a released library.
 ### Fixed
 
 - Fixed forge mirroring: mirror to Gitea over SSH, creating the `.ssh` directory
-  before the keyscan, and force-push while temporarily unprotecting GitLab `main`
+  before the keyscan and force-pushing while temporarily unprotecting GitLab `main`
   so the mirror push is accepted (#4).
 
 ## 2026-06-04

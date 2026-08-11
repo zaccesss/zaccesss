@@ -18,20 +18,20 @@
 
 <!--
   Profile card rendering:
-  - <picture> with prefers-color-scheme serves profile-dark.svg or profile-light.svg directly to browser engines,
-    ensuring light/dark mode switches reliably across every forge and device.
-  - profile.svg serves as the standalone adaptive fallback card (dark theme by default with embedded CSS).
+  - <picture> with prefers-color-scheme serves profile/profile-dark.svg or profile/profile-light.svg directly
+    to browser engines, ensuring light/dark mode switches reliably across every forge and device.
+  - profile/profile.svg serves as the standalone adaptive fallback card (dark theme by default with embedded CSS).
 -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile-dark.svg?v=13">
-  <source media="(prefers-color-scheme: light)" srcset="profile-light.svg?v=13">
-  <img alt="Isaac Adjei's GitHub Profile" src="profile.svg?v=13" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/profile-dark.svg?v=14">
+  <source media="(prefers-color-scheme: light)" srcset="profile/profile-light.svg?v=14">
+  <img alt="Isaac Adjei's GitHub Profile" src="profile/profile.svg?v=14" width="100%">
 </picture>
 <!-- I'm keeping this SVG but muting it for now - I'll uncomment when i want to restore it later -->
 <!--
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="approach-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="approach-light.svg">
-  <img alt="my approach" src="approach.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="approach/approach-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="approach/approach-light.svg">
+  <img alt="my approach" src="approach/approach.svg" width="100%">
 </picture>
 -->
