@@ -17,12 +17,14 @@ alongside profile.svg — some forges and devices don't honour @media queries
 inside an <img>-embedded SVG, so those need a fixed file per theme.
 
 Run after editing approach.svg's markup or palette:
-    python approach.py
+    python approach/approach.py
 """
 
+import os
 import re
 
-SOURCE = 'approach.svg'
+HERE = os.path.dirname(__file__)
+SOURCE = os.path.join(HERE, 'approach.svg')
 
 # Must match the .cls { fill: ...; } rules in approach.svg's base and light blocks exactly.
 DARK = {
@@ -57,9 +59,9 @@ def main() -> None:
     if not MEDIA_BLOCK_RE.search(svg):
         raise RuntimeError(f'Could not find the light-mode @media block in {SOURCE}')
 
-    with open('approach-dark.svg', 'w', encoding='utf-8') as f:
+    with open(os.path.join(HERE, 'approach-dark.svg'), 'w', encoding='utf-8') as f:
         f.write(render(svg, DARK, 'approach-dark.svg', 'fixed dark palette'))
-    with open('approach-light.svg', 'w', encoding='utf-8') as f:
+    with open(os.path.join(HERE, 'approach-light.svg'), 'w', encoding='utf-8') as f:
         f.write(render(svg, LIGHT, 'approach-light.svg', 'fixed light palette'))
     print('Generated approach-dark.svg and approach-light.svg from approach.svg.')
 

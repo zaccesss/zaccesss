@@ -8,7 +8,7 @@
 """
 profile.py — my GitHub profile README SVG generator.
 
-I generate three SVG cards (profile.svg, profile-dark.svg, and profile-light.svg):
+I generate three SVG cards (profile.svg, profile-dark.svg and profile-light.svg):
   - profile.svg: theme-adaptive card (dark palette by default, light under prefers-color-scheme)
   - profile-dark.svg: fixed dark-mode card for <picture> source tags, for hosts that don't
     honour @media queries inside an <img>-embedded SVG
@@ -18,7 +18,7 @@ I generate three SVG cards (profile.svg, profile-dark.svg, and profile-light.svg
 
 To run locally I need my ACCESS_TOKEN set as an environment variable:
     export ACCESS_TOKEN=<fine-grained-PAT>
-    python profile.py
+    python profile/profile.py
 """
 
 import os
@@ -34,7 +34,7 @@ from html import escape as esc
 
 USERNAME   = 'zaccesss'  # GitHub username to query
 
-ASCII_ART_PATH = os.path.join(os.path.dirname(__file__), 'assets', 'ascii_profile.txt')  # path to ASCII portrait file
+ASCII_ART_PATH = os.path.join(os.path.dirname(__file__), '..', 'assets', 'ascii_profile.txt')  # path to ASCII portrait file, one level up in the repo root
 GRAPHQL_URL    = 'https://api.github.com/graphql'  # GitHub GraphQL endpoint
 
 # Portrait dimensions (rows must match ascii_profile.txt line count)
@@ -372,7 +372,7 @@ def fmt_uptime(created_at: str) -> str:
 
     Calendar-exact rather than delta_days // 365: a flat 365 divisor doesn't know about leap
     years, so it drifts the day count by roughly a day for every leap year the account has lived
-    through, and eventually would misattribute a whole year once that drift piles up. relativedelta
+    through; it would eventually misattribute a whole year once that drift piles up. relativedelta
     walks real calendar months and years instead, so the split is exact regardless of how many
     leap years fall inside the span.
     """
@@ -710,7 +710,7 @@ def main() -> None:
     print(f'  LOC: {fmt(loc_total)} ({fmt(loc_add)}++, {fmt(loc_del)}--)')
     print(f'  Streak: {current_streak} days current, {longest_streak} days best')
 
-    print('Generating profile.svg (adaptive), profile-dark.svg, and profile-light.svg...')
+    print('Generating profile.svg (adaptive), profile-dark.svg and profile-light.svg...')
     stat_args = (
         ascii_rows,
         repos, contributed, stars, forks,
@@ -719,11 +719,12 @@ def main() -> None:
         loc_total, loc_add, loc_del,
         current_streak, longest_streak,
     )
-    with open('profile.svg', 'w', encoding='utf-8') as f:
+    out_dir = os.path.dirname(__file__)
+    with open(os.path.join(out_dir, 'profile.svg'), 'w', encoding='utf-8') as f:
         f.write(build_svg(*stat_args, mode='adaptive'))
-    with open('profile-dark.svg', 'w', encoding='utf-8') as f:
+    with open(os.path.join(out_dir, 'profile-dark.svg'), 'w', encoding='utf-8') as f:
         f.write(build_svg(*stat_args, mode='dark'))
-    with open('profile-light.svg', 'w', encoding='utf-8') as f:
+    with open(os.path.join(out_dir, 'profile-light.svg'), 'w', encoding='utf-8') as f:
         f.write(build_svg(*stat_args, mode='light'))
     print('Done.')
 
