@@ -6,7 +6,7 @@
 # see NOTICE.md. The repository's visual output (the SVGs, the README and the
 # assets) is licensed under CC BY-NC-ND 4.0; see LICENSE.
 """
-profile.py — my GitHub profile README SVG generator.
+profile.py - my GitHub profile README SVG generator.
 
 I generate three SVG cards (profile.svg, profile-dark.svg and profile-light.svg):
   - profile.svg: theme-adaptive card (dark palette by default, light under prefers-color-scheme)
@@ -438,7 +438,7 @@ def brace_col_range(lbl2: str, v2_main: str, detail_lbl: str, detail_val: str) -
 
     min is with the dot-leader at its 1-dot floor (as tight as the row can be). max is with the
     inner brace text at its natural, unpadded length (as loose as the row can be before it either
-    has to shrink real digits, which we never do, or blow past the LINE_WIDTH row budget).
+    has to shrink real digits, which we never do or blow past the LINE_WIDTH row budget).
     """
     p_min = len(lbl2) + len(v2_main) + 5
     p_max = RIGHT_BUDGET - 2 - brace_inner_len(detail_lbl, detail_val)
@@ -658,7 +658,7 @@ def main() -> None:
     # separate classic PAT scoped to read:user only, with no repo access at all, so I don't have
     # to widen ACCESS_TOKEN's own repo-content permissions just to see my private contributions.
     # Falls back to ACCESS_TOKEN so this still runs (with public-only contribution counts) before
-    # the secret exists, or for local testing with a token that already carries read:user.
+    # the secret exists or for local testing with a token that already carries read:user.
     contrib_token = os.environ.get('CONTRIB_TOKEN', '').strip() or token
     username = os.environ.get('USER_NAME', USERNAME)  # USER_NAME env var overrides the hardcoded default
 

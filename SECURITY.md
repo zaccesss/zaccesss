@@ -28,7 +28,7 @@ Please report anything security relevant privately, not in a public issue.
   cannot read or write any repository content, only my own profile level
   contribution counts.
 - The workflow's write access to this repo comes from the built in `GITHUB_TOKEN`,
-  scoped to this repository alone, and is only used to commit the regenerated SVGs.
+  scoped to this repository alone and is only used to commit the regenerated SVGs.
 
 ## If a credential is exposed
 
