@@ -6,14 +6,14 @@
 # see NOTICE.md. The repository's visual output (the SVGs, the README and the
 # assets) is licensed under CC BY-NC-ND 4.0; see LICENSE.
 """
-approach.py — derives approach-dark.svg and approach-light.svg
+approach.py - derives approach-dark.svg and approach-light.svg
 from approach.svg.
 
 approach.svg (checked in, hand-edited) is the single theme-adaptive source: a
 dark base palette plus a `@media (prefers-color-scheme: light)` override. This
 script splits that into two fixed-palette siblings for the README's <picture>
 element, the same reason profile.py emits profile-dark.svg / profile-light.svg
-alongside profile.svg — some forges and devices don't honour @media queries
+alongside profile.svg - some forges and devices don't honour @media queries
 inside an <img>-embedded SVG, so those need a fixed file per theme.
 
 Run after editing approach.svg's markup or palette:
