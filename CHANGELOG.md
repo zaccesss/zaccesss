@@ -6,8 +6,16 @@ because it is a living profile rather than a released library.
 
 ## Unreleased
 
+### Added
+
+- CODEOWNERS and SUPPORT.md.
+- Markdown lint CI workflow with its own `.markdownlint.json`, added to the workflows README.
+- YAML issue forms for bug reports and feature requests plus a pull request template.
+- `.github/ISSUE_TEMPLATE/config.yml` disabling blank issues.
+
 ### Changed
 
+- Rewrote CODE_OF_CONDUCT.md from a closed-to-external-input notice to the standard interaction guidelines used across my other repositories.
 - Moved the profile and approach generators and their SVGs into their own `profile/` and `approach/`
   folders, so each card's script and output sit together instead of all eight files loose at the repo
   root. Updated the README image paths, the build and CI workflows and the docs that reference them
