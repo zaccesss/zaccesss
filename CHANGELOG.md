@@ -15,6 +15,7 @@ because it is a living profile rather than a released library.
 
 ### Changed
 
+- The repo count stat now includes repos I belong to as an org member, not just ones I personally own, matching the affiliation list the lines-of-code stat already used.
 - Rewrote CODE_OF_CONDUCT.md from a closed-to-external-input notice to the standard interaction guidelines used across my other repositories.
 - Moved the profile and approach generators and their SVGs into their own `profile/` and `approach/`
   folders, so each card's script and output sit together instead of all eight files loose at the repo
