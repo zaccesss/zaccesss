@@ -148,11 +148,15 @@ def get_user_info(token: str, username: str) -> tuple[int, int, int, int, int, i
 
 
 def get_repos_stars_and_forks(token: str, username: str) -> tuple[int, int, int]:
-    """Return (total_owned_repos, total_stars, total_forks)."""
+    """Return (total_repos, total_stars, total_forks) across repos I own or belong to as an org member.
+
+    Matches get_loc's affiliation list below, so joining an org counts its repos here the same
+    way it already counts towards lines of code, rather than this stat staying personal-only.
+    """
     query = """
         query ($login: String!, $cursor: String) {
             user(login: $login) {
-                repositories(first: 100, after: $cursor, ownerAffiliations: OWNER,
+                repositories(first: 100, after: $cursor, ownerAffiliations: [OWNER, ORGANIZATION_MEMBER],
                              orderBy: {field: UPDATED_AT, direction: DESC}) {
                     nodes { stargazerCount forkCount }
                     pageInfo { hasNextPage endCursor }
