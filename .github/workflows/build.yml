@@ -38,7 +38,7 @@ jobs:
       # Check out my repo so the workflow has access to my files.
       # fetch-depth: 0 gives a full clone. Gitea rejects shallow pushes to new repos.
       - name: Checkout repository
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           # Push the SVGs over SSH with a write deploy key so the build bypasses the
