@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: LicenseRef-PolyForm-Noncommercial-1.0.0
-# Copyright (c) 2026 Isaac Adjei <https://isaacadjei.me>
+# copyright (c) 2026 Isaac Adjei <https://isaacadjei.me>
 #
-# This generator script is licensed under the PolyForm Noncommercial License 1.0.0;
+# this generator script is licensed under the PolyForm Noncommercial License 1.0.0;
 # see NOTICE.md. The repository's visual output (the SVGs, the README and the
 # assets) is licensed under CC BY-NC-ND 4.0; see LICENSE.
 """
@@ -26,7 +26,7 @@ import re
 HERE = os.path.dirname(__file__)
 SOURCE = os.path.join(HERE, 'approach.svg')
 
-# Must match the .cls { fill: ...; } rules in approach.svg's base and light blocks exactly.
+# must match the .cls { fill: ...; } rules in approach.svg's base and light blocks exactly.
 DARK = {
     'comment': '#616e7f', 'kw': '#ff7b72', 'type': '#ffa657', 'fn': '#d2a8ff',
     'str':     '#a5d6ff', 'plain': '#c9d1d9', 'bg': '#161b22',
@@ -43,7 +43,7 @@ MEDIA_BLOCK_RE = re.compile(
 def render(svg: str, palette: dict, filename: str, description: str) -> str:
     out = svg
     for cls, colour in palette.items():
-        # Keep the existing column alignment (the whitespace before '{'); only swap the colour.
+        # keep the existing column alignment (the whitespace before '{'); only swap the colour.
         out = re.sub(rf'(\.{cls}\s*{{ fill: )[^;]+(; }})', rf'\g<1>{colour}\g<2>', out)
     out = MEDIA_BLOCK_RE.sub('\n', out)
     out = out.replace(
