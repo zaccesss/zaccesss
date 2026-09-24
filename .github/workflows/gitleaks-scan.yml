@@ -13,7 +13,7 @@ on:
     branches: [main]
   push:
 
-# Least privilege, I only need to read the repository contents to scan them.
+# least privilege, I only need to read the repository contents to scan them.
 permissions:
   contents: read
 
