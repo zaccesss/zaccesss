@@ -82,7 +82,7 @@ jobs:
       - name: Generate the approach SVG variants
         run: python approach/approach.py
 
-      # commit the freshly generated SVGs back to my repo under my own name.
+      # commit the freshly generated SVGs back to my repo under a separate automation identity.
       # the diff check means I only commit when something actually changed.
       # I push to GitHub (using the token actions/checkout already configured);
       # mirroring to the other forges is handled server-side by mirror-ops.
@@ -97,8 +97,12 @@ jobs:
             git config --global user.signingkey ~/.sign_key.pub
             git config --global commit.gpgsign true
           fi
-          git config --global user.email "code@isaacadjei.me"
-          git config --global user.name "Isaac Adjei"
+          # previous identity, kept for reference: these commits used to land as me.
+          # git config --global user.email "code@isaacadjei.me"
+          # git config --global user.name "Isaac Adjei"
+          # the address below is not on my GitHub account, so the commits are not credited to me.
+          git config --global user.email "me@isaacadjei.me"
+          git config --global user.name "zaccesss-bot"
           git add profile/profile.svg profile/profile-dark.svg profile/profile-light.svg approach/approach-dark.svg approach/approach-light.svg
           if git diff --staged --quiet; then
             echo "SVGs unchanged; nothing to commit."
