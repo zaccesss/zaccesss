@@ -606,7 +606,7 @@ def build_svg(
         blank(Y[19]),
 
         section_header(Y[20], 'Contact'),
-        info_row(Y[21], 'Discord',        'zac.nii'),
+        info_row(Y[21], 'Discord',        'zac.cess'),
         info_row(Y[22], 'Portfolio',      'isaacadjei.me'),
         info_row(Y[23], 'Email.Main',     'hello@isaacadjei.me'),
         info_row(Y[24], 'Email.Work',     'contact@isaacadjei.me'),
