@@ -1,4 +1,4 @@
-# Weekly dependency update PRs for this repo's two ecosystems: pip for the requirements.txt
+# weekly dependency update PRs for this repo's two ecosystems: pip for the requirements.txt
 # used by the profile scripts and GitHub Actions for the workflow action versions. Major
 # version bumps are ignored across both, since a breaking change should never land
 # automatically, matching the pattern used across the rest of the fleet.

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: LicenseRef-PolyForm-Noncommercial-1.0.0
-# Copyright (c) 2026 Isaac Adjei <https://isaacadjei.me>
+# copyright (c) 2026 Isaac Adjei <https://isaacadjei.me>
 #
-# This generator script is licensed under the PolyForm Noncommercial License 1.0.0;
+# this generator script is licensed under the PolyForm Noncommercial License 1.0.0;
 # see NOTICE.md. The repository's visual output (the SVGs, the README and the
 # assets) is licensed under CC BY-NC-ND 4.0; see LICENSE.
 """
@@ -29,7 +29,7 @@ from dateutil.relativedelta import relativedelta
 from html import escape as esc
 
 # ---------------------------------------------------------------------------
-# Constants
+# constants
 # ---------------------------------------------------------------------------
 
 USERNAME   = 'zaccesss'  # GitHub username to query
@@ -37,7 +37,7 @@ USERNAME   = 'zaccesss'  # GitHub username to query
 ASCII_ART_PATH = os.path.join(os.path.dirname(__file__), '..', 'assets', 'ascii_profile.txt')  # path to ASCII portrait file, one level up in the repo root
 GRAPHQL_URL    = 'https://api.github.com/graphql'  # GitHub GraphQL endpoint
 
-# Portrait dimensions (rows must match ascii_profile.txt line count)
+# portrait dimensions (rows must match ascii_profile.txt line count)
 ASCII_ROWS = 30  # must match the line count of ascii_profile.txt
 
 SVG_WIDTH  = 1120  # total canvas width in pixels; +40 vs the old 1080 to keep pace with LINE_WIDTH
@@ -46,7 +46,7 @@ SVG_WIDTH  = 1120  # total canvas width in pixels; +40 vs the old 1080 to keep p
 ROW_STEP   = 20   # vertical gap between rows in pixels
 ROW_START  = 30   # y-coordinate of the first row
 
-# Right column char width: dots are calculated so every value ends here.
+# right column char width: dots are calculated so every value ends here.
 # 70 not 66: the extra 4 chars are the slack the Repos/Streak curly-brace rows need to always
 # align, verified by exhaustively checking every digit-length combination up to 999 repos/
 # contributed and 9999 streak days (get_streak() is no longer capped at one year of history, so
@@ -59,12 +59,12 @@ ASCII_FONT_SIZE = 13  # px; a size down from the 16px stats font so the 44-char-
                        # leaves a real gap before STATS_X instead of almost touching it
 ASCII_Y_OFFSET = ROW_STEP  # visually centres the portrait after the taller Git Stats block
 
-# Stats rows: content goes to row 33 (y=690); SVG height adds bottom margin.
+# stats rows: content goes to row 33 (y=690); SVG height adds bottom margin.
 STATS_ROWS = 34                                                        # total number of rows in the stats block
 SVG_HEIGHT = ROW_START + (STATS_ROWS - 1) * ROW_STEP + ROW_STEP + 20  # 730px total canvas height
 
 # ---------------------------------------------------------------------------
-# Colour schemes
+# colour schemes
 # ---------------------------------------------------------------------------
 
 DARK = {
@@ -333,8 +333,8 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
     add, delete = 0, 0
     for repo in repos:
         owner, name = repo.split('/', 1)
-        # Only in my own repos do I credit unlinked terminal commits (they're mine).
-        # In org/shared repos an unlinked commit could be someone else's, so there
+        # only in my own repos do I credit unlinked terminal commits (they're mine).
+        # in org/shared repos an unlinked commit could be someone else's, so there
         # I require the commit to be authored by me.
         is_own_repo = owner.lower() == username.lower()
         cursor = None
@@ -364,7 +364,7 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
     return add, delete, add - delete
 
 # ---------------------------------------------------------------------------
-# Formatting helpers
+# formatting helpers
 # ---------------------------------------------------------------------------
 
 def fmt(n: int) -> str:
@@ -569,7 +569,7 @@ def build_svg(
 
     header_dashes = '-' * (LINE_WIDTH - len('isaac@adjei '))
 
-    # Repos {Contrib} and Streak {Best} share one '{' column target so both braces align vertically.
+    # repos {Contrib} and Streak {Best} share one '{' column target so both braces align vertically.
     # dual_row_detail clamps this to each row's own safe range, so it can only ever land as close
     # as that row's budget allows - it can't push either row past the LINE_WIDTH row budget.
     brace_col_target = shared_brace_col([
@@ -616,11 +616,11 @@ def build_svg(
 
         section_header(Y[27], 'Git Stats'),
         dual_row(Y[28], 'Followers',      fmt(followers),        'Stars',          fmt(stars)),
-        # Forks and Gists are both 0 right now, I'll bring this row back once I have some.
+        # forks and Gists are both 0 right now, I'll bring this row back once I have some.
         # dual_row(Y[?], 'Forks',        fmt(forks),            'Gists',          fmt(gists)),
         dual_row(Y[29], 'Commits',        fmt(commits),          'PRs',            fmt(prs)),
         dual_row(Y[30], 'Issues',         fmt(issues),           'Reviews',        fmt(reviews)),
-        # The three curly-brace detail rows sit together at the bottom, by design.
+        # the three curly-brace detail rows sit together at the bottom, by design.
         contribs_repos_row(Y[31], 'Contribs', fmt(total_contribs), repos, contributed, brace_col=brace_col_target),
         dual_row_detail(Y[32], 'Uptime', uptime,   'Streak',         f'{fmt(current_streak)}d', 'Best', f'{fmt(longest_streak)}d', brace_col=brace_col_target),
         loc_dual_row(Y[33], loc_total, loc_add, loc_del),
@@ -648,7 +648,7 @@ def build_svg(
 </svg>"""
 
 # ---------------------------------------------------------------------------
-# Main
+# main
 # ---------------------------------------------------------------------------
 
 def main() -> None:
@@ -661,7 +661,7 @@ def main() -> None:
     # classic read:user scope - no fine-grained permission grants this. CONTRIB_TOKEN is a
     # separate classic PAT scoped to read:user only, with no repo access at all, so I don't have
     # to widen ACCESS_TOKEN's own repo-content permissions just to see my private contributions.
-    # Falls back to ACCESS_TOKEN so this still runs (with public-only contribution counts) before
+    # falls back to ACCESS_TOKEN so this still runs (with public-only contribution counts) before
     # the secret exists or for local testing with a token that already carries read:user.
     contrib_token = os.environ.get('CONTRIB_TOKEN', '').strip() or token
     username = os.environ.get('USER_NAME', USERNAME)  # USER_NAME env var overrides the hardcoded default

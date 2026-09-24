@@ -1,15 +1,15 @@
-# Lightweight CI so a broken change cannot land. I compile and import check my
+# lightweight CI so a broken change cannot land. I compile and import check my
 # generator scripts. There is no build step, they are plain scripts, so this is quick.
 
 name: CI
 
 on:
-  # Pull requests only. CI does not need to re-run on main after a PR merges (the same
+  # pull requests only. CI does not need to re-run on main after a PR merges (the same
   # commit was already checked on the PR); the SVG commits the build pushes to main
   # are not code changes worth checking.
   pull_request:
 
-# Least privilege, I only read the repository.
+# least privilege, I only read the repository.
 permissions:
   contents: read
 
