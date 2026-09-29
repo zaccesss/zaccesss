@@ -14,6 +14,8 @@
   <a href="https://isaacadjei.me/contact">Contact</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/all-pages">More</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://github.com/zaccesssbot">Bot</a>
 </p>
 
 <!--
