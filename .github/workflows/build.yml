@@ -42,7 +42,8 @@ jobs:
         with:
           fetch-depth: 0
           # push the SVGs over SSH with a write deploy key so the build bypasses the
-          # branch ruleset that requires CI on main. Commits stay authored as me.
+          # branch ruleset that requires CI on main. A deploy key only grants push access,
+          # it has no bearing on the commit author identity set further down.
           ssh-key: ${{ secrets.BUILD_DEPLOY_KEY }}
 
       # I'm using Python 3.12 to run my SVG generator script.
@@ -97,12 +98,11 @@ jobs:
             git config --global user.signingkey ~/.sign_key.pub
             git config --global commit.gpgsign true
           fi
-          # previous identity, kept for reference: these commits used to land as me.
-          # git config --global user.email "code@isaacadjei.me"
-          # git config --global user.name "Isaac Adjei"
-          # the address below is not on my GitHub account, so the commits are not credited to me.
-          git config --global user.email "me@isaacadjei.me"
-          git config --global user.name "zaccesss-bot"
+          # zaccesssbot is a real, separate GitHub account (its own verified email, its own
+          # registered copy of this signing key), so these commits land there, not on me, and
+          # actually show as Verified rather than the unlinked placeholder identity this used.
+          git config --global user.email "automation@isaacadjei.me"
+          git config --global user.name "zaccesssbot"
           git add profile/profile.svg profile/profile-dark.svg profile/profile-light.svg approach/approach-dark.svg approach/approach-light.svg
           if git diff --staged --quiet; then
             echo "SVGs unchanged; nothing to commit."
