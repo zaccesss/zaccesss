@@ -15,6 +15,7 @@ because it is a living profile rather than a released library.
 
 ### Changed
 
+- Tidied code comments and the repository docs.
 - The build workflow now commits generated SVGs as the real zaccesssbot account instead of a placeholder identity with no GitHub account behind it. Its signing key now matches what is actually registered there, so these commits show as Verified.
 - The repo count stat now includes repos I belong to as an org member, not just ones I personally own, matching the affiliation list the lines-of-code stat already used.
 - Rewrote CODE_OF_CONDUCT.md from a closed-to-external-input notice to the standard interaction guidelines used across my other repositories.
