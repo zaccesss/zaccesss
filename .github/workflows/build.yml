@@ -1,7 +1,7 @@
 name: README build
 
-# I run this four times a day at 00:17, 06:17, 12:17 and 18:17 UTC to keep my stats fresh,
-# on every push to main; I can also trigger it manually from the Actions tab.
+# runs four times a day at 00:17, 06:17, 12:17 and 18:17 UTC to keep the stats fresh,
+# on every push to main and on demand from the Actions tab.
 # the :17 minute keeps the run off the congested top of the hour so it is less likely
 # to be delayed or dropped.
 on:
@@ -10,7 +10,7 @@ on:
   push:
     branches: [main]
     # the build commits the regenerated SVGs and pushes them with a deploy key which,
-    # unlike GITHUB_TOKEN, re-triggers workflows. I ignore the generated SVGs so an
+    # unlike GITHUB_TOKEN, re-triggers workflows. The generated SVGs are ignored so an
     # SVG-only commit cannot start another build and loop. approach.svg itself is
     # excluded from this list since it's the hand-edited source, not generated output -
     # editing it should still trigger a build so its dark/light siblings regenerate.
@@ -20,7 +20,7 @@ on:
       - 'approach/approach-light.svg'
   workflow_dispatch:
 
-# I need write access so the job can push the regenerated SVG back to my repo.
+# write access lets the job push the regenerated SVG back to the repo.
 permissions:
   contents: write
 
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # check out my repo so the workflow has access to my files.
+      # check out the repo so the workflow has access to its files.
       # fetch-depth: 0 gives a full clone. Gitea rejects shallow pushes to new repos.
       - name: Checkout repository
         uses: actions/checkout@v4.4.0
@@ -46,13 +46,13 @@ jobs:
           # it has no bearing on the commit author identity set further down.
           ssh-key: ${{ secrets.BUILD_DEPLOY_KEY }}
 
-      # I'm using Python 3.12 to run my SVG generator script.
+      # Python 3.12 runs the SVG generator script.
       - name: Set up Python 3.12
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
-      # cache pip downloads so my builds are faster on repeat runs.
+      # cache pip downloads so builds are faster on repeat runs.
       - name: Cache pip
         uses: actions/cache@v6
         with:
@@ -60,13 +60,13 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: ${{ runner.os }}-pip-
 
-      # install everything my generator script needs.
+      # install everything the generator script needs.
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
-      # run my generator. It pulls live GitHub stats and writes profile.svg.
+      # run the generator. It pulls live GitHub stats and writes profile.svg.
       # ACCESS_TOKEN lives in: Settings > Secrets and variables > Actions > New repository secret
-      # it needs read access to my repositories and account so it can fetch stats.
+      # it needs read access to the account and its repositories so it can fetch stats.
       # CONTRIB_TOKEN is a separate classic PAT scoped to read:user only, no repo access at all.
       # GitHub's contributionsCollection withholds private-repo detail (commits, reviews, the
       # calendar) from every API caller without that scope; no fine-grained permission grants
@@ -83,9 +83,9 @@ jobs:
       - name: Generate the approach SVG variants
         run: python approach/approach.py
 
-      # commit the freshly generated SVGs back to my repo under a separate automation identity.
-      # the diff check means I only commit when something actually changed.
-      # I push to GitHub (using the token actions/checkout already configured);
+      # commit the freshly generated SVGs back to the repo under a separate automation identity.
+      # the diff check means a commit only happens when something actually changed.
+      # push to GitHub (using the token actions/checkout already configured);
       # mirroring to the other forges is handled server-side by mirror-ops.
       - name: Commit and push the updated SVG
         env:
@@ -99,7 +99,7 @@ jobs:
             git config --global commit.gpgsign true
           fi
           # zaccesssbot is a real, separate GitHub account (its own verified email, its own
-          # registered copy of this signing key), so these commits land there, not on me, and
+          # registered copy of this signing key), so these commits land there, not on the owner, and
           # actually show as Verified rather than the unlinked placeholder identity this used.
           git config --global user.email "automation@isaacadjei.me"
           git config --global user.name "zaccesssbot"

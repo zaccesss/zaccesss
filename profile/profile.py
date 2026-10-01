@@ -256,7 +256,7 @@ def get_streak(token: str, username: str, creation_year: int) -> tuple[int, int]
             longest = max(longest, current_run)
         else:
             current_run = 0
-    # I don't penalise the streak if today has no contributions yet
+    # don't penalise the streak if today has no contributions yet
     today = datetime.date.today().isoformat()
     days_to_check = [(d, c) for d, c in days if d <= today]
     if days_to_check and days_to_check[-1][0] == today and days_to_check[-1][1] == 0:
@@ -333,9 +333,9 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
     add, delete = 0, 0
     for repo in repos:
         owner, name = repo.split('/', 1)
-        # only in my own repos do I credit unlinked terminal commits (they're mine).
+        # only in the owner's own repos are unlinked terminal commits credited (they're the owner's).
         # in org/shared repos an unlinked commit could be someone else's, so there
-        # I require the commit to be authored by me.
+        # the commit must be authored by the owner.
         is_own_repo = owner.lower() == username.lower()
         cursor = None
         try:
@@ -347,8 +347,8 @@ def get_loc(token: str, username: str) -> tuple[int, int, int]:
                                .get('target', {})
                                .get('history', {}))
                 for c in history.get('nodes', []):
-                    # I skip my automated metadata backup commits (from the meta-mirror repo) so their
-                    # JSON dumps do not inflate my lines of code with data I did not actually write.
+                    # skip the automated metadata backup commits (from the meta-mirror repo) so their
+                    # JSON dumps do not inflate the lines of code with data nobody actually wrote.
                     if c.get('messageHeadline', '') == 'chore: update metadata backup':
                         continue
                     login = ((c.get('author') or {}).get('user') or {}).get('login', '')
@@ -412,7 +412,7 @@ def info_row(y: int, label: str, value: str) -> str:
     return trow(y, cc('. ') + key(label) + cc(f': {pad_dots(label, str(value))} ') + val(str(value)))
 
 def section_header(y: int, title: str) -> str:
-    # I want my section headers to match the weight of the first "isaac@adjei" line,
+    # section headers match the weight of the first "isaac@adjei" line,
     # so the whole thing - title and hyphens - uses the main text colour, no grey.
     hyphens = '-' * max(2, LINE_WIDTH - 2 - len(title) - 1)
     return trow(y, f'- {title} {hyphens}')
@@ -616,7 +616,7 @@ def build_svg(
 
         section_header(Y[27], 'Git Stats'),
         dual_row(Y[28], 'Followers',      fmt(followers),        'Stars',          fmt(stars)),
-        # forks and Gists are both 0 right now, I'll bring this row back once I have some.
+        # forks and Gists are both 0 right now, so this row returns once there are some.
         # dual_row(Y[?], 'Forks',        fmt(forks),            'Gists',          fmt(gists)),
         dual_row(Y[29], 'Commits',        fmt(commits),          'PRs',            fmt(prs)),
         dual_row(Y[30], 'Issues',         fmt(issues),           'Reviews',        fmt(reviews)),
@@ -659,8 +659,8 @@ def main() -> None:
     # GitHub's contributionsCollection withholds private-repo detail (commits, reviews, the
     # calendar) from every API caller, even the account owner, unless the token carries the
     # classic read:user scope - no fine-grained permission grants this. CONTRIB_TOKEN is a
-    # separate classic PAT scoped to read:user only, with no repo access at all, so I don't have
-    # to widen ACCESS_TOKEN's own repo-content permissions just to see my private contributions.
+    # separate classic PAT scoped to read:user only, with no repo access at all, so there is no need
+    # to widen ACCESS_TOKEN's own repo-content permissions just to see private contributions.
     # falls back to ACCESS_TOKEN so this still runs (with public-only contribution counts) before
     # the secret exists or for local testing with a token that already carries read:user.
     contrib_token = os.environ.get('CONTRIB_TOKEN', '').strip() or token
