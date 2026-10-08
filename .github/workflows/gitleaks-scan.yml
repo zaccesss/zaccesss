@@ -21,6 +21,7 @@ jobs:
   gitleaks:
     name: Gitleaks
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       # check out the repository so gitleaks has the files to scan.
