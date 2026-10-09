@@ -607,10 +607,10 @@ def build_svg(
 
         section_header(Y[20], 'Contact'),
         info_row(Y[21], 'Discord',        'zac.cess'),
-        info_row(Y[22], 'Portfolio',      'isaacadjei.me'),
-        info_row(Y[23], 'Email.Main',     'hello@isaacadjei.me'),
-        info_row(Y[24], 'Email.Work',     'contact@isaacadjei.me'),
-        info_row(Y[25], 'LinkedIn',       'linkedin.com/in/isaacadjei'),
+        info_row(Y[22], 'LinkedIn',       'in/isaacadjei'),
+        info_row(Y[23], 'Portfolio',      'isaacadjei.me'),
+        info_row(Y[24], 'Email.Main',     'hello@isaacadjei.me'),
+        info_row(Y[25], 'Email.Work',     'contact@isaacadjei.me'),
 
         blank(Y[26]),
 
