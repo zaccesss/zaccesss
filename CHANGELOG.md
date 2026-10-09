@@ -6,6 +6,8 @@ because it is a living profile rather than a released library.
 
 ## Unreleased
 
+## 2026-10-09
+
 ### Changed
 
 - The card now reads Host then Mode then Region. Mode shortens to EECS. Region shows eu-west-2 in place of the full location, which the profile sidebar already gives.
