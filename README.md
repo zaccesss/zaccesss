@@ -1,17 +1,23 @@
 <p align="center">
   <a href="https://isaacadjei.me">Portfolio</a>
   &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/about">About</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/experience">Experience</a>
+  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/projects">Projects</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/blog">Blog</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/til">TIL</a>
   &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/notes">Notes</a>
+  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/newsletter">Newsletter</a>
   &nbsp;&bull;&nbsp;
-  <a href="https://isaacadjei.me/links">Links</a>
-  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/contact">Contact</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/links">Links</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/all-pages">More</a>
   &nbsp;&bull;&nbsp;
@@ -25,9 +31,9 @@
   - profile/profile.svg serves as the standalone adaptive fallback card (dark theme by default with embedded CSS).
 -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/profile-dark.svg?v=14">
-  <source media="(prefers-color-scheme: light)" srcset="profile/profile-light.svg?v=14">
-  <img alt="Isaac Adjei's GitHub Profile" src="profile/profile.svg?v=14" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/profile-dark.svg?v=15">
+  <source media="(prefers-color-scheme: light)" srcset="profile/profile-light.svg?v=15">
+  <img alt="Isaac Adjei's GitHub Profile" src="profile/profile.svg?v=15" width="100%">
 </picture>
 <!-- I'm keeping this SVG but muting it for now - I'll uncomment when i want to restore it later -->
 <!--
