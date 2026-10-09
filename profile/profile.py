@@ -582,7 +582,7 @@ def build_svg(
 
         info_row(Y[1],  'Host',     'Aston University'),
         info_row(Y[2],  'Mode',     'EECS'),
-        info_row(Y[3],  'Region',   'eu-west-2'),
+        info_row(Y[3],  'Region',   'LHR <-> BHX'),
         info_row(Y[4],  'Kernel',   'Sleep deprived but functional'),
         info_row(Y[5],  'OS',       'Windows, macOS, Ubuntu, Linux'),
         info_row(Y[6],  'IDE',      'JetBrains, VS Code, Visual/Microchip Studio'),

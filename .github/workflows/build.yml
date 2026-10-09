@@ -110,17 +110,22 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update generated SVGs"
-          # if the remote moved ahead while we were running, replant our freshly
-          # generated SVGs on top of the new tip and retry. We regenerate the whole
-          # SVG each run, so ours is the authoritative newest version, so 'reset --soft'
-          # onto origin/main re-commits our files cleanly with no line-level conflict.
+          # if the remote moved ahead while we were running, replant only our freshly
+          # generated SVGs on top of the new tip and retry. A soft reset would keep this
+          # run's older copy of every other file staged and quietly revert whatever landed
+          # on main meanwhile, so the SVGs are set aside and the tree is reset hard instead.
           # 'if git push' keeps a failed push from tripping 'set -e' mid-loop.
+          svgs="profile/profile.svg profile/profile-dark.svg profile/profile-light.svg approach/approach-dark.svg approach/approach-light.svg"
+          keep="$(mktemp -d)"
+          for f in $svgs; do mkdir -p "$keep/$(dirname "$f")"; cp "$f" "$keep/$f"; done
           pushed=false
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then pushed=true; break; fi
             echo "Push rejected (attempt ${attempt}); replanting SVGs on latest origin/main..."
             git fetch origin main
-            git reset --soft origin/main
+            git reset --hard origin/main
+            for f in $svgs; do cp "$keep/$f" "$f"; done
+            git add $svgs
             if git diff --staged --quiet; then
               echo "Remote already matches our SVGs; nothing to push."
               pushed=true
