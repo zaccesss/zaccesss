@@ -6,8 +6,15 @@ because it is a living profile rather than a released library.
 
 ## Unreleased
 
+## 2026-10-09
+
+### Fixed
+
+- The card build no longer reverts other changes on main when it retries a rejected push. It sets its generated SVGs aside, resets to the new tip and puts only those back.
+
 ### Changed
 
+- Region shows LHR <-> BHX, the CDN edge codes for London and Birmingham, in place of eu-west-2. Plain ASCII keeps the right edge aligned in the card font.
 - The card now reads Host then Mode then Region. Mode shortens to EECS. Region shows eu-west-2 in place of the full location, which the profile sidebar already gives.
 
 ### Added
