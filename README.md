@@ -1,17 +1,23 @@
 <p align="center">
   <a href="https://isaacadjei.me">Portfolio</a>
   &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/about">About</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/experience">Experience</a>
+  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/projects">Projects</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/blog">Blog</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/til">TIL</a>
   &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/notes">Notes</a>
+  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/newsletter">Newsletter</a>
   &nbsp;&bull;&nbsp;
-  <a href="https://isaacadjei.me/links">Links</a>
-  &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/contact">Contact</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://isaacadjei.me/links">Links</a>
   &nbsp;&bull;&nbsp;
   <a href="https://isaacadjei.me/all-pages">More</a>
   &nbsp;&bull;&nbsp;
