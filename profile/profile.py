@@ -599,7 +599,7 @@ def build_svg(
 
         info_row(Y[14], 'Hobbies.Tech',      'CyberSec, Cloud, DevOps, Hackathons'),
         info_row(Y[15], 'Hobbies.Software',  'Full Stack, Open Source, DB, AI/ML/DS'),
-        info_row(Y[16], 'Hobbies.Hardware',  'Embedded Systems, MCUs, PCB, Robotics'),
+        info_row(Y[16], 'Hobbies.Hardware',  'Embedded Systems, MCUs, PCBs, Robotics'),
         info_row(Y[17], 'Hobbies.General',  'Fitness, Travel, Piano, Reading, Gaming'),
         info_row(Y[18], 'Hobbies.Status',   'rm -rf impostor_syndrome && touch grass'),
 

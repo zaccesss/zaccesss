@@ -15,6 +15,7 @@ because it is a living profile rather than a released library.
 ### Changed
 
 - The Contact block runs Discord, LinkedIn, Portfolio, Email.Main then Email.Work, so the keys step up in length and the two emails sit together. LinkedIn shows as in/isaacadjei.
+- Hobbies.Hardware reads PCBs, plural like MCUs beside it.
 - Region shows LHR <-> BHX, the CDN edge codes for London and Birmingham, in place of eu-west-2. Plain ASCII keeps the right edge aligned in the card font.
 - The card now reads Host then Mode then Region. Mode shortens to EECS. Region shows eu-west-2 in place of the full location, which the profile sidebar already gives.
 
