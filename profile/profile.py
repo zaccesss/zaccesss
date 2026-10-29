@@ -67,25 +67,12 @@ SVG_HEIGHT = ROW_START + (STATS_ROWS - 1) * ROW_STEP + ROW_STEP + 20  # 730px to
 # colour schemes
 # ---------------------------------------------------------------------------
 
-DARK = {
-    'bg':     '#161b22',
-    'text':   '#c9d1d9',
-    'key':    '#ffa657',
-    'value':  '#a5d6ff',
-    'add':    '#3fb950',
-    'delete': '#f85149',
-    'dots':   '#616e7f',
-}
+# the live colours come from palettes.py at the repository root, where every set is kept
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from palettes import CARD  # noqa: E402
 
-LIGHT = {
-    'bg':     '#f6f8fa',
-    'text':   '#24292f',
-    'key':    '#953800',
-    'value':  '#0a3069',
-    'add':    '#1a7f37',
-    'delete': '#cf222e',
-    'dots':   '#c2cfde',
-}
+DARK = CARD['dark']
+LIGHT = CARD['light']
 
 # ---------------------------------------------------------------------------
 # ASCII art loader
@@ -550,6 +537,8 @@ def build_svg(
         .cc       {{ fill: {LIGHT['dots']};   }}
       }}"""
 
+    # empty for a set without 'bold', so the live Primer card renders exactly as before
+    weight = 'font-weight: bold; ' if base_palette.get('bold') else ''
     style = f"""
       @font-face {{
         src: local('Consolas'), local('Consolas Bold');
@@ -561,8 +550,8 @@ def build_svg(
       .fg       {{ fill: {base_palette['text']};   }}
       .key      {{ fill: {base_palette['key']};    }}
       .value    {{ fill: {base_palette['value']};  }}
-      .addColor {{ fill: {base_palette['add']};    }}
-      .delColor {{ fill: {base_palette['delete']}; }}
+      .addColor {{ fill: {base_palette['add']};    {weight}}}
+      .delColor {{ fill: {base_palette['delete']}; {weight}}}
       .cc       {{ fill: {base_palette['dots']};   }}
       text, tspan {{ white-space: pre; }}{media_override}
     """
