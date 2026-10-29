@@ -7,7 +7,7 @@
 """
 palettes.py - every colour set the profile card and the approach panel can use.
 
-ACTIVE picks the live one, which profile/profile.py reads. The live card stays on
+ACTIVE picks the live one, which profile.py beside it reads. The live card stays on
 Primer; every other set is kept here switched off, ready to try by changing ACTIVE.
 The approach colours are kept as data only and approach/approach.py keeps its own.
 A card set can add 'bold': True to draw the lines of code ++ and -- in bold.
