@@ -67,8 +67,8 @@ SVG_HEIGHT = ROW_START + (STATS_ROWS - 1) * ROW_STEP + ROW_STEP + 20  # 730px to
 # colour schemes
 # ---------------------------------------------------------------------------
 
-# the live colours come from palettes.py at the repository root, where every set is kept
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# the live colours come from palettes.py beside this script, where every set is kept; running
+# the script puts its own folder first on the import path
 from palettes import CARD  # noqa: E402
 
 DARK = CARD['dark']
