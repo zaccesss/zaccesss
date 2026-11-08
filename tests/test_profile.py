@@ -213,16 +213,17 @@ def test_contrib_counts_every_repository_once_and_never_shows_below_repos(gen, m
         return FakeResponse(200, {'data': {'user': {field: {'nodes': [{'nameWithOwner': n} for n in names], 'pageInfo': page}}}})
     monkeypatch.setattr(gen.requests, 'post', post)
 
-    assert gen.get_distinct_repos('t', 'zaccesss') == 6
+    assert gen.get_distinct_repos('t', 'zaccesss') == 5
     assert seen == ['repositories', 'repositories', 'repositoriesContributedTo', 'repositoriesContributedTo']
 
 
-def test_a_stored_contrib_below_fresh_repos_is_lifted_to_repos(gen, monkeypatch, tmp_path):
+def test_a_stored_contrib_below_fresh_repos_is_lifted_to_repos(gen, monkeypatch, tmp_path, capsys):
     # repos is fetched fresh at 131 while the contributed group can only be carried over at 100
     stored = dict(STORED, contributed={'contributed': 100, 'updated': '2026-11-03T18:01:36Z'})
     (tmp_path / 'last-good.json').write_text(json.dumps(stored) + '\n')
     big = json.loads(json.dumps(GOOD_DATA))
-    big['user']['repositories']['totalCount'] = 131
+    demo = big['user']['repositories']['nodes'][0]
+    big['user']['repositories']['nodes'] = [dict(demo, nameWithOwner=f'zaccesss/repo-{i}') for i in range(131)]
     state = {'n': 0}
 
     def post(*a, **k):
@@ -232,8 +233,7 @@ def test_a_stored_contrib_below_fresh_repos_is_lifted_to_repos(gen, monkeypatch,
     monkeypatch.setattr(gen.requests, 'post', post)
     gen.main()
 
-    svg = (tmp_path / 'profile.svg').read_text()
-    assert '131' in svg
+    assert 'Repos: 131 | Contributed: 131' in capsys.readouterr().out
 
 
 def test_a_fork_is_left_out_of_repos_but_its_stars_still_count(gen, monkeypatch):
